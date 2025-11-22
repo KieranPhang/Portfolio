@@ -1,17 +1,40 @@
 export const siteConfig = {
-  name: "Ryan Fitzgerald",
-  title: "Senior Software Engineer",
-  description: "Portfolio website of Ryan Fitzgerald",
+  name: "K Phang",
+  title: "Robotics Engineer",
+  description: "Engineering Portfolio website of Kieran Phang-Davey",
   accentColor: "#1d4ed8",
+
   social: {
-    email: "your-email@example.com",
-    linkedin: "https://linkedin.com/in/yourprofile",
-    twitter: "https://x.com/rfitzio",
-    github: "https://github.com/RyanFitzgerald",
+    email: "Kphangda@asu.edu",
+    linkedin: "https://www.linkedin.com/in/kieran-phang-davey/",
+    github: "https://github.com/KieranPhang",
   },
+
   aboutMe:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quos asperiores nihil consequatur tempore cupiditate architecto natus commodi corrupti quas quasi facere est, dignissimos odit nam veniam sapiente ut, vitae eligendi ipsum dolor, nostrum ullam impedit! Corrupti ratione mollitia temporibus necessitatibus, consectetur reiciendis recusandae id, dolorum quaerat, vero pariatur. Ratione!",
-  skills: ["Javascript", "React", "Node.js", "Python", "AWS", "Docker"],
+    "Enthusiastic Robotics engineer pursuing experience in manufacturing engineering with a deep interest in microfactories, agile manufacturing, and flexible production. Dedicated to advancing skills in robotics, manufacturing, and process optimization through Kaizen and lean manufacturing, with a proven track record in leadership, management, and driving team success.",
+
+  skills: [
+    // Programming & data analysis
+    "C++",
+    "Python",
+    "MATLAB",
+    "Microsoft Excel",
+    // Hardware & hands-on skills
+    "Microcontrollers (PIC & Arduino)",
+    "3D Printing",
+    "Soldering",
+    "Welding",
+    // Design tools
+    "SOLIDWORKS",
+    "Fusion 360",
+    "AutoCAD",
+    "KiCad",
+    // Other
+    "Technical Writing & Reports",
+    "Project Management"
+  ],
+
+  // ⬇️ LEFT UNCHANGED (you can edit later)
   projects: [
     {
       name: "AI Dev Roundup Newsletter",
@@ -35,57 +58,67 @@ export const siteConfig = {
       skills: ["React", "Node.js", "AWS"],
     },
   ],
+
   experience: [
     {
-      company: "Tech Company",
-      title: "Senior Software Engineer",
-      dateRange: "Jan 2022 - Present",
+      company: "Arizona State University",
+      title: "Head Residential Assistant (RA)",
+      dateRange: "Aug 2024 – Present",
       bullets: [
-        "Led development of microservices architecture serving 1M+ users",
-        "Reduced API response times by 40% through optimization",
-        "Mentored team of 5 junior developers",
+        "Supervise 7 RA staff, handle crisis management, and mentor residents to support safety and community-building.",
+        "Streamline communication and collaboration across teams to align programming with organizational goals.",
+        "Organize large-scale events, including a 475-attendee Halloween event with 70% year-over-year growth."
       ],
     },
     {
-      company: "Startup Inc",
-      title: "Full Stack Developer",
-      dateRange: "Jun 2020 - Dec 2021",
+      company: "Singapore Armed Forces C4 Command (C4C)",
+      title: "Logistics Coordinator | Corporal",
+      dateRange: "Oct 2020 – Sep 2022",
       bullets: [
-        "Built and launched MVP product from scratch using React and Node.js",
-        "Implemented CI/CD pipeline reducing deployment time by 60%",
-        "Collaborated with product team to define technical requirements",
+        "Developed systems for maintaining mission-critical communication equipment, achieving near-100% operational readiness.",
+        "Coordinated logistical support for high-profile national events such as the Shangri-La Dialogue and National Day.",
+        "Performed preventive equipment maintenance to extend lifespan, reduce downtime, and maintain readiness under tight deadlines."
       ],
     },
     {
-      company: "Digital Agency",
-      title: "Frontend Developer",
-      dateRange: "Aug 2018 - May 2020",
+      company: "Appco Group",
+      title: "Sales Representative Team Leader",
+      dateRange: "Mar 2019 – Jul 2019",
       bullets: [
-        "Developed responsive web applications for 20+ clients",
-        "Improved site performance scores by 35% on average",
-        "Introduced modern JavaScript frameworks to legacy codebases",
+        "Exceeded sales quotas by ~15% through door-to-door, street, and B2B sales.",
+        "Led and coached team members to surpass revenue goals and improve performance.",
+        "Improved team sales pitches and objection-handling strategies, increasing closing rates by 20%+."
+      ],
+    },
+    {
+      company: "National Boilermaking Services",
+      title: "Welding Apprentice",
+      dateRange: "Oct 2018 – Dec 2018",
+      bullets: [
+        "Developed basic welding techniques and contributed to manufacturing and repair projects.",
+        "Assisted with fabrication tasks using essential shop tools in an industrial environment."
+      ],
+    },
+    {
+      company: "Chemistry Form Pte. Ltd.",
+      title: "Design Intern",
+      dateRange: "Nov 2015 – Dec 2015",
+      bullets: [
+        "Utilized CAD tools and Adobe Suite to create visuals and layouts for product exhibitions.",
+        "Supported design workflows and helped deliver visually impactful marketing and display materials."
       ],
     },
   ],
+
   education: [
     {
-      school: "University Name",
-      degree: "Bachelor of Science in Computer Science",
-      dateRange: "2014 - 2018",
+      school: "Arizona State University, Mesa, AZ",
+      degree: "B.S.E., Engineering (Robotics)",
+      dateRange: "Expected Graduation May 2027",
       achievements: [
-        "Graduated Magna Cum Laude with 3.8 GPA",
-        "Dean's List all semesters",
-        "President of Computer Science Club",
-      ],
-    },
-    {
-      school: "Online Platform",
-      degree: "Full Stack Development Certificate",
-      dateRange: "2019",
-      achievements: [
-        "Completed 500+ hours of coursework",
-        "Built 10+ portfolio projects",
-        "Specialized in React and Node.js",
+        "Current GPA: 3.3",
+        "Relevant coursework: Engineering Design Project (PCB design, robotic arms & manipulators, 3D printing, team management).",
+        "Additional coursework: Introduction to SOLIDWORKS, Electrical Engineering Fundamentals, Materials & Manufacturing, General Chemistry, and technical writing for engineering.",
       ],
     },
   ],
