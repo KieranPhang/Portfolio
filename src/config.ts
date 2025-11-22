@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "K Phang",
+  name: "Kieran 'K' Phang",
   title: "Robotics Engineer",
   description: "Engineering Portfolio website of Kieran Phang-Davey",
   accentColor: "#1d4ed8",
