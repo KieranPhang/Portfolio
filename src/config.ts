@@ -37,25 +37,25 @@ export const siteConfig = {
   // ⬇️ LEFT UNCHANGED (you can edit later)
   projects: [
     {
-      name: "AI Dev Roundup Newsletter",
+      name: "Pontoon Picnic  Table",
       description:
-        "One concise email. Five minutes. Every Tuesday. Essential AI news & trends, production-ready libraries, powerful AI tools, and real-world code examples",
+        "Designed and built a floating picnic table pontoon using 55-gallon HDPE barrels and a reinforced frame to support a full-size table and multiple passengers. The pontoon completed a full Salt River run (Water Users → Exit 4) carrying four people, maintaining stability and buoyancy with only minor dents and no structural failures. Total build cost stayed under $100.",
       link: "https://aidevroundup.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+      skills: ["Welding", "Project Management"],
     },
     {
-      name: "Chrome Extension Mastery: Build Full-Stack Extensions with React & Node.js",
+      name: "Pyramid of Light",
       description:
-        "Master the art of building production-ready, full-stack Chrome Extensions using modern web technologies and best practices",
+        "At the request of a local DJ,  I built a pyramid of Light using PCV pipes, 3D printed connectors, and LED shop lights",
       link: "https://fullstackextensions.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+      skills: ["SOLIDWORKS", "3D Printing", "Project Management"],
     },
     {
-      name: "ExtensionKit",
+      name: "Water Opacity Sensor",
       description:
-        "Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates & examples",
+        "Designed and fabricated a PCB integrating a Curiosity Nano PIC and photoresistor to measure fluid clarity via light intensity; collaborated with a team to interface multiple subsystem boards with a master control PIC",
       link: "https://extensionkit.io/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+      skills: ["KiCAD"],
     },
   ],
 
