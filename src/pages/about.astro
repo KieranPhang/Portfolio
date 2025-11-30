@@ -18,7 +18,32 @@ import "../styles/global.css";
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
+
     <title>About | {siteConfig.name}</title>
+
+    <!-- Basic SEO / social tags -->
+    <meta
+      property="og:title"
+      content={`About | ${siteConfig.name}`}
+    />
+    <meta
+      property="og:description"
+      content="Get to know Kieran – a robotics engineering student with a passion for manufacturing, optimization, and building real things."
+    />
+    <meta property="og:type" content="website" />
+    <!-- If you have a dedicated OG image, replace this with its URL -->
+    <!-- <meta property="og:image" content="https://yourdomain.com/images/og-about.jpg" /> -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content={`About | ${siteConfig.name}`}
+    />
+    <meta
+      name="twitter:description"
+      content="Get to know Kieran – a robotics engineering student with a passion for manufacturing, optimization, and building real things."
+    />
+    <!-- <meta name="twitter:image" content="https://yourdomain.com/images/og-about.jpg" /> -->
   </head>
 
   <!-- DARK BACKGROUND FIX -->
@@ -48,6 +73,16 @@ import "../styles/global.css";
             can legally work in the United States, and what I do when I’m not
             in front of a CAD model or a robot.
           </p>
+
+          <!-- Headshot block -->
+            <div class="mt-6 flex justify-center">
+            <img
+                src="/images/ASU_Headshot_KPhang.jpg"
+                alt="Photo of me"
+                class="w-44 h-44 rounded-full object-cover border-2 border-blue-500 shadow-[0_0_25px_rgba(0,102,255,0.15)]"
+            />
+            </div>
+
         </header>
 
         <!-- 1. More About Me -->
