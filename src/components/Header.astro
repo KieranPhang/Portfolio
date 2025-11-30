@@ -14,48 +14,45 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
     <ul class="flex items-center gap-8 justify-center">
       <li>
         <a
-          href="#about"
+          href="/about"
           class="text-gray-700 hover:text-black transition-colors font-medium"
         >
           About
         </a>
       </li>
-      {
-        hasProjects && (
-          <li>
-            <a
-              href="#projects"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Projects
-            </a>
-          </li>
-        )
-      }
-      {
-        hasExperience && (
-          <li>
-            <a
-              href="#experience"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Experience
-            </a>
-          </li>
-        )
-      }
-      {
-        hasEducation && (
-          <li>
-            <a
-              href="#education"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Education
-            </a>
-          </li>
-        )
-      }
+
+      {hasProjects && (
+        <li>
+          <a
+            href="/projects"
+            class="text-gray-700 hover:text-black transition-colors font-medium"
+          >
+            Projects
+          </a>
+        </li>
+      )}
+
+      {hasExperience && (
+        <li>
+          <a
+            href="/experience"
+            class="text-gray-700 hover:text-black transition-colors font-medium"
+          >
+            Experience
+          </a>
+        </li>
+      )}
+
+      {hasEducation && (
+        <li>
+          <a
+            href="#education"
+            class="text-gray-700 hover:text-black transition-colors font-medium"
+          >
+            Education
+          </a>
+        </li>
+      )}
     </ul>
   </nav>
 </header>
