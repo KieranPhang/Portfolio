@@ -21,31 +21,48 @@ import "../styles/global.css";
     <title>About | {siteConfig.name}</title>
   </head>
 
-  <body class="bg-[#050608] text-gray-100">
+  <!-- GREY BACKGROUND -->
+  <body class="bg-[#0d0f12] text-gray-100">
     <Header />
 
     <main class="pt-24 pb-16">
       <section class="max-w-5xl mx-auto px-6 space-y-16">
-        {/* Top intro */}
+
+        <!-- Top intro -->
         <header class="space-y-4">
           <p class="text-sm uppercase tracking-[0.25em] text-blue-500">
             About
           </p>
+
           <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">
             Get to know Kieran &quot;K&quot; Phang
           </h1>
+
+          <!-- BLUE UNDERLINE -->
+          <div
+            class="w-[75px] h-[5px] mt-2 rounded-full"
+            style={`background-color: ${siteConfig.accentColor}`}
+          ></div>
+
           <p class="text-base sm:text-lg text-gray-400 max-w-3xl">
-            This page goes a layer deeper than the homepage: who you are, how
-            you move through the world, and the constraints an employer should
-            know about up front.
+            This page goes a layer deeper than the homepage: who you are,
+            how you move through the world, and the constraints an employer
+            should know about up front.
           </p>
         </header>
 
-        {/* 1. More About Me */}
+        <!-- 1. More About Me -->
         <section class="space-y-4">
           <h2 class="text-2xl sm:text-3xl font-semibold text-gray-100">
             More about me
           </h2>
+
+          <!-- BLUE UNDERLINE -->
+          <div
+            class="w-[75px] h-[5px] mt-1 rounded-full"
+            style={`background-color: ${siteConfig.accentColor}`}
+          ></div>
+
           <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
             tincidunt, augue non tempus aliquet, sapien lectus malesuada
@@ -54,6 +71,7 @@ import "../styles/global.css";
             scelerisque, ipsum nec ullamcorper pretium, enim nisl rhoncus
             purus, et fermentum odio magna eget velit.
           </p>
+
           <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
             Curabitur euismod, sem ut dictum interdum, dolor felis rutrum
             lorem, nec semper mi lacus id quam. Integer non ligula non est
@@ -62,11 +80,18 @@ import "../styles/global.css";
           </p>
         </section>
 
-        {/* 2. Visa Requirements */}
+        <!-- 2. Visa Requirements -->
         <section class="space-y-4">
           <h2 class="text-2xl sm:text-3xl font-semibold text-gray-100">
             Visa requirements
           </h2>
+
+          <!-- BLUE UNDERLINE -->
+          <div
+            class="w-[75px] h-[5px] mt-1 rounded-full"
+            style={`background-color: ${siteConfig.accentColor}`}
+          ></div>
+
           <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
             suscipit risus. Donec sit amet purus in urna hendrerit tristique.
@@ -74,6 +99,7 @@ import "../styles/global.css";
             nibh, et rhoncus velit felis id eros. Integer ornare sodales
             posuere.
           </p>
+
           <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
             Use this section to clearly explain your citizenship, current visa
             status, and any sponsorship requirements or constraints. Hiring
@@ -82,11 +108,18 @@ import "../styles/global.css";
           </p>
         </section>
 
-        {/* 3. Hobbies & Everything Else */}
+        <!-- 3. Hobbies & Everything Else -->
         <section class="space-y-4">
           <h2 class="text-2xl sm:text-3xl font-semibold text-gray-100">
             Hobbies &amp; everything else
           </h2>
+
+          <!-- BLUE UNDERLINE -->
+          <div
+            class="w-[75px] h-[5px] mt-1 rounded-full"
+            style={`background-color: ${siteConfig.accentColor}`}
+          ></div>
+
           <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
             porttitor, nisl sed tempor consequat, est lorem feugiat ipsum, sed
@@ -94,6 +127,7 @@ import "../styles/global.css";
             bibendum, et dapibus velit elementum. Suspendisse at magna
             bibendum, bibendum est eget, ultrices sapien.
           </p>
+
           <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
             This is where you can talk about the things that make you a human
             being rather than just a resume: building things, training, music,
@@ -101,6 +135,7 @@ import "../styles/global.css";
             those hobbies shape the way you work.
           </p>
         </section>
+
       </section>
     </main>
 
