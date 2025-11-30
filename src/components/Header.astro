@@ -10,8 +10,17 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
   id="header"
   class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300"
 >
-  <nav class="max-w-7xl mx-auto px-8 py-4">
+  <nav class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+
+    <!-- LEFT SIDE: CLICKABLE NAME (HOME BUTTON) -->
+    <a href="/" class="text-xl font-bold text-gray-900 hover:text-black transition-colors">
+      {siteConfig.name}
+    </a>
+
+    <!-- RIGHT SIDE: NAV LINKS -->
     <ul class="flex items-center gap-8 justify-center">
+
+      <!-- ABOUT PAGE -->
       <li>
         <a
           href="/about"
@@ -21,38 +30,47 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
         </a>
       </li>
 
-      {hasProjects && (
-        <li>
-          <a
-            href="/projects"
-            class="text-gray-700 hover:text-black transition-colors font-medium"
-          >
-            Projects
-          </a>
-        </li>
-      )}
+      <!-- PROJECTS PAGE -->
+      {
+        hasProjects && (
+          <li>
+            <a
+              href="/projects"
+              class="text-gray-700 hover:text-black transition-colors font-medium"
+            >
+              Projects
+            </a>
+          </li>
+        )
+      }
 
-      {hasExperience && (
-        <li>
-          <a
-            href="/experience"
-            class="text-gray-700 hover:text-black transition-colors font-medium"
-          >
-            Experience
-          </a>
-        </li>
-      )}
+      <!-- EXPERIENCE PAGE -->
+      {
+        hasExperience && (
+          <li>
+            <a
+              href="/experience"
+              class="text-gray-700 hover:text-black transition-colors font-medium"
+            >
+              Experience
+            </a>
+          </li>
+        )
+      }
 
-      {hasEducation && (
-        <li>
-          <a
-            href="#education"
-            class="text-gray-700 hover:text-black transition-colors font-medium"
-          >
-            Education
-          </a>
-        </li>
-      )}
+      <!-- EDUCATION PAGE -->
+      {
+        hasEducation && (
+          <li>
+            <a
+              href="/education"
+              class="text-gray-700 hover:text-black transition-colors font-medium"
+            >
+              Education
+            </a>
+          </li>
+        )
+      }
     </ul>
   </nav>
 </header>
