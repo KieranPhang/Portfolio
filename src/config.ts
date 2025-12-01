@@ -54,7 +54,7 @@ export const siteConfig = {
       name: "Water Opacity Sensor",
       description:
         "Designed and fabricated a PCB integrating a Curiosity Nano PIC and photoresistor to measure fluid clarity via light intensity; collaborated with a team to interface multiple subsystem boards with a master control PIC",
-      link: "https://hirekieran.com/projects/",
+      link: "https://k-phang.github.io/",
       skills: ["KiCAD"],
     },
   ],
