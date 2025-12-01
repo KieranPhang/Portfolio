@@ -1,6 +1,9 @@
 ---
 import { siteConfig } from "../config";
+
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+// show only first 3 on the homepage
+const previewProjects = hasProjects ? siteConfig.projects.slice(0, 3) : [];
 ---
 
 {
@@ -20,14 +23,20 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
 
           <div class="lg:col-span-8">
             <div class="space-y-8">
-              {siteConfig.projects.map((project, index) => {
+              {previewProjects.map((project, index) => {
+                const isExternal = project.link?.startsWith("http");
+
                 const Component = project.link ? "a" : "div";
                 const linkProps = project.link
-                  ? {
-                      href: project.link,
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                    }
+                  ? isExternal
+                    ? {
+                        href: project.link,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                      }
+                    : {
+                        href: project.link,
+                      }
                   : {};
 
                 return (
@@ -72,7 +81,9 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                         </div>
 
                         <p
-                          class={`text-base sm:text-lg text-gray-600 leading-relaxed ${project.link ? "pr-12 sm:pr-14 md:pr-16" : ""}`}
+                          class={`text-base sm:text-lg text-gray-600 leading-relaxed ${
+                            project.link ? "pr-12 sm:pr-14 md:pr-16" : ""
+                          }`}
                         >
                           {project.description}
                         </p>
@@ -95,6 +106,17 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                   </div>
                 );
               })}
+            </div>
+
+            {/* 👇 New "See more" button */}
+            <div class="mt-8">
+              <a
+                href="/projects"
+                class="inline-flex items-center px-5 py-2.5 rounded-full border border-gray-300 text-sm sm:text-base font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
+              >
+                See more projects
+                <span class="ml-2">→</span>
+              </a>
             </div>
           </div>
         </div>
