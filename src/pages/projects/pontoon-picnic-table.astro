@@ -1,23 +1,92 @@
 ---
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Pontoon Picnic Table</title>
-    <meta name="description" content="Pontoon picnic table project." />
+    <title>Pontoon Picnic Table | {siteConfig.name}</title>
+    <meta
+      name="description"
+      content="A floating picnic table pontoon built under $100 and tested on the Salt River."
+    />
   </head>
 
-  <body class="bg-background text-foreground">
+  <body class="bg-[#0d0f12] text-gray-100">
     <Header />
 
-    <main class="max-w-3xl mx-auto py-12 px-4">
-      <h1 class="text-4xl font-bold mb-6">Pontoon Picnic Table</h1>
-      <p class="text-lg text-gray-700">
-        This is where you add your project details.
-      </p>
+    <main class="pt-24 pb-16">
+      <section class="max-w-3xl mx-auto px-6 space-y-8">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em] text-blue-500">
+            Project
+          </p>
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">
+            Pontoon Picnic Table
+          </h1>
+          <p class="text-base sm:text-lg text-gray-400">
+            A DIY floating picnic table built with 55-gallon HDPE barrels and a
+            reinforced frame, designed to carry a full picnic setup and a group
+            of friends down the Salt River.
+          </p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Overview</h2>
+          <p class="text-gray-300 leading-relaxed">
+            This project started as a challenge: build a stable, river-ready
+            picnic platform on a student budget. I designed and built a pontoon
+            using reclaimed 55-gallon HDPE barrels as flotation and a reinforced
+            frame to support a full-size picnic table and multiple passengers.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            The pontoon completed a full Salt River run (Water Users → Exit 4)
+            carrying four people. It handled rocks, shallow water, and light
+            impacts with only minor dents to the barrels and no structural
+            failures. Total build cost stayed under $100.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">My Role</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Designed the frame, barrel layout, and tie-down system.</li>
+            <li>Cut, drilled, and assembled the structure using basic shop tools.</li>
+            <li>Managed sourcing and budgeting to stay under a $100 cap.</li>
+            <li>Planned and executed the first on-river test with a full crew.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">What I Learned</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Practical buoyancy, stability, and weight distribution tradeoffs.</li>
+            <li>How to design for abuse: rocks, scraping, and real-world misuse.</li>
+            <li>Balancing cost, safety, and fun under tight constraints.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-2xl font-semibold text-gray-100">Tech & Skills</h2>
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-200">
+              Welding / Fabrication
+            </span>
+            <span class="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-200">
+              Rapid Prototyping
+            </span>
+            <span class="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-200">
+              Project Management
+            </span>
+            <span class="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-200">
+              Design Under Constraints
+            </span>
+          </div>
+        </section>
+      </section>
     </main>
 
     <Footer />
