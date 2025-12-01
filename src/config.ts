@@ -37,12 +37,12 @@ export const siteConfig = {
   // ⬇️ LEFT UNCHANGED (you can edit later)
   projects: [
     {
-      name: "Pontoon Picnic  Table",
-      description:
-        "Designed and built a floating picnic table pontoon using 55-gallon HDPE barrels and a reinforced frame to support a full-size table and multiple passengers. The pontoon completed a full Salt River run (Water Users → Exit 4) carrying four people, maintaining stability and buoyancy with only minor dents and no structural failures. Total build cost stayed under $100.",
-      link: "https://hirekieran.com/projects/",
+      name: "Pontoon Picnic Table",
+      description: "Designed and built a floating picnic table pontoon...",
+      link: "/projects/pontoon-picnic-table", // no .html, no domain
       skills: ["Welding", "Project Management"],
     },
+
     {
       name: "Pyramid of Light",
       description:
