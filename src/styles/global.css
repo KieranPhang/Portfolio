@@ -1,30 +1,51 @@
-@import "tailwindcss";
-
-/* Base typography */
-body {
-  font-family: "IBM Plex Mono", monospace;
-}
-
-/* Dark theme tokens (matches your Dark Reader look) */
 :root {
-  --bg: #0d0f12;          /* page background */
-  --fg: #e5e7eb;          /* primary text */
-  --muted: #9ca3af;       /* secondary text */
-  --card: #0f1318;        /* card background */
-  --border: #1c1f26;      /* card border */
+  --bg: #0d0f12;
+  --fg: #e5e7eb;
+  --muted: #9ca3af;
+
+  --card: #0f1318;
+  --border: #1c1f26;
+
+  --pill: rgba(255, 255, 255, 0.08);
+  --pill-border: rgba(255, 255, 255, 0.12);
+
+  --header: rgba(13, 15, 18, 0.78);
+
+  /* fallback; you already have siteConfig.accentColor in components for inline styles */
+  --accent: #3b82f6;
 }
 
-/* Global dark baseline (so pages without explicit classes still look right) */
 html,
 body {
   background: var(--bg);
   color: var(--fg);
 }
 
-/* “Tailwind-like” classes used in your pages (these were previously undefined) */
+/* These fix your existing undefined classes used in pages */
 .bg-background { background-color: var(--bg); }
 .text-foreground { color: var(--fg); }
 
+/* Reusable “project-card style” */
 .bg-card { background-color: var(--card); }
 .border-card { border-color: var(--border); }
-.text-muted { color: var(--muted); }
+
+/* Pills for skills/tags */
+.pill {
+  background: var(--pill);
+  border: 1px solid var(--pill-border);
+  color: var(--fg);
+}
+
+/* Primary button (blue/white by default) */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+/* Dark header bar */
+.header-bg {
+  background: var(--header);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
