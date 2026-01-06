@@ -28,3 +28,58 @@ body {
 .bg-card { background-color: var(--card); }
 .border-card { border-color: var(--border); }
 .text-muted { color: var(--muted); }
+
+/* =========================
+   ADDITIVE DARK MODE OVERRIDES
+   ========================= */
+
+/* Page background */
+body {
+  background-color: #0b0d10;
+}
+
+/* Section backgrounds */
+section {
+  background-color: transparent;
+}
+
+/* Card surfaces (projects, experience, education) */
+.bg-white,
+.bg-gray-50,
+.bg-gray-100 {
+  background-color: #0f1318 !important;
+}
+
+/* Card borders */
+.border,
+.border-gray-200,
+.border-gray-300 {
+  border-color: #1c2330 !important;
+}
+
+/* Paragraph text */
+.text-gray-600,
+.text-gray-700,
+.text-gray-800 {
+  color: #a8b0bf !important;
+}
+
+/* Headings */
+.text-gray-900,
+.text-black {
+  color: #f5f7fa !important;
+}
+
+/* Skill pills */
+.rounded-full.bg-gray-100,
+.rounded-full.bg-gray-200 {
+  background-color: #101317 !important;
+  color: #f5f7fa !important;
+  border: 1px solid #1c2330;
+}
+
+/* Footer */
+footer {
+  background-color: #0b0d10;
+  border-top: 1px solid #1c2330;
+}
