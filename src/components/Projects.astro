@@ -5,7 +5,6 @@ const projects = siteConfig.projects ?? [];
 const hasProjects = projects.length > 0;
 
 // homepage shows first 3 projects (simple + foolproof)
-// if you later add more, they won't appear here unless they’re in the first 3
 const featured = projects.slice(0, 3);
 ---
 
@@ -30,12 +29,15 @@ const featured = projects.slice(0, 3);
             {featured.map((project, index) => (
               <a
                 href={project.link}
-                class="block rounded-2xl bg-white border border-gray-100 p-6 sm:p-7 hover:shadow-md transition-shadow duration-300"
-
+                class="block rounded-2xl border p-6 sm:p-7 hover:shadow-md transition-shadow duration-300"
+                style="
+                  background-color: #0b0d10;
+                  border-color: #1c2330;
+                "
               >
                 <div class="flex items-start justify-between gap-4">
                   <div>
-                    <div class="text-sm text-blue-500 mb-2">
+                    <div class="text-sm mb-2" style={`color: ${siteConfig.accentColor}`}>
                       {(index + 1).toString().padStart(2, "0")}
                     </div>
 
@@ -48,7 +50,10 @@ const featured = projects.slice(0, 3);
                     </p>
                   </div>
 
-                  <span class="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/5 text-white">
+                  <span
+                    class="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full text-white"
+                    style="background-color: rgba(255,255,255,0.06);"
+                  >
                     ↗
                   </span>
                 </div>
@@ -56,7 +61,13 @@ const featured = projects.slice(0, 3);
                 {project.skills?.length > 0 && (
                   <div class="mt-4 flex flex-wrap gap-2">
                     {project.skills.map((skill) => (
-                      <span class="px-3 py-1 text-xs rounded-full bg-white/5 text-gray-200 border border-white/10">
+                      <span
+                        class="px-3 py-1 text-xs rounded-full text-gray-200 border"
+                        style="
+                          background-color: rgba(255,255,255,0.06);
+                          border-color: rgba(255,255,255,0.10);
+                        "
+                      >
                         {skill}
                       </span>
                     ))}
@@ -66,6 +77,7 @@ const featured = projects.slice(0, 3);
             ))}
           </div>
 
+          {/* Button (blue) */}
           <div class="mt-8">
             <a
               href="/projects"

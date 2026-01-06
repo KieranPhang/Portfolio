@@ -8,69 +8,48 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 
 <header
   id="header"
-  class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300 border-b"
+  style="background-color:#0b0d10; border-color:#1c2330;"
 >
   <nav class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
 
     <!-- LEFT SIDE: CLICKABLE NAME (HOME BUTTON) -->
-    <a href="/" class="text-xl font-bold text-gray-900 hover:text-black transition-colors">
+    <a href="/" class="text-xl font-bold text-white hover:text-white transition-colors">
       {siteConfig.name}
     </a>
 
     <!-- RIGHT SIDE: NAV LINKS -->
     <ul class="flex items-center gap-8 justify-center">
-
-      <!-- ABOUT PAGE -->
       <li>
-        <a
-          href="/about"
-          class="text-gray-700 hover:text-black transition-colors font-medium"
-        >
+        <a href="/about" class="text-gray-300 hover:text-white transition-colors font-medium">
           About
         </a>
       </li>
 
-      <!-- PROJECTS PAGE -->
-      {
-        hasProjects && (
-          <li>
-            <a
-              href="/projects"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Projects
-            </a>
-          </li>
-        )
-      }
+      {hasProjects && (
+        <li>
+          <a href="/projects" class="text-gray-300 hover:text-white transition-colors font-medium">
+            Projects
+          </a>
+        </li>
+      )}
 
-      <!-- EXPERIENCE PAGE -->
-      {
-        hasExperience && (
-          <li>
-            <a
-              href="/experience"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Experience
-            </a>
-          </li>
-        )
-      }
+      {hasExperience && (
+        <li>
+          <a href="/experience" class="text-gray-300 hover:text-white transition-colors font-medium">
+            Experience
+          </a>
+        </li>
+      )}
 
-      <!-- EDUCATION PAGE -->
-      {
-        hasEducation && (
-          <li>
-            <a
-              href="#education"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Education
-            </a>
-          </li>
-        )
-      }
+      {hasEducation && (
+        <li>
+          <!-- if Education is its own page, keep /education. If you want homepage anchor, use /#education -->
+          <a href="/education" class="text-gray-300 hover:text-white transition-colors font-medium">
+            Education
+          </a>
+        </li>
+      )}
     </ul>
   </nav>
 </header>
@@ -78,16 +57,20 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 <script>
   window.addEventListener("scroll", () => {
     const header = document.getElementById("header");
+    if (!header) return;
+
     if (window.scrollY > 100) {
-      header?.classList.add("bg-white/80", "backdrop-blur-sm");
+      header.classList.add("backdrop-blur-sm");
+      header.style.backgroundColor = "rgba(11, 13, 16, 0.85)"; // dark glass
+      header.style.borderColor = "rgba(28, 35, 48, 1)";
     } else {
-      header?.classList.remove("bg-white/80", "backdrop-blur-sm");
+      header.classList.remove("backdrop-blur-sm");
+      header.style.backgroundColor = "#0b0d10"; // solid dark
+      header.style.borderColor = "#1c2330";
     }
   });
 </script>
 
 <style>
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 </style>
