@@ -11,16 +11,16 @@ export const siteConfig = {
   },
 
   aboutMe:
-    "Robotics engineering student seeking experience in manufacturing, automation, and microfactories. I’m passionate about building systems that are efficient, scalable, and reliable; whether that’s a production workflow or a rapid prototype. I enjoy solving problems, improving processes, and taking a project from idea to product.  My experience spans robotics, 3D printing, CAD design, microcontrollers, and lean manufacturing principles. I thrive on ownership, iteration, and making things work better than they did yesterday.",
+    "Robotics-focused engineering student building real hardware across fabrication, embedded systems, and system integration. Interested in manufacturing, automation, and rapid prototyping, with a bias toward shipping and iterative improvement.",
 
   skills: [
     // Programming & data analysis
-    "C++",
+    "C",
     "Python",
     "MATLAB",
-    "Microsoft Excel",
+    "Excel",
     // Hardware & hands-on skills
-    "Microcontrollers (PIC & Arduino)",
+    "Microcontrollers (ESP32, PIC, & Arduino)",
     "3D Printing",
     "Soldering",
     "Welding",
@@ -30,40 +30,39 @@ export const siteConfig = {
     "AutoCAD",
     "KiCad",
     // Other
-    "Technical Writing & Reports",
+    "Technical Documentation",
     "Project Management"
   ],
 
-  // ⬇️ LEFT UNCHANGED (you can edit later)
   projects: [
-    {
-      name: "Pontoon Picnic Table",
-      description: "Designed and built a floating picnic table pontoon...",
-      link: "/projects/pontoon-picnic-table", // no .html, no domain
-      skills: ["Welding", "Project Management"],
-    },
-
-    {
-      name: "Pyramid of Light",
-      description:
-        "At the request of a local DJ,  I built a pyramid of Light using PCV pipes, 3D printed connectors, and LED shop lights",
-      link: "https://hirekieran.com/projects/",
-      skills: ["SOLIDWORKS", "3D Printing", "Project Management"],
-    },
-    {
-      name: "Water Opacity Sensor",
-      description:
-        "Designed and fabricated a PCB integrating a Curiosity Nano PIC and photoresistor to measure fluid clarity via light intensity; collaborated with a team to interface multiple subsystem boards with a master control PIC",
-      link: "https://k-phang.github.io/",
-      skills: ["KiCAD"],
-    },
+  {
+    name: "Pontoon Picnic Table",
+    description: "Designed and welded a $100 pontoon picnic table, then river-tested it.Designed and welded a $100 pontoon picnic table and river-tested it.",
+    link: "/projects/pontoon-picnic-table",
+    image: "/projects/pontoon-picnic-table/thumbnail.jpg",
+    skills: ["Welding", "Fabrication", "CAD"],
+  },
+  {
+    name: "C3 COSMIC Challenge – Cable Braiding Machine",
+    description: "Mechatronic cable-braiding prototype for in-space manufacturing, focused on integration and CAD.",
+    link: "/projects/c3-cosmic-cable-braiding-machine",
+    image: "/projects/c3-cosmic-cable-braiding-machine/thumbnail.jpg",
+    skills: ["Mechatronics", "Systems", "CAD"],
+  },
+  {
+    name: "Water Opacity Sensor",
+    description: "PIC-based optical sensor PCB measuring fluid clarity via light intensity.",
+    link: "/projects/water-opacity-sensor",
+    image: "/projects/water-opacity-sensor/thumbnail.jpg",
+    skills: ["KiCad", "PIC", "Embedded"],
+  },
   ],
 
   experience: [
     {
       company: "Arizona State University",
       title: "Head Residential Assistant (RA)",
-      dateRange: "Aug 2024 – Present",
+      dateRange: "Aug 2024 – Jan 2025",
       bullets: [
         "Supervise 7 RA staff, handle crisis management, and mentor residents to support safety and community-building.",
         "Streamline communication and collaboration across teams to align programming with organizational goals.",
@@ -113,10 +112,10 @@ export const siteConfig = {
   education: [
     {
       school: "Arizona State University, Mesa, AZ",
-      degree: "B.S.E., Engineering (Robotics)",
+      degree: "B.S.E., Engineering (Robotics Specialization)",
       dateRange: "Expected Graduation May 2027",
       achievements: [
-        "Current GPA: 3.3",
+        "Current GPA: 3.14",
         "Relevant coursework: Engineering Design Project (PCB design, robotic arms & manipulators, 3D printing, team management).",
         "Additional coursework: Introduction to SOLIDWORKS, Electrical Engineering Fundamentals, Materials & Manufacturing, General Chemistry, and technical writing for engineering.",
       ],
