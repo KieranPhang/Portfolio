@@ -35,12 +35,12 @@ export const siteConfig = {
   ],
 
   projects: [
-  {
-    name: "Pontoon Picnic Table",
-    description: "Designed and built a $100 pontoon picnic table and stress-tested it on Arizona’s Salt River for 4 hours. Custom welded barrel brackets, pickup-legal transport, and no tip in 300 lb seesaw tests.",
-    link: "/projects/pontoon-picnic-table",
-    image: "/projects/pontoon-picnic-table/thumbnail.jpg",
-    skills: ["Welding", "Fabrication", "Design for Constraints", "Project Management"],
+    {
+    name: "Water Opacity Sensor",
+    description: "PIC-based optical sensor PCB measuring fluid clarity via light intensity.",
+    link: "/projects/water-opacity-sensor",
+    image: "/projects/water-opacity-sensor/thumbnail.jpg",
+    skills: ["KiCad", "PIC", "Embedded"],
   },
   {
     name: "C3 COSMIC Challenge – Cable Braiding Machine",
@@ -50,12 +50,13 @@ export const siteConfig = {
     skills: ["Mechatronics", "Systems", "CAD"],
   },
   {
-    name: "Water Opacity Sensor",
-    description: "PIC-based optical sensor PCB measuring fluid clarity via light intensity.",
-    link: "/projects/water-opacity-sensor",
-    image: "/projects/water-opacity-sensor/thumbnail.jpg",
-    skills: ["KiCad", "PIC", "Embedded"],
+    name: "Pontoon Picnic Table",
+    description: "Designed and built a $100 pontoon picnic table and stress-tested it on Arizona’s Salt River for 4 hours. Custom welded barrel brackets, pickup-legal transport, and no tip in 300 lb seesaw tests.",
+    link: "/projects/pontoon-picnic-table",
+    image: "/projects/pontoon-picnic-table/thumbnail.jpg",
+    skills: ["Welding", "Fabrication", "Design for Constraints", "Project Management"],
   },
+  
   ],
 
   experience: [
