@@ -37,7 +37,7 @@ export const siteConfig = {
   projects: [
     {
     name: "Water Opacity Sensor",
-    description: "PIC-based optical sensor PCB measuring fluid clarity via light intensity.",
+    description: "PIC-based optical sensor PCB measuring fluid clarity via light intensity. ",
     link: "/projects/water-opacity-sensor",
     image: "/projects/water-opacity-sensor/thumbnail.jpg",
     skills: ["KiCad", "PIC", "Embedded"],
