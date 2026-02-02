@@ -40,8 +40,22 @@ const projects = siteConfig.projects ?? [];
         <div class="grid gap-6 sm:gap-8 md:grid-cols-2">
           {projects.map((project) => (
             <article class="flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-lg shadow-black/30">
-              {/* Image / thumbnail placeholder */}
-              <div class="h-40 bg-gradient-to-br from-blue-500/40 via-purple-500/30 to-slate-900" />
+              {/* Image / thumbnail */}
+              {project.image ? (
+                <div class="relative h-40 w-full overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={`${project.name} hero image`}
+                    class="h-full w-full object-cover"
+                   loading="lazy"
+                  />
+                <div class="absolute inset-0 bg-black/20" />
+                </div>
+) : (
+  <div class="h-40 bg-gradient-to-br from-blue-500/40 via-purple-500/30 to-slate-900" />
+)}
+
+
 
               <div class="flex flex-1 flex-col p-6 space-y-4">
                 <header class="space-y-1">
