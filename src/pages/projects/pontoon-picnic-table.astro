@@ -3,406 +3,135 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { siteConfig } from "../../config";
 import "../../styles/global.css";
-
-const projectName = "Pontoon Picnic Table";
-const projectTagline = "Pontoon Picnic Table built under $100.";
-const projectSummary =
-  "A picnic table integrated with four 55-gallon steel drums and a 2x4 frame — designed, welded, and baptised in a full salt river run in just two weeks.";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>{projectName} | {siteConfig.name}</title>
-    <meta name="description" content={projectSummary} />
-  </head>
 
-  <body class="bg-background text-foreground">
-    <Header />
+<section class="p-8 sm:p-12 md:p-16 lg:p-24">
+  <div class="max-w-5xl mx-auto space-y-16">
 
-    <main class="pt-24 pb-16">
-      <section class="max-w-4xl mx-auto px-6 space-y-10">
-        {/* Top header */}
-        <header class="space-y-3">
-          <p class="text-sm uppercase tracking-[0.25em] text-blue-500">
-            Project
-          </p>
-          <h1 class="text-4xl sm:text-5xl font-bold">
-            {projectName}
-          </h1>
-          <p class="text-base sm:text-lg text-gray-400">
-            {projectTagline}
-          </p>
-          <p class="text-sm sm:text-base text-gray-400">
-            {projectSummary}
-          </p>
-        </header>
+    <!-- TITLE -->
+    <header class="space-y-4">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white">
+        Pontoon Picnic Table
+      </h1>
+      <p class="text-lg text-gray-300">
+        Also known as <span class="font-semibold text-white">“Out To Lunch”</span>
+      </p>
+    </header>
 
-        {/* WHY – Problem / Motivation / Constraints */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold">Why</h2>
-          <p class="text-gray-300 leading-relaxed">
-            This started as a front desk daydream that turned into a summer
-            project. I had some surplus income, a bit of free time, and the
-            desire to build something ridiculous, fun, and just barely
-            practical: a floating picnic table.
-          </p>
-          <p class="text-gray-300 leading-relaxed">
-            The goal was simple: build a floating picnic table that could carry
-            at least four people down the Salt River without sinking, capsizing,
-            or blowing the budget.
-          </p>
-          <h3 class="text-lg font-semibold">Goal</h3>
-          <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>
-              Create a floating picnic platform that can comfortably carry four
-              adults (or more) plus a full table setup.
-            </li>
-            <li>
-              Survive at least one full run of the Salt River from put-in to
-              take-out.
-            </li>
-          </ul>
-          <h3 class="text-lg font-semibold">Constraints</h3>
-          <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>Materials budget capped at <span class="font-semibold">$100</span>.</li>
-            <li>Had to be built before the new school term started. (I had about 2 weeks)</li>
-            <li>
-              Limited to standard shop tools and whatever scrap materials I
-              could find.
-            </li>
-          </ul>
-          <h3 class="text-lg font-semibold">Who it was for</h3>
-          <p class="text-gray-300 leading-relaxed">
-            This wasn&apos;t a client project or a class assignment. It was
-            built for me and my friends — something fun, memorable, and
-            slightly over-engineered to make one river day way more interesting.
-          </p>
-        </section>
+    <!-- OVERVIEW -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold text-white">Overview</h2>
+      <p class="text-gray-300 leading-relaxed">
+        “Out To Lunch” is a low-cost pontoon picnic table designed and built as a
+        functional watercraft for leisurely river floats. What started as a summer
+        side quest quickly turned into a full stress test in real-world conditions:
+        shallow water, rock strikes, rapid currents, transport constraints, and a
+        fully loaded crew.
+      </p>
+      <p class="text-gray-300 leading-relaxed">
+        The platform was intentionally pushed to its limits by floating it down the
+        Salt River, Arizona, where it survived hours of use without tipping, breaking,
+        or violating transport laws.
+      </p>
+    </section>
 
-        {/* WHAT – Concept, Requirements, High-level Architecture */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold">What</h2>
-          <p class="text-gray-300 leading-relaxed">
-            The Pontoon Picnic Table is a DIY floating platform: a standard
-            picnic table mounted on a 2x4 frame that's bolted to four
-            55-gallon steel drums using custom welded steel brackets. The drums
-            provide buoyancy, the timber frame provides structure, and the table
-            turns it into usable space instead of just a raft.
-          </p>
+    <!-- ROLE -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold text-white">My Role</h2>
+      <p class="text-gray-300 leading-relaxed">
+        I was the primary designer, fabricator, and tester. I handled the structural
+        design, welding, material sourcing, and launch coordination. A friend, Logan,
+        assisted with portions of the woodwork and assembly. Technical advisors were
+        consulted informally, but the design and execution were largely my own.
+      </p>
+    </section>
 
-          <h3 class="text-lg font-semibold">Key requirements</h3>
-          <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>
-              <span class="font-semibold">Load capacity:</span> safely support
-              at least four adults plus the table and gear.
-            </li>
-            <li>
-              <span class="font-semibold">Stability:</span> remain stable on the
-              river without tipping, even when people stand or jump on the
-              benches.
-            </li>
-            <li>
-              <span class="font-semibold">Usability:</span> provide a flat
-              surface for food, drinks, and bags while floating.
-            </li>
-            <li>
-              <span class="font-semibold">Cost:</span> total material spend under
-              $100.
-            </li>
-            <li>
-              <span class="font-semibold">Buildability:</span> constructible
-              with basic shop tools, welding equipment, and scavenged wood.
-            </li>
-          </ul>
-        </section>
+    <!-- CONSTRAINTS -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold text-white">Design Constraints</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li>Total budget under <strong>$100 USD</strong> (excluding gas)</li>
+        <li>Buoyancy sufficient for <strong>4 people minimum</strong> (calculated up to 8)</li>
+        <li>Structural stability under shallow water drag and rock strikes</li>
+        <li>Pickup truck transport within Arizona overhang limits</li>
+        <li>Large, usable table surface for food and drinks</li>
+        <li>Minimum operational depth of ~1 ft with ~300 lbs of people + gear</li>
+      </ul>
+    </section>
 
-        {/* SCHEMATIC / PLAN – first part of “How” */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold">
-            Schematic &amp; Plan
-          </h2>
-          <p class="text-gray-300 leading-relaxed">
-            The &quot;schematic&quot; for this project started as a hand-drawn
-            sketch on the back of a legal pad: four 55-gallon drums arranged in
-            a rectangle, a 2x4 frame connecting all of them, and a picnic table
-            structure built into the frame. The drawing captured rough
-            dimensions, barrel spacing, and how the brackets would tie the wood
-            frame into the steel drums.
-          </p>
+    <!-- MATERIALS -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold text-white">Materials & Fabrication</h2>
+      <p class="text-gray-300 leading-relaxed">
+        The structure was built using standard construction lumber and salvaged
+        materials wherever possible. Four 55-gallon steel drums provided buoyancy and
+        were rigidly mounted using custom-fabricated steel brackets.
+      </p>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li>2×4 lumber and assorted scrap wood (including a reclaimed door)</li>
+        <li>4 × 55-gallon steel drums</li>
+        <li>Custom steel brackets welded directly to the barrels</li>
+        <li>Long through-bolts for structural fastening</li>
+        <li>Wood sealant and caulk for water resistance</li>
+        <li>Vinyl flooring applied to seating surfaces for comfort</li>
+      </ul>
+    </section>
 
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
-            <p class="text-sm text-gray-400 mb-3">
-              Schematic / plan (placeholder):
-            </p>
-            <div class="aspect-[16/9] w-full rounded-xl border border-dashed border-slate-700 flex items-center justify-center text-xs text-slate-500">
-              {/* When ready, replace this placeholder with an actual image: */}
-              {/* <img
-                src="/images/projects/pontoon-plan.jpg"
-                alt="Pontoon picnic table sketch"
-                class="w-full h-full object-contain rounded-xl"
-              /> */}
-              Upload hand-drawn plan / sketch here
-            </div>
-          </div>
-        </section>
+    <!-- COST -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold text-white">Cost Breakdown</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li>Lumber: ~$21</li>
+        <li>Steel drums (4×): ~$32</li>
+        <li>Hardware (bolts, fasteners): ~$20</li>
+        <li>Sealant & caulk: ~$10</li>
+        <li>Vinyl flooring: ~$16</li>
+        <li><strong>Total:</strong> ~$99</li>
+      </ul>
+    </section>
 
-        {/* COMPONENT SELECTION – justify major parts */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold">
-            Component Selection
-          </h2>
-          <p class="text-gray-300 leading-relaxed">
-            Every component was chosen to hit the balance between durability,
-            cost, and "Satisfactory" engineering for a river day.
-          </p>
+    <!-- TESTING -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold text-white">Testing & Failure Modes</h2>
+      <p class="text-gray-300 leading-relaxed">
+        The platform was deliberately tested beyond normal use. Two people, each
+        approximately 300 lbs combined per side, jumped on opposite benches in a
+        seesaw-like motion to induce tipping. The structure did not tip.
+      </p>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li>Rock strikes in shallow sections</li>
+        <li>Drag across low water depth</li>
+        <li>Dynamic load shifting and jumping</li>
+        <li>Lifting and loading into a pickup truck</li>
+        <li>Extended float duration</li>
+      </ul>
+    </section>
 
-          <div class="space-y-3">
-            <h3 class="text-lg font-semibold">Major components</h3>
-            <ul class="list-disc list-inside space-y-2 text-gray-300">
-              <li>
-                <span class="font-semibold">55-gallon steel drums (x4):</span>{" "}
-                Chosen over plastic barrels for durability and impact
-                resistance. Steel handled rock hits and scraping better than
-                thin-walled plastic, and could be directly welded to the custom
-                brackets.
-              </li>
-              <li>
-                <span class="font-semibold">2x4 lumber frame:</span> A simple,
-                affordable framing material that&apos;s easy to cut, drill, and
-                repair. The frame forms a rectangular grid that ties all four
-                barrels together and supports the bench and table structure.
-              </li>
-              <li>
-                <span class="font-semibold">Scrap wood / door as tabletop:</span>{" "}
-                The first iteration literally used a discarded door as the main
-                table surface: cheap, flat, and mostly the right size. Other
-                scrap pieces were used to flesh out the bench surfaces and
-                bracing.
-              </li>
-              <li>
-                <span class="font-semibold">
-                  Custom welded steel brackets:
-                </span>{" "}
-                Short sections of welding coupons were bent to the correct angle,
-                welded to the barrels, then drilled to accept bolts. These
-                brackets are the interface between the drums and the wooden
-                frame.
-              </li>
-              <li>
-                <span class="font-semibold">Hardware (bolts, nuts, washers):</span>{" "}
-                Off-the-shelf fasteners were used to tie the wood frame into the
-                welded brackets. Short sections of flat steel were cut and
-                used as improvised washers for better load distribution.
-              </li>
-            </ul>
-          </div>
-        </section>
+    <!-- RESULTS -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold text-white">Results</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li>Carried 4 people for ~4 hours on the Salt River (Water Users → Exit 4)</li>
+        <li>Remained stable and functional throughout the run</li>
+        <li>No structural failures or leaks</li>
+        <li>Transported legally in the bed of a pickup truck</li>
+        <li>Stayed under budget</li>
+      </ul>
+    </section>
 
-        {/* BILL OF MATERIALS (BOM) */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold">
-            Bill of Materials (BOM)
-          </h2>
-          <p class="text-gray-300 leading-relaxed">
-            The build intentionally leaned on cheap, readily available materials
-            and scavenged parts to stay within the $100 cap while still feeling
-            overbuilt enough to trust on the river.
-          </p>
+    <!-- SAFETY -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold text-white">Safety & Compliance</h2>
+      <p class="text-gray-300 leading-relaxed">
+        Backup inner tubes were carried in case of failure. Local river authorities
+        were contacted prior to launch and confirmed the craft was acceptable as long
+        as it remained unpowered. Personal flotation devices were available.
+      </p>
+      <p class="text-gray-400 italic">
+        Personal safety philosophy: “Fuck it, we ball.”
+      </p>
+    </section>
 
-          <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/60">
-            <table class="min-w-full text-sm text-left text-gray-300">
-              <thead class="bg-slate-900/80 text-gray-200">
-                <tr>
-                  <th class="px-4 py-2">#</th>
-                  <th class="px-4 py-2">Item</th>
-                  <th class="px-4 py-2">Specification</th>
-                  <th class="px-4 py-2">Qty</th>
-                  <th class="px-4 py-2">Cost</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800">
-                <tr>
-                  <td class="px-4 py-2">1</td>
-                  <td class="px-4 py-2">Steel drums</td>
-                  <td class="px-4 py-2">55-gallon steel barrels</td>
-                  <td class="px-4 py-2">4</td>
-                  <td class="px-4 py-2">$32.00</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">2</td>
-                  <td class="px-4 py-2">2x4 lumber</td>
-                  <td class="px-4 py-2">
-                    2x4 studs for frame, benches, and table supports
-                  </td>
-                  <td class="px-4 py-2">7</td>
-                  <td class="px-4 py-2">$20</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">3</td>
-                  <td class="px-4 py-2">Bolts, nuts &amp; washers</td>
-                  <td class="px-4 py-2">
-                    ~16x through-bolts plus improvised steel tube washers
-                  </td>
-                  <td class="px-4 py-2">16</td>
-                  <td class="px-4 py-2">$20</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">4</td>
-                  <td class="px-4 py-2">Steel bracket stock</td>
-                  <td class="px-4 py-2">
-                    Welding Coupons bent and welded as barrel brackets
-                  </td>
-                  <td class="px-4 py-2">as needed</td>
-                  <td class="px-4 py-2">$0</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">5</td>
-                  <td class="px-4 py-2">Scrap wood / door</td>
-                  <td class="px-4 py-2">
-                    Reclaimed tabletop and extra bracing pieces
-                  </td>
-                  <td class="px-4 py-2">various</td>
-                  <td class="px-4 py-2">$0 (scavenged)</td>
-                </tr>
-                <tr class="bg-slate-900/60 font-semibold">
-                  <td class="px-4 py-2" colspan="4">
-                    Total (materials)
-                  </td>
-                  <td class="px-4 py-2">&lt; $100</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="text-xs text-gray-500">
-            Costs are approximate and based on available receipts and memory.
-          </p>
-        </section>
-
-        {/* HOW – Build process & implementation */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold">How</h2>
-          <p class="text-gray-300 leading-relaxed">
-            With the sketch and materials sorted, the build came together in a
-            series of very physical, very dusty steps.
-          </p>
-
-          <h3 class="text-lg font-semibold">
-            Build process
-          </h3>
-          <ol class="list-decimal list-inside space-y-2 text-gray-300">
-            <li>
-              Took rough measurements for overall footprint, barrel spacing, and
-              table height.
-            </li>
-            <li>
-              Built the main rectangular frame from 2x4s, essentially a
-              wooden square that would sit around the barrels.
-            </li>
-            <li>
-              Positioned each barrel against the inner edges of the frame and
-              added additional 2x4s to trap and locate them.
-            </li>
-            <li>
-              Cut steel bar sections, bent them to the correct angle, and
-              welded them to the barrels as custom brackets.
-            </li>
-            <li>
-              Drilled holes in the brackets and matching holes through the wood
-              frame; bolted the frame to the brackets using nuts, bolts, and
-              flat steel pieces as heavy-duty washers.
-            </li>
-            <li>
-              Built up the bench sections from 2x4s and scrap wood, then framed
-              and decked the tabletop (including the original &quot;door
-              table&quot; iteration).
-            </li>
-            <li>
-              Applied a water-resistant coating to the wood (in hindsight, this
-              should have been done earlier in the process).
-            </li>
-            <li>
-              Made sure bolts were torqued tight and then sent it.
-            </li>
-          </ol>
-        </section>
-
-        {/* TESTING & RESULTS */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold">
-            Testing &amp; Results
-          </h2>
-          <p class="text-gray-300 leading-relaxed">
-            Testing was very direct: put it in the water, load it with humans,
-            and see if it floats.
-          </p>
-          <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>
-              <span class="font-semibold">Float test:</span> The first launch
-              confirmed that the barrels provided more than enough buoyancy. The platform sat high in the water and remained level.
-            </li>
-            <li>
-              <span class="font-semibold">Load test:</span> All four of us sat
-              on the benches and deliberately shifted our weight before proceeding to stand up and jumped up
-              and down. The structure leaned a bit but never felt close to tipping
-            </li>
-            <li>
-              <span class="font-semibold">River test:</span> We took the pontoon
-              down the Salt River from Water Users to Exit 4. It made the full
-              run without capsizing or sinking. The barrels picked up a few
-              dents from rocks, but there were no cracks or leaks and no
-              structural failures.
-            </li>
-          </ul>
-          <p class="text-gray-300 leading-relaxed">
-            Overall, the pontoon met its design goal: four people, a full table
-            setup, one full river run, zero catastrophic failures, and a build
-            cost under budget.
-          </p>
-        </section>
-
-        {/* LESSONS / NEXT STEPS */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold">
-            What I&apos;d Do Next
-          </h2>
-          <p class="text-gray-300 leading-relaxed">
-            Version one of the Pontoon Picnic Table proved that the idea works.
-            Future updates would focus less on &quot;can we make it float?&quot;
-            and more on control, comfort, and durability.
-          </p>
-          <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>
-              Add <span class="font-semibold">steering rudders</span> or an oar
-              mount so it&apos;s not at the mercy of the current.
-            </li>
-            <li>
-              Mount <span class="font-semibold">tires or bumpers</span> along
-              the edges to soften rock impacts and protect the barrels.
-            </li>
-            <li>
-              Add <span class="font-semibold">caster wheels</span> underneath to
-              make it easier to move across parking lots and launch areas.
-            </li>
-            <li>
-              Weld on a small <span class="font-semibold">barbecue pit</span> so
-              we can grill food while floating.
-            </li>
-          </ul>
-        </section>
-
-        {/* Back link */}
-        <div class="pt-4">
-          <a
-            href="/projects"
-            class="text-sm text-blue-500 hover:text-blue-400 underline-offset-2 hover:underline"
-          >
-            ← Back to all projects
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <Footer />
-  </body>
-</html>
+  </div>
+</section>
