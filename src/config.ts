@@ -37,10 +37,10 @@ export const siteConfig = {
   projects: [
   {
     name: "Pontoon Picnic Table",
-    description: "Designed and welded a $100 pontoon picnic table, then river-tested it.Designed and welded a $100 pontoon picnic table and river-tested it.",
+    description: "Designed and built a $100 pontoon picnic table and stress-tested it on Arizona’s Salt River for 4 hours. Custom welded barrel brackets, pickup-legal transport, and no tip in 300 lb seesaw tests.",
     link: "/projects/pontoon-picnic-table",
     image: "/projects/pontoon-picnic-table/thumbnail.jpg",
-    skills: ["Welding", "Fabrication", "CAD"],
+    skills: ["Welding", "Fabrication", "Design for Constraints", "Project Management"],
   },
   {
     name: "C3 COSMIC Challenge – Cable Braiding Machine",
