@@ -3,135 +3,347 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { siteConfig } from "../../config";
 import "../../styles/global.css";
+
+// Project meta
+const projectName = "Pontoon Picnic Table";
+const projectAlias = "Out To Lunch";
+const projectTagline = "A floating picnic platform built under $100.";
+const projectSummary =
+  "A DIY pontoon picnic table designed, built, and stress-tested on Arizona’s Salt River. Built from four 55-gallon steel drums, scrap lumber, and custom welded brackets to survive shallow drags, rock strikes, and aggressive load shifting.";
+
+// Image URLs (match your current filenames, no renaming)
+const img = {
+  hero: "/images/projects/pontoon/Pontoon_Hero.png",
+  blueprint: "/images/projects/pontoon/Pontoon_Blueprint.jpg",
+  brackets: "/images/projects/pontoon/Pontoon_Brackets.jpg",
+  construction: "/images/projects/pontoon/Pontoon_Construction.jpg",
+  floating: "/images/projects/pontoon/Pontoon_Floating.jpg",
+  truck: "/images/projects/pontoon/Pontoon_Truck.jpg",
+};
+
+// Quick facts
+const timeframe = "2 weeks";
+const budget = "$100 USD (excluding gas)";
+const team = "Me + Logan (assist with woodwork/assembly)";
+
+// Constraints and outcomes
+const constraints = [
+  "Under $100 total materials cost (excluding gas).",
+  "Buoyancy for minimum 4 people, calculated up to 8.",
+  "Structural stability through shallow-water drag and rock strikes.",
+  "Transportable in a pickup truck within Arizona overhang limits.",
+  "Large usable tabletop area for food and drinks.",
+  "Operable in ~1 ft depth with ~300 lbs of people plus ~50 lbs of gear.",
+];
+
+const outcomes = [
+  "Carried 4 people for ~4 hours (Water Users → Exit 4).",
+  "No tipping during aggressive seesaw-style bench jumping tests (roughly 300 lbs per side).",
+  "No structural failures or leaks during the run.",
+  "Transported legally in the bed of a pickup truck.",
+  "Final cost came in at about $99.",
+];
+
+const bom = [
+  { item: "Lumber (2x4 + scrap, incl. reclaimed door)", spec: "frame + deck + table", qty: "var", cost: "$21" },
+  { item: "55-gallon steel drums", spec: "buoyancy", qty: "4", cost: "$32" },
+  { item: "Hardware (long bolts, fasteners)", spec: "structure + mounting", qty: "var", cost: "$20" },
+  { item: "Sealant + caulk", spec: "wood + water resistance", qty: "var", cost: "$10" },
+  { item: "Vinyl flooring", spec: "seat comfort layer", qty: "var", cost: "$16" },
+];
+
+const totalCost = "$99";
+
+// Safety
+const safety = [
+  "Brought inner tubes as a backup contingency if a barrel failed.",
+  "Checked with local river authorities. OK as long as it was unpowered.",
+  "Personal flotation devices were available.",
+  "Personal safety philosophy: “Fuck it, we ball.”",
+];
 ---
 
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{projectName} | {siteConfig.name}</title>
+    <meta name="description" content={projectSummary} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
 
-<section class="p-8 sm:p-12 md:p-16 lg:p-24">
-  <div class="max-w-5xl mx-auto space-y-16">
+  <body class="bg-background text-foreground">
+    <Header />
 
-    <!-- TITLE -->
-    <header class="space-y-4">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white">
-        Pontoon Picnic Table
-      </h1>
-      <p class="text-lg text-gray-300">
-        Also known as <span class="font-semibold text-white">“Out To Lunch”</span>
-      </p>
-    </header>
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <!-- Top header -->
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color: ${siteConfig.accentColor}`}>
+            Project
+          </p>
 
-    <!-- OVERVIEW -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-semibold text-white">Overview</h2>
-      <p class="text-gray-300 leading-relaxed">
-        “Out To Lunch” is a low-cost pontoon picnic table designed and built as a
-        functional watercraft for leisurely river floats. What started as a summer
-        side quest quickly turned into a full stress test in real-world conditions:
-        shallow water, rock strikes, rapid currents, transport constraints, and a
-        fully loaded crew.
-      </p>
-      <p class="text-gray-300 leading-relaxed">
-        The platform was intentionally pushed to its limits by floating it down the
-        Salt River, Arizona, where it survived hours of use without tipping, breaking,
-        or violating transport laws.
-      </p>
-    </section>
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">
+            {projectName}
+          </h1>
 
-    <!-- ROLE -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-semibold text-white">My Role</h2>
-      <p class="text-gray-300 leading-relaxed">
-        I was the primary designer, fabricator, and tester. I handled the structural
-        design, welding, material sourcing, and launch coordination. A friend, Logan,
-        assisted with portions of the woodwork and assembly. Technical advisors were
-        consulted informally, but the design and execution were largely my own.
-      </p>
-    </section>
+          <p class="text-base sm:text-lg text-gray-400">
+            Also known as “{projectAlias}”
+          </p>
 
-    <!-- CONSTRAINTS -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-semibold text-white">Design Constraints</h2>
-      <ul class="list-disc list-inside text-gray-300 space-y-2">
-        <li>Total budget under <strong>$100 USD</strong> (excluding gas)</li>
-        <li>Buoyancy sufficient for <strong>4 people minimum</strong> (calculated up to 8)</li>
-        <li>Structural stability under shallow water drag and rock strikes</li>
-        <li>Pickup truck transport within Arizona overhang limits</li>
-        <li>Large, usable table surface for food and drinks</li>
-        <li>Minimum operational depth of ~1 ft with ~300 lbs of people + gear</li>
-      </ul>
-    </section>
+          <p class="text-base sm:text-lg text-gray-400">
+            {projectTagline}
+          </p>
 
-    <!-- MATERIALS -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-semibold text-white">Materials & Fabrication</h2>
-      <p class="text-gray-300 leading-relaxed">
-        The structure was built using standard construction lumber and salvaged
-        materials wherever possible. Four 55-gallon steel drums provided buoyancy and
-        were rigidly mounted using custom-fabricated steel brackets.
-      </p>
-      <ul class="list-disc list-inside text-gray-300 space-y-2">
-        <li>2×4 lumber and assorted scrap wood (including a reclaimed door)</li>
-        <li>4 × 55-gallon steel drums</li>
-        <li>Custom steel brackets welded directly to the barrels</li>
-        <li>Long through-bolts for structural fastening</li>
-        <li>Wood sealant and caulk for water resistance</li>
-        <li>Vinyl flooring applied to seating surfaces for comfort</li>
-      </ul>
-    </section>
+          <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+            {projectSummary}
+          </p>
 
-    <!-- COST -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-semibold text-white">Cost Breakdown</h2>
-      <ul class="list-disc list-inside text-gray-300 space-y-2">
-        <li>Lumber: ~$21</li>
-        <li>Steel drums (4×): ~$32</li>
-        <li>Hardware (bolts, fasteners): ~$20</li>
-        <li>Sealant & caulk: ~$10</li>
-        <li>Vinyl flooring: ~$16</li>
-        <li><strong>Total:</strong> ~$99</li>
-      </ul>
-    </section>
+          <!-- quick facts -->
+          <div class="pt-2 flex flex-wrap gap-2 text-xs sm:text-sm">
+            <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/60 text-gray-300">
+              Timeframe: {timeframe}
+            </span>
+            <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/60 text-gray-300">
+              Budget: {budget}
+            </span>
+            <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/60 text-gray-300">
+              Team: {team}
+            </span>
+          </div>
+        </header>
 
-    <!-- TESTING -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-semibold text-white">Testing & Failure Modes</h2>
-      <p class="text-gray-300 leading-relaxed">
-        The platform was deliberately tested beyond normal use. Two people, each
-        approximately 300 lbs combined per side, jumped on opposite benches in a
-        seesaw-like motion to induce tipping. The structure did not tip.
-      </p>
-      <ul class="list-disc list-inside text-gray-300 space-y-2">
-        <li>Rock strikes in shallow sections</li>
-        <li>Drag across low water depth</li>
-        <li>Dynamic load shifting and jumping</li>
-        <li>Lifting and loading into a pickup truck</li>
-        <li>Extended float duration</li>
-      </ul>
-    </section>
+        <!-- Hero image -->
+        <section class="space-y-3">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3 sm:p-4">
+            <img
+              src={img.hero}
+              alt="Pontoon picnic table fully loaded before launch"
+              class="w-full h-auto rounded-xl object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-gray-400 mt-3">
+              Fully loaded pre-launch. This is the money shot.
+            </p>
+          </div>
+        </section>
 
-    <!-- RESULTS -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-semibold text-white">Results</h2>
-      <ul class="list-disc list-inside text-gray-300 space-y-2">
-        <li>Carried 4 people for ~4 hours on the Salt River (Water Users → Exit 4)</li>
-        <li>Remained stable and functional throughout the run</li>
-        <li>No structural failures or leaks</li>
-        <li>Transported legally in the bed of a pickup truck</li>
-        <li>Stayed under budget</li>
-      </ul>
-    </section>
+        <!-- Why -->
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Why</h2>
+          <p class="text-gray-300 leading-relaxed">
+            This started as a summer side quest: turn a cheap river float into a full picnic experience.
+            The real goal was not “float once.” The goal was to build something that could take abuse:
+            shallow drags, rock strikes, rapid currents, and a fully loaded crew, while staying under $100
+            and staying legal for transport in a pickup.
+          </p>
 
-    <!-- SAFETY -->
-    <section class="space-y-4">
-      <h2 class="text-2xl font-semibold text-white">Safety & Compliance</h2>
-      <p class="text-gray-300 leading-relaxed">
-        Backup inner tubes were carried in case of failure. Local river authorities
-        were contacted prior to launch and confirmed the craft was acceptable as long
-        as it remained unpowered. Personal flotation devices were available.
-      </p>
-      <p class="text-gray-400 italic">
-        Personal safety philosophy: “Fuck it, we ball.”
-      </p>
-    </section>
+          <h3 class="text-lg font-semibold text-gray-100">Constraints</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {constraints.map((c) => <li>{c}</li>)}
+          </ul>
+        </section>
 
-  </div>
-</section>
+        <!-- What -->
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">What</h2>
+          <p class="text-gray-300 leading-relaxed">
+            A pontoon picnic table built from standard construction lumber and four 55-gallon drums, mounted using custom
+            welded steel brackets. The structure was designed around weight distribution and stability first, then optimized
+            around budget and transport constraints.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <p class="text-sm text-gray-400 mb-2">Primary materials</p>
+              <ul class="list-disc list-inside space-y-2 text-gray-300">
+                <li>2x4 lumber + scrap (including a reclaimed door)</li>
+                <li>4 × 55-gallon steel drums</li>
+                <li>Custom brackets welded to drums</li>
+                <li>Long through-bolts, sealant, caulk</li>
+                <li>Vinyl flooring on seating surfaces</li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <p class="text-sm text-gray-400 mb-2">My role</p>
+              <ul class="list-disc list-inside space-y-2 text-gray-300">
+                <li>Designed the structure and layout</li>
+                <li>Fabricated and welded the barrel brackets</li>
+                <li>Sourced materials and kept cost under control</li>
+                <li>Coordinated launch and testing</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Schematic & Plan -->
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Schematic &amp; Plan</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The design began with a rough sketch and a requirements list. The layout focused on stable buoyancy and keeping
+            the center of mass low while preserving a usable table surface.
+          </p>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img
+              src={img.blueprint}
+              alt="Concept sketch and requirements for the pontoon picnic table"
+              class="w-full h-auto rounded-xl object-contain"
+              loading="lazy"
+            />
+            <p class="text-xs text-gray-400 mt-3">
+              Original sketch and constraints.
+            </p>
+          </div>
+        </section>
+
+        <!-- Fabrication highlights -->
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Fabrication</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The critical detail was the bracket system. The barrels were rigidly mounted using custom steel brackets that were
+            welded directly to the drums, then fastened into the wood structure with long bolts.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <img
+                src={img.brackets}
+                alt="Close up of welded bracket on barrel"
+                class="w-full h-auto rounded-xl object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-gray-400 mt-3">
+                Bracket close-up. Welded mounting point.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <img
+                src={img.construction}
+                alt="Mid-build construction view of frame and barrels"
+                class="w-full h-auto rounded-xl object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-gray-400 mt-3">
+                Mid-build. Frame + barrel layout.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BOM -->
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Bill of Materials (BOM)</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Cost was controlled by scavenging lumber and choosing simple hardware. The spend went where it mattered: buoyancy,
+            fastening, sealing, and comfort.
+          </p>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/60">
+            <table class="min-w-full text-sm text-left text-gray-300">
+              <thead class="bg-slate-900/80 text-gray-200">
+                <tr>
+                  <th class="px-4 py-2">Item</th>
+                  <th class="px-4 py-2">Specification</th>
+                  <th class="px-4 py-2">Qty</th>
+                  <th class="px-4 py-2">Cost</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800">
+                {bom.map((row) => (
+                  <tr>
+                    <td class="px-4 py-2">{row.item}</td>
+                    <td class="px-4 py-2">{row.spec}</td>
+                    <td class="px-4 py-2">{row.qty}</td>
+                    <td class="px-4 py-2">{row.cost}</td>
+                  </tr>
+                ))}
+                <tr class="bg-slate-900/60 font-semibold">
+                  <td class="px-4 py-2" colspan="3">Total</td>
+                  <td class="px-4 py-2">{totalCost}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Testing & Results -->
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Testing &amp; Results</h2>
+          <p class="text-gray-300 leading-relaxed">
+            This was not a gentle lake float. We stress-tested it intentionally, then ran it for hours on the Salt River.
+          </p>
+
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {outcomes.map((o) => <li>{o}</li>)}
+          </ul>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img
+              src={img.floating}
+              alt="Pontoon in the water during the river float"
+              class="w-full h-auto rounded-xl object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-gray-400 mt-3">
+              In-water action shot.
+            </p>
+          </div>
+        </section>
+
+        <!-- Transport -->
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Transport</h2>
+          <p class="text-gray-300 leading-relaxed">
+            A hard constraint was pickup transport legality. The platform was designed to fit in the bed within overhang limits,
+            which made build geometry and assembly choices non-negotiable.
+          </p>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img
+              src={img.truck}
+              alt="Pontoon loaded in the back of a pickup truck"
+              class="w-full h-auto rounded-xl object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-gray-400 mt-3">
+              Loaded in the truck.
+            </p>
+          </div>
+        </section>
+
+        <!-- Safety -->
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Safety &amp; Compliance</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {safety.map((s) => <li>{s}</li>)}
+          </ul>
+        </section>
+
+        <!-- What I'd do next -->
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">What I&apos;d Do Next</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Add sacrificial skid surfaces for shallow drags and rock contact zones.</li>
+            <li>Improve modularity so it breaks down faster for transport and storage.</li>
+            <li>Refine sealing strategy and add inspection points for repeat runs.</li>
+            <li>Turn the build into a repeatable plan with cut list and bracket drawings.</li>
+          </ul>
+        </section>
+
+        <!-- Back link -->
+        <div class="pt-4">
+          <a
+            href="/projects"
+            class="text-sm text-blue-400 hover:text-blue-300 underline-offset-2 hover:underline"
+          >
+            ← Back to all projects
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>
