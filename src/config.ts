@@ -53,7 +53,7 @@ export const siteConfig = {
     name: "Pontoon Picnic Table",
     description: "Designed and built a $100 pontoon picnic table and stress-tested it on Arizona’s Salt River for 4 hours. Custom welded barrel brackets, pickup-legal transport, and no tip in 300 lb seesaw tests.",
     link: "/projects/pontoon-picnic-table",
-    image: "/public/images/projects/pontoon/Pontoon_Hero.png",
+    image: "/images/projects/pontoon/Pontoon_Hero.png",
     skills: ["Welding", "Fabrication", "Design for Constraints", "Project Management"],
   },
   
