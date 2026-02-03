@@ -4,29 +4,27 @@ import Footer from "../../components/Footer.astro";
 import { siteConfig } from "../../config";
 import "../../styles/global.css";
 
-// 🔁 CHANGE THESE PER PROJECT
 const projectName = "Pyramid of Light";
-const projectTagline = "A modular LED pyramid stage prop built in 9 days for a themed live event.";
+const projectTagline = "Rapid-built LED pyramid stage prop inspired by Daft Punk’s 2006 Sahara tent visuals.";
 const projectSummary =
-  "Inspired by Daft Punk’s 2006 Sahara Tent pyramid visuals, I designed and built a lightweight, modular pyramid made from PVC and shop lights, using custom 3D printed connectors for fast assembly and transport.";
+  "Designed and built in 9 days for an Egypt-themed collegiate event. Concept, geometry, custom 3D printed connectors, and full assembly under tight budget and time constraints.";
 
-// Images (you said filenames are final)
-const hero = "/images/projects/pyramid/Pyramid_Hero.jpg";
-const imgs = {
-  lightBar: "/images/projects/pyramid/Pyramid_LightBar.jpg",
-  toothpick: "/images/projects/pyramid/Pyramid_ToothpickModel.jpg",
-  connectorSketch: "/images/projects/pyramid/Pyramid_ConnectorsPartSketch.jpg",
-  connectorsLaidOut: "/images/projects/pyramid/Pyramid_ConnectorsLaidOut.jpg",
-  connectorsPrinted: "/images/projects/pyramid/Pyramid_ConnectorsPrinted.jpg",
-  cadLines: "/images/projects/pyramid/Pyramid_CADLines.jpg",
-  initialSketch: "/images/projects/pyramid/Pyramid_InitialSketch.jpg",
-  blueTape: "/images/projects/pyramid/Pyramid_BlueTapeTint.jpg",
-  wires: "/images/projects/pyramid/Pyramid_Wires.jpg",
-};
+const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\//, "")}`;
 
-// YouTube embed (start at 39s)
+// Images (public/)
+const hero = "/images/projects/Pyramid/Pyramid_Hero.jpg";
+const imgInitialSketch = "/images/projects/Pyramid/Pyramid_InitialSketch.jpg";
+const imgCADLines = "/images/projects/Pyramid/Pyramid_CADLines.jpg";
+const imgToothpick = "/images/projects/Pyramid/Pyramid_ToothpickModel.jpg";
+const imgConnSketch = "/images/projects/Pyramid/Pyramid_ConnectorsPartSketch.jpg";
+const imgConnPrinted = "/images/projects/Pyramid/Pyramid_ConnectorsPrinted.jpg";
+const imgConnLaidOut = "/images/projects/Pyramid/Pyramid_ConnectorsLaidOut.jpg";
+const imgLightBar = "/images/projects/Pyramid/Pyramid_LightBar.jpg";
+const imgBlueTape = "/images/projects/Pyramid/Pyramid_BlueTapeTint.jpg";
+
+// YouTube
 const ytId = "fJFgYYfPhIs";
-const ytStart = 39;
+const ytStart = 39; // seconds
 ---
 
 <html lang="en">
@@ -44,375 +42,180 @@ const ytStart = 39;
         {/* Top header */}
         <header class="space-y-3">
           <p class="text-sm uppercase tracking-[0.25em] text-blue-500">Project</p>
-          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">
-            {projectName}
-          </h1>
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{projectName}</h1>
           <p class="text-base sm:text-lg text-gray-400">{projectTagline}</p>
           <p class="text-sm sm:text-base text-gray-400">{projectSummary}</p>
         </header>
 
-        {/* HERO */}
+        {/* Hero (keep portrait, no crop) */}
         <section class="space-y-4">
-          <div class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <img
-              src={hero}
-              alt={`${projectName} hero`}
-              class="w-full h-[320px] sm:h-[420px] object-cover"
-              loading="lazy"
-            />
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
+            <div class="w-full overflow-hidden rounded-xl">
+              <img
+                src={withBase(hero)}
+                alt="Pyramid of Light hero image"
+                class="w-full h-auto object-contain"
+                loading="eager"
+              />
+            </div>
           </div>
-          <p class="text-xs text-slate-500">
-            Final build in use at the event. Designed for fast assembly, stability, and visual impact.
-          </p>
         </section>
 
-        {/* WHY */}
+        {/* Why */}
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">Why</h2>
           <p class="text-gray-300 leading-relaxed">
-            About nine days before a themed live event, I was asked for decoration ideas. I pulled
-            inspiration from the Daft Punk Sahara Tent pyramid visuals and translated the concept
-            into something I could actually build quickly and cheaply.
+            A local DJ asked for fast decoration ideas for an Egypt-themed collegiate event.
+            I pulled inspiration from Daft Punk’s 2006 Sahara tent pyramid visuals, then scoped a build that could be executed
+            in under two weeks with cheap materials and minimal fabrication risk.
           </p>
           <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li><span class="font-medium">Goal:</span> a striking pyramid centerpiece that reads from across a crowd.</li>
-            <li><span class="font-medium">Constraints:</span> under roughly $150, minimal tools, fast print time, fast assembly.</li>
-            <li><span class="font-medium">Reality:</span> last minute venue changes and limited build window.</li>
+            <li>Constraint: 9 days end-to-end (design, fabrication, assembly, and install).</li>
+            <li>Constraint: tight budget target (under roughly $150 in parts).</li>
+            <li>Constraint: stable structure for continuous operation during the event.</li>
           </ul>
         </section>
 
-        {/* WHAT */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">What</h2>
-          <p class="text-gray-300 leading-relaxed">
-            The Pyramid of Light is a modular frame system built from PVC struts and custom 3D printed
-            connectors. LED shop lights mount along edges to create clean triangular silhouettes that
-            look like a stage structure, without the complexity of LED panels.
-          </p>
-
-          <h3 class="text-lg font-semibold text-gray-100">Key requirements</h3>
-          <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>Modular triangles that assemble quickly and repeat reliably.</li>
-            <li>Stable for multi hour use with a dense crowd nearby.</li>
-            <li>Transportable in a car with simple packing.</li>
-            <li>Lighting that is bright on camera but not painful up close.</li>
-          </ul>
-        </section>
-
-        {/* INSPIRATION + VIDEO */}
+        {/* Inspiration (YouTube embed) */}
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">Inspiration</h2>
           <p class="text-gray-300 leading-relaxed">
-            This build is directly inspired by the pyramid aesthetic from the Daft Punk Sahara Tent era.
-            The goal was not to replicate LED screens, but to capture the triangular geometry and stage presence.
+            The design goal was a modular pyramid silhouette made of repeated triangular elements, referencing the iconic Sahara tent look.
           </p>
 
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 space-y-3">
-            <p class="text-sm text-gray-400">
-              Reference clip (external, not my content):
-            </p>
-            <div class="aspect-video w-full overflow-hidden rounded-xl border border-slate-800">
+          <div class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
+            <div class="aspect-video w-full">
               <iframe
-                class="w-full h-full"
-                src={`https://www.youtube-nocookie.com/embed/${ytId}?start=${ytStart}&rel=0&modestbranding=1`}
-                title="Daft Punk Sahara Tent reference"
+                class="h-full w-full"
+                src={`https://www.youtube-nocookie.com/embed/${ytId}?start=${ytStart}&rel=0`}
+                title="Daft Punk Sahara tent reference"
                 loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               />
             </div>
           </div>
         </section>
 
-        {/* SCHEMATIC & PLAN */}
+        {/* Concept + Geometry (portrait images, no crop) */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Schematic &amp; Plan</h2>
+          <h2 class="text-2xl font-semibold text-gray-100">Concept and Geometry</h2>
           <p class="text-gray-300 leading-relaxed">
-            I started by locking the triangle geometry, then validating it with a scaled toothpick model
-            before committing to full size PVC. From there, I translated connection points into printable
-            connector parts and a simple assembly map.
+            I chose five-foot PVC poles and designed the pyramid as repeated triangular frames.
+            The key was locking the geometry so assembly stayed predictable under time pressure.
           </p>
 
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
+              <p class="text-sm text-gray-400 mb-2">Initial sketch</p>
               <img
-                src={imgs.initialSketch}
-                alt="Initial sketch and concept"
-                class="w-full h-56 object-cover"
+                src={withBase(imgInitialSketch)}
+                alt="Initial sketch"
+                class="w-full h-auto object-contain rounded-xl"
                 loading="lazy"
               />
-              <div class="p-4">
-                <p class="text-sm text-gray-300 font-medium">Initial sketch</p>
-                <p class="text-xs text-slate-500">Concept direction and stage silhouette.</p>
-              </div>
             </div>
 
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
+              <p class="text-sm text-gray-400 mb-2">CAD line layout</p>
               <img
-                src={imgs.cadLines}
-                alt="CAD line layout for pyramid geometry"
-                class="w-full h-56 object-cover"
+                src={withBase(imgCADLines)}
+                alt="CAD line layout"
+                class="w-full h-auto object-contain rounded-xl"
                 loading="lazy"
               />
-              <div class="p-4">
-                <p class="text-sm text-gray-300 font-medium">CAD line layout</p>
-                <p class="text-xs text-slate-500">Locked strut lengths and triangle placements.</p>
-              </div>
             </div>
           </div>
+        </section>
 
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
+        {/* Scale model validation (portrait) */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Scale Model Validation</h2>
+          <p class="text-gray-300 leading-relaxed">
+            I printed a scaled connector set and used a toothpick model to validate angles, joint count, and assembly order before committing to full-size parts.
+          </p>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
             <img
-              src={imgs.toothpick}
-              alt="Scaled toothpick model validation"
-              class="w-full h-[320px] object-cover"
+              src={withBase(imgToothpick)}
+              alt="Toothpick scale model validation"
+              class="w-full h-auto object-contain rounded-xl"
               loading="lazy"
             />
-            <div class="p-4">
-              <p class="text-sm text-gray-300 font-medium">Scale model validation</p>
-              <p class="text-xs text-slate-500">
-                Quick physical check of geometry and assembly order before printing full connector sets.
-              </p>
-            </div>
           </div>
         </section>
 
-        {/* COMPONENT SELECTION */}
+        {/* Connectors (portrait, and rotate the rotated photo) */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Component Selection</h2>
+          <h2 class="text-2xl font-semibold text-gray-100">Connectors</h2>
           <p class="text-gray-300 leading-relaxed">
-            The parts were chosen for speed and repeatability. PVC is cheap, forgiving, and fast to cut.
-            The real enabler was the connector system, since it turned the structure into a modular kit.
+            Custom 3D printed connectors made the structure modular and fast to assemble.
+            The connector geometry was iterated quickly, then produced at volume with help from friends to hit the deadline.
           </p>
 
-          <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>
-              <span class="font-medium">PVC struts:</span> lightweight, rigid enough at this scale, easy to source last minute.
-            </li>
-            <li>
-              <span class="font-medium">3D printed connectors:</span> repeatable angles and quick assembly without custom fabrication.
-            </li>
-            <li>
-              <span class="font-medium">LED shop lights:</span> strong edge definition on camera, simple wiring, high brightness per dollar.
-            </li>
-            <li>
-              <span class="font-medium">Diffusion using tape:</span> reduced glare and added color tint when the lights were too intense.
-            </li>
-          </ul>
-        </section>
-
-        {/* CONNECTORS */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Connector System</h2>
-          <p class="text-gray-300 leading-relaxed">
-            I created a connector family that standardizes joints and reduces setup time. The workflow
-            was: sketch connector intent, print test pieces, iterate scale and fit, then print the full set
-            across multiple printers with help from friends.
-          </p>
-
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
+              <p class="text-sm text-gray-400 mb-2">Connector part sketch</p>
               <img
-                src={imgs.connectorSketch}
+                src={withBase(imgConnSketch)}
                 alt="Connector part sketch"
-                class="w-full h-56 object-cover"
+                class="w-full h-auto object-contain rounded-xl"
                 loading="lazy"
               />
-              <div class="p-4">
-                <p class="text-sm text-gray-300 font-medium">Connector part sketch</p>
-                <p class="text-xs text-slate-500">Mapped which joint types were needed and where.</p>
-              </div>
             </div>
 
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
+              <p class="text-sm text-gray-400 mb-2">Connectors printed</p>
               <img
-                src={imgs.connectorsPrinted}
-                alt="3D printed connectors on the printer"
-                class="w-full h-56 object-cover"
+                src={withBase(imgConnPrinted)}
+                alt="Connectors printed"
+                class="w-full h-auto object-contain rounded-xl"
                 loading="lazy"
               />
-              <div class="p-4">
-                <p class="text-sm text-gray-300 font-medium">Connectors printing</p>
-                <p class="text-xs text-slate-500">Scaled and iterated for fit, then produced the full kit.</p>
-              </div>
             </div>
           </div>
 
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
-            <img
-              src={imgs.connectorsLaidOut}
-              alt="Connectors laid out for assembly"
-              class="w-full h-[320px] object-cover"
-              loading="lazy"
-            />
-            <div class="p-4">
-              <p class="text-sm text-gray-300 font-medium">Assembly staging</p>
-              <p class="text-xs text-slate-500">Pre staged parts so the build could move fast on site.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* BOM */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Bill of Materials (BOM)</h2>
-          <p class="text-gray-300 leading-relaxed">
-            Target was to stay around $150. Exact totals varied based on what we could source quickly,
-            but the build stayed in the low budget range by using commodity materials and printed joints.
-          </p>
-
-          <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/60">
-            <table class="min-w-full text-sm text-left text-gray-300">
-              <thead class="bg-slate-900/80 text-gray-200">
-                <tr>
-                  <th class="px-4 py-2">#</th>
-                  <th class="px-4 py-2">Item</th>
-                  <th class="px-4 py-2">Specification</th>
-                  <th class="px-4 py-2">Qty</th>
-                  <th class="px-4 py-2">Cost</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800">
-                <tr>
-                  <td class="px-4 py-2">1</td>
-                  <td class="px-4 py-2">PVC pipe</td>
-                  <td class="px-4 py-2">5 ft struts (cut to length)</td>
-                  <td class="px-4 py-2">varies</td>
-                  <td class="px-4 py-2">~$</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">2</td>
-                  <td class="px-4 py-2">LED shop lights</td>
-                  <td class="px-4 py-2">linear bars</td>
-                  <td class="px-4 py-2">varies</td>
-                  <td class="px-4 py-2">~$</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">3</td>
-                  <td class="px-4 py-2">3D printed connectors</td>
-                  <td class="px-4 py-2">custom joint set</td>
-                  <td class="px-4 py-2">set</td>
-                  <td class="px-4 py-2">~$</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">4</td>
-                  <td class="px-4 py-2">Wiring and splitters</td>
-                  <td class="px-4 py-2">power distribution</td>
-                  <td class="px-4 py-2">set</td>
-                  <td class="px-4 py-2">~$</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">5</td>
-                  <td class="px-4 py-2">Diffusion</td>
-                  <td class="px-4 py-2">tape tint and glare reduction</td>
-                  <td class="px-4 py-2">as needed</td>
-                  <td class="px-4 py-2">~$</td>
-                </tr>
-                <tr class="bg-slate-900/60 font-semibold">
-                  <td class="px-4 py-2" colspan="4">Total</td>
-                  <td class="px-4 py-2">~$150</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        {/* HOW */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">How</h2>
-          <p class="text-gray-300 leading-relaxed">
-            The implementation was a sprint: lock geometry, validate scale, print connectors, source lighting,
-            then assemble and debug wiring on site. The structure stayed stable through the full event duration.
-          </p>
-
-          <h3 class="text-lg font-semibold text-gray-100">Build process</h3>
-          <ol class="list-decimal list-inside space-y-2 text-gray-300">
-            <li>Geometry and triangle layout in CAD.</li>
-            <li>Scale validation using a toothpick model.</li>
-            <li>Connector design and print iteration for fit and strength.</li>
-            <li>Bulk connector printing with help from friends.</li>
-            <li>Lighting test, then diffusion and tint when brightness was too high.</li>
-            <li>Final assembly, wiring routing, and quick safety checks.</li>
-          </ol>
-        </section>
-
-        {/* IMPLEMENTATION DETAILS IMAGES */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Implementation Details</h2>
-
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
+          {/* Staging row: keep these portrait-aligned, remove wiring, rotate the rotated one */}
+          <div class="grid gap-6 md:grid-cols-3">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
+              <p class="text-sm text-gray-400 mb-2">Assembly staging</p>
               <img
-                src={imgs.lightBar}
+                src={withBase(imgConnLaidOut)}
+                alt="Connectors laid out for assembly"
+                class="w-full h-auto object-contain rounded-xl"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
+              <p class="text-sm text-gray-400 mb-2">Lighting hardware</p>
+              <img
+                src={withBase(imgLightBar)}
                 alt="LED light bars"
-                class="w-full h-56 object-cover"
+                class="w-full h-auto object-contain rounded-xl rotate-90 origin-center"
                 loading="lazy"
               />
-              <div class="p-4">
-                <p class="text-sm text-gray-300 font-medium">Lighting hardware</p>
-                <p class="text-xs text-slate-500">Linear shop lights used as edge elements.</p>
-              </div>
             </div>
 
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
+              <p class="text-sm text-gray-400 mb-2">Diffusion and tint</p>
               <img
-                src={imgs.blueTape}
+                src={withBase(imgBlueTape)}
                 alt="Blue tape diffusion and tint"
-                class="w-full h-56 object-cover"
+                class="w-full h-auto object-contain rounded-xl"
                 loading="lazy"
               />
-              <div class="p-4">
-                <p class="text-sm text-gray-300 font-medium">Diffusion and tint</p>
-                <p class="text-xs text-slate-500">Quick fix to reduce glare and shape the look.</p>
-              </div>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
-              <img
-                src={imgs.wires}
-                alt="Wiring and splitters"
-                class="w-full h-56 object-cover"
-                loading="lazy"
-              />
-              <div class="p-4">
-                <p class="text-sm text-gray-300 font-medium">Wiring</p>
-                <p class="text-xs text-slate-500">Power distribution staged for fast setup.</p>
-              </div>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
-              <img
-                src={imgs.connectorsPrinted}
-                alt="Printed connectors"
-                class="w-full h-56 object-cover"
-                loading="lazy"
-              />
-              <div class="p-4">
-                <p class="text-sm text-gray-300 font-medium">Connector production</p>
-                <p class="text-xs text-slate-500">Printed joint kit enabled modular assembly.</p>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* TESTING & RESULTS */}
+        {/* Outcome */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Testing &amp; Results</h2>
+          <h2 class="text-2xl font-semibold text-gray-100">Outcome</h2>
           <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>Geometry validated at small scale before full build.</li>
-            <li>Lighting validated in a room environment, then modified for glare control.</li>
-            <li>Structure remained stable through the full multi hour event window.</li>
-            <li>Pack down and transport worked as intended due to modular connectors.</li>
-          </ul>
-        </section>
-
-        {/* NEXT */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">What I&apos;d Do Next</h2>
-          <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>Design a cleaner cable management layer built into the connectors.</li>
-            <li>Add standardized mounting features for different light bars and diffusers.</li>
-            <li>Improve assembly labeling so anyone can build it without guidance.</li>
-            <li>Create a transport case and a repeatable setup checklist.</li>
+            <li>Delivered a full-scale illuminated pyramid prop under extreme time pressure.</li>
+            <li>Maintained stability through the full event runtime without structural failures.</li>
+            <li>Proved a fast pipeline: geometry lock, scale validation, connector iteration, then rapid assembly.</li>
           </ul>
         </section>
 
