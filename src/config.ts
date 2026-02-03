@@ -46,7 +46,7 @@ export const siteConfig = {
     name: "C3 COSMIC Challenge – Cable Braiding Machine",
     description: "Mechatronic cable-braiding prototype for in-space manufacturing, focused on integration and CAD.",
     link: "/projects/c3-cosmic-cable-braiding-machine",
-    image: "/projects/c3-cosmic-cable-braiding-machine/thumbnail.jpg",
+    image: "/images/projects/C3/thumbnail.jpg",
     skills: ["Mechatronics", "Systems", "CAD"],
   },
   {
