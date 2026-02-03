@@ -5,6 +5,14 @@ import { siteConfig } from "../config";
 import "../styles/global.css";
 
 const projects = siteConfig.projects ?? [];
+
+// makes image paths work on localhost, custom domain, and GitHub Pages subpaths
+const base = import.meta.env.BASE_URL;
+const withBase = (p) => {
+  if (!p) return "";
+  const clean = p.startsWith("/") ? p.slice(1) : p;
+  return `${base}${clean}`;
+};
 ---
 
 <html lang="en">
@@ -27,13 +35,12 @@ const projects = siteConfig.projects ?? [];
             Projects
           </p>
           <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">
-            Things I&apos;ve built 
+            Things I&apos;ve built
           </h1>
           <p class="text-base sm:text-lg text-gray-400 max-w-3xl">
-            Hardware, software, manufacturing experiments, and whatever else
-            didn&apos;t fit neatly into a resume bullet.
-            These include both my personal and professional projects.
-            Each card expands into it's own deep dive page fully explaining the project.
+            Hardware, software, manufacturing experiments, and whatever else didn&apos;t fit
+            neatly into a resume bullet. These include both my personal and professional
+            projects. Each card expands into its own deep dive page fully explaining the project.
           </p>
         </header>
 
@@ -44,18 +51,16 @@ const projects = siteConfig.projects ?? [];
               {project.image ? (
                 <div class="relative h-40 w-full overflow-hidden">
                   <img
-                    src={project.image}
+                    src={withBase(project.image)}
                     alt={`${project.name} hero image`}
                     class="h-full w-full object-cover"
-                   loading="lazy"
+                    loading="lazy"
                   />
-                <div class="absolute inset-0 bg-black/20" />
+                  <div class="absolute inset-0 bg-black/20" />
                 </div>
-) : (
-  <div class="h-40 bg-gradient-to-br from-blue-500/40 via-purple-500/30 to-slate-900" />
-)}
-
-
+              ) : (
+                <div class="h-40 bg-gradient-to-br from-blue-500/40 via-purple-500/30 to-slate-900" />
+              )}
 
               <div class="flex flex-1 flex-col p-6 space-y-4">
                 <header class="space-y-1">
@@ -81,8 +86,6 @@ const projects = siteConfig.projects ?? [];
                   {project.link && (
                     <a
                       href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       class="inline-flex items-center rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white hover:bg-blue-500 transition"
                     >
                       View project →
