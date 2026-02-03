@@ -1,4 +1,5 @@
 ---
+// src/pages/projects.astro
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { siteConfig } from "../config";
@@ -6,13 +7,8 @@ import "../styles/global.css";
 
 const projects = siteConfig.projects ?? [];
 
-// makes image paths work on localhost, custom domain, and GitHub Pages subpaths
-const base = import.meta.env.BASE_URL;
-const withBase = (p) => {
-  if (!p) return "";
-  const clean = p.startsWith("/") ? p.slice(1) : p;
-  return `${base}${clean}`;
-};
+// Prefix paths correctly for GitHub Pages base URL
+const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\//, "")}`;
 ---
 
 <html lang="en">
@@ -31,15 +27,11 @@ const withBase = (p) => {
     <main class="pt-24 pb-16">
       <section class="max-w-6xl mx-auto px-6 space-y-12">
         <header class="space-y-3">
-          <p class="text-sm uppercase tracking-[0.25em] text-blue-500">
-            Projects
-          </p>
-          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">
-            Things I&apos;ve built
-          </h1>
+          <p class="text-sm uppercase tracking-[0.25em] text-blue-500">Projects</p>
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">Things I&apos;ve built</h1>
           <p class="text-base sm:text-lg text-gray-400 max-w-3xl">
-            Hardware, software, manufacturing experiments, and whatever else didn&apos;t fit neatly into a resume bullet. 
-            These include both my personal and professional projects. 
+            Hardware, software, manufacturing experiments, and whatever else didn&apos;t fit neatly into a resume bullet.
+            These include both my personal and professional projects.
             Each card expands into its own deep dive page fully explaining the project.
           </p>
         </header>
@@ -64,12 +56,8 @@ const withBase = (p) => {
 
               <div class="flex flex-1 flex-col p-6 space-y-4">
                 <header class="space-y-1">
-                  <h2 class="text-xl font-semibold text-gray-100">
-                    {project.name}
-                  </h2>
-                  <p class="text-sm text-slate-400 line-clamp-3">
-                    {project.description}
-                  </p>
+                  <h2 class="text-xl font-semibold text-gray-100">{project.name}</h2>
+                  <p class="text-sm text-slate-400 line-clamp-3">{project.description}</p>
                 </header>
 
                 {project.skills && project.skills.length > 0 && (
