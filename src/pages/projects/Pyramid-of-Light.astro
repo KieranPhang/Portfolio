@@ -21,7 +21,7 @@ const imgs = {
   cadLines: "/images/projects/pyramid/Pyramid_CADLines.jpg",
   initialSketch: "/images/projects/pyramid/Pyramid_InitialSketch.jpg",
   blueTape: "/images/projects/pyramid/Pyramid_BlueTapeTint.jpg",
-  wires: "/images/projects/pyramid/Pyramid_Wires.jpg",
+  // wires removed (Pyramid_Wires.jpg deleted from page)
 };
 
 // YouTube embed (start at 39s)
@@ -51,13 +51,13 @@ const ytStart = 39;
           <p class="text-sm sm:text-base text-gray-400">{projectSummary}</p>
         </header>
 
-        {/* HERO */}
+        {/* HERO (portrait) */}
         <section class="space-y-4">
           <div class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
             <img
               src={hero}
               alt={`${projectName} hero`}
-              class="w-full h-[320px] sm:h-[420px] object-cover"
+              class="w-full h-[520px] sm:h-[680px] object-cover object-center"
               loading="lazy"
             />
           </div>
@@ -138,7 +138,7 @@ const ytStart = 39;
               <img
                 src={imgs.initialSketch}
                 alt="Initial sketch and concept"
-                class="w-full h-56 object-cover"
+                class="w-full h-80 object-cover object-center"
                 loading="lazy"
               />
               <div class="p-4">
@@ -151,7 +151,7 @@ const ytStart = 39;
               <img
                 src={imgs.cadLines}
                 alt="CAD line layout for pyramid geometry"
-                class="w-full h-56 object-cover"
+                class="w-full h-80 object-cover object-center"
                 loading="lazy"
               />
               <div class="p-4">
@@ -161,11 +161,12 @@ const ytStart = 39;
             </div>
           </div>
 
+          {/* Toothpick model (portrait) */}
           <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
             <img
               src={imgs.toothpick}
               alt="Scaled toothpick model validation"
-              class="w-full h-[320px] object-cover"
+              class="w-full h-[520px] sm:h-[640px] object-cover object-center"
               loading="lazy"
             />
             <div class="p-4">
@@ -215,7 +216,7 @@ const ytStart = 39;
               <img
                 src={imgs.connectorSketch}
                 alt="Connector part sketch"
-                class="w-full h-56 object-cover"
+                class="w-full h-80 object-cover object-center"
                 loading="lazy"
               />
               <div class="p-4">
@@ -228,7 +229,7 @@ const ytStart = 39;
               <img
                 src={imgs.connectorsPrinted}
                 alt="3D printed connectors on the printer"
-                class="w-full h-56 object-cover"
+                class="w-full h-80 object-cover object-center"
                 loading="lazy"
               />
               <div class="p-4">
@@ -238,11 +239,12 @@ const ytStart = 39;
             </div>
           </div>
 
+          {/* Connectors laid out (rotate 90° clockwise) */}
           <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
             <img
               src={imgs.connectorsLaidOut}
               alt="Connectors laid out for assembly"
-              class="w-full h-[320px] object-cover"
+              class="w-full h-[520px] sm:h-[640px] object-cover object-center rotate-90"
               loading="lazy"
             />
             <div class="p-4">
@@ -339,17 +341,31 @@ const ytStart = 39;
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">Implementation Details</h2>
 
-          <div class="grid gap-4 sm:grid-cols-2">
+          {/* Vertically stacked row of three (light bar rotated, printed portrait, blue tape unchanged) */}
+          <div class="space-y-4">
             <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
               <img
                 src={imgs.lightBar}
                 alt="LED light bars"
-                class="w-full h-56 object-cover"
+                class="w-full h-[520px] sm:h-[640px] object-cover object-center rotate-90"
                 loading="lazy"
               />
               <div class="p-4">
                 <p class="text-sm text-gray-300 font-medium">Lighting hardware</p>
                 <p class="text-xs text-slate-500">Linear shop lights used as edge elements.</p>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
+              <img
+                src={imgs.connectorsPrinted}
+                alt="Printed connectors"
+                class="w-full h-[520px] sm:h-[640px] object-cover object-center"
+                loading="lazy"
+              />
+              <div class="p-4">
+                <p class="text-sm text-gray-300 font-medium">Connector production</p>
+                <p class="text-xs text-slate-500">Printed joint kit enabled modular assembly.</p>
               </div>
             </div>
 
@@ -363,32 +379,6 @@ const ytStart = 39;
               <div class="p-4">
                 <p class="text-sm text-gray-300 font-medium">Diffusion and tint</p>
                 <p class="text-xs text-slate-500">Quick fix to reduce glare and shape the look.</p>
-              </div>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
-              <img
-                src={imgs.wires}
-                alt="Wiring and splitters"
-                class="w-full h-56 object-cover"
-                loading="lazy"
-              />
-              <div class="p-4">
-                <p class="text-sm text-gray-300 font-medium">Wiring</p>
-                <p class="text-xs text-slate-500">Power distribution staged for fast setup.</p>
-              </div>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
-              <img
-                src={imgs.connectorsPrinted}
-                alt="Printed connectors"
-                class="w-full h-56 object-cover"
-                loading="lazy"
-              />
-              <div class="p-4">
-                <p class="text-sm text-gray-300 font-medium">Connector production</p>
-                <p class="text-xs text-slate-500">Printed joint kit enabled modular assembly.</p>
               </div>
             </div>
           </div>
