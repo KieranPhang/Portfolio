@@ -4,27 +4,31 @@ import Footer from "../../components/Footer.astro";
 import { siteConfig } from "../../config";
 import "../../styles/global.css";
 
+// Project metadata
 const projectName = "Pyramid of Light";
-const projectTagline = "Rapid-built LED pyramid stage prop inspired by Daft Punk’s 2006 Sahara tent visuals.";
+const projectTagline =
+  "Rapid-built LED pyramid stage prop inspired by Daft Punk’s 2006 Sahara tent visuals.";
 const projectSummary =
   "Designed and built in 9 days for an Egypt-themed collegiate event. Concept, geometry, custom 3D printed connectors, and full assembly under tight budget and time constraints.";
 
-const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\//, "")}`;
+// IMPORTANT: These paths assume files live in:
+// public/images/projects/Pyramid/
+const ASSETS_BASE = "/images/projects/Pyramid";
 
-// Images (public/)
-const hero = "/images/projects/Pyramid/Pyramid_Hero.jpg";
-const imgInitialSketch = "/images/projects/Pyramid/Pyramid_InitialSketch.jpg";
-const imgCADLines = "/images/projects/Pyramid/Pyramid_CADLines.jpg";
-const imgToothpick = "/images/projects/Pyramid/Pyramid_ToothpickModel.jpg";
-const imgConnSketch = "/images/projects/Pyramid/Pyramid_ConnectorsPartSketch.jpg";
-const imgConnPrinted = "/images/projects/Pyramid/Pyramid_ConnectorsPrinted.jpg";
-const imgConnLaidOut = "/images/projects/Pyramid/Pyramid_ConnectorsLaidOut.jpg";
-const imgLightBar = "/images/projects/Pyramid/Pyramid_LightBar.jpg";
-const imgBlueTape = "/images/projects/Pyramid/Pyramid_BlueTapeTint.jpg";
+const heroImg = `${ASSETS_BASE}/Pyramid_Hero.jpg`;
+const imgInitialSketch = `${ASSETS_BASE}/Pyramid_InitialSketch.jpg`;
+const imgCadLines = `${ASSETS_BASE}/Pyramid_CADLines.jpg`;
+const imgToothpick = `${ASSETS_BASE}/Pyramid_ToothpickModel.jpg`;
 
-// YouTube
-const ytId = "fJFgYYfPhIs";
-const ytStart = 39; // seconds
+const imgConnectorSketch = `${ASSETS_BASE}/Pyramid_ConnectorsPartSketch.jpg`;
+const imgConnectorsPrinted = `${ASSETS_BASE}/Pyramid_ConnectorsPrinted.jpg`;
+const imgConnectorsLaidOut = `${ASSETS_BASE}/Pyramid_ConnectorsLaidOut.jpg`;
+
+const imgLightBars = `${ASSETS_BASE}/Pyramid_LightBar.jpg`;
+const imgBlueTape = `${ASSETS_BASE}/Pyramid_BlueTapeTint.jpg`;
+
+// YouTube embed (start time ~39s)
+const youtubeEmbed = "https://www.youtube.com/embed/fJFgYYfPhIs?start=39";
 ---
 
 <html lang="en">
@@ -39,6 +43,7 @@ const ytStart = 39; // seconds
 
     <main class="pt-24 pb-16">
       <section class="max-w-4xl mx-auto px-6 space-y-10">
+
         {/* Top header */}
         <header class="space-y-3">
           <p class="text-sm uppercase tracking-[0.25em] text-blue-500">Project</p>
@@ -47,15 +52,16 @@ const ytStart = 39; // seconds
           <p class="text-sm sm:text-base text-gray-400">{projectSummary}</p>
         </header>
 
-        {/* Hero (keep portrait, no crop) */}
+        {/* Hero image (portrait-friendly) */}
         <section class="space-y-4">
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
-            <div class="w-full overflow-hidden rounded-xl">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <p class="text-sm text-gray-400 mb-3">Hero</p>
+            <div class="w-full flex justify-center">
               <img
-                src={withBase(hero)}
+                src={heroImg}
                 alt="Pyramid of Light hero image"
-                class="w-full h-auto object-contain"
-                loading="eager"
+                class="max-h-[780px] w-auto rounded-xl border border-slate-800 object-contain"
+                loading="lazy"
               />
             </div>
           </div>
@@ -66,8 +72,8 @@ const ytStart = 39; // seconds
           <h2 class="text-2xl font-semibold text-gray-100">Why</h2>
           <p class="text-gray-300 leading-relaxed">
             A local DJ asked for fast decoration ideas for an Egypt-themed collegiate event.
-            I pulled inspiration from Daft Punk’s 2006 Sahara tent pyramid visuals, then scoped a build that could be executed
-            in under two weeks with cheap materials and minimal fabrication risk.
+            I pulled inspiration from Daft Punk’s 2006 Sahara tent pyramid visuals, then scoped a build
+            that could be executed in under two weeks with cheap materials and minimal fabrication risk.
           </p>
           <ul class="list-disc list-inside space-y-2 text-gray-300">
             <li>Constraint: 9 days end-to-end (design, fabrication, assembly, and install).</li>
@@ -80,24 +86,25 @@ const ytStart = 39; // seconds
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">Inspiration</h2>
           <p class="text-gray-300 leading-relaxed">
-            The design goal was a modular pyramid silhouette made of repeated triangular elements, referencing the iconic Sahara tent look.
+            The design goal was a modular pyramid silhouette made of repeated triangular elements,
+            referencing the iconic Sahara tent look.
           </p>
 
-          <div class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
-            <div class="aspect-video w-full">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <p class="text-sm text-gray-400 mb-3">Daft Punk Sahara tent reference</p>
+            <div class="aspect-video w-full overflow-hidden rounded-xl border border-slate-800">
               <iframe
                 class="h-full w-full"
-                src={`https://www.youtube-nocookie.com/embed/${ytId}?start=${ytStart}&rel=0`}
-                title="Daft Punk Sahara tent reference"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                src={youtubeEmbed}
+                title="Daft Punk Sahara tent reference clip"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
               />
             </div>
           </div>
         </section>
 
-        {/* Concept + Geometry (portrait images, no crop) */}
+        {/* Concept and Geometry (portrait stack) */}
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">Concept and Geometry</h2>
           <p class="text-gray-300 leading-relaxed">
@@ -106,105 +113,134 @@ const ytStart = 39; // seconds
           </p>
 
           <div class="grid gap-6 md:grid-cols-2">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
-              <p class="text-sm text-gray-400 mb-2">Initial sketch</p>
-              <img
-                src={withBase(imgInitialSketch)}
-                alt="Initial sketch"
-                class="w-full h-auto object-contain rounded-xl"
-                loading="lazy"
-              />
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <p class="text-sm text-gray-400 mb-3">Initial sketch</p>
+              <div class="w-full flex justify-center">
+                <img
+                  src={imgInitialSketch}
+                  alt="Initial sketch"
+                  class="max-h-[560px] w-auto rounded-xl border border-slate-800 object-contain"
+                  loading="lazy"
+                />
+              </div>
             </div>
 
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
-              <p class="text-sm text-gray-400 mb-2">CAD line layout</p>
-              <img
-                src={withBase(imgCADLines)}
-                alt="CAD line layout"
-                class="w-full h-auto object-contain rounded-xl"
-                loading="lazy"
-              />
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <p class="text-sm text-gray-400 mb-3">CAD line layout</p>
+              <div class="w-full flex justify-center">
+                <img
+                  src={imgCadLines}
+                  alt="CAD line layout"
+                  class="max-h-[560px] w-auto rounded-xl border border-slate-800 object-contain"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Scale model validation (portrait) */}
+        {/* Scale Model Validation (portrait) */}
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">Scale Model Validation</h2>
           <p class="text-gray-300 leading-relaxed">
-            I printed a scaled connector set and used a toothpick model to validate angles, joint count, and assembly order before committing to full-size parts.
+            I printed a scaled connector set and used a toothpick model to validate angles, joint count,
+            and assembly order before committing to full-size parts.
           </p>
 
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
-            <img
-              src={withBase(imgToothpick)}
-              alt="Toothpick scale model validation"
-              class="w-full h-auto object-contain rounded-xl"
-              loading="lazy"
-            />
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <p class="text-sm text-gray-400 mb-3">Toothpick scale model validation</p>
+            <div class="w-full flex justify-center">
+              <img
+                src={imgToothpick}
+                alt="Toothpick scale model validation"
+                class="max-h-[620px] w-auto rounded-xl border border-slate-800 object-contain"
+                loading="lazy"
+              />
+            </div>
           </div>
         </section>
 
-        {/* Connectors (portrait, and rotate the rotated photo) */}
+        {/* Connectors (portrait + rotate assembly staging) */}
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">Connectors</h2>
           <p class="text-gray-300 leading-relaxed">
-            Custom 3D printed connectors made the structure modular and fast to assemble.
-            The connector geometry was iterated quickly, then produced at volume with help from friends to hit the deadline.
+            Custom 3D printed connectors made the structure modular and fast to assemble. The connector geometry
+            was iterated quickly, then produced at volume with help from friends to hit the deadline.
           </p>
 
           <div class="grid gap-6 md:grid-cols-2">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
-              <p class="text-sm text-gray-400 mb-2">Connector part sketch</p>
-              <img
-                src={withBase(imgConnSketch)}
-                alt="Connector part sketch"
-                class="w-full h-auto object-contain rounded-xl"
-                loading="lazy"
-              />
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <p class="text-sm text-gray-400 mb-3">Connector part sketch</p>
+              <div class="w-full flex justify-center">
+                <img
+                  src={imgConnectorSketch}
+                  alt="Connector part sketch"
+                  class="max-h-[560px] w-auto rounded-xl border border-slate-800 object-contain"
+                  loading="lazy"
+                />
+              </div>
             </div>
 
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
-              <p class="text-sm text-gray-400 mb-2">Connectors printed</p>
-              <img
-                src={withBase(imgConnPrinted)}
-                alt="Connectors printed"
-                class="w-full h-auto object-contain rounded-xl"
-                loading="lazy"
-              />
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <p class="text-sm text-gray-400 mb-3">Connectors printed</p>
+              <div class="w-full flex justify-center">
+                <img
+                  src={imgConnectorsPrinted}
+                  alt="Connectors printed"
+                  class="max-h-[560px] w-auto rounded-xl border border-slate-800 object-contain"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Staging row: keep these portrait-aligned, remove wiring, rotate the rotated one */}
-          <div class="grid gap-6 md:grid-cols-3">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
-              <p class="text-sm text-gray-400 mb-2">Assembly staging</p>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <p class="text-sm text-gray-400 mb-3">Assembly staging</p>
+            <div class="w-full flex justify-center">
               <img
-                src={withBase(imgConnLaidOut)}
-                alt="Connectors laid out for assembly"
-                class="w-full h-auto object-contain rounded-xl"
+                src={imgConnectorsLaidOut}
+                alt="Connectors laid out for assembly staging"
+                class="max-h-[560px] w-auto rounded-xl border border-slate-800 object-contain rotate-90"
                 loading="lazy"
               />
             </div>
+            <p class="mt-3 text-xs text-gray-500">
+              Note: rotated 90 degrees for correct orientation.
+            </p>
+          </div>
+        </section>
 
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
-              <p class="text-sm text-gray-400 mb-2">Lighting hardware</p>
-              <img
-                src={withBase(imgLightBar)}
-                alt="LED light bars"
-                class="w-full h-auto object-contain rounded-xl rotate-90 origin-center"
-                loading="lazy"
-              />
+        {/* Lighting (vertical align, no wiring section) */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Lighting</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Off-the-shelf shop light bars were used as the illumination source. Diffusion and tint were added
+            using blue tape to reduce harshness and tune the look.
+          </p>
+
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <p class="text-sm text-gray-400 mb-3">LED light bars</p>
+              <div class="w-full flex justify-center">
+                <img
+                  src={imgLightBars}
+                  alt="LED light bars"
+                  class="max-h-[560px] w-auto rounded-xl border border-slate-800 object-contain"
+                  loading="lazy"
+                />
+              </div>
             </div>
 
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
-              <p class="text-sm text-gray-400 mb-2">Diffusion and tint</p>
-              <img
-                src={withBase(imgBlueTape)}
-                alt="Blue tape diffusion and tint"
-                class="w-full h-auto object-contain rounded-xl"
-                loading="lazy"
-              />
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <p class="text-sm text-gray-400 mb-3">Blue tape diffusion and tint</p>
+              <div class="w-full flex justify-center">
+                <img
+                  src={imgBlueTape}
+                  alt="Blue tape diffusion and tint"
+                  class="max-h-[560px] w-auto rounded-xl border border-slate-800 object-contain"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </section>
