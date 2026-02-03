@@ -10,7 +10,7 @@ const projectTagline = "A modular LED pyramid stage prop built in 9 days for a t
 const projectSummary =
   "Inspired by Daft Punk’s 2006 Sahara Tent pyramid visuals, I designed and built a lightweight, modular pyramid made from PVC and shop lights, using custom 3D printed connectors for fast assembly and transport.";
 
-// Images (you said filenames are final)
+// Images
 const hero = "/images/projects/pyramid/Pyramid_Hero.jpg";
 const imgs = {
   lightBar: "/images/projects/pyramid/Pyramid_LightBar.jpg",
@@ -21,12 +21,21 @@ const imgs = {
   cadLines: "/images/projects/pyramid/Pyramid_CADLines.jpg",
   initialSketch: "/images/projects/pyramid/Pyramid_InitialSketch.jpg",
   blueTape: "/images/projects/pyramid/Pyramid_BlueTapeTint.jpg",
-  // wires removed (Pyramid_Wires.jpg deleted from page)
 };
 
 // YouTube embed (start at 39s)
 const ytId = "fJFgYYfPhIs";
 const ytStart = 39;
+
+// Tailwind-friendly class strings (keeps the markup readable)
+const portraitImg =
+  "w-full h-auto max-h-[70vh] object-contain bg-slate-950";
+const portraitImgCard =
+  "w-full h-auto max-h-[520px] sm:max-h-[640px] object-contain bg-slate-950";
+const rotatedSquareWrap =
+  "w-full aspect-square bg-slate-950";
+const rotatedImg =
+  "w-full h-full object-contain rotate-90 origin-center";
 ---
 
 <html lang="en">
@@ -51,13 +60,13 @@ const ytStart = 39;
           <p class="text-sm sm:text-base text-gray-400">{projectSummary}</p>
         </header>
 
-        {/* HERO (portrait) */}
+        {/* HERO (portrait, no forced crop) */}
         <section class="space-y-4">
           <div class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">
             <img
               src={hero}
               alt={`${projectName} hero`}
-              class="w-full h-[520px] sm:h-[680px] object-cover object-center"
+              class={portraitImg}
               loading="lazy"
             />
           </div>
@@ -138,7 +147,7 @@ const ytStart = 39;
               <img
                 src={imgs.initialSketch}
                 alt="Initial sketch and concept"
-                class="w-full h-80 object-cover object-center"
+                class={portraitImgCard}
                 loading="lazy"
               />
               <div class="p-4">
@@ -151,7 +160,7 @@ const ytStart = 39;
               <img
                 src={imgs.cadLines}
                 alt="CAD line layout for pyramid geometry"
-                class="w-full h-80 object-cover object-center"
+                class={portraitImgCard}
                 loading="lazy"
               />
               <div class="p-4">
@@ -161,12 +170,12 @@ const ytStart = 39;
             </div>
           </div>
 
-          {/* Toothpick model (portrait) */}
+          {/* Toothpick model (portrait, no forced crop) */}
           <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
             <img
               src={imgs.toothpick}
               alt="Scaled toothpick model validation"
-              class="w-full h-[520px] sm:h-[640px] object-cover object-center"
+              class={portraitImg}
               loading="lazy"
             />
             <div class="p-4">
@@ -216,7 +225,7 @@ const ytStart = 39;
               <img
                 src={imgs.connectorSketch}
                 alt="Connector part sketch"
-                class="w-full h-80 object-cover object-center"
+                class={portraitImgCard}
                 loading="lazy"
               />
               <div class="p-4">
@@ -229,7 +238,7 @@ const ytStart = 39;
               <img
                 src={imgs.connectorsPrinted}
                 alt="3D printed connectors on the printer"
-                class="w-full h-80 object-cover object-center"
+                class={portraitImgCard}
                 loading="lazy"
               />
               <div class="p-4">
@@ -239,14 +248,16 @@ const ytStart = 39;
             </div>
           </div>
 
-          {/* Connectors laid out (rotate 90° clockwise) */}
+          {/* Connectors laid out (rotate 90° clockwise WITHOUT cropping) */}
           <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
-            <img
-              src={imgs.connectorsLaidOut}
-              alt="Connectors laid out for assembly"
-              class="w-full h-[520px] sm:h-[640px] object-cover object-center rotate-90"
-              loading="lazy"
-            />
+            <div class={rotatedSquareWrap}>
+              <img
+                src={imgs.connectorsLaidOut}
+                alt="Connectors laid out for assembly"
+                class={rotatedImg}
+                loading="lazy"
+              />
+            </div>
             <div class="p-4">
               <p class="text-sm text-gray-300 font-medium">Assembly staging</p>
               <p class="text-xs text-slate-500">Pre staged parts so the build could move fast on site.</p>
@@ -337,30 +348,33 @@ const ytStart = 39;
           </ol>
         </section>
 
-        {/* IMPLEMENTATION DETAILS IMAGES */}
+        {/* IMPLEMENTATION DETAILS (stacked 3, wires removed) */}
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">Implementation Details</h2>
 
-          {/* Vertically stacked row of three (light bar rotated, printed portrait, blue tape unchanged) */}
           <div class="space-y-4">
+            {/* Light bar (rotate 90° clockwise WITHOUT cropping) */}
             <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
-              <img
-                src={imgs.lightBar}
-                alt="LED light bars"
-                class="w-full h-[520px] sm:h-[640px] object-cover object-center rotate-90"
-                loading="lazy"
-              />
+              <div class={rotatedSquareWrap}>
+                <img
+                  src={imgs.lightBar}
+                  alt="LED light bars"
+                  class={rotatedImg}
+                  loading="lazy"
+                />
+              </div>
               <div class="p-4">
                 <p class="text-sm text-gray-300 font-medium">Lighting hardware</p>
                 <p class="text-xs text-slate-500">Linear shop lights used as edge elements.</p>
               </div>
             </div>
 
+            {/* Printed connectors (portrait) */}
             <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
               <img
                 src={imgs.connectorsPrinted}
                 alt="Printed connectors"
-                class="w-full h-[520px] sm:h-[640px] object-cover object-center"
+                class={portraitImg}
                 loading="lazy"
               />
               <div class="p-4">
@@ -369,6 +383,7 @@ const ytStart = 39;
               </div>
             </div>
 
+            {/* Blue tape (unchanged) */}
             <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
               <img
                 src={imgs.blueTape}
