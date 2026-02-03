@@ -56,6 +56,15 @@ export const siteConfig = {
     image: "/images/projects/pontoon/Pontoon_Hero.png",
     skills: ["Welding", "Fabrication", "Design for Constraints", "Project Management"],
   },
+  {
+    name: "Pyramid of Light",
+    description: "Built a modular LED pyramid stage prop in 9 days using PVC, 3D printed connectors, and shop lights.",
+    link: "/projects/pyramid-of-light",
+    hero: "/images/projects/pyramid/C3_or_whatever.jpg",
+    skills: ["SOLIDWORKS", "3D Printing", "Project Management"],
+    featured: false
+}
+
   
   ],
 
