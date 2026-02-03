@@ -24,6 +24,7 @@ export const siteConfig = {
     "3D Printing",
     "Soldering",
     "Welding",
+    "Embedded Systems",
     // Design tools
     "SOLIDWORKS",
     "Fusion 360",
@@ -40,14 +41,14 @@ export const siteConfig = {
     description: "PIC-based optical sensor PCB measuring fluid clarity via light intensity. ",
     link: "/projects/water-opacity-sensor",
     image: "/images/projects/WOS/WOS_PCBB.jpg",
-    skills: ["KiCad", "PIC", "Embedded"],
+    skills: ["KiCad", "C", "Microcontrollers (ESP32, PIC, & Arduino)", "Soldering", "Technical Documentation", "Embedded Systems"],
   },
   {
     name: "C3 COSMIC Challenge – Cable Braiding Machine",
     description: "Mechatronic cable-braiding prototype for in-space manufacturing, focused on integration and CAD.",
     link: "/projects/c3-cosmic-cable-braiding-machine",
     image: "/images/projects/C3/C3_Hero.png",
-    skills: ["Mechatronics", "Systems", "CAD"],
+    skills: ["Mechatronics", "Systems", "CAD", "Technical Documentation", "Project Management"],
   },
   {
     name: "Pontoon Picnic Table",
