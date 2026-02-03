@@ -5,7 +5,7 @@ const projects = siteConfig.projects ?? [];
 const hasProjects = projects.length > 0;
 
 // homepage shows first 3 projects (simple + foolproof)
-const featured = projects.slice(0, 3);
+const featured = projects.filter((p) => p.featured).slice(0, 3);
 ---
 
 {
