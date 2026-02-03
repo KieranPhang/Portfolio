@@ -42,6 +42,7 @@ export const siteConfig = {
     link: "/projects/water-opacity-sensor",
     image: "/images/projects/WOS/WOS_PCBB.jpg",
     skills: ["KiCad", "C", "Microcontrollers (ESP32, PIC, & Arduino)", "Soldering", "Technical Documentation", "Embedded Systems"],
+    featured: true
   },
   {
     name: "C3 COSMIC Challenge – Cable Braiding Machine",
@@ -49,6 +50,7 @@ export const siteConfig = {
     link: "/projects/c3-cosmic-cable-braiding-machine",
     image: "/images/projects/C3/C3_Hero.png",
     skills: ["Mechatronics", "Systems", "CAD", "Technical Documentation", "Project Management"],
+    featured: true
   },
   {
     name: "Pontoon Picnic Table",
@@ -56,6 +58,8 @@ export const siteConfig = {
     link: "/projects/pontoon-picnic-table",
     image: "/images/projects/pontoon/Pontoon_Hero.png",
     skills: ["Welding", "Fabrication", "Design for Constraints", "Project Management"],
+    featured: true
+
   },
   {
     name: "Pyramid of Light",
