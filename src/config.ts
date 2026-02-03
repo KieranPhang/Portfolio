@@ -59,7 +59,7 @@ export const siteConfig = {
   {
     name: "Pyramid of Light",
     description: "Built a modular LED pyramid stage prop in 9 days using PVC, 3D printed connectors, and shop lights.",
-    link: "/projects/pyramid-of-light",
+    link: "/projects/Pyramid-of-Light",
     hero: "/images/projects/pyramid/Pyramid_Hero.jpg",
     skills: ["SOLIDWORKS", "3D Printing", "Project Management"],
     featured: false
