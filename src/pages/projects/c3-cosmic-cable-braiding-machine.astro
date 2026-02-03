@@ -4,11 +4,21 @@ import Footer from "../../components/Footer.astro";
 import { siteConfig } from "../../config";
 import "../../styles/global.css";
 
-// 🔁 CHANGE THESE PER PROJECT
-const projectName = "PROJECT NAME ";
-const projectTagline = "A floating picnic platform built under $100.";
+// Project constants
+const projectName =
+  "COSMIC Capstone Challenge (C3) | Team MÖBIUS “Starstitcher” Trackless Cable Braiding Machine";
+
+const projectTagline =
+  "A conceptual, trackless cable-braiding manufacturing system designed for space-ready, reconfigurable fabrication.";
+
 const projectSummary =
-  "DIY river-ready pontoon built from 55-gallon HDPE barrels and a reinforced frame, designed to carry a full picnic table and multiple passengers.";
+  "Starstitcher is a trackless braiding concept for in-space manufacturing that uses independently guided carriers, material handling, and localized curing to produce braided structures in arbitrary patterns and forms.";
+
+// Media paths (match your uploaded filenames)
+const HERO_IMG = "/images/projects/C3/C3_Hero.png";
+const FEATURES_IMG = "/images/projects/C3/C3_Features.png";
+const BRAID_IMG = "/images/projects/C3/C3_Braid.webp";
+const VIDEO_SRC = "/images/projects/C3/C3_Video.mp4";
 ---
 
 <html lang="en">
@@ -18,214 +28,226 @@ const projectSummary =
     <meta name="description" content={projectSummary} />
   </head>
 
-    <body class="bg-background text-foreground">
+  <body class="bg-background text-foreground">
     <Header />
 
     <main class="pt-24 pb-16">
       <section class="max-w-4xl mx-auto px-6 space-y-10">
         {/* Top header */}
         <header class="space-y-3">
-          <p class="text-sm uppercase tracking-[0.25em] text-blue-500">
-            Project
-          </p>
-          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">
-            {projectName}
-          </h1>
-          <p class="text-base sm:text-lg text-gray-400">
-            {projectTagline}
-          </p>
-          <p class="text-sm sm:text-base text-gray-400">
-            {projectSummary}
-          </p>
+          <p class="text-sm uppercase tracking-[0.25em] text-blue-500">Project</p>
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{projectName}</h1>
+          <p class="text-base sm:text-lg text-gray-400">{projectTagline}</p>
+          <p class="text-sm sm:text-base text-gray-400">{projectSummary}</p>
         </header>
 
-        {/* WHY – Problem / Motivation / Constraints */}
+        {/* Hero image */}
+        <section class="space-y-4">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3 sm:p-4">
+            <img
+              src={HERO_IMG}
+              alt="Starstitcher current build concept render"
+              class="w-full h-auto rounded-xl object-contain"
+              loading="eager"
+            />
+            <p class="mt-3 text-xs text-gray-400">
+              Concept render showing the proposed Starstitcher architecture and major subsystems.
+            </p>
+          </div>
+        </section>
+
+        {/* WHY */}
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">Why</h2>
           <p class="text-gray-300 leading-relaxed">
-            {/* Replace this with the story: what problem you were solving,
-                why this project existed, context (class, client, personal),
-                and any hard constraints (budget, tools, timeline, safety, etc.) */}
-            I wanted a way to turn a cheap, rough river float into a full picnic
-            experience, under strict budget and material constraints.
+            Starstitcher was proposed as a compact, reconfigurable manufacturing concept for space
+            environments where resupply is expensive and mission needs evolve. The goal was a single
+            system that could fabricate braided composite structures on demand, without being locked
+            into one fixed geometry or one fixed motion track.
           </p>
           <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>Goal: what “success” looked like.</li>
-            <li>Constraints: budget, tools, material availability, deadlines.</li>
-            <li>Users: who this was built for (you, friends, a client, a class).</li>
+            <li><span class="font-medium">Primary goal:</span> a trackless braiding approach enabling flexible patterns and outcomes.</li>
+            <li><span class="font-medium">Constraints:</span> microgravity operation, launch packaging volume, limited power, material handling, repeatability.</li>
+            <li><span class="font-medium">Outcome focus:</span> communicate a credible systems concept with clear subsystem ownership and tradeoffs.</li>
           </ul>
         </section>
 
-        {/* WHAT – Concept, Requirements, High-level Architecture */}
+        {/* WHAT */}
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">What</h2>
           <p class="text-gray-300 leading-relaxed">
-            {/* High-level concept and requirements */}
-            At a high level, this project is a [device/system] that does X for Y,
-            while satisfying Z constraints.
+            Starstitcher is a conceptual, trackless cable braiding system designed for space-ready
+            manufacturing. It takes raw filament and forms braided structures in any form supported by
+            an achievable braiding pattern and process setup, rather than limiting output to one or two
+            hard-tooled geometries.
           </p>
-          <h3 class="text-lg font-semibold text-gray-100">
-            Key requirements
-          </h3>
+
+          <h3 class="text-lg font-semibold text-gray-100">Key requirements</h3>
           <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>Requirement 1 (e.g., must safely support 4 adults and a table).</li>
-            <li>Requirement 2 (e.g., must stay under $100 in materials).</li>
-            <li>Requirement 3 (e.g., must be buildable with basic shop tools).</li>
+            <li>Trackless carrier architecture to enable flexible braid patterns and reconfiguration.</li>
+            <li>Launch-ready packaging and deployment into an operational configuration.</li>
+            <li>Material handling compatible with microgravity constraints and limited crew time.</li>
+            <li>Localized curing strategy compatible with constrained power and thermal environments.</li>
           </ul>
         </section>
 
-        {/* SCHEMATIC / PLAN – first part of “How” */}
+        {/* System Architecture & Subsystems */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">
-            Schematic &amp; Plan
-          </h2>
+          <h2 class="text-2xl font-semibold text-gray-100">System Architecture &amp; Subsystems</h2>
           <p class="text-gray-300 leading-relaxed">
-            {/* Explain the schematic / mechanical layout / circuit diagram / block diagram. */}
-            The design started with a simple plan that balanced weight
-            distribution, stability, and ease of assembly.
+            At a high level, Starstitcher combines independent carriers, material handling, tension management,
+            and localized curing to translate raw filament into braided composite structures. The defining idea
+            is the trackless carrier concept, enabling patterns to be driven by system coordination and geometry
+            rather than fixed tracks.
           </p>
 
-          {/* If you have an image, drop it in /public/images/projects/... */}
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
-            <p class="text-sm text-gray-400 mb-3">
-              Schematic / plan (placeholder):
-            </p>
-            <div class="aspect-[16/9] w-full rounded-xl border border-dashed border-slate-700 flex items-center justify-center text-xs text-slate-500">
-              {/* Replace this with an actual image tag: */}
-              {/* <img src="/images/projects/pontoon-plan.png" alt="Pontoon plan" class="w-full h-full object-contain rounded-xl" /> */}
-              Drop schematic or layout image here
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-100">Carrier and braiding system</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Independent carriers transport filament spools through coordinated paths around the working area.
+                By removing fixed tracks, the system can support a wide range of braid trajectories and densities,
+                enabling reconfiguration without redesigning mechanical tooling.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-gray-100">Take-up and tension control</h3>
+              <p class="text-gray-300 leading-relaxed">
+                The take-up arms manage tension and geometry as material is deposited, maintaining consistent braid
+                formation and stabilizing the workpiece during fabrication.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-gray-100">Material handling and loading</h3>
+              <p class="text-gray-300 leading-relaxed">
+                A loading mechanism supports spool staging and integration with carriers. This subsystem was designed
+                to reduce intervention time and support launch packaging and deployment constraints.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-gray-100">Thermal processing and curing</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Integrated IR heating elements provide localized thermal input to support curing or consolidation of
+                braided material, targeting a manufacturing flow that remains compatible with constrained power and
+                thermal management in space environments.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-gray-100">Launch packaging and deployment</h3>
+              <p class="text-gray-300 leading-relaxed">
+                The frame and subsystem arrangement were designed to compact for launch and then deploy to an operational
+                configuration. This reduces overhead hardware and supports a practical space-ready concept.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* COMPONENT SELECTION – justify major parts */}
+        {/* Deployment / packaging slide */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">
-            Component Selection
-          </h2>
+          <h2 class="text-2xl font-semibold text-gray-100">Deployment &amp; Packaging</h2>
           <p class="text-gray-300 leading-relaxed">
-            {/* Explain why you chose specific components / materials / ICs / mechanical parts. */}
-            Each component was chosen to balance performance, cost, and ease of
-            integration.
+            This concept emphasizes launch readiness, protecting carriers during launch and enabling a staged deployment
+            into an operational configuration once on-orbit.
           </p>
-
-          <div class="space-y-3">
-            <h3 class="text-lg font-semibold text-gray-100">
-              Major components
-            </h3>
-            <ul class="list-disc list-inside space-y-2 text-gray-300">
-              <li>
-                <span class="font-medium">Component / material 1</span> — why you
-                picked it over alternatives.
-              </li>
-              <li>
-                <span class="font-medium">Component / material 2</span> — tradeoffs
-                and reasoning.
-              </li>
-              <li>
-                <span class="font-medium">Component / material 3</span> — reliability,
-                availability, or safety considerations.
-              </li>
-            </ul>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3 sm:p-4">
+            <img
+              src={FEATURES_IMG}
+              alt="Starstitcher deployment and packaging feature slide"
+              class="w-full h-auto rounded-xl object-contain"
+              loading="lazy"
+            />
           </div>
         </section>
 
-        {/* BILL OF MATERIALS (BOM) */}
+        {/* Video */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">
-            Bill of Materials (BOM)
-          </h2>
+          <h2 class="text-2xl font-semibold text-gray-100">Concept Motion Study</h2>
           <p class="text-gray-300 leading-relaxed">
-            {/* Quick note about total cost and any reuse/scavenged parts. */}
-            The build was kept within budget by reusing materials where possible
-            and choosing cost-effective components.
+            The video below shows a motion mock-up used to communicate how carriers would traverse coordinated paths to
+            form braid patterns in a trackless architecture.
           </p>
 
-          <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/60">
-            <table class="min-w-full text-sm text-left text-gray-300">
-              <thead class="bg-slate-900/80 text-gray-200">
-                <tr>
-                  <th class="px-4 py-2">#</th>
-                  <th class="px-4 py-2">Item</th>
-                  <th class="px-4 py-2">Specification</th>
-                  <th class="px-4 py-2">Qty</th>
-                  <th class="px-4 py-2">Cost</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800">
-                <tr>
-                  <td class="px-4 py-2">1</td>
-                  <td class="px-4 py-2">Example part</td>
-                  <td class="px-4 py-2">Size / rating / part number</td>
-                  <td class="px-4 py-2">x1</td>
-                  <td class="px-4 py-2">$0.00</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">2</td>
-                  <td class="px-4 py-2">Example part 2</td>
-                  <td class="px-4 py-2">Details here</td>
-                  <td class="px-4 py-2">x4</td>
-                  <td class="px-4 py-2">$0.00</td>
-                </tr>
-                {/* Duplicate rows as needed */}
-                <tr class="bg-slate-900/60 font-semibold">
-                  <td class="px-4 py-2" colspan="4">
-                    Total
-                  </td>
-                  <td class="px-4 py-2">$0.00</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3 sm:p-4">
+            <video
+              class="w-full rounded-xl"
+              controls
+              preload="metadata"
+              playsinline
+            >
+              <source src={VIDEO_SRC} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </section>
 
-        {/* HOW – Build process & implementation */}
+        {/* Representative output */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">How</h2>
+          <h2 class="text-2xl font-semibold text-gray-100">Representative Output</h2>
           <p class="text-gray-300 leading-relaxed">
-            {/* High-level explanation of how you implemented the design. */}
-            With the design locked and parts in hand, the build moved through
-            fabrication, assembly, and testing.
+            The braid image is included to illustrate the type of braided geometry and material behavior relevant to this
+            concept. This specific braid sample was produced by a teammate and is shown for context only.
           </p>
 
-          <h3 class="text-lg font-semibold text-gray-100">
-            Build process
-          </h3>
-          <ol class="list-decimal list-inside space-y-2 text-gray-300">
-            <li>Step 1: prepare materials / cut stock / initial wiring.</li>
-            <li>Step 2: assemble main structure / PCB / frame.</li>
-            <li>Step 3: integrate components and perform basic checks.</li>
-            <li>Step 4: final assembly, sealing, and safety checks.</li>
-          </ol>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3 sm:p-4">
+            <img
+              src={BRAID_IMG}
+              alt="Representative braided sample (teammate-produced)"
+              class="w-full h-auto rounded-xl object-contain"
+              loading="lazy"
+            />
+            <p class="mt-3 text-xs text-gray-400">
+              Representative braid sample produced by a teammate. Included to contextualize real-world output.
+            </p>
+          </div>
         </section>
 
-        {/* TESTING & RESULTS */}
+        {/* My role */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">
-            Testing &amp; Results
-          </h2>
+          <h2 class="text-2xl font-semibold text-gray-100">My Role</h2>
           <p class="text-gray-300 leading-relaxed">
-            {/* Describe how you validated it: tests, metrics, real-world run. */}
-            The system was tested in realistic conditions to verify stability,
-            performance, and safety.
+            I contributed as a general engineer with an emphasis on mechanical design and system integration.
+            My work focused on CAD ownership, mechanical subsystem development, manufacturing feasibility, and
+            supporting the end-to-end narrative so the concept could be communicated clearly and efficiently.
           </p>
+        </section>
+
+        {/* Testing & results */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Results</h2>
           <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>Test scenario 1 and what you observed.</li>
-            <li>Test scenario 2: edge cases, overloads, or failure modes.</li>
-            <li>Final outcome: did it meet or exceed the original “Why”.</li>
+            <li>Delivered a coherent, space-ready trackless manufacturing concept with subsystem-level justification.</li>
+            <li>Produced CAD and visuals to communicate architecture, deployment, and motion intent.</li>
+            <li>Demonstrated team execution on a complex, constraint-driven systems concept.</li>
           </ul>
         </section>
 
-        {/* LESSONS / NEXT STEPS */}
+        {/* Next steps */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">
-            What I&apos;d Do Next
-          </h2>
+          <h2 class="text-2xl font-semibold text-gray-100">What I&apos;d Do Next</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Define a formal subsystem interface map and a basic control architecture for carrier coordination.</li>
+            <li>Build a small-scale bench mock-up to validate carrier motion, tension control, and repeatability.</li>
+            <li>Run a feasibility pass on power and thermal budgets for in-space curing scenarios.</li>
+          </ul>
+        </section>
+
+        {/* Team credit */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Team Credit</h2>
           <p class="text-gray-300 leading-relaxed">
-            {/* Short reflection: what you’d change, next iteration ideas, or how this feeds other projects. */}
-            With more time and budget, I would iterate on durability and user
-            experience, and explore how to turn this into a repeatable build.
+            Team members and friends who contributed to Team MÖBIUS:
           </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>SAVANNA PAIGE</li>
+            <li>BRONSON BACH</li>
+            <li>MALEK MAYYAS</li>
+            <li>JACOB ANDRUS</li>
+            <li>K PHANG-DAVEY</li>
+          </ul>
         </section>
 
         {/* Back link */}
