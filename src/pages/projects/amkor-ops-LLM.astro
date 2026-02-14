@@ -4,11 +4,12 @@ import Footer from "../../components/Footer.astro";
 import { siteConfig } from "../../config";
 import "../../styles/global.css";
 
-// 🔁 CHANGE THESE PER PROJECT
-const projectName = "PROJECT NAME ";
-const projectTagline = "A floating picnic platform built under $100.";
+// 🔁 AMKOR PAGE CONFIG
+const projectName = "Manufacturing/Product Ops Copilot for Profitability and Utilization";
+const projectTagline =
+  "A private, on prem LLM workflow that turns factory signals into a structured SITREP and an executive ready slide outline.";
 const projectSummary =
-  "DIY river-ready pontoon built from 55-gallon HDPE barrels and a reinforced frame, designed to carry a full picnic table and multiple passengers.";
+  "Prototype case study for Amkor Tempe focused on faster triage, clearer decisions, and privacy preserving analytics for utilization and profitability.";
 ---
 
 <html lang="en">
@@ -18,214 +19,248 @@ const projectSummary =
     <meta name="description" content={projectSummary} />
   </head>
 
-    <body class="bg-background text-foreground">
+  <body class="bg-background text-foreground">
     <Header />
 
     <main class="pt-24 pb-16">
       <section class="max-w-4xl mx-auto px-6 space-y-10">
         {/* Top header */}
         <header class="space-y-3">
-          <p class="text-sm uppercase tracking-[0.25em] text-blue-500">
-            Project
-          </p>
-          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">
-            {projectName}
-          </h1>
-          <p class="text-base sm:text-lg text-gray-400">
-            {projectTagline}
-          </p>
-          <p class="text-sm sm:text-base text-gray-400">
-            {projectSummary}
-          </p>
+          <p class="text-sm uppercase tracking-[0.25em] text-blue-500">Project</p>
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{projectName}</h1>
+          <p class="text-base sm:text-lg text-gray-400">{projectTagline}</p>
+          <p class="text-sm sm:text-base text-gray-400">{projectSummary}</p>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 space-y-2">
+            <p class="text-sm text-gray-300 font-semibold">Context</p>
+            <p class="text-sm text-gray-400 leading-relaxed">
+              Built as a fast prototype after speaking with Erin Martin (HR) and Drake Miller (Process Team) at the ASU career fair.
+              The intent is to demonstrate an intern deliverable aligned to Amkor product engineering needs for analytics, utilization,
+              and profitability workflows using LLM tools.
+            </p>
+            <p class="text-xs text-gray-500">
+              This page is public but unlisted. It is intended for Amkor reviewers and interview discussion.
+            </p>
+          </div>
         </header>
 
-        {/* WHY – Problem / Motivation / Constraints */}
+        {/* WHY */}
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">Why</h2>
           <p class="text-gray-300 leading-relaxed">
-            {/* Replace this with the story: what problem you were solving,
-                why this project existed, context (class, client, personal),
-                and any hard constraints (budget, tools, timeline, safety, etc.) */}
-            I wanted a way to turn a cheap, rough river float into a full picnic
-            experience, under strict budget and material constraints.
+            Manufacturing and product teams often spend significant time converting scattered signals into decisions.
+            Data exists, but the bottleneck is triage, interpretation, and communication. The result is slower response,
+            more back and forth, and inconsistent reporting. This project proposes a private LLM driven workflow that turns
+            operational signals into a structured SITREP and an executive ready slide outline in minutes.
           </p>
           <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>Goal: what “success” looked like.</li>
-            <li>Constraints: budget, tools, material availability, deadlines.</li>
-            <li>Users: who this was built for (you, friends, a client, a class).</li>
+            <li><span class="font-medium">Goal:</span> reduce time from signal to decision and improve clarity of recommendations.</li>
+            <li><span class="font-medium">Goal:</span> standardize reporting so engineering managers can compare incidents week to week.</li>
+            <li><span class="font-medium">Constraints:</span> data privacy, auditability, and messy real world logs.</li>
           </ul>
         </section>
 
-        {/* WHAT – Concept, Requirements, High-level Architecture */}
+        {/* WHAT */}
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">What</h2>
           <p class="text-gray-300 leading-relaxed">
-            {/* High-level concept and requirements */}
-            At a high level, this project is a [device/system] that does X for Y,
-            while satisfying Z constraints.
+            A Manufacturing and Product Ops Copilot that ingests operational metrics and event logs, computes a small set of
+            decision oriented KPIs, then uses a local LLM to generate two outputs:
           </p>
-          <h3 class="text-lg font-semibold text-gray-100">
-            Key requirements
-          </h3>
           <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>Requirement 1 (e.g., must safely support 4 adults and a table).</li>
-            <li>Requirement 2 (e.g., must stay under $100 in materials).</li>
-            <li>Requirement 3 (e.g., must be buildable with basic shop tools).</li>
+            <li><span class="font-medium">Downtime triage SITREP:</span> what happened, impact, likely drivers, and recommended actions.</li>
+            <li><span class="font-medium">Slide outline:</span> a concise executive ready structure that can be pasted into PowerPoint.</li>
           </ul>
-        </section>
 
-        {/* SCHEMATIC / PLAN – first part of “How” */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">
-            Schematic &amp; Plan
-          </h2>
-          <p class="text-gray-300 leading-relaxed">
-            {/* Explain the schematic / mechanical layout / circuit diagram / block diagram. */}
-            The design started with a simple plan that balanced weight
-            distribution, stability, and ease of assembly.
-          </p>
+          <h3 class="text-lg font-semibold text-gray-100">Key requirements</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li><span class="font-medium">Privacy first:</span> runs in a private environment with no external data egress by default.</li>
+            <li><span class="font-medium">Actionable outputs:</span> recommendations tied to utilization and profitability impacts.</li>
+            <li><span class="font-medium">Explainability:</span> every recommendation includes supporting evidence and data gaps.</li>
+            <li><span class="font-medium">Fast iteration:</span> outputs must be generated quickly enough to be used daily or weekly.</li>
+          </ul>
 
-          {/* If you have an image, drop it in /public/images/projects/... */}
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
-            <p class="text-sm text-gray-400 mb-3">
-              Schematic / plan (placeholder):
-            </p>
-            <div class="aspect-[16/9] w-full rounded-xl border border-dashed border-slate-700 flex items-center justify-center text-xs text-slate-500">
-              {/* Replace this with an actual image tag: */}
-              {/* <img src="/images/projects/pontoon-plan.png" alt="Pontoon plan" class="w-full h-full object-contain rounded-xl" /> */}
-              Drop schematic or layout image here
-            </div>
-          </div>
-        </section>
-
-        {/* COMPONENT SELECTION – justify major parts */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">
-            Component Selection
-          </h2>
-          <p class="text-gray-300 leading-relaxed">
-            {/* Explain why you chose specific components / materials / ICs / mechanical parts. */}
-            Each component was chosen to balance performance, cost, and ease of
-            integration.
-          </p>
-
-          <div class="space-y-3">
-            <h3 class="text-lg font-semibold text-gray-100">
-              Major components
-            </h3>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 space-y-3">
+            <p class="text-sm text-gray-300 font-semibold">What I expect Amkor will care about most</p>
             <ul class="list-disc list-inside space-y-2 text-gray-300">
-              <li>
-                <span class="font-medium">Component / material 1</span> — why you
-                picked it over alternatives.
-              </li>
-              <li>
-                <span class="font-medium">Component / material 2</span> — tradeoffs
-                and reasoning.
-              </li>
-              <li>
-                <span class="font-medium">Component / material 3</span> — reliability,
-                availability, or safety considerations.
-              </li>
+              <li><span class="font-medium">Downtime triage:</span> faster, consistent SITREPs and next steps.</li>
+              <li><span class="font-medium">Utilization:</span> knowing where capacity is constrained and why.</li>
+              <li><span class="font-medium">Profitability:</span> translating yield, scrap, rework, and downtime into cost impact.</li>
+              <li><span class="font-medium">Communication:</span> executive quality summaries that reduce meeting time.</li>
             </ul>
           </div>
         </section>
 
-        {/* BILL OF MATERIALS (BOM) */}
+        {/* SCHEMATIC & PLAN */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">
-            Bill of Materials (BOM)
-          </h2>
+          <h2 class="text-2xl font-semibold text-gray-100">Schematic &amp; Plan</h2>
           <p class="text-gray-300 leading-relaxed">
-            {/* Quick note about total cost and any reuse/scavenged parts. */}
-            The build was kept within budget by reusing materials where possible
-            and choosing cost-effective components.
+            The architecture is intentionally simple for reliability and privacy. A data layer produces a small set of KPIs.
+            A local LLM generates structured outputs. A UI presents the SITREP, key charts, and a one click slide outline.
           </p>
 
-          <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/60">
-            <table class="min-w-full text-sm text-left text-gray-300">
-              <thead class="bg-slate-900/80 text-gray-200">
-                <tr>
-                  <th class="px-4 py-2">#</th>
-                  <th class="px-4 py-2">Item</th>
-                  <th class="px-4 py-2">Specification</th>
-                  <th class="px-4 py-2">Qty</th>
-                  <th class="px-4 py-2">Cost</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800">
-                <tr>
-                  <td class="px-4 py-2">1</td>
-                  <td class="px-4 py-2">Example part</td>
-                  <td class="px-4 py-2">Size / rating / part number</td>
-                  <td class="px-4 py-2">x1</td>
-                  <td class="px-4 py-2">$0.00</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2">2</td>
-                  <td class="px-4 py-2">Example part 2</td>
-                  <td class="px-4 py-2">Details here</td>
-                  <td class="px-4 py-2">x4</td>
-                  <td class="px-4 py-2">$0.00</td>
-                </tr>
-                {/* Duplicate rows as needed */}
-                <tr class="bg-slate-900/60 font-semibold">
-                  <td class="px-4 py-2" colspan="4">
-                    Total
-                  </td>
-                  <td class="px-4 py-2">$0.00</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <p class="text-sm text-gray-400 mb-3">High level architecture diagram</p>
+
+            <div class="w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-950/40">
+              <svg viewBox="0 0 1200 420" role="img" aria-label="Ops Copilot architecture diagram" class="w-full h-auto">
+                <defs>
+                  <style>
+                    .box { fill: rgba(15, 23, 42, 0.6); stroke: rgba(148, 163, 184, 0.35); stroke-width: 2; rx: 18; }
+                    .txt { fill: rgba(226, 232, 240, 0.95); font: 18px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto; }
+                    .sub { fill: rgba(148, 163, 184, 0.95); font: 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto; }
+                    .arrow { stroke: rgba(59, 130, 246, 0.85); stroke-width: 3; marker-end: url(#m); }
+                  </style>
+                  <marker id="m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(59, 130, 246, 0.85)"></path>
+                  </marker>
+                </defs>
+
+                {/* Boxes */}
+                <rect class="box" x="40" y="60" width="300" height="130" />
+                <text class="txt" x="70" y="100">Factory signals</text>
+                <text class="sub" x="70" y="130">events, alarms, downtime</text>
+                <text class="sub" x="70" y="155">yield, scrap, rework</text>
+                <text class="sub" x="70" y="180">throughput, utilization</text>
+
+                <rect class="box" x="420" y="60" width="330" height="130" />
+                <text class="txt" x="450" y="100">Metrics layer</text>
+                <text class="sub" x="450" y="130">KPI rollups and features</text>
+                <text class="sub" x="450" y="155">profitability and capacity impact</text>
+                <text class="sub" x="450" y="180">data quality checks</text>
+
+                <rect class="box" x="820" y="60" width="340" height="130" />
+                <text class="txt" x="850" y="100">Local LLM engine</text>
+                <text class="sub" x="850" y="130">private inference, no egress</text>
+                <text class="sub" x="850" y="155">structured SITREP generation</text>
+                <text class="sub" x="850" y="180">slide outline generation</text>
+
+                <rect class="box" x="220" y="240" width="360" height="140" />
+                <text class="txt" x="250" y="280">UI and reporting</text>
+                <text class="sub" x="250" y="310">incident list, charts, SITREP</text>
+                <text class="sub" x="250" y="335">evidence and confidence</text>
+                <text class="sub" x="250" y="360">copy to PowerPoint</text>
+
+                <rect class="box" x="660" y="240" width="500" height="140" />
+                <text class="txt" x="690" y="280">Optional stretch</text>
+                <text class="sub" x="690" y="310">policy gated redaction and escalation</text>
+                <text class="sub" x="690" y="335">only if approved, only if sanitized</text>
+                <text class="sub" x="690" y="360">external model never sees raw identifiers</text>
+
+                {/* Arrows */}
+                <line class="arrow" x1="340" y1="125" x2="420" y2="125" />
+                <line class="arrow" x1="750" y1="125" x2="820" y2="125" />
+                <line class="arrow" x1="990" y1="190" x2="450" y2="240" />
+                <line class="arrow" x1="580" y1="310" x2="660" y2="310" />
+              </svg>
+            </div>
+
+            <p class="text-xs text-gray-500 mt-3">
+              The default path is local only. The optional stretch path is a gated redaction plus escalation pattern, not the core.
+            </p>
           </div>
         </section>
 
-        {/* HOW – Build process & implementation */}
+        {/* COMPONENT SELECTION */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Component Selection</h2>
+          <p class="text-gray-300 leading-relaxed">
+            This is a prototype plan intended to map directly to the internship posting. Tool choices will be finalized during
+            implementation based on Amkor internal constraints. The emphasis is on privacy, traceability, and outputs that teams will actually use.
+          </p>
+
+          <div class="space-y-3">
+            <h3 class="text-lg font-semibold text-gray-100">Planned components</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-300">
+              <li>
+                <span class="font-medium">Local LLM runtime</span> — private inference on a local workstation or internal server.
+              </li>
+              <li>
+                <span class="font-medium">Metrics and feature layer</span> — small set of KPIs for utilization and profitability impact.
+              </li>
+              <li>
+                <span class="font-medium">Reporting outputs</span> — structured SITREP template plus PowerPoint ready slide outline.
+              </li>
+              <li>
+                <span class="font-medium">Automation hooks</span> — compatible with Copilot style workflows and Power Automate style triggers.
+              </li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 space-y-2">
+            <p class="text-sm text-gray-300 font-semibold">Privacy and safety posture</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-300">
+              <li>Default mode is local inference with no external data sharing.</li>
+              <li>Outputs are designed to be auditable with referenced inputs and stated data gaps.</li>
+              <li>Any external model use is a stretch concept behind explicit policy gating and redaction.</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* HOW */}
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">How</h2>
           <p class="text-gray-300 leading-relaxed">
-            {/* High-level explanation of how you implemented the design. */}
-            With the design locked and parts in hand, the build moved through
-            fabrication, assembly, and testing.
+            The implementation plan is scoped to be completed quickly as a proof of capability. The objective is not a full production system.
+            The objective is to demonstrate an intern deliverable that can be expanded inside Amkor with real data sources.
           </p>
 
-          <h3 class="text-lg font-semibold text-gray-100">
-            Build process
-          </h3>
+          <h3 class="text-lg font-semibold text-gray-100">Build plan</h3>
           <ol class="list-decimal list-inside space-y-2 text-gray-300">
-            <li>Step 1: prepare materials / cut stock / initial wiring.</li>
-            <li>Step 2: assemble main structure / PCB / frame.</li>
-            <li>Step 3: integrate components and perform basic checks.</li>
-            <li>Step 4: final assembly, sealing, and safety checks.</li>
+            <li>Define a realistic synthetic dataset schema for utilization, downtime, and profitability proxies.</li>
+            <li>Compute KPI rollups and basic anomaly flags for incident selection.</li>
+            <li>Generate a structured SITREP from selected incident data using a local LLM.</li>
+            <li>Generate a slide outline output formatted for quick paste into PowerPoint.</li>
+            <li>Build a clean UI that shows incident list, KPIs, SITREP, and slide outline.</li>
           </ol>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 space-y-2">
+            <p class="text-sm text-gray-400">
+              Demo status
+              <span class="text-gray-500"> (planned updates)</span>
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-300">
+              <li><span class="font-medium">Tonight:</span> publish case study page with architecture and requirements.</li>
+              <li><span class="font-medium">This weekend:</span> implement a working prototype and record a short walkthrough.</li>
+              <li><span class="font-medium">Next:</span> refine outputs for clearer utilization and profitability decision framing.</li>
+            </ul>
+          </div>
         </section>
 
         {/* TESTING & RESULTS */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">
-            Testing &amp; Results
-          </h2>
+          <h2 class="text-2xl font-semibold text-gray-100">Testing &amp; Results</h2>
           <p class="text-gray-300 leading-relaxed">
-            {/* Describe how you validated it: tests, metrics, real-world run. */}
-            The system was tested in realistic conditions to verify stability,
-            performance, and safety.
+            Results will be posted once the prototype is implemented. The evaluation metrics for the demo are intentionally practical:
+            speed, clarity, and whether the recommendations are supported by visible evidence.
           </p>
           <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>Test scenario 1 and what you observed.</li>
-            <li>Test scenario 2: edge cases, overloads, or failure modes.</li>
-            <li>Final outcome: did it meet or exceed the original “Why”.</li>
+            <li><span class="font-medium">Time to SITREP:</span> generate a structured incident summary in under 60 seconds.</li>
+            <li><span class="font-medium">Decision clarity:</span> outputs include recommended next actions and stated confidence.</li>
+            <li><span class="font-medium">Presentation readiness:</span> slide outline can be pasted into PowerPoint with minimal editing.</li>
+            <li><span class="font-medium">Privacy:</span> default operation requires no external data sharing.</li>
           </ul>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <p class="text-sm text-gray-400 mb-3">Demo link (placeholder)</p>
+            <div class="rounded-xl border border-dashed border-slate-700 p-4 text-sm text-slate-400">
+              Add a YouTube link or embedded video here once recorded.
+              <div class="mt-2 text-xs text-slate-500">
+                Example: a 60 to 90 second walkthrough showing incident selection, SITREP output, and slide outline output.
+              </div>
+            </div>
+          </div>
         </section>
 
-        {/* LESSONS / NEXT STEPS */}
+        {/* NEXT STEPS */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">
-            What I&apos;d Do Next
-          </h2>
-          <p class="text-gray-300 leading-relaxed">
-            {/* Short reflection: what you’d change, next iteration ideas, or how this feeds other projects. */}
-            With more time and budget, I would iterate on durability and user
-            experience, and explore how to turn this into a repeatable build.
-          </p>
+          <h2 class="text-2xl font-semibold text-gray-100">What I&apos;d Do Next</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Add evidence citations per recommendation, including which metrics triggered the conclusion.</li>
+            <li>Add a confidence score and a “missing data” section to guide what to collect next.</li>
+            <li>Add profitability and utilization decision templates for weekly review workflows.</li>
+            <li>Integrate a simple automation trigger pattern compatible with Copilot and Power Automate style workflows.</li>
+          </ul>
         </section>
 
         {/* Back link */}
@@ -243,4 +278,3 @@ const projectSummary =
     <Footer />
   </body>
 </html>
-
