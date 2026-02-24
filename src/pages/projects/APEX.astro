@@ -4,18 +4,19 @@ import Footer from "../../components/Footer.astro";
 import { siteConfig } from "../../config";
 import "../../styles/global.css";
 
-const projectName = "Manufacturing/Product Ops Copilot for Profitability and Utilization";
+const projectName = "APEX";
+const projectFullName = "Automated Plant Executive Intelligence";
 const projectTagline =
-  "A private, on prem LLM workflow that turns operational signals into a structured SITREP and an executive ready slide outline.";
+  "A structured decision workflow prototype that compresses the gap between factory signals and executive action — built for semiconductor packaging operations.";
 const projectSummary =
-  "Unlisted case study prototype for Amkor Tempe, built to align with the Product Engineer Intern posting for advanced packaging, flip chip BGA, and chiplets.";
+  "Unlisted case study prototype for Amkor Technology, aligned with the Product Engineer Intern posting for Advanced Flip Chip BGA, Chiplets, and Wafer Services.";
 const pageType = "Case Study";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>{projectName} | {siteConfig.name}</title>
+    <title>{projectName}: {projectFullName} | {siteConfig.name}</title>
     <meta name="description" content={projectSummary} />
   </head>
 
@@ -23,241 +24,752 @@ const pageType = "Case Study";
     <Header />
 
     <main class="pt-24 pb-16">
-      <section class="max-w-4xl mx-auto px-6 space-y-10">
-        {/* Header */}
-        <header class="space-y-3">
+      <section class="max-w-4xl mx-auto px-6 space-y-16">
+
+        <!-- HERO -->
+        <header class="space-y-5">
           <p class="text-sm uppercase tracking-[0.25em] text-blue-500">{pageType}</p>
 
-          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">
-            {projectName}
-          </h1>
-
-          <p class="text-base sm:text-lg text-gray-400">{projectTagline}</p>
-          <p class="text-sm sm:text-base text-gray-400">{projectSummary}</p>
-
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 space-y-2">
-            <p class="text-sm text-gray-300 font-semibold">Context</p>
-            <p class="text-sm text-gray-400 leading-relaxed">
-              Built as a fast prototype plan after speaking with Erin Martin (HR) and Drake Miller (Process Team) at the ASU career fair.
-              The goal is to demonstrate an intern deliverable aligned to Amkor product engineering needs for product analytics, utilization,
-              and profitability workflows using LLM tools.
+          <div class="space-y-1">
+            <h1 class="text-5xl sm:text-6xl font-bold text-gray-100 tracking-tight">
+              {projectName}
+            </h1>
+            <p class="text-xl sm:text-2xl font-light text-blue-400 tracking-wide">
+              {projectFullName}
             </p>
-            <p class="text-xs text-gray-500">
-              This page is public but unlisted. It is intended for Amkor reviewers and interview discussion.
+          </div>
+
+          <p class="text-base sm:text-lg text-gray-300 leading-relaxed max-w-3xl">
+            {projectTagline}
+          </p>
+
+          <div class="rounded-2xl border border-blue-900/50 bg-blue-950/20 p-5 space-y-2">
+            <p class="text-sm text-blue-300 font-semibold uppercase tracking-widest">Origin</p>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Built after a direct conversation with Drake Miller (Process Team) and Erin Martin (HR) at the ASU career fair.
+              Drake described a recurring operational problem: when equipment goes down at any global Amkor facility,
+              the path from detection to resolution runs entirely through email and phone calls — and can take up to 12 hours.
+              APEX is a structured response to that stated reality, cross-referenced against the internal signals embedded
+              in three concurrent Product Engineer Intern postings.
+            </p>
+            <p class="text-xs text-gray-500 pt-1">
+              This page is public but unlisted. It is intended for Amkor reviewers and interview discussion only.
             </p>
           </div>
         </header>
 
-        {/* Posting alignment */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Role Alignment</h2>
-          <p class="text-gray-300 leading-relaxed">
-            This case study is designed to map directly to the Product Engineer Intern posting for the Advanced Flip Chip BGA and Chiplets product team.
-            The emphasis is product analytics, Industry 4.0 style monitoring, and communication outputs that support decision making.
-          </p>
-
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 space-y-3">
-            <p class="text-sm text-gray-300 font-semibold">Direct mapping to posting responsibilities</p>
-            <ul class="list-disc list-inside space-y-2 text-gray-300">
-              <li><span class="font-medium">Product analytics to strategy:</span> roll up operational data into decision oriented KPIs and recommendations.</li>
-              <li><span class="font-medium">Industry 4.0 workflow:</span> use LLM tools to monitor and review profitability drivers and utilization constraints.</li>
-              <li><span class="font-medium">Pricing and volume allocation support:</span> generate a structured decision brief based on margin and capacity signals.</li>
-              <li><span class="font-medium">Equipment utilization:</span> identify where capacity is constrained and what is driving downtime and yield loss.</li>
-              <li><span class="font-medium">Communication:</span> produce an executive ready slide outline from the same analysis output.</li>
-            </ul>
+        <!-- EXECUTIVE ABSTRACT -->
+        <section class="space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Executive Abstract</p>
+            <div class="h-px flex-1 bg-slate-800"></div>
           </div>
-        </section>
 
-        {/* Intern deliverables */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Intern Deliverables</h2>
-          <p class="text-gray-300 leading-relaxed">
-            If selected, this is the deliverable set I would aim to produce early, then refine with real Amkor data sources and feedback from product engineering and process teams.
-          </p>
-
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 space-y-3">
-            <p class="text-sm text-gray-300 font-semibold">Deliverables that match the posting</p>
-            <ul class="list-disc list-inside space-y-2 text-gray-300">
-              <li><span class="font-medium">Weekly profitability snapshot:</span> margin proxies driven by yield, scrap, rework, downtime, and throughput.</li>
-              <li><span class="font-medium">Utilization and capacity summary:</span> where constraints are, trend direction, and likely drivers.</li>
-              <li><span class="font-medium">Downtime triage SITREP generator:</span> consistent incident summary with recommended next actions and confidence.</li>
-              <li><span class="font-medium">PowerPoint ready slide outline:</span> executive review format generated from the same data and SITREP.</li>
-              <li><span class="font-medium">Recommendation memo:</span> proposed next steps and roadmap based on what worked and what data is missing.</li>
-            </ul>
+          <div class="rounded-2xl border border-slate-700 bg-slate-900/50 p-6 space-y-4">
+            <p class="text-gray-200 text-base leading-relaxed">
+              Amkor Technology operates one of the world's largest semiconductor packaging networks — factories across South Korea,
+              Japan, China, Vietnam, Taiwan, the Philippines, Portugal, and the United States. When a machine goes down at any of
+              these sites, the path to resolution involves emails, phone calls across time zones, manual data collection from
+              multiple systems, and a diagnosis that can take up to 12 hours.
+            </p>
+            <p class="text-gray-300 text-base leading-relaxed">
+              That 12-hour window is not a technology failure. It is an
+              <span class="text-blue-400 font-medium">information routing failure</span>.
+              The data to diagnose the problem exists. The engineers who can fix it exist.
+              What is missing is a system that connects them — automatically, with context already structured.
+            </p>
+            <p class="text-gray-300 text-base leading-relaxed">
+              In parallel, product managers and business unit analysts spend significant time each week manually assembling
+              operational data from fragmented sources into PowerPoint decks for leadership review.
+              The deck gets built. The decision still lags.
+            </p>
+            <p class="text-gray-200 text-base leading-relaxed font-medium">
+              APEX is a structured decision workflow prototype that addresses both problems.
+              It takes raw factory event data, normalizes it, computes decision-relevant KPIs,
+              and generates a structured executive briefing automatically.
+              The goal is not to replace engineering judgment. It is to eliminate the manual assembly step that delays it.
+            </p>
           </div>
-        </section>
 
-        {/* Why */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Why</h2>
-          <p class="text-gray-300 leading-relaxed">
-            Manufacturing and product teams often spend time converting scattered signals into decisions.
-            Data exists, but triage, interpretation, and communication slow the loop.
-            This project proposes a private LLM workflow that turns operational signals into a structured SITREP and an executive ready slide outline.
-          </p>
-          <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li><span class="font-medium">Goal:</span> reduce time from signal to decision and improve clarity of recommendations.</li>
-            <li><span class="font-medium">Goal:</span> standardize reporting so weekly reviews are consistent and comparable.</li>
-            <li><span class="font-medium">Constraints:</span> privacy, auditability, and messy real world logs.</li>
-          </ul>
-        </section>
-
-        {/* What */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">What</h2>
-          <p class="text-gray-300 leading-relaxed">
-            A Manufacturing and Product Ops Copilot that ingests operational metrics and event logs, computes a small set of decision KPIs,
-            then uses a local LLM to generate two outputs:
-          </p>
-          <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li><span class="font-medium">Downtime triage SITREP:</span> what happened, impact, likely drivers, and recommended actions.</li>
-            <li><span class="font-medium">Slide outline:</span> an executive ready structure that can be pasted into PowerPoint.</li>
-          </ul>
-
-          <h3 class="text-lg font-semibold text-gray-100">Key requirements</h3>
-          <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li><span class="font-medium">Privacy first:</span> runs locally with no external data egress by default.</li>
-            <li><span class="font-medium">Actionable outputs:</span> recommendations tied to utilization and profitability impacts.</li>
-            <li><span class="font-medium">Explainability:</span> each recommendation includes supporting evidence and data gaps.</li>
-            <li><span class="font-medium">Fast iteration:</span> usable for daily triage and weekly review.</li>
-          </ul>
-
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 space-y-2">
-            <p class="text-sm text-gray-300 font-semibold">Privacy posture</p>
-            <ul class="list-disc list-inside space-y-2 text-gray-300">
-              <li>Default mode is local inference with no external LLM provider access to raw data.</li>
-              <li>Optional stretch is a gated redaction and escalation pattern, not the core system.</li>
-              <li>Outputs are designed for auditability with visible inputs and stated uncertainty.</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Architecture */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Architecture</h2>
-          <p class="text-gray-300 leading-relaxed">
-            The architecture is intentionally simple for reliability and privacy. A data layer produces KPIs.
-            A local LLM generates structured outputs. A UI presents the SITREP, key charts, and a one click slide outline.
-          </p>
-
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
-            <p class="text-sm text-gray-400 mb-3">High level architecture diagram</p>
-
-            <div class="w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-950/40">
-              <svg viewBox="0 0 1200 420" role="img" aria-label="Ops Copilot architecture diagram" class="w-full h-auto">
+          <!-- Decision Loop Compression Diagram -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
+            <p class="text-xs text-slate-500 mb-4 uppercase tracking-widest">Decision Loop Compression — Before vs. After APEX</p>
+            <div class="w-full overflow-x-auto">
+              <svg viewBox="0 0 1060 310" role="img" aria-label="Decision loop compression diagram" class="w-full h-auto min-w-[580px]">
                 <defs>
-                  <style>
-                    .box { fill: rgba(15, 23, 42, 0.6); stroke: rgba(148, 163, 184, 0.35); stroke-width: 2; rx: 18; }
-                    .txt { fill: rgba(226, 232, 240, 0.95); font: 18px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto; }
-                    .sub { fill: rgba(148, 163, 184, 0.95); font: 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto; }
-                    .arrow { stroke: rgba(59, 130, 246, 0.85); stroke-width: 3; marker-end: url(#m); }
-                  </style>
-                  <marker id="m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                    <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(59, 130, 246, 0.85)"></path>
+                  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(239,68,68,0.9)"></path>
+                  </marker>
+                  <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(59,130,246,0.9)"></path>
                   </marker>
                 </defs>
 
-                <rect class="box" x="40" y="60" width="300" height="130" />
-                <text class="txt" x="70" y="100">Factory signals</text>
-                <text class="sub" x="70" y="130">events, alarms, downtime</text>
-                <text class="sub" x="70" y="155">yield, scrap, rework</text>
-                <text class="sub" x="70" y="180">throughput, utilization</text>
+                <!-- BEFORE label -->
+                <text x="20" y="26" fill="rgba(239,68,68,0.9)" font-size="12" font-family="ui-sans-serif, system-ui" font-weight="700" letter-spacing="3">BEFORE</text>
+                <text x="20" y="44" fill="rgba(148,163,184,0.6)" font-size="11" font-family="ui-sans-serif">Manual workflow — up to 12 hours</text>
 
-                <rect class="box" x="420" y="60" width="330" height="130" />
-                <text class="txt" x="450" y="100">Metrics layer</text>
-                <text class="sub" x="450" y="130">KPI rollups and features</text>
-                <text class="sub" x="450" y="155">profitability and capacity impact</text>
-                <text class="sub" x="450" y="180">data quality checks</text>
+                <!-- Before step boxes -->
+                <rect x="20" y="55" width="120" height="50" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
+                <text x="80" y="78" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Detection</text>
+                <text x="80" y="96" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">local only</text>
+                <line x1="140" y1="80" x2="168" y2="80" stroke="rgba(239,68,68,0.7)" stroke-width="2" marker-end="url(#arr-red)"></line>
 
-                <rect class="box" x="820" y="60" width="340" height="130" />
-                <text class="txt" x="850" y="100">Local LLM engine</text>
-                <text class="sub" x="850" y="130">private inference, no egress</text>
-                <text class="sub" x="850" y="155">structured SITREP generation</text>
-                <text class="sub" x="850" y="180">slide outline generation</text>
+                <rect x="168" y="55" width="120" height="50" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
+                <text x="228" y="78" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Email / Call</text>
+                <text x="228" y="96" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">cross time zones</text>
+                <line x1="288" y1="80" x2="316" y2="80" stroke="rgba(239,68,68,0.7)" stroke-width="2" marker-end="url(#arr-red)"></line>
 
-                <rect class="box" x="220" y="240" width="360" height="140" />
-                <text class="txt" x="250" y="280">UI and reporting</text>
-                <text class="sub" x="250" y="310">incident list, charts, SITREP</text>
-                <text class="sub" x="250" y="335">evidence and confidence</text>
-                <text class="sub" x="250" y="360">copy to PowerPoint</text>
+                <rect x="316" y="55" width="120" height="50" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
+                <text x="376" y="78" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Data Pull</text>
+                <text x="376" y="96" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">manual, fragmented</text>
+                <line x1="436" y1="80" x2="464" y2="80" stroke="rgba(239,68,68,0.7)" stroke-width="2" marker-end="url(#arr-red)"></line>
 
-                <rect class="box" x="660" y="240" width="500" height="140" />
-                <text class="txt" x="690" y="280">Optional stretch</text>
-                <text class="sub" x="690" y="310">policy gated redaction and escalation</text>
-                <text class="sub" x="690" y="335">only if approved, only if sanitized</text>
-                <text class="sub" x="690" y="360">external model never sees raw identifiers</text>
+                <rect x="464" y="55" width="120" height="50" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
+                <text x="524" y="78" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Diagnosis</text>
+                <text x="524" y="96" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">tribal knowledge</text>
+                <line x1="584" y1="80" x2="612" y2="80" stroke="rgba(239,68,68,0.7)" stroke-width="2" marker-end="url(#arr-red)"></line>
 
-                <line class="arrow" x1="340" y1="125" x2="420" y2="125" />
-                <line class="arrow" x1="750" y1="125" x2="820" y2="125" />
-                <line class="arrow" x1="990" y1="190" x2="450" y2="240" />
-                <line class="arrow" x1="580" y1="310" x2="660" y2="310" />
+                <rect x="612" y="55" width="120" height="50" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
+                <text x="672" y="78" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Decision</text>
+                <text x="672" y="96" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">hours later</text>
+
+                <!-- 12hr callout -->
+                <rect x="760" y="48" width="140" height="64" rx="10" fill="rgba(60,10,10,0.6)" stroke="rgba(239,68,68,0.4)" stroke-width="1" stroke-dasharray="4 3"></rect>
+                <text x="830" y="74" fill="rgba(239,68,68,0.95)" font-size="24" font-family="ui-mono, monospace" font-weight="700" text-anchor="middle">~12 hrs</text>
+                <text x="830" y="96" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">avg. resolution latency</text>
+
+                <!-- Divider -->
+                <line x1="0" y1="152" x2="1060" y2="152" stroke="rgba(100,116,139,0.2)" stroke-width="1"></line>
+
+                <!-- AFTER label -->
+                <text x="20" y="176" fill="rgba(59,130,246,0.9)" font-size="12" font-family="ui-sans-serif, system-ui" font-weight="700" letter-spacing="3">AFTER APEX</text>
+                <text x="20" y="194" fill="rgba(148,163,184,0.6)" font-size="11" font-family="ui-sans-serif">Automated pipeline — under 30 seconds</text>
+
+                <!-- After step boxes -->
+                <rect x="20" y="205" width="120" height="50" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
+                <text x="80" y="228" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Detection</text>
+                <text x="80" y="246" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">any site</text>
+                <line x1="140" y1="230" x2="168" y2="230" stroke="rgba(59,130,246,0.7)" stroke-width="2" marker-end="url(#arr-blue)"></line>
+
+                <rect x="168" y="205" width="120" height="50" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
+                <text x="228" y="228" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Auto-Normalize</text>
+                <text x="228" y="246" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">schema mapped</text>
+                <line x1="288" y1="230" x2="316" y2="230" stroke="rgba(59,130,246,0.7)" stroke-width="2" marker-end="url(#arr-blue)"></line>
+
+                <rect x="316" y="205" width="120" height="50" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
+                <text x="376" y="228" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">KPI + Diagnose</text>
+                <text x="376" y="246" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">AI-computed</text>
+                <line x1="436" y1="230" x2="464" y2="230" stroke="rgba(59,130,246,0.7)" stroke-width="2" marker-end="url(#arr-blue)"></line>
+
+                <rect x="464" y="205" width="120" height="50" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
+                <text x="524" y="228" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Structured Brief</text>
+                <text x="524" y="246" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">auto-generated</text>
+                <line x1="584" y1="230" x2="612" y2="230" stroke="rgba(59,130,246,0.7)" stroke-width="2" marker-end="url(#arr-blue)"></line>
+
+                <rect x="612" y="205" width="120" height="50" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
+                <text x="672" y="228" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Decision</text>
+                <text x="672" y="246" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">seconds later</text>
+
+                <!-- <30s callout -->
+                <rect x="760" y="198" width="140" height="64" rx="10" fill="rgba(10,20,50,0.6)" stroke="rgba(59,130,246,0.4)" stroke-width="1" stroke-dasharray="4 3"></rect>
+                <text x="830" y="224" fill="rgba(59,130,246,0.95)" font-size="24" font-family="ui-mono, monospace" font-weight="700" text-anchor="middle">&lt;30 sec</text>
+                <text x="830" y="246" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">data-to-briefing pipeline</text>
+
+                <!-- Footer note -->
+                <text x="530" y="296" fill="rgba(100,116,139,0.65)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">APEX does not automate engineering judgment — it eliminates the manual assembly step that delays it.</text>
               </svg>
             </div>
+          </div>
+        </section>
 
-            <p class="text-xs text-gray-500 mt-3">
-              Default path is local inference. The optional stretch path is a gated redaction and escalation pattern.
+        <!-- PROBLEM LANDSCAPE -->
+        <section class="space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Problem Landscape</p>
+            <div class="h-px flex-1 bg-slate-800"></div>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed">
+            The problems APEX addresses were not stated directly. They were inferred from three overlapping signals:
+            a direct conversation with Amkor's process team, patterns embedded in concurrent internship postings,
+            and the structural realities of operating a global OSAT at advanced packaging complexity.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="rounded-2xl border border-red-900/50 bg-red-950/10 p-5 space-y-2">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                <p class="text-sm font-semibold text-red-300">Downtime Resolution Latency</p>
+              </div>
+              <p class="text-sm text-gray-400 leading-relaxed">Equipment failures trigger a manual chain: detect → email → call → pull data from multiple systems → diagnose → act. Across global time zones, this averages up to 12 hours. The bottleneck is not the repair. It is the information routing.</p>
+            </div>
+            <div class="rounded-2xl border border-amber-900/40 bg-amber-950/10 p-5 space-y-2">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+                <p class="text-sm font-semibold text-amber-300">Fragmented Operational Data</p>
+              </div>
+              <p class="text-sm text-gray-400 leading-relaxed">Factories across Korea, Japan, Vietnam, and Portugal likely operate different MES systems with different fault code schemas and yield formats. Corporate receives summarized spreadsheets, not structured feeds. No unified semantic layer exists.</p>
+            </div>
+            <div class="rounded-2xl border border-amber-900/40 bg-amber-950/10 p-5 space-y-2">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+                <p class="text-sm font-semibold text-amber-300">Manual Reporting Cycle</p>
+              </div>
+              <p class="text-sm text-gray-400 leading-relaxed">Product managers and engineers spend hours each week pulling data from disparate systems, consolidating into Excel, and building PowerPoint decks for leadership review. The intern postings explicitly describe this as a core workload. It is high-effort, low-value work.</p>
+            </div>
+            <div class="rounded-2xl border border-orange-900/40 bg-orange-950/10 p-5 space-y-2">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-orange-400"></div>
+                <p class="text-sm font-semibold text-orange-300">Profitability Visibility Lag</p>
+              </div>
+              <p class="text-sm text-gray-400 leading-relaxed">Product-level profitability requires joining ERP cost data, production actuals, and pricing structures — all done manually. Margin reporting is periodic and retrospective. Erosion can go undetected for weeks before surfacing in a review cycle.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-700/50 bg-slate-900/40 p-5 space-y-2">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-slate-500"></div>
+                <p class="text-sm font-semibold text-gray-200">Pricing and Allocation Misalignment</p>
+              </div>
+              <p class="text-sm text-gray-400 leading-relaxed">Pricing decisions across business units are made without a unified view of factory capacity, tool utilization, or real-time cost structure. Volume allocation lags actual equipment loading. Decisions are made from spreadsheets that are already stale.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-700/50 bg-slate-900/40 p-5 space-y-2">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-slate-500"></div>
+                <p class="text-sm font-semibold text-gray-200">Executive Reporting Friction</p>
+              </div>
+              <p class="text-sm text-gray-400 leading-relaxed">Every intern posting requires a final deliverable: a presentation with recommendations. This mirrors what product engineers do continuously. The organization's primary internal communication artifact is a manually built PowerPoint deck assembled every review cycle.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- NEEDS DISCOVERY -->
+        <section class="space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Needs Discovery</p>
+            <div class="h-px flex-1 bg-slate-800"></div>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed">
+            Organizations in operational transformation rarely state their needs precisely. The stated need and the actual need
+            are different layers. APEX was designed by working through three layers of signal simultaneously.
+          </p>
+
+          <div class="space-y-4">
+            <div class="rounded-2xl border border-blue-900/40 bg-blue-950/10 p-5 space-y-3">
+              <p class="text-sm font-semibold text-blue-300 uppercase tracking-widest">Explicit Needs — Directly Stated</p>
+              <p class="text-xs text-slate-500">Source: direct conversation with Drake Miller, Amkor Process Team</p>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex gap-2"><span class="text-blue-400 mt-0.5 shrink-0">→</span><span>Faster downtime triage — reduce the 12-hour resolution window</span></li>
+                <li class="flex gap-2"><span class="text-blue-400 mt-0.5 shrink-0">→</span><span>An AI solution that takes in raw factory data and processes it automatically</span></li>
+                <li class="flex gap-2"><span class="text-blue-400 mt-0.5 shrink-0">→</span><span>Converts data into a presentation or dashboard with explanations of what changed</span></li>
+                <li class="flex gap-2"><span class="text-blue-400 mt-0.5 shrink-0">→</span><span>Explains what changed and what actions are needed — without manual assembly</span></li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl border border-violet-900/40 bg-violet-950/10 p-5 space-y-3">
+              <p class="text-sm font-semibold text-violet-300 uppercase tracking-widest">Inferred Needs — Extracted from Posting Language</p>
+              <p class="text-xs text-slate-500">Source: three concurrent Product Engineer Intern postings, cross-referenced for repeated themes</p>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex gap-2"><span class="text-violet-400 mt-0.5 shrink-0">→</span><span>Automation of pricing strategy analysis across customer and package type</span></li>
+                <li class="flex gap-2"><span class="text-violet-400 mt-0.5 shrink-0">→</span><span>CapEx planning support and factory operating efficiency monitoring</span></li>
+                <li class="flex gap-2"><span class="text-violet-400 mt-0.5 shrink-0">→</span><span>Product profitability monitoring using Copilot and LLM tools</span></li>
+                <li class="flex gap-2"><span class="text-violet-400 mt-0.5 shrink-0">→</span><span>Consolidation of product overview presentations and factory capability summaries</span></li>
+                <li class="flex gap-2"><span class="text-violet-400 mt-0.5 shrink-0">→</span><span>Volume allocation and equipment utilization optimization</span></li>
+                <li class="flex gap-2"><span class="text-violet-400 mt-0.5 shrink-0">→</span><span>Agentic AI, Microsoft Copilot, and Power Automate — mentioned directly, not scoped</span></li>
+              </ul>
+              <p class="text-xs text-slate-500 pt-1 italic">
+                The simultaneous mention of Excel/VBA and Agentic AI in the same posting is the diagnostic signal.
+                It describes a manual workflow the organization wants to automate but has not yet decomposed into its actual failure modes.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-emerald-900/40 bg-emerald-950/10 p-5 space-y-3">
+              <p class="text-sm font-semibold text-emerald-300 uppercase tracking-widest">Implicit Needs — Structurally Inferred</p>
+              <p class="text-xs text-slate-500">Source: OSAT industry operating model, global factory complexity, IP sensitivity</p>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Data privacy and IP protection</span> — Amkor handles customer designs under strict NDA. Any AI system must default to local inference with no external data egress.</span></li>
+                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Auditability</span> — Recommendations must show their work. Black-box AI outputs are not acceptable in a manufacturing environment where decisions affect yield, quality, and customer commitments.</span></li>
+                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Repeatability</span> — Reporting must be structurally consistent across sites and over time. One-off dashboards are not trusted operationally.</span></li>
+                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Change management compatibility</span> — The system must fit into existing workflows rather than requiring engineers to abandon their current process entirely.</span></li>
+                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Cross-factory normalization</span> — Different facilities run different MES systems with different fault code schemas. Before any intelligence layer can work, raw data must be harmonized. This is the foundational prerequisite most AI implementations skip.</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SYSTEM VISION -->
+        <section class="space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-500">System Vision</p>
+            <div class="h-px flex-1 bg-slate-800"></div>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed">
+            APEX is not a dashboard. It is a <span class="text-blue-400 font-medium">decision pipeline</span>.
+            A dashboard presents data. A decision pipeline converts data into a structured, actionable briefing
+            without requiring a human to assemble it. The full vision is a cross-factory operational intelligence layer —
+            a system connecting factory signals to corporate decisions across the entire global footprint.
+          </p>
+
+          <!-- Layered Architecture Diagram -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
+            <p class="text-xs text-slate-500 mb-4 uppercase tracking-widest">System Architecture — Data to Executive Action</p>
+            <div class="w-full overflow-x-auto">
+              <svg viewBox="0 0 860 470" role="img" aria-label="APEX layered system architecture" class="w-full h-auto min-w-[540px]">
+                <defs>
+                  <marker id="arr-down" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M 0 0 L 5 10 L 0 0 z" fill="rgba(59,130,246,0.65)"></path>
+                  </marker>
+                </defs>
+
+                <!-- Layer 1 -->
+                <rect x="40" y="20" width="780" height="68" rx="12" fill="rgba(30,10,10,0.7)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
+                <text x="70" y="50" fill="rgba(252,165,165,0.9)" font-size="12" font-family="ui-sans-serif" font-weight="700" letter-spacing="1">LAYER 1 — RAW FACTORY DATA</text>
+                <text x="70" y="72" fill="rgba(148,163,184,0.7)" font-size="11" font-family="ui-sans-serif">MES exports · alarm logs · downtime events · yield records · lot genealogy · ERP proxies</text>
+                <line x1="430" y1="88" x2="430" y2="108" stroke="rgba(59,130,246,0.5)" stroke-width="2" marker-end="url(#arr-down)"></line>
+
+                <!-- Layer 2 -->
+                <rect x="40" y="108" width="780" height="68" rx="12" fill="rgba(40,20,5,0.7)" stroke="rgba(251,146,60,0.4)" stroke-width="1.5"></rect>
+                <text x="70" y="138" fill="rgba(253,186,116,0.9)" font-size="12" font-family="ui-sans-serif" font-weight="700" letter-spacing="1">LAYER 2 — SCHEMA NORMALIZATION</text>
+                <text x="70" y="160" fill="rgba(148,163,184,0.7)" font-size="11" font-family="ui-sans-serif">Cross-factory field mapping · fault code harmonization · alias resolution · confidence scoring</text>
+                <line x1="430" y1="176" x2="430" y2="196" stroke="rgba(59,130,246,0.5)" stroke-width="2" marker-end="url(#arr-down)"></line>
+
+                <!-- Layer 3 -->
+                <rect x="40" y="196" width="780" height="68" rx="12" fill="rgba(10,30,10,0.7)" stroke="rgba(52,211,153,0.4)" stroke-width="1.5"></rect>
+                <text x="70" y="226" fill="rgba(110,231,183,0.9)" font-size="12" font-family="ui-sans-serif" font-weight="700" letter-spacing="1">LAYER 3 — METRICS COMPUTATION</text>
+                <text x="70" y="248" fill="rgba(148,163,184,0.7)" font-size="11" font-family="ui-sans-serif">KPI rollups: yield · scrap · downtime · utilization · throughput proxy · margin proxy · anomaly flags · baseline delta</text>
+                <line x1="430" y1="264" x2="430" y2="284" stroke="rgba(59,130,246,0.5)" stroke-width="2" marker-end="url(#arr-down)"></line>
+
+                <!-- Layer 4 -->
+                <rect x="40" y="284" width="780" height="68" rx="12" fill="rgba(10,20,40,0.7)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
+                <text x="70" y="314" fill="rgba(147,197,253,0.9)" font-size="12" font-family="ui-sans-serif" font-weight="700" letter-spacing="1">LAYER 4 — LLM INFERENCE (PRIVACY-FIRST LOCAL DEFAULT)</text>
+                <text x="70" y="336" fill="rgba(148,163,184,0.7)" font-size="11" font-family="ui-sans-serif">SITREP generation · root cause hypotheses · cross-site pattern detection · narrative synthesis · data gap identification</text>
+                <line x1="430" y1="352" x2="430" y2="372" stroke="rgba(59,130,246,0.5)" stroke-width="2" marker-end="url(#arr-down)"></line>
+
+                <!-- Layer 5 -->
+                <rect x="40" y="372" width="780" height="68" rx="12" fill="rgba(20,10,40,0.7)" stroke="rgba(167,139,250,0.45)" stroke-width="1.5"></rect>
+                <text x="70" y="402" fill="rgba(196,181,253,0.9)" font-size="12" font-family="ui-sans-serif" font-weight="700" letter-spacing="1">LAYER 5 — STRUCTURED EXECUTIVE OUTPUT</text>
+                <text x="70" y="424" fill="rgba(148,163,184,0.7)" font-size="11" font-family="ui-sans-serif">5-section briefing · slide outline · financial exposure panel · recommended actions · data gap flags · export</text>
+
+                <!-- Privacy badge -->
+                <rect x="586" y="294" width="214" height="48" rx="9" fill="rgba(5,20,5,0.6)" stroke="rgba(52,211,153,0.3)" stroke-width="1" stroke-dasharray="4 3"></rect>
+                <text x="693" y="316" fill="rgba(110,231,183,0.8)" font-size="11" font-family="ui-sans-serif" text-anchor="middle" font-weight="600">Privacy-First Default</text>
+                <text x="693" y="334" fill="rgba(100,116,139,0.8)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">No external data egress by default</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Five use cases -->
+          <div class="space-y-3">
+            <p class="text-sm font-semibold text-gray-200">Five Core Use Cases — Long-Term Vision</p>
+
+            <details class="group rounded-2xl border border-slate-800 bg-slate-900/40 overflow-hidden">
+              <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-800/40 transition-colors list-none">
+                <div class="flex items-center gap-3">
+                  <span class="text-xs font-mono text-blue-500 bg-blue-950/50 px-2 py-0.5 rounded">UC-1</span>
+                  <span class="text-sm font-semibold text-gray-200">Global Downtime Intelligence Engine</span>
+                </div>
+                <span class="text-slate-500 text-xs">▼</span>
+              </summary>
+              <div class="px-4 pb-4 pt-1 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-red-400">Problem</p><p class="text-xs text-gray-400 leading-relaxed">12-hour resolution cycle driven by manual information routing across time zones.</p></div>
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-emerald-400">Measurable Impact</p><p class="text-xs text-gray-400 leading-relaxed">Reduce mean time to resolution from ~12 hours to under 2 hours. At $8,500/hr throughput loss, a 10-hour reduction per incident represents direct revenue recovery.</p></div>
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-blue-400">Output Format</p><p class="text-xs text-gray-400 leading-relaxed">Structured incident brief — tool ID, fault signature, confidence-ranked root causes, recommended first action, escalation path.</p></div>
+              </div>
+            </details>
+
+            <details class="group rounded-2xl border border-slate-800 bg-slate-900/40 overflow-hidden">
+              <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-800/40 transition-colors list-none">
+                <div class="flex items-center gap-3">
+                  <span class="text-xs font-mono text-blue-500 bg-blue-950/50 px-2 py-0.5 rounded">UC-2</span>
+                  <span class="text-sm font-semibold text-gray-200">Equipment Utilization and Volume Allocation Optimizer</span>
+                </div>
+                <span class="text-slate-500 text-xs">▼</span>
+              </summary>
+              <div class="px-4 pb-4 pt-1 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-red-400">Problem</p><p class="text-xs text-gray-400 leading-relaxed">Allocation decisions made from static spreadsheets with no unified cross-factory visibility into actual equipment loading.</p></div>
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-emerald-400">Measurable Impact</p><p class="text-xs text-gray-400 leading-relaxed">2–5% OEE improvement through better allocation. Reduction in customer delivery misses caused by capacity misreads.</p></div>
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-blue-400">Output Format</p><p class="text-xs text-gray-400 leading-relaxed">Real-time utilization dashboard with allocation recommendation engine. Margin vs. utilization heatmap by factory and tool class.</p></div>
+              </div>
+            </details>
+
+            <details class="group rounded-2xl border border-slate-800 bg-slate-900/40 overflow-hidden">
+              <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-800/40 transition-colors list-none">
+                <div class="flex items-center gap-3">
+                  <span class="text-xs font-mono text-blue-500 bg-blue-950/50 px-2 py-0.5 rounded">UC-3</span>
+                  <span class="text-sm font-semibold text-gray-200">Continuous Product Profitability Monitor</span>
+                </div>
+                <span class="text-slate-500 text-xs">▼</span>
+              </summary>
+              <div class="px-4 pb-4 pt-1 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-red-400">Problem</p><p class="text-xs text-gray-400 leading-relaxed">Profitability reporting is periodic and retrospective. Margin erosion from yield fluctuations or cost shifts can go undetected for weeks.</p></div>
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-emerald-400">Measurable Impact</p><p class="text-xs text-gray-400 leading-relaxed">Catch margin erosion weeks earlier. Inform re-pricing negotiations with live data rather than stale cycle reports.</p></div>
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-blue-400">Output Format</p><p class="text-xs text-gray-400 leading-relaxed">Real-time gross margin view by product line and factory. Automated alert when margin drops below threshold with AI-generated variance explanation.</p></div>
+              </div>
+            </details>
+
+            <details class="group rounded-2xl border border-slate-800 bg-slate-900/40 overflow-hidden">
+              <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-800/40 transition-colors list-none">
+                <div class="flex items-center gap-3">
+                  <span class="text-xs font-mono text-blue-500 bg-blue-950/50 px-2 py-0.5 rounded">UC-4</span>
+                  <span class="text-sm font-semibold text-gray-200">Automated Executive Narrative Engine</span>
+                </div>
+                <span class="text-slate-500 text-xs">▼</span>
+              </summary>
+              <div class="px-4 pb-4 pt-1 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-red-400">Problem</p><p class="text-xs text-gray-400 leading-relaxed">Manual slide consolidation is a recurring high-effort task across all business units every review cycle.</p></div>
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-emerald-400">Measurable Impact</p><p class="text-xs text-gray-400 leading-relaxed">Reduce analyst reporting workload by an estimated 50%. Enforce consistent reporting language across BUs. Accelerate review cycle cadence.</p></div>
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-blue-400">Output Format</p><p class="text-xs text-gray-400 leading-relaxed">Auto-generated weekly briefing deck. 5-section executive digest with factory-by-factory delta analysis and KPI deviation narrative.</p></div>
+              </div>
+            </details>
+
+            <details class="group rounded-2xl border border-slate-800 bg-slate-900/40 overflow-hidden">
+              <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-800/40 transition-colors list-none">
+                <div class="flex items-center gap-3">
+                  <span class="text-xs font-mono text-blue-500 bg-blue-950/50 px-2 py-0.5 rounded">UC-5</span>
+                  <span class="text-sm font-semibold text-gray-200">Cross-Factory Yield and Process Drift Detection</span>
+                </div>
+                <span class="text-slate-500 text-xs">▼</span>
+              </summary>
+              <div class="px-4 pb-4 pt-1 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-red-400">Problem</p><p class="text-xs text-gray-400 leading-relaxed">Yield degradation can occur gradually across sites without centralized pattern recognition. Common supplier issues may appear as isolated local events.</p></div>
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-emerald-400">Measurable Impact</p><p class="text-xs text-gray-400 leading-relaxed">Prevent multi-million dollar yield excursions. Surface systemic supplier or equipment fleet issues before they cascade across factories.</p></div>
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-blue-400">Output Format</p><p class="text-xs text-gray-400 leading-relaxed">Early warning alerts. Cross-factory comparison dashboard. Root cause hypotheses ranked by confidence with recommended escalation path.</p></div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- DEMO IMPLEMENTATION -->
+        <section class="space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Demo Implementation</p>
+            <div class="h-px flex-1 bg-slate-800"></div>
+          </div>
+
+          <div class="rounded-2xl border border-yellow-900/40 bg-yellow-950/10 p-4">
+            <p class="text-sm text-yellow-300 font-semibold">Scope Boundary</p>
+            <p class="text-sm text-yellow-200/70 mt-1 leading-relaxed">
+              The current APEX implementation is a focused prototype demonstrating the core data-to-briefing pipeline
+              using a synthetic dataset modeled on Amkor's real global factory footprint. It is not a production system.
+              The distinction between prototype capability and production readiness is maintained explicitly throughout.
+            </p>
+          </div>
+
+          <!-- Demo flow -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
+            <p class="text-xs text-slate-500 mb-4 uppercase tracking-widest">Demo Pipeline — Five Steps, Under Five Minutes</p>
+            <div class="w-full overflow-x-auto">
+              <svg viewBox="0 0 930 120" role="img" aria-label="APEX demo pipeline five step flow" class="w-full h-auto min-w-[580px]">
+                <defs>
+                  <marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(59,130,246,0.8)"></path>
+                  </marker>
+                </defs>
+                <rect x="20" y="10" width="155" height="86" rx="12" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.35)" stroke-width="1.5"></rect>
+                <text x="26" y="34" fill="rgba(59,130,246,0.6)" font-size="11" font-family="ui-mono, monospace" font-weight="700">01</text>
+                <text x="97" y="48" fill="rgba(226,232,240,0.95)" font-size="13" font-family="ui-sans-serif" font-weight="600" text-anchor="middle">Upload CSV</text>
+                <text x="97" y="66" fill="rgba(148,163,184,0.8)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">Drag-drop or</text>
+                <text x="97" y="82" fill="rgba(148,163,184,0.8)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">load sample data</text>
+                <line x1="175" y1="53" x2="193" y2="53" stroke="rgba(59,130,246,0.6)" stroke-width="2" marker-end="url(#arr-r)"></line>
+
+                <rect x="193" y="10" width="155" height="86" rx="12" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.35)" stroke-width="1.5"></rect>
+                <text x="199" y="34" fill="rgba(59,130,246,0.6)" font-size="11" font-family="ui-mono, monospace" font-weight="700">02</text>
+                <text x="270" y="48" fill="rgba(226,232,240,0.95)" font-size="13" font-family="ui-sans-serif" font-weight="600" text-anchor="middle">Normalize</text>
+                <text x="270" y="66" fill="rgba(148,163,184,0.8)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">Schema map</text>
+                <text x="270" y="82" fill="rgba(148,163,184,0.8)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">+ alias resolve</text>
+                <line x1="348" y1="53" x2="366" y2="53" stroke="rgba(59,130,246,0.6)" stroke-width="2" marker-end="url(#arr-r)"></line>
+
+                <rect x="366" y="10" width="155" height="86" rx="12" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.35)" stroke-width="1.5"></rect>
+                <text x="372" y="34" fill="rgba(59,130,246,0.6)" font-size="11" font-family="ui-mono, monospace" font-weight="700">03</text>
+                <text x="443" y="48" fill="rgba(226,232,240,0.95)" font-size="13" font-family="ui-sans-serif" font-weight="600" text-anchor="middle">Compute KPIs</text>
+                <text x="443" y="66" fill="rgba(148,163,184,0.8)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">Yield · downtime</text>
+                <text x="443" y="82" fill="rgba(148,163,184,0.8)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">margin proxy</text>
+                <line x1="521" y1="53" x2="539" y2="53" stroke="rgba(59,130,246,0.6)" stroke-width="2" marker-end="url(#arr-r)"></line>
+
+                <rect x="539" y="10" width="155" height="86" rx="12" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.35)" stroke-width="1.5"></rect>
+                <text x="545" y="34" fill="rgba(59,130,246,0.6)" font-size="11" font-family="ui-mono, monospace" font-weight="700">04</text>
+                <text x="616" y="48" fill="rgba(226,232,240,0.95)" font-size="13" font-family="ui-sans-serif" font-weight="600" text-anchor="middle">LLM Diagnose</text>
+                <text x="616" y="66" fill="rgba(148,163,184,0.8)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">SITREP +</text>
+                <text x="616" y="82" fill="rgba(148,163,184,0.8)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">pattern detect</text>
+                <line x1="694" y1="53" x2="712" y2="53" stroke="rgba(59,130,246,0.6)" stroke-width="2" marker-end="url(#arr-r)"></line>
+
+                <rect x="712" y="10" width="155" height="86" rx="12" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.35)" stroke-width="1.5"></rect>
+                <text x="718" y="34" fill="rgba(59,130,246,0.6)" font-size="11" font-family="ui-mono, monospace" font-weight="700">05</text>
+                <text x="789" y="48" fill="rgba(226,232,240,0.95)" font-size="13" font-family="ui-sans-serif" font-weight="600" text-anchor="middle">Briefing Out</text>
+                <text x="789" y="66" fill="rgba(148,163,184,0.8)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">5-section deck</text>
+                <text x="789" y="82" fill="rgba(148,163,184,0.8)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">+ export ready</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="rounded-2xl border border-slate-700 bg-slate-900/50 p-5 space-y-3">
+              <p class="text-sm font-semibold text-gray-200">What the Demo Includes</p>
+              <ul class="space-y-2 text-sm text-gray-400">
+                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Synthetic Amkor-flavored dataset — 40 events across 9 real global factories</li>
+                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Multi-file ingestion with schema auto-mapping and confidence scoring</li>
+                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>KPI computation: yield, scrap, downtime, utilization, throughput proxy, margin proxy</li>
+                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Anomaly detection and baseline comparison with z-score flagging</li>
+                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Structured SITREP generation with cross-site pattern detection</li>
+                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Financial exposure panel with live throughput rate adjustment</li>
+                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Executive briefing export — print-ready 5-section document</li>
+                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>AI assistant for follow-up questions, data gap requests, and manager update copy</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-slate-700 bg-slate-900/50 p-5 space-y-3">
+              <p class="text-sm font-semibold text-gray-200">What the Demo Explicitly Does Not Include</p>
+              <ul class="space-y-2 text-sm text-gray-400">
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Live MES integration (requires internal data access)</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Real Amkor production data of any kind</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Authentication or multi-tenant isolation</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Formal automated test suite</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Production-hardened API security</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Role-based access control</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Persistent database (local JSON only)</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Pricing or CapEx optimization models (roadmap item)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Demo video placeholder -->
+          <div class="rounded-2xl border border-dashed border-slate-700 bg-slate-900/30 p-6 text-center space-y-2">
+            <p class="text-sm text-slate-400 font-medium">[ Demo Video — Insert Here ]</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Recommended: 60–90 second screen recording showing the full pipeline from CSV upload → KPI dashboard → SITREP output → briefing export.
+              Export as MP4 and embed with a video tag, or use a thumbnail image linking to a hosted recording.
+            </p>
+            <p class="text-xs text-slate-600 italic">
+              Suggested thumbnail: split view — upload screen on the left, generated executive briefing on the right.
+              APEX header visible at top. Dark background, blue accent colors consistent with the design system.
             </p>
           </div>
         </section>
 
-        {/* Execution plan with dates */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Execution Plan</h2>
-          <p class="text-gray-300 leading-relaxed">
-            This plan is scoped to demonstrate capability quickly, then leave a clean foundation for expansion using real internal data sources.
-          </p>
+        <!-- ARCHITECTURE -->
+        <section class="space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Technical Architecture</p>
+            <div class="h-px flex-1 bg-slate-800"></div>
+          </div>
 
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 space-y-3">
-            <p class="text-sm text-gray-300 font-semibold">Milestones</p>
-            <ul class="list-disc list-inside space-y-2 text-gray-300">
-              <li><span class="font-medium">2026-02-13:</span> case study page published and application submitted.</li>
-              <li><span class="font-medium">2026-02-14 to 2026-02-15:</span> prototype implementation with synthetic dataset and UI.</li>
-              <li><span class="font-medium">2026-02-16:</span> demo walkthrough video, updated results section, and polished outputs.</li>
-            </ul>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-3 space-y-1">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Frontend</p>
+              <p class="text-xs text-gray-200 font-medium">Next.js 16</p>
+              <p class="text-xs text-gray-500">App Router + React 19 + TypeScript</p>
+            </div>
+            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-3 space-y-1">
+              <p class="text-xs uppercase tracking-widest text-slate-500">AI Layer</p>
+              <p class="text-xs text-gray-200 font-medium">Vercel AI SDK</p>
+              <p class="text-xs text-gray-500">Streaming responses + structured JSON output</p>
+            </div>
+            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-3 space-y-1">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Charts</p>
+              <p class="text-xs text-gray-200 font-medium">Recharts</p>
+              <p class="text-xs text-gray-500">Interactive KPI + utilization views</p>
+            </div>
+            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-3 space-y-1">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Storage</p>
+              <p class="text-xs text-gray-200 font-medium">Local JSON</p>
+              <p class="text-xs text-gray-500">No external DB — demo scope only</p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-950/40 overflow-hidden">
+            <div class="p-4 border-b border-slate-800">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Current API Surface</p>
+            </div>
+            <div class="divide-y divide-slate-800/50">
+              {[
+                ["POST /api/ingest", "Accepts CSV, JSON, text via multipart — schema maps to canonical incident format"],
+                ["GET /api/datasets", "List all ingested dataset index entries"],
+                ["GET /api/incidents", "List normalized incident summaries"],
+                ["GET /api/metrics?incident_id=…", "Return computed MetricsPayload with KPIs, anomalies, top contributors"],
+                ["POST /api/generate", "Stream structured SITREP JSON — baseline or what-if mode"],
+                ["POST /api/assistant", "Stream AssistantInsight — follow-up Q&A, data gap requests, manager update copy"],
+              ].map(([endpoint, description]) => (
+                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 px-4 py-3">
+                  <code class="text-xs text-blue-300 font-mono shrink-0">{endpoint}</code>
+                  <p class="text-xs text-gray-500">{description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Testing criteria */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Evaluation Criteria</h2>
-          <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li><span class="font-medium">Time to SITREP:</span> generate a structured incident summary in under 60 seconds.</li>
-            <li><span class="font-medium">Decision clarity:</span> recommendations include next actions, confidence, and missing data.</li>
-            <li><span class="font-medium">Presentation readiness:</span> slide outline can be pasted into PowerPoint with minimal edits.</li>
-            <li><span class="font-medium">Privacy:</span> default operation requires no external data sharing.</li>
-          </ul>
+        <!-- EXPANSION PATH -->
+        <section class="space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Long-Term Expansion Path</p>
+            <div class="h-px flex-1 bg-slate-800"></div>
+          </div>
 
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
-            <p class="text-sm text-gray-400 mb-3">Demo link (placeholder)</p>
-            <div class="rounded-xl border border-dashed border-slate-700 p-4 text-sm text-slate-400">
-              Video will be added here after recording.
-              <div class="mt-2 text-xs text-slate-500">
-                Target: 60 to 90 second walkthrough showing incident selection, SITREP output, and slide outline output.
+          <p class="text-gray-300 leading-relaxed">
+            APEX is designed as a provable foundation, not a finished product. The demo validates the core pipeline.
+            Each phase extends it toward full operational integration without requiring a rebuild.
+          </p>
+
+          <div class="space-y-3">
+            <div class="rounded-2xl border border-blue-900/40 bg-slate-900/30 p-4">
+              <p class="text-sm font-semibold text-blue-400 mb-3">Phase 1 — Current Demo</p>
+              <div class="flex flex-wrap gap-2">
+                {["Synthetic dataset ingestion", "Schema normalization + KPI computation", "SITREP generation", "Financial exposure panel", "Executive briefing export"].map(item => (
+                  <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-slate-800/60 rounded-full px-3 py-1"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>{item}</span>
+                ))}
+              </div>
+            </div>
+            <div class="rounded-2xl border border-violet-900/40 bg-slate-900/30 p-4">
+              <p class="text-sm font-semibold text-violet-400 mb-3">Phase 2 — Live Data Integration</p>
+              <div class="flex flex-wrap gap-2">
+                {["MES API connection or scheduled export", "Real-time incident detection and alert routing", "Persistent database replacing local JSON", "Multi-factory concurrent monitoring"].map(item => (
+                  <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-slate-800/60 rounded-full px-3 py-1"><span class="w-1.5 h-1.5 rounded-full bg-violet-500"></span>{item}</span>
+                ))}
+              </div>
+            </div>
+            <div class="rounded-2xl border border-amber-900/40 bg-slate-900/30 p-4">
+              <p class="text-sm font-semibold text-amber-400 mb-3">Phase 3 — Profitability and Pricing Layer</p>
+              <div class="flex flex-wrap gap-2">
+                {["ERP cost data integration", "Real-time margin monitoring by product and factory", "Parametric pricing model — design attributes to cost structure", "Volume allocation optimization with capacity constraints"].map(item => (
+                  <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-slate-800/60 rounded-full px-3 py-1"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>{item}</span>
+                ))}
+              </div>
+            </div>
+            <div class="rounded-2xl border border-emerald-900/40 bg-slate-900/30 p-4">
+              <p class="text-sm font-semibold text-emerald-400 mb-3">Phase 4 — Role-Based Views and Automation</p>
+              <div class="flex flex-wrap gap-2">
+                {["Engineering manager vs. executive digest vs. team handoff", "Automated weekly reporting on schedule", "Copilot and Power Automate integration hooks", "Evidence citations per recommendation — full auditability chain"].map(item => (
+                  <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-slate-800/60 rounded-full px-3 py-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>{item}</span>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Next steps */}
+        <!-- ENGINEERING TRADEOFFS -->
+        <section class="space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Engineering Tradeoffs</p>
+            <div class="h-px flex-1 bg-slate-800"></div>
+          </div>
+
+          <p class="text-gray-400 text-sm leading-relaxed">These are the deliberate decisions made in the prototype and the production implications of each.</p>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-950/40 overflow-hidden">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-slate-800">
+                  <th class="text-left p-4 text-xs uppercase tracking-widest text-slate-500 font-medium w-1/4">Decision</th>
+                  <th class="text-left p-4 text-xs uppercase tracking-widest text-slate-500 font-medium w-1/3">Demo Choice</th>
+                  <th class="text-left p-4 text-xs uppercase tracking-widest text-slate-500 font-medium">Production Implication</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/50">
+                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Persistence</td><td class="p-4 text-amber-300/80 text-xs">Local JSON files</td><td class="p-4 text-gray-500 text-xs">Real datastore with versioning and migration support</td></tr>
+                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Schema Mapping</td><td class="p-4 text-amber-300/80 text-xs">Heuristic alias resolution, confidence-scored</td><td class="p-4 text-gray-500 text-xs">Validated mapping tables maintained per factory per MES version</td></tr>
+                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">AI Inference</td><td class="p-4 text-amber-300/80 text-xs">External API with privacy default</td><td class="p-4 text-gray-500 text-xs">On-premise or VPC-hosted inference — no raw data leaves facility network</td></tr>
+                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Output Format</td><td class="p-4 text-amber-300/80 text-xs">HTML-to-PDF via browser print</td><td class="p-4 text-gray-500 text-xs">Templated PPTX generation or direct Copilot integration</td></tr>
+                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Authentication</td><td class="p-4 text-amber-300/80 text-xs">None (demo only)</td><td class="p-4 text-gray-500 text-xs">Role-based access — engineer, manager, executive, auditor</td></tr>
+                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Fault Classification</td><td class="p-4 text-amber-300/80 text-xs">LLM-based structured prompt</td><td class="p-4 text-gray-500 text-xs">Hybrid: rule-based taxonomy + ML classification trained on historical events</td></tr>
+                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Cross-Site Patterns</td><td class="p-4 text-amber-300/80 text-xs">Grouping by fault code</td><td class="p-4 text-gray-500 text-xs">Statistical similarity clustering across normalized event vectors</td></tr>
+                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Financial Estimates</td><td class="p-4 text-amber-300/80 text-xs">Configurable $/hr rate slider</td><td class="p-4 text-gray-500 text-xs">Actual throughput and margin data from ERP integration</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- WHY THIS MATTERS -->
+        <section class="space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Why This Matters</p>
+            <div class="h-px flex-1 bg-slate-800"></div>
+          </div>
+
+          <p class="text-gray-200 leading-relaxed">
+            Advanced semiconductor packaging — flip chip BGA, chiplets, 2.5D integration, wafer-level processing —
+            operates at tolerances and complexity levels where decision latency has direct, measurable financial consequences.
+            A 12-hour downtime resolution window on a critical flip chip bonding tool is not just an operational inconvenience.
+            At industry-standard throughput rates, it is a quantifiable revenue loss, a potential customer commitment miss,
+            and a yield recovery cost that compounds across the lot.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            The engineers and product managers who manage these operations are not lacking expertise.
+            They are lacking a system that organizes information at the speed their expertise requires.
+            Every hour spent manually assembling a spreadsheet or building a slide deck is an hour not spent
+            on the engineering judgment that actually resolves the problem.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            APEX is built on the premise that the right role for AI in manufacturing is not to make decisions —
+            it is to compress the distance between signals and the humans who make them.
+            The goal is not to replace the process engineer. It is to ensure the process engineer
+            has the right information, structured correctly, before the 12 hours are up.
+          </p>
+
+          <div class="rounded-2xl border border-slate-700 bg-slate-900/40 p-5 space-y-3">
+            <p class="text-sm text-gray-200 font-semibold">Role Alignment — Advanced Flip Chip BGA and Chiplets, Product Engineer Intern</p>
+            <div class="space-y-2 pt-1">
+              {[
+                ["Product analytics to strategy", "Operational KPIs rolled up into decision-oriented metrics and recommendations"],
+                ["Industry 4.0 workflow", "LLM tools monitoring profitability drivers and utilization constraints"],
+                ["Pricing and volume allocation support", "Margin and capacity signals structured into a decision brief"],
+                ["Equipment utilization", "Downtime quantified, capacity constraints surfaced, yield loss attributed"],
+                ["Communication output", "Executive-ready briefing generated from the same analysis pipeline"],
+              ].map(([posting, apex]) => (
+                <div class="flex gap-2 text-sm">
+                  <span class="text-blue-400 shrink-0 mt-0.5">→</span>
+                  <span><span class="text-gray-300 font-medium">{posting}:</span> <span class="text-gray-500">{apex}</span></span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <!-- WHAT I'D DO NEXT -->
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">What I&apos;d Do Next</h2>
-          <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>Add evidence citations per recommendation, including which metrics triggered the conclusion.</li>
-            <li>Add role based views: engineering manager summary, engineer handoff, and weekly review view.</li>
-            <li>Add utilization and profitability decision templates for weekly review workflows.</li>
-            <li>Integrate automation triggers compatible with Copilot and Power Automate style workflows.</li>
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-500">What I Would Do Next With Real Access</p>
+            <div class="h-px flex-1 bg-slate-800"></div>
+          </div>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Replace the synthetic dataset with a controlled sample of sanitized real incident data to validate schema mapping accuracy and KPI relevance against actual Amkor operational patterns.</li>
+            <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Conduct structured sessions with product engineers to validate the five KPIs selected — confirm which metrics actually drive decisions vs. which are noise in practice.</li>
+            <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Add evidence citations per recommendation, including the exact metrics and thresholds that triggered each conclusion, to build warranted trust in AI outputs.</li>
+            <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Map the fault code taxonomy across at least two factory MES systems to design the cross-factory normalization layer with real schema variance data.</li>
+            <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Prototype role-based output views: engineering manager handoff, operator-level triage card, and VP-level weekly digest — same underlying data, different depth and framing.</li>
+            <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Integrate Copilot and Power Automate hooks to fit APEX into existing workflows rather than requiring a new tool adoption cycle.</li>
           </ul>
         </section>
 
-        {/* Back link */}
-        <div class="pt-4">
-          <a
-            href="/projects"
-            class="text-sm text-blue-400 hover:text-blue-300 underline-offset-2 hover:underline"
-          >
+        <!-- DEMO LINK -->
+        <section class="rounded-2xl border border-blue-900/40 bg-blue-950/10 p-6 space-y-3">
+          <p class="text-sm font-semibold text-blue-300 uppercase tracking-widest">Live Demo</p>
+          <div class="rounded-xl border border-dashed border-blue-900/50 p-4 text-sm text-slate-400 space-y-2">
+            <p>[ Demo link — insert hosted URL once deployed ]</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Evaluation criteria: SITREP generated in under 60 seconds from upload.
+              Executive briefing export ready for direct use in a leadership review with no manual editing.
+              Full pipeline — data load to briefing output — completable in under 5 minutes with zero training required.
+            </p>
+          </div>
+        </section>
+
+        <!-- BACK -->
+        <div class="pt-2">
+          <a href="/projects" class="text-sm text-blue-400 hover:text-blue-300 underline-offset-2 hover:underline">
             ← Back to all projects
           </a>
         </div>
+
       </section>
     </main>
 
