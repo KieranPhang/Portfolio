@@ -465,92 +465,48 @@ const pageType = "Case Study";
           <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
             <p class="text-xs text-slate-500 mb-4 uppercase tracking-widest">Demo Pipeline - Five Steps, Under Five Minutes</p>
             <div class="w-full overflow-x-auto">
-              <svg viewBox="0 0 1060 520" role="img" aria-label="Decision loop compression diagram" class="w-full h-auto">
-                <defs>
-                  <marker id="arr-red-down" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="7" markerHeight="7" orient="auto">
-                  <path d="M 0 0 L 5 10 L 10 0 z" fill="rgba(239,68,68,0.9)"></path>
-                </marker>
-                <marker id="arr-blue-down" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="7" markerHeight="7" orient="auto">
-                  <path d="M 0 0 L 5 10 L 10 0 z" fill="rgba(59,130,246,0.9)"></path>
-                </marker>
-              </defs>
+              <svg viewBox="0 0 640 860" role="img" aria-label="APEX demo pipeline five step flow" class="w-full h-auto">
+  <defs>
+    <marker id="arr-down-blue" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 0 0 L 5 10 L 10 0 z" fill="rgba(59,130,246,0.85)"></path>
+    </marker>
+  </defs>
 
-  <!-- Column headers -->
-  <text x="140" y="36" fill="rgba(239,68,68,0.9)" font-size="12" font-family="ui-sans-serif, system-ui" font-weight="700" letter-spacing="3" text-anchor="middle">BEFORE</text>
-  <text x="140" y="56" fill="rgba(148,163,184,0.6)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">Manual workflow - up to 12 hours</text>
+  <!-- box: x=120, w=400, h=128, rx=16; centerX=320; y0=40; gap=34 -->
 
-  <text x="720" y="36" fill="rgba(59,130,246,0.9)" font-size="12" font-family="ui-sans-serif, system-ui" font-weight="700" letter-spacing="3" text-anchor="middle">AFTER APEX</text>
-  <text x="720" y="56" fill="rgba(148,163,184,0.6)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">Automated pipeline - under 30 seconds</text>
+  <rect x="120" y="40" width="400" height="128" rx="16" fill="rgba(10,20,40,0.85)" stroke="rgba(59,130,246,0.4)" stroke-width="2"></rect>
+  <text x="144" y="78" fill="rgba(59,130,246,0.7)" font-size="18" font-family="ui-mono, monospace" font-weight="800">01</text>
+  <text x="320" y="96" fill="rgba(226,232,240,0.98)" font-size="26" font-family="ui-sans-serif" font-weight="700" text-anchor="middle">Upload CSV</text>
+  <text x="320" y="126" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">Drag-drop or</text>
+  <text x="320" y="154" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">load sample data</text>
+  <line x1="320" y1="170" x2="320" y2="206" stroke="rgba(59,130,246,0.7)" stroke-width="3" marker-end="url(#arr-down-blue)"></line>
 
-  <!-- Subtle center divider -->
-  <line x1="520" y1="78" x2="520" y2="462" stroke="rgba(100,116,139,0.2)" stroke-width="1"></line>
+  <rect x="120" y="206" width="400" height="128" rx="16" fill="rgba(10,20,40,0.85)" stroke="rgba(59,130,246,0.4)" stroke-width="2"></rect>
+  <text x="144" y="244" fill="rgba(59,130,246,0.7)" font-size="18" font-family="ui-mono, monospace" font-weight="800">02</text>
+  <text x="320" y="262" fill="rgba(226,232,240,0.98)" font-size="26" font-family="ui-sans-serif" font-weight="700" text-anchor="middle">Normalize</text>
+  <text x="320" y="292" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">Schema map</text>
+  <text x="320" y="320" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">+ alias resolve</text>
+  <line x1="320" y1="336" x2="320" y2="372" stroke="rgba(59,130,246,0.7)" stroke-width="3" marker-end="url(#arr-down-blue)"></line>
 
-  <!-- ===== BEFORE (left column) ===== -->
-  <!-- Geometry: x=80, w=120, centerX=140; y starts at 90; boxH=52; gap=20 -->
-  <rect x="80" y="90" width="120" height="52" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
-  <text x="140" y="114" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Detection</text>
-  <text x="140" y="132" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">local only</text>
-  <line x1="140" y1="142" x2="140" y2="162" stroke="rgba(239,68,68,0.7)" stroke-width="2" marker-end="url(#arr-red-down)"></line>
+  <rect x="120" y="372" width="400" height="128" rx="16" fill="rgba(10,20,40,0.85)" stroke="rgba(59,130,246,0.4)" stroke-width="2"></rect>
+  <text x="144" y="410" fill="rgba(59,130,246,0.7)" font-size="18" font-family="ui-mono, monospace" font-weight="800">03</text>
+  <text x="320" y="428" fill="rgba(226,232,240,0.98)" font-size="26" font-family="ui-sans-serif" font-weight="700" text-anchor="middle">Compute KPIs</text>
+  <text x="320" y="458" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">Yield · downtime</text>
+  <text x="320" y="486" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">margin proxy</text>
+  <line x1="320" y1="502" x2="320" y2="538" stroke="rgba(59,130,246,0.7)" stroke-width="3" marker-end="url(#arr-down-blue)"></line>
 
-  <rect x="80" y="162" width="120" height="52" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
-  <text x="140" y="186" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Email / Call</text>
-  <text x="140" y="204" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">cross time zones</text>
-  <line x1="140" y1="214" x2="140" y2="234" stroke="rgba(239,68,68,0.7)" stroke-width="2" marker-end="url(#arr-red-down)"></line>
+  <rect x="120" y="538" width="400" height="128" rx="16" fill="rgba(10,20,40,0.85)" stroke="rgba(59,130,246,0.4)" stroke-width="2"></rect>
+  <text x="144" y="576" fill="rgba(59,130,246,0.7)" font-size="18" font-family="ui-mono, monospace" font-weight="800">04</text>
+  <text x="320" y="594" fill="rgba(226,232,240,0.98)" font-size="26" font-family="ui-sans-serif" font-weight="700" text-anchor="middle">LLM Diagnose</text>
+  <text x="320" y="624" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">SITREP +</text>
+  <text x="320" y="652" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">pattern detect</text>
+  <line x1="320" y1="668" x2="320" y2="704" stroke="rgba(59,130,246,0.7)" stroke-width="3" marker-end="url(#arr-down-blue)"></line>
 
-  <rect x="80" y="234" width="120" height="52" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
-  <text x="140" y="258" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Data Pull</text>
-  <text x="140" y="276" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">manual, fragmented</text>
-  <line x1="140" y1="286" x2="140" y2="306" stroke="rgba(239,68,68,0.7)" stroke-width="2" marker-end="url(#arr-red-down)"></line>
-
-  <rect x="80" y="306" width="120" height="52" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
-  <text x="140" y="330" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Diagnosis</text>
-  <text x="140" y="348" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">tribal knowledge</text>
-  <line x1="140" y1="358" x2="140" y2="378" stroke="rgba(239,68,68,0.7)" stroke-width="2" marker-end="url(#arr-red-down)"></line>
-
-  <rect x="80" y="378" width="120" height="52" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
-  <text x="140" y="402" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Decision</text>
-  <text x="140" y="420" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">hours later</text>
-
-  <!-- BEFORE callout -->
-  <rect x="230" y="392" width="210" height="70" rx="12" fill="rgba(60,10,10,0.6)" stroke="rgba(239,68,68,0.4)" stroke-width="1" stroke-dasharray="4 3"></rect>
-  <text x="335" y="422" fill="rgba(239,68,68,0.95)" font-size="26" font-family="ui-mono, monospace" font-weight="700" text-anchor="middle">~12 hrs</text>
-  <text x="335" y="446" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">avg. resolution latency</text>
-
-  <!-- ===== AFTER (right column) ===== -->
-  <!-- Geometry: x=660, w=120, centerX=720 -->
-  <rect x="660" y="90" width="120" height="52" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
-  <text x="720" y="114" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Detection</text>
-  <text x="720" y="132" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">any site</text>
-  <line x1="720" y1="142" x2="720" y2="162" stroke="rgba(59,130,246,0.7)" stroke-width="2" marker-end="url(#arr-blue-down)"></line>
-
-  <rect x="660" y="162" width="120" height="52" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
-  <text x="720" y="186" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Auto-Normalize</text>
-  <text x="720" y="204" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">schema mapped</text>
-  <line x1="720" y1="214" x2="720" y2="234" stroke="rgba(59,130,246,0.7)" stroke-width="2" marker-end="url(#arr-blue-down)"></line>
-
-  <rect x="660" y="234" width="120" height="52" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
-  <text x="720" y="258" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">KPI + Diagnose</text>
-  <text x="720" y="276" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">AI-computed</text>
-  <line x1="720" y1="286" x2="720" y2="306" stroke="rgba(59,130,246,0.7)" stroke-width="2" marker-end="url(#arr-blue-down)"></line>
-
-  <rect x="660" y="306" width="120" height="52" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
-  <text x="720" y="330" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Structured Brief</text>
-  <text x="720" y="348" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">auto-generated</text>
-  <line x1="720" y1="358" x2="720" y2="378" stroke="rgba(59,130,246,0.7)" stroke-width="2" marker-end="url(#arr-blue-down)"></line>
-
-  <rect x="660" y="378" width="120" height="52" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
-  <text x="720" y="402" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Decision</text>
-  <text x="720" y="420" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">seconds later</text>
-
-  <!-- AFTER callout -->
-  <rect x="810" y="392" width="210" height="70" rx="12" fill="rgba(10,20,50,0.6)" stroke="rgba(59,130,246,0.4)" stroke-width="1" stroke-dasharray="4 3"></rect>
-  <text x="915" y="422" fill="rgba(59,130,246,0.95)" font-size="26" font-family="ui-mono, monospace" font-weight="700" text-anchor="middle">&lt;30 sec</text>
-  <text x="915" y="446" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">data-to-briefing pipeline</text>
-
-  <!-- Footer note -->
-  <text x="530" y="505" fill="rgba(100,116,139,0.65)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">
-    APEX does not automate engineering judgment. It eliminates the manual assembly step that delays it.
-  </text>
+  <rect x="120" y="704" width="400" height="128" rx="16" fill="rgba(10,20,40,0.85)" stroke="rgba(59,130,246,0.4)" stroke-width="2"></rect>
+  <text x="144" y="742" fill="rgba(59,130,246,0.7)" font-size="18" font-family="ui-mono, monospace" font-weight="800">05</text>
+  <text x="320" y="760" fill="rgba(226,232,240,0.98)" font-size="26" font-family="ui-sans-serif" font-weight="700" text-anchor="middle">Briefing Out</text>
+  <text x="320" y="790" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">5-section deck</text>
+  <text x="320" y="818" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">+ export ready</text>
 </svg>
             </div>
           </div>
