@@ -7,7 +7,7 @@ import "../../styles/global.css";
 const projectName = "APEX";
 const projectFullName = "Automated Plant Executive Intelligence";
 const projectTagline =
-  "A structured decision workflow prototype that compresses the gap between factory signals and executive action, built for semiconductor packaging operations.";
+  "A structured decision workflow prototype that compresses the gap between factory signals and executive action — built for semiconductor packaging operations.";
 const projectSummary =
   "Unlisted case study prototype for Amkor Technology, aligned with the Product Engineer Intern posting for Advanced Flip Chip BGA, Chiplets, and Wafer Services.";
 const pageType = "Case Study";
@@ -48,7 +48,7 @@ const pageType = "Case Study";
             <p class="text-sm text-gray-300 leading-relaxed">
               Built after a direct conversation with Drake Miller (Process Team) and Erin Martin (HR) at the ASU career fair.
               Drake described a recurring operational problem: when equipment goes down at any global Amkor facility,
-              the path from detection to resolution runs entirely through email and phone calls, and can take up to 12 hours.
+              the path from detection to resolution runs entirely through email and phone calls — and can take up to 12 hours.
               APEX is a structured response to that stated reality, cross-referenced against the internal signals embedded
               in three concurrent Product Engineer Intern postings.
             </p>
@@ -57,6 +57,30 @@ const pageType = "Case Study";
             </p>
           </div>
         </header>
+
+        <!-- DEMO VIDEO -->
+        <section class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Demo Walkthrough</p>
+            <div class="h-px flex-1 bg-slate-800"></div>
+          </div>
+          <div class="rounded-2xl border border-slate-700 bg-slate-900/50 overflow-hidden">
+            <div class="relative w-full" style="padding-bottom: 56.25%;">
+              <iframe
+                class="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/MK0_jIs-YOs"
+                title="APEX: Automated Plant Executive Intelligence — Demo Walkthrough"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <p class="text-xs text-slate-500 text-center">
+            Full pipeline walkthrough — data ingestion through executive briefing export. Recorded on the live prototype using a synthetic Amkor-modeled dataset.
+          </p>
+        </section>
 
         <!-- EXECUTIVE ABSTRACT -->
         <section class="space-y-5">
@@ -68,7 +92,7 @@ const pageType = "Case Study";
 
           <div class="rounded-2xl border border-slate-700 bg-slate-900/50 p-6 space-y-4">
             <p class="text-gray-200 text-base leading-relaxed">
-              Amkor Technology operates one of the world's largest semiconductor packaging networks, with factories across South Korea,
+              Amkor Technology operates one of the world's largest semiconductor packaging networks — factories across South Korea,
               Japan, China, Vietnam, Taiwan, the Philippines, Portugal, and the United States. When a machine goes down at any of
               these sites, the path to resolution involves emails, phone calls across time zones, manual data collection from
               multiple systems, and a diagnosis that can take up to 12 hours.
@@ -77,7 +101,7 @@ const pageType = "Case Study";
               That 12-hour window is not a technology failure. It is an
               <span class="text-blue-400 font-medium">information routing failure</span>.
               The data to diagnose the problem exists. The engineers who can fix it exist.
-              What is missing is a system that connects them automatically, with context already structured.
+              What is missing is a system that connects them — automatically, with context already structured.
             </p>
             <p class="text-gray-300 text-base leading-relaxed">
               In parallel, product managers and business unit analysts spend significant time each week manually assembling
@@ -92,95 +116,87 @@ const pageType = "Case Study";
             </p>
           </div>
 
-          <!-- Decision Loop Compression Diagram -->
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-            <p class="text-xs text-slate-500 mb-4 uppercase tracking-widest">Decision Loop Compression - Before vs. After APEX</p>
-            <div class="w-full overflow-x-auto">
-              <svg viewBox="0 0 1060 310" role="img" aria-label="Decision loop compression diagram" class="w-full h-auto min-w-[580px]">
-                <defs>
-                  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                    <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(239,68,68,0.9)"></path>
-                  </marker>
-                  <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                    <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(59,130,246,0.9)"></path>
-                  </marker>
-                </defs>
+          <!-- Decision Loop Compression Diagram — LARGE VERSION -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
+            <p class="text-xs text-slate-500 mb-6 uppercase tracking-widest">Decision Loop Compression — Before vs. After APEX</p>
 
-                <!-- BEFORE label -->
-                <text x="20" y="26" fill="rgba(239,68,68,0.9)" font-size="12" font-family="ui-sans-serif, system-ui" font-weight="700" letter-spacing="3">BEFORE</text>
-                <text x="20" y="44" fill="rgba(148,163,184,0.6)" font-size="11" font-family="ui-sans-serif">Manual workflow - up to 12 hours</text>
-
-                <!-- Before step boxes -->
-                <rect x="20" y="55" width="120" height="50" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
-                <text x="80" y="78" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Detection</text>
-                <text x="80" y="96" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">local only</text>
-                <line x1="140" y1="80" x2="168" y2="80" stroke="rgba(239,68,68,0.7)" stroke-width="2" marker-end="url(#arr-red)"></line>
-
-                <rect x="168" y="55" width="120" height="50" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
-                <text x="228" y="78" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Email / Call</text>
-                <text x="228" y="96" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">cross time zones</text>
-                <line x1="288" y1="80" x2="316" y2="80" stroke="rgba(239,68,68,0.7)" stroke-width="2" marker-end="url(#arr-red)"></line>
-
-                <rect x="316" y="55" width="120" height="50" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
-                <text x="376" y="78" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Data Pull</text>
-                <text x="376" y="96" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">manual, fragmented</text>
-                <line x1="436" y1="80" x2="464" y2="80" stroke="rgba(239,68,68,0.7)" stroke-width="2" marker-end="url(#arr-red)"></line>
-
-                <rect x="464" y="55" width="120" height="50" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
-                <text x="524" y="78" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Diagnosis</text>
-                <text x="524" y="96" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">tribal knowledge</text>
-                <line x1="584" y1="80" x2="612" y2="80" stroke="rgba(239,68,68,0.7)" stroke-width="2" marker-end="url(#arr-red)"></line>
-
-                <rect x="612" y="55" width="120" height="50" rx="10" fill="rgba(30,10,10,0.8)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
-                <text x="672" y="78" fill="rgba(252,165,165,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Decision</text>
-                <text x="672" y="96" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">hours later</text>
-
-                <!-- 12hr callout -->
-                <rect x="760" y="48" width="140" height="64" rx="10" fill="rgba(60,10,10,0.6)" stroke="rgba(239,68,68,0.4)" stroke-width="1" stroke-dasharray="4 3"></rect>
-                <text x="830" y="74" fill="rgba(239,68,68,0.95)" font-size="24" font-family="ui-mono, monospace" font-weight="700" text-anchor="middle">~12 hrs</text>
-                <text x="830" y="96" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">avg. resolution latency</text>
-
-                <!-- Divider -->
-                <line x1="0" y1="152" x2="1060" y2="152" stroke="rgba(100,116,139,0.2)" stroke-width="1"></line>
-
-                <!-- AFTER label -->
-                <text x="20" y="176" fill="rgba(59,130,246,0.9)" font-size="12" font-family="ui-sans-serif, system-ui" font-weight="700" letter-spacing="3">AFTER APEX</text>
-                <text x="20" y="194" fill="rgba(148,163,184,0.6)" font-size="11" font-family="ui-sans-serif">Automated pipeline - under 30 seconds</text>
-
-                <!-- After step boxes -->
-                <rect x="20" y="205" width="120" height="50" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
-                <text x="80" y="228" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Detection</text>
-                <text x="80" y="246" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">any site</text>
-                <line x1="140" y1="230" x2="168" y2="230" stroke="rgba(59,130,246,0.7)" stroke-width="2" marker-end="url(#arr-blue)"></line>
-
-                <rect x="168" y="205" width="120" height="50" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
-                <text x="228" y="228" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Auto-Normalize</text>
-                <text x="228" y="246" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">schema mapped</text>
-                <line x1="288" y1="230" x2="316" y2="230" stroke="rgba(59,130,246,0.7)" stroke-width="2" marker-end="url(#arr-blue)"></line>
-
-                <rect x="316" y="205" width="120" height="50" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
-                <text x="376" y="228" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">KPI + Diagnose</text>
-                <text x="376" y="246" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">AI-computed</text>
-                <line x1="436" y1="230" x2="464" y2="230" stroke="rgba(59,130,246,0.7)" stroke-width="2" marker-end="url(#arr-blue)"></line>
-
-                <rect x="464" y="205" width="120" height="50" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
-                <text x="524" y="228" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Structured Brief</text>
-                <text x="524" y="246" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">auto-generated</text>
-                <line x1="584" y1="230" x2="612" y2="230" stroke="rgba(59,130,246,0.7)" stroke-width="2" marker-end="url(#arr-blue)"></line>
-
-                <rect x="612" y="205" width="120" height="50" rx="10" fill="rgba(10,20,40,0.8)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
-                <text x="672" y="228" fill="rgba(147,197,253,0.95)" font-size="12" font-family="ui-sans-serif" text-anchor="middle">Decision</text>
-                <text x="672" y="246" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">seconds later</text>
-
-                <!-- <30s callout -->
-                <rect x="760" y="198" width="140" height="64" rx="10" fill="rgba(10,20,50,0.6)" stroke="rgba(59,130,246,0.4)" stroke-width="1" stroke-dasharray="4 3"></rect>
-                <text x="830" y="224" fill="rgba(59,130,246,0.95)" font-size="24" font-family="ui-mono, monospace" font-weight="700" text-anchor="middle">&lt;30 sec</text>
-                <text x="830" y="246" fill="rgba(148,163,184,0.6)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">data-to-briefing pipeline</text>
-
-                <!-- Footer note -->
-                <text x="530" y="296" fill="rgba(100,116,139,0.65)" font-size="11" font-family="ui-sans-serif" text-anchor="middle">APEX does not automate engineering judgment. It eliminates the manual assembly step that delays it.</text>
-              </svg>
+            <!-- BEFORE row -->
+            <div class="mb-2">
+              <p class="text-sm font-bold tracking-[0.2em] mb-1" style="color: rgba(239,68,68,0.9)">BEFORE</p>
+              <p class="text-xs mb-4" style="color: rgba(148,163,184,0.6)">Manual workflow — up to 12 hours</p>
+              <div class="flex items-center gap-2 flex-wrap">
+                <div class="rounded-lg px-4 py-3 min-w-[110px] text-center" style="background:rgba(30,10,10,0.8);border:1.5px solid rgba(239,68,68,0.4)">
+                  <p class="text-sm font-semibold" style="color:rgba(252,165,165,0.95)">Detection</p>
+                  <p class="text-xs mt-1" style="color:rgba(148,163,184,0.6)">local only</p>
+                </div>
+                <span class="text-lg font-bold" style="color:rgba(239,68,68,0.7)">→</span>
+                <div class="rounded-lg px-4 py-3 min-w-[110px] text-center" style="background:rgba(30,10,10,0.8);border:1.5px solid rgba(239,68,68,0.4)">
+                  <p class="text-sm font-semibold" style="color:rgba(252,165,165,0.95)">Email / Call</p>
+                  <p class="text-xs mt-1" style="color:rgba(148,163,184,0.6)">cross time zones</p>
+                </div>
+                <span class="text-lg font-bold" style="color:rgba(239,68,68,0.7)">→</span>
+                <div class="rounded-lg px-4 py-3 min-w-[110px] text-center" style="background:rgba(30,10,10,0.8);border:1.5px solid rgba(239,68,68,0.4)">
+                  <p class="text-sm font-semibold" style="color:rgba(252,165,165,0.95)">Data Pull</p>
+                  <p class="text-xs mt-1" style="color:rgba(148,163,184,0.6)">manual, fragmented</p>
+                </div>
+                <span class="text-lg font-bold" style="color:rgba(239,68,68,0.7)">→</span>
+                <div class="rounded-lg px-4 py-3 min-w-[110px] text-center" style="background:rgba(30,10,10,0.8);border:1.5px solid rgba(239,68,68,0.4)">
+                  <p class="text-sm font-semibold" style="color:rgba(252,165,165,0.95)">Diagnosis</p>
+                  <p class="text-xs mt-1" style="color:rgba(148,163,184,0.6)">tribal knowledge</p>
+                </div>
+                <span class="text-lg font-bold" style="color:rgba(239,68,68,0.7)">→</span>
+                <div class="rounded-lg px-4 py-3 min-w-[110px] text-center" style="background:rgba(30,10,10,0.8);border:1.5px solid rgba(239,68,68,0.4)">
+                  <p class="text-sm font-semibold" style="color:rgba(252,165,165,0.95)">Decision</p>
+                  <p class="text-xs mt-1" style="color:rgba(148,163,184,0.6)">hours later</p>
+                </div>
+                <div class="rounded-lg px-5 py-3 ml-2" style="background:rgba(60,10,10,0.6);border:1px dashed rgba(239,68,68,0.45)">
+                  <p class="text-2xl font-bold font-mono" style="color:rgba(239,68,68,0.95)">~12 hrs</p>
+                  <p class="text-xs mt-1" style="color:rgba(148,163,184,0.6)">avg. resolution latency</p>
+                </div>
+              </div>
             </div>
+
+            <div class="my-6 border-t" style="border-color:rgba(100,116,139,0.2)"></div>
+
+            <!-- AFTER row -->
+            <div class="mb-2">
+              <p class="text-sm font-bold tracking-[0.2em] mb-1" style="color: rgba(59,130,246,0.9)">AFTER APEX</p>
+              <p class="text-xs mb-4" style="color: rgba(148,163,184,0.6)">Automated pipeline — under 30 seconds</p>
+              <div class="flex items-center gap-2 flex-wrap">
+                <div class="rounded-lg px-4 py-3 min-w-[110px] text-center" style="background:rgba(10,20,40,0.8);border:1.5px solid rgba(59,130,246,0.45)">
+                  <p class="text-sm font-semibold" style="color:rgba(147,197,253,0.95)">Detection</p>
+                  <p class="text-xs mt-1" style="color:rgba(148,163,184,0.6)">any site</p>
+                </div>
+                <span class="text-lg font-bold" style="color:rgba(59,130,246,0.7)">→</span>
+                <div class="rounded-lg px-4 py-3 min-w-[110px] text-center" style="background:rgba(10,20,40,0.8);border:1.5px solid rgba(59,130,246,0.45)">
+                  <p class="text-sm font-semibold" style="color:rgba(147,197,253,0.95)">Auto-Normalize</p>
+                  <p class="text-xs mt-1" style="color:rgba(148,163,184,0.6)">schema mapped</p>
+                </div>
+                <span class="text-lg font-bold" style="color:rgba(59,130,246,0.7)">→</span>
+                <div class="rounded-lg px-4 py-3 min-w-[110px] text-center" style="background:rgba(10,20,40,0.8);border:1.5px solid rgba(59,130,246,0.45)">
+                  <p class="text-sm font-semibold" style="color:rgba(147,197,253,0.95)">KPI + Diagnose</p>
+                  <p class="text-xs mt-1" style="color:rgba(148,163,184,0.6)">AI-computed</p>
+                </div>
+                <span class="text-lg font-bold" style="color:rgba(59,130,246,0.7)">→</span>
+                <div class="rounded-lg px-4 py-3 min-w-[110px] text-center" style="background:rgba(10,20,40,0.8);border:1.5px solid rgba(59,130,246,0.45)">
+                  <p class="text-sm font-semibold" style="color:rgba(147,197,253,0.95)">Structured Brief</p>
+                  <p class="text-xs mt-1" style="color:rgba(148,163,184,0.6)">auto-generated</p>
+                </div>
+                <span class="text-lg font-bold" style="color:rgba(59,130,246,0.7)">→</span>
+                <div class="rounded-lg px-4 py-3 min-w-[110px] text-center" style="background:rgba(10,20,40,0.8);border:1.5px solid rgba(59,130,246,0.45)">
+                  <p class="text-sm font-semibold" style="color:rgba(147,197,253,0.95)">Decision</p>
+                  <p class="text-xs mt-1" style="color:rgba(148,163,184,0.6)">seconds later</p>
+                </div>
+                <div class="rounded-lg px-5 py-3 ml-2" style="background:rgba(10,20,50,0.6);border:1px dashed rgba(59,130,246,0.4)">
+                  <p class="text-2xl font-bold font-mono" style="color:rgba(59,130,246,0.95)">&lt;30 sec</p>
+                  <p class="text-xs mt-1" style="color:rgba(148,163,184,0.6)">data-to-briefing pipeline</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-xs text-center mt-6" style="color:rgba(100,116,139,0.65)">
+              APEX does not automate engineering judgment — it eliminates the manual assembly step that delays it.
+            </p>
           </div>
         </section>
 
@@ -225,7 +241,7 @@ const pageType = "Case Study";
                 <div class="w-2 h-2 rounded-full bg-orange-400"></div>
                 <p class="text-sm font-semibold text-orange-300">Profitability Visibility Lag</p>
               </div>
-              <p class="text-sm text-gray-400 leading-relaxed">Product-level profitability requires joining ERP cost data, production actuals, and pricing structures, all done manually. Margin reporting is periodic and retrospective. Erosion can go undetected for weeks before surfacing in a review cycle.</p>
+              <p class="text-sm text-gray-400 leading-relaxed">Product-level profitability requires joining ERP cost data, production actuals, and pricing structures — all done manually. Margin reporting is periodic and retrospective. Erosion can go undetected for weeks before surfacing in a review cycle.</p>
             </div>
             <div class="rounded-2xl border border-slate-700/50 bg-slate-900/40 p-5 space-y-2">
               <div class="flex items-center gap-2">
@@ -259,18 +275,18 @@ const pageType = "Case Study";
 
           <div class="space-y-4">
             <div class="rounded-2xl border border-blue-900/40 bg-blue-950/10 p-5 space-y-3">
-              <p class="text-sm font-semibold text-blue-300 uppercase tracking-widest">Explicit Needs - Directly Stated</p>
+              <p class="text-sm font-semibold text-blue-300 uppercase tracking-widest">Explicit Needs — Directly Stated</p>
               <p class="text-xs text-slate-500">Source: direct conversation with Drake Miller, Amkor Process Team</p>
               <ul class="space-y-2 text-sm text-gray-300">
-                <li class="flex gap-2"><span class="text-blue-400 mt-0.5 shrink-0">→</span><span>Faster downtime triage - reduce the 12-hour resolution window</span></li>
+                <li class="flex gap-2"><span class="text-blue-400 mt-0.5 shrink-0">→</span><span>Faster downtime triage — reduce the 12-hour resolution window</span></li>
                 <li class="flex gap-2"><span class="text-blue-400 mt-0.5 shrink-0">→</span><span>An AI solution that takes in raw factory data and processes it automatically</span></li>
                 <li class="flex gap-2"><span class="text-blue-400 mt-0.5 shrink-0">→</span><span>Converts data into a presentation or dashboard with explanations of what changed</span></li>
-                <li class="flex gap-2"><span class="text-blue-400 mt-0.5 shrink-0">→</span><span>Explains what changed and what actions are needed, without manual assembly</span></li>
+                <li class="flex gap-2"><span class="text-blue-400 mt-0.5 shrink-0">→</span><span>Explains what changed and what actions are needed — without manual assembly</span></li>
               </ul>
             </div>
 
             <div class="rounded-2xl border border-violet-900/40 bg-violet-950/10 p-5 space-y-3">
-              <p class="text-sm font-semibold text-violet-300 uppercase tracking-widest">Inferred Needs - Extracted from Posting Language</p>
+              <p class="text-sm font-semibold text-violet-300 uppercase tracking-widest">Inferred Needs — Extracted from Posting Language</p>
               <p class="text-xs text-slate-500">Source: three concurrent Product Engineer Intern postings, cross-referenced for repeated themes</p>
               <ul class="space-y-2 text-sm text-gray-300">
                 <li class="flex gap-2"><span class="text-violet-400 mt-0.5 shrink-0">→</span><span>Automation of pricing strategy analysis across customer and package type</span></li>
@@ -278,7 +294,7 @@ const pageType = "Case Study";
                 <li class="flex gap-2"><span class="text-violet-400 mt-0.5 shrink-0">→</span><span>Product profitability monitoring using Copilot and LLM tools</span></li>
                 <li class="flex gap-2"><span class="text-violet-400 mt-0.5 shrink-0">→</span><span>Consolidation of product overview presentations and factory capability summaries</span></li>
                 <li class="flex gap-2"><span class="text-violet-400 mt-0.5 shrink-0">→</span><span>Volume allocation and equipment utilization optimization</span></li>
-                <li class="flex gap-2"><span class="text-violet-400 mt-0.5 shrink-0">→</span><span>Agentic AI, Microsoft Copilot, and Power Automate are mentioned directly, not scoped</span></li>
+                <li class="flex gap-2"><span class="text-violet-400 mt-0.5 shrink-0">→</span><span>Agentic AI, Microsoft Copilot, and Power Automate — mentioned directly, not scoped</span></li>
               </ul>
               <p class="text-xs text-slate-500 pt-1 italic">
                 The simultaneous mention of Excel/VBA and Agentic AI in the same posting is the diagnostic signal.
@@ -287,14 +303,14 @@ const pageType = "Case Study";
             </div>
 
             <div class="rounded-2xl border border-emerald-900/40 bg-emerald-950/10 p-5 space-y-3">
-              <p class="text-sm font-semibold text-emerald-300 uppercase tracking-widest">Implicit Needs - Structurally Inferred</p>
+              <p class="text-sm font-semibold text-emerald-300 uppercase tracking-widest">Implicit Needs — Structurally Inferred</p>
               <p class="text-xs text-slate-500">Source: OSAT industry operating model, global factory complexity, IP sensitivity</p>
               <ul class="space-y-2 text-sm text-gray-300">
-                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Data privacy and IP protection</span>: Amkor handles customer designs under strict NDA. Any AI system must default to local inference with no external data egress.</span></li>
-                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Auditability</span>: Recommendations must show their work. Black-box AI outputs are not acceptable in a manufacturing environment where decisions affect yield, quality, and customer commitments.</span></li>
-                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Repeatability</span>: Reporting must be structurally consistent across sites and over time. One-off dashboards are not trusted operationally.</span></li>
-                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Change management compatibility</span>: The system must fit into existing workflows rather than requiring engineers to abandon their current process entirely.</span></li>
-                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Cross-factory normalization</span>: Different facilities run different MES systems with different fault code schemas. Before any intelligence layer can work, raw data must be harmonized. This is the foundational prerequisite most AI implementations skip.</span></li>
+                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Data privacy and IP protection</span> — Amkor handles customer designs under strict NDA. Any AI system must default to local inference with no external data egress.</span></li>
+                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Auditability</span> — Recommendations must show their work. Black-box AI outputs are not acceptable in a manufacturing environment where decisions affect yield, quality, and customer commitments.</span></li>
+                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Repeatability</span> — Reporting must be structurally consistent across sites and over time. One-off dashboards are not trusted operationally.</span></li>
+                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Change management compatibility</span> — The system must fit into existing workflows rather than requiring engineers to abandon their current process entirely.</span></li>
+                <li class="flex gap-2"><span class="text-emerald-400 mt-0.5 shrink-0">→</span><span><span class="font-medium text-gray-200">Cross-factory normalization</span> — Different facilities run different MES systems with different fault code schemas. Before any intelligence layer can work, raw data must be harmonized. This is the foundational prerequisite most AI implementations skip.</span></li>
               </ul>
             </div>
           </div>
@@ -311,61 +327,33 @@ const pageType = "Case Study";
           <p class="text-gray-300 leading-relaxed">
             APEX is not a dashboard. It is a <span class="text-blue-400 font-medium">decision pipeline</span>.
             A dashboard presents data. A decision pipeline converts data into a structured, actionable briefing
-            without requiring a human to assemble it. The full vision is a cross-factory operational intelligence layer,
+            without requiring a human to assemble it. The full vision is a cross-factory operational intelligence layer —
             a system connecting factory signals to corporate decisions across the entire global footprint.
           </p>
 
           <!-- Layered Architecture Diagram -->
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-            <p class="text-xs text-slate-500 mb-4 uppercase tracking-widest">System Architecture - Data to Executive Action</p>
-            <div class="w-full overflow-x-auto">
-              <svg viewBox="0 0 860 470" role="img" aria-label="APEX layered system architecture" class="w-full h-auto min-w-[540px]">
-                <defs>
-                  <marker id="arr-down" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="6" markerHeight="6" orient="auto">
-                    <path d="M 0 0 L 5 10 L 0 0 z" fill="rgba(59,130,246,0.65)"></path>
-                  </marker>
-                </defs>
-
-                <!-- Layer 1 -->
-                <rect x="40" y="20" width="780" height="68" rx="12" fill="rgba(30,10,10,0.7)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"></rect>
-                <text x="70" y="50" fill="rgba(252,165,165,0.9)" font-size="12" font-family="ui-sans-serif" font-weight="700" letter-spacing="1">LAYER 1 - RAW FACTORY DATA</text>
-                <text x="70" y="72" fill="rgba(148,163,184,0.7)" font-size="11" font-family="ui-sans-serif">MES exports · alarm logs · downtime events · yield records · lot genealogy · ERP proxies</text>
-                <line x1="430" y1="88" x2="430" y2="108" stroke="rgba(59,130,246,0.5)" stroke-width="2" marker-end="url(#arr-down)"></line>
-
-                <!-- Layer 2 -->
-                <rect x="40" y="108" width="780" height="68" rx="12" fill="rgba(40,20,5,0.7)" stroke="rgba(251,146,60,0.4)" stroke-width="1.5"></rect>
-                <text x="70" y="138" fill="rgba(253,186,116,0.9)" font-size="12" font-family="ui-sans-serif" font-weight="700" letter-spacing="1">LAYER 2 - SCHEMA NORMALIZATION</text>
-                <text x="70" y="160" fill="rgba(148,163,184,0.7)" font-size="11" font-family="ui-sans-serif">Cross-factory field mapping · fault code harmonization · alias resolution · confidence scoring</text>
-                <line x1="430" y1="176" x2="430" y2="196" stroke="rgba(59,130,246,0.5)" stroke-width="2" marker-end="url(#arr-down)"></line>
-
-                <!-- Layer 3 -->
-                <rect x="40" y="196" width="780" height="68" rx="12" fill="rgba(10,30,10,0.7)" stroke="rgba(52,211,153,0.4)" stroke-width="1.5"></rect>
-                <text x="70" y="226" fill="rgba(110,231,183,0.9)" font-size="12" font-family="ui-sans-serif" font-weight="700" letter-spacing="1">LAYER 3 - METRICS COMPUTATION</text>
-                <text x="70" y="248" fill="rgba(148,163,184,0.7)" font-size="11" font-family="ui-sans-serif">KPI rollups: yield · scrap · downtime · utilization · throughput proxy · margin proxy · anomaly flags · baseline delta</text>
-                <line x1="430" y1="264" x2="430" y2="284" stroke="rgba(59,130,246,0.5)" stroke-width="2" marker-end="url(#arr-down)"></line>
-
-                <!-- Layer 4 -->
-                <rect x="40" y="284" width="780" height="68" rx="12" fill="rgba(10,20,40,0.7)" stroke="rgba(59,130,246,0.45)" stroke-width="1.5"></rect>
-                <text x="70" y="314" fill="rgba(147,197,253,0.9)" font-size="12" font-family="ui-sans-serif" font-weight="700" letter-spacing="1">LAYER 4 - LLM INFERENCE (PRIVACY-FIRST LOCAL DEFAULT)</text>
-                <text x="70" y="336" fill="rgba(148,163,184,0.7)" font-size="11" font-family="ui-sans-serif">SITREP generation · root cause hypotheses · cross-site pattern detection · narrative synthesis · data gap identification</text>
-                <line x1="430" y1="352" x2="430" y2="372" stroke="rgba(59,130,246,0.5)" stroke-width="2" marker-end="url(#arr-down)"></line>
-
-                <!-- Layer 5 -->
-                <rect x="40" y="372" width="780" height="68" rx="12" fill="rgba(20,10,40,0.7)" stroke="rgba(167,139,250,0.45)" stroke-width="1.5"></rect>
-                <text x="70" y="402" fill="rgba(196,181,253,0.9)" font-size="12" font-family="ui-sans-serif" font-weight="700" letter-spacing="1">LAYER 5 - STRUCTURED EXECUTIVE OUTPUT</text>
-                <text x="70" y="424" fill="rgba(148,163,184,0.7)" font-size="11" font-family="ui-sans-serif">5-section briefing · slide outline · financial exposure panel · recommended actions · data gap flags · export</text>
-
-                <!-- Privacy badge -->
-                <rect x="586" y="294" width="214" height="48" rx="9" fill="rgba(5,20,5,0.6)" stroke="rgba(52,211,153,0.3)" stroke-width="1" stroke-dasharray="4 3"></rect>
-                <text x="693" y="316" fill="rgba(110,231,183,0.8)" font-size="11" font-family="ui-sans-serif" text-anchor="middle" font-weight="600">Privacy-First Default</text>
-                <text x="693" y="334" fill="rgba(100,116,139,0.8)" font-size="10" font-family="ui-sans-serif" text-anchor="middle">No external data egress by default</text>
-              </svg>
+          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6 space-y-3">
+            <p class="text-xs text-slate-500 uppercase tracking-widest">System Architecture — Data to Executive Action</p>
+            {[
+              { label: "LAYER 1 — RAW FACTORY DATA", sub: "MES exports · alarm logs · downtime events · yield records · lot genealogy · ERP proxies", bg: "rgba(30,10,10,0.7)", border: "rgba(239,68,68,0.4)", tc: "rgba(252,165,165,0.9)" },
+              { label: "LAYER 2 — SCHEMA NORMALIZATION", sub: "Cross-factory field mapping · fault code harmonization · alias resolution · confidence scoring", bg: "rgba(40,20,5,0.7)", border: "rgba(251,146,60,0.4)", tc: "rgba(253,186,116,0.9)" },
+              { label: "LAYER 3 — METRICS COMPUTATION", sub: "KPI rollups: yield · scrap · downtime · utilization · throughput proxy · margin proxy · anomaly flags · baseline delta", bg: "rgba(10,30,10,0.7)", border: "rgba(52,211,153,0.4)", tc: "rgba(110,231,183,0.9)" },
+              { label: "LAYER 4 — LLM INFERENCE (PRIVACY-FIRST LOCAL DEFAULT)", sub: "SITREP generation · root cause hypotheses · cross-site pattern detection · narrative synthesis · data gap identification", bg: "rgba(10,20,40,0.7)", border: "rgba(59,130,246,0.45)", tc: "rgba(147,197,253,0.9)" },
+              { label: "LAYER 5 — STRUCTURED EXECUTIVE OUTPUT", sub: "5-section briefing · slide outline · financial exposure panel · recommended actions · data gap flags · export", bg: "rgba(20,10,40,0.7)", border: "rgba(167,139,250,0.45)", tc: "rgba(196,181,253,0.9)" },
+            ].map(({ label, sub, bg, border, tc }) => (
+              <div class="rounded-xl px-5 py-4" style={`background:${bg};border:1.5px solid ${border}`}>
+                <p class="text-sm font-bold tracking-wide mb-1" style={`color:${tc}`}>{label}</p>
+                <p class="text-xs" style="color:rgba(148,163,184,0.75)">{sub}</p>
+              </div>
+            ))}
+            <div class="rounded-xl px-4 py-3 mt-1" style="background:rgba(5,20,5,0.6);border:1px dashed rgba(52,211,153,0.35)">
+              <p class="text-xs font-semibold text-center" style="color:rgba(110,231,183,0.85)">Privacy-First Default — No external data egress by default</p>
             </div>
           </div>
 
           <!-- Five use cases -->
           <div class="space-y-3">
-            <p class="text-sm font-semibold text-gray-200">Five Core Use Cases - Long-Term Vision</p>
+            <p class="text-sm font-semibold text-gray-200">Five Core Use Cases — Long-Term Vision</p>
 
             <details class="group rounded-2xl border border-slate-800 bg-slate-900/40 overflow-hidden">
               <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-800/40 transition-colors list-none">
@@ -378,7 +366,7 @@ const pageType = "Case Study";
               <div class="px-4 pb-4 pt-1 grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-red-400">Problem</p><p class="text-xs text-gray-400 leading-relaxed">12-hour resolution cycle driven by manual information routing across time zones.</p></div>
                 <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-emerald-400">Measurable Impact</p><p class="text-xs text-gray-400 leading-relaxed">Reduce mean time to resolution from ~12 hours to under 2 hours. At $8,500/hr throughput loss, a 10-hour reduction per incident represents direct revenue recovery.</p></div>
-                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-blue-400">Output Format</p><p class="text-xs text-gray-400 leading-relaxed">Structured incident brief - tool ID, fault signature, confidence-ranked root causes, recommended first action, escalation path.</p></div>
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-blue-400">Output Format</p><p class="text-xs text-gray-400 leading-relaxed">Structured incident brief — tool ID, fault signature, confidence-ranked root causes, recommended first action, escalation path.</p></div>
               </div>
             </details>
 
@@ -422,7 +410,7 @@ const pageType = "Case Study";
               </summary>
               <div class="px-4 pb-4 pt-1 grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-red-400">Problem</p><p class="text-xs text-gray-400 leading-relaxed">Manual slide consolidation is a recurring high-effort task across all business units every review cycle.</p></div>
-                <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-emerald-400">Measurable Impact</p><p class="text-xs text-gray-400 leading-relaxed">Reduce analyst reporting workload by an estimated 50%. Enforce consistent reporting language across BUs. Accelerate review cycle cadence.</p></div>
+                <div class="space-y-1"><p class="text-xs uppercase tracking-widests text-emerald-400">Measurable Impact</p><p class="text-xs text-gray-400 leading-relaxed">Reduce analyst reporting workload by an estimated 50%. Enforce consistent reporting language across BUs. Accelerate review cycle cadence.</p></div>
                 <div class="space-y-1"><p class="text-xs uppercase tracking-widest text-blue-400">Output Format</p><p class="text-xs text-gray-400 leading-relaxed">Auto-generated weekly briefing deck. 5-section executive digest with factory-by-factory delta analysis and KPI deviation narrative.</p></div>
               </div>
             </details>
@@ -461,53 +449,29 @@ const pageType = "Case Study";
             </p>
           </div>
 
-          <!-- Demo flow -->
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-            <p class="text-xs text-slate-500 mb-4 uppercase tracking-widest">Demo Pipeline - Five Steps, Under Five Minutes</p>
-            <div class="w-full overflow-x-auto">
-              <svg viewBox="0 0 640 860" role="img" aria-label="APEX demo pipeline five step flow" class="w-full h-auto">
-  <defs>
-    <marker id="arr-down-blue" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="9" markerHeight="9" orient="auto">
-      <path d="M 0 0 L 5 10 L 10 0 z" fill="rgba(59,130,246,0.85)"></path>
-    </marker>
-  </defs>
-
-  <!-- box: x=120, w=400, h=128, rx=16; centerX=320; y0=40; gap=34 -->
-
-  <rect x="120" y="40" width="400" height="128" rx="16" fill="rgba(10,20,40,0.85)" stroke="rgba(59,130,246,0.4)" stroke-width="2"></rect>
-  <text x="144" y="78" fill="rgba(59,130,246,0.7)" font-size="18" font-family="ui-mono, monospace" font-weight="800">01</text>
-  <text x="320" y="96" fill="rgba(226,232,240,0.98)" font-size="26" font-family="ui-sans-serif" font-weight="700" text-anchor="middle">Upload CSV</text>
-  <text x="320" y="126" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">Drag-drop or</text>
-  <text x="320" y="154" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">load sample data</text>
-  <line x1="320" y1="170" x2="320" y2="206" stroke="rgba(59,130,246,0.7)" stroke-width="3" marker-end="url(#arr-down-blue)"></line>
-
-  <rect x="120" y="206" width="400" height="128" rx="16" fill="rgba(10,20,40,0.85)" stroke="rgba(59,130,246,0.4)" stroke-width="2"></rect>
-  <text x="144" y="244" fill="rgba(59,130,246,0.7)" font-size="18" font-family="ui-mono, monospace" font-weight="800">02</text>
-  <text x="320" y="262" fill="rgba(226,232,240,0.98)" font-size="26" font-family="ui-sans-serif" font-weight="700" text-anchor="middle">Normalize</text>
-  <text x="320" y="292" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">Schema map</text>
-  <text x="320" y="320" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">+ alias resolve</text>
-  <line x1="320" y1="336" x2="320" y2="372" stroke="rgba(59,130,246,0.7)" stroke-width="3" marker-end="url(#arr-down-blue)"></line>
-
-  <rect x="120" y="372" width="400" height="128" rx="16" fill="rgba(10,20,40,0.85)" stroke="rgba(59,130,246,0.4)" stroke-width="2"></rect>
-  <text x="144" y="410" fill="rgba(59,130,246,0.7)" font-size="18" font-family="ui-mono, monospace" font-weight="800">03</text>
-  <text x="320" y="428" fill="rgba(226,232,240,0.98)" font-size="26" font-family="ui-sans-serif" font-weight="700" text-anchor="middle">Compute KPIs</text>
-  <text x="320" y="458" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">Yield · downtime</text>
-  <text x="320" y="486" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">margin proxy</text>
-  <line x1="320" y1="502" x2="320" y2="538" stroke="rgba(59,130,246,0.7)" stroke-width="3" marker-end="url(#arr-down-blue)"></line>
-
-  <rect x="120" y="538" width="400" height="128" rx="16" fill="rgba(10,20,40,0.85)" stroke="rgba(59,130,246,0.4)" stroke-width="2"></rect>
-  <text x="144" y="576" fill="rgba(59,130,246,0.7)" font-size="18" font-family="ui-mono, monospace" font-weight="800">04</text>
-  <text x="320" y="594" fill="rgba(226,232,240,0.98)" font-size="26" font-family="ui-sans-serif" font-weight="700" text-anchor="middle">LLM Diagnose</text>
-  <text x="320" y="624" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">SITREP +</text>
-  <text x="320" y="652" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">pattern detect</text>
-  <line x1="320" y1="668" x2="320" y2="704" stroke="rgba(59,130,246,0.7)" stroke-width="3" marker-end="url(#arr-down-blue)"></line>
-
-  <rect x="120" y="704" width="400" height="128" rx="16" fill="rgba(10,20,40,0.85)" stroke="rgba(59,130,246,0.4)" stroke-width="2"></rect>
-  <text x="144" y="742" fill="rgba(59,130,246,0.7)" font-size="18" font-family="ui-mono, monospace" font-weight="800">05</text>
-  <text x="320" y="760" fill="rgba(226,232,240,0.98)" font-size="26" font-family="ui-sans-serif" font-weight="700" text-anchor="middle">Briefing Out</text>
-  <text x="320" y="790" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">5-section deck</text>
-  <text x="320" y="818" fill="rgba(226,232,240,0.85)" font-size="22" font-family="ui-sans-serif" text-anchor="middle">+ export ready</text>
-</svg>
+          <!-- Demo Pipeline — LARGE HTML VERSION -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
+            <p class="text-xs text-slate-500 mb-6 uppercase tracking-widest">Demo Pipeline — Five Steps, Under Five Minutes</p>
+            <div class="flex flex-col sm:flex-row items-stretch gap-3">
+              {[
+                { n: "01", label: "Upload CSV", sub: "Drag-drop or load sample data" },
+                { n: "02", label: "Normalize", sub: "Schema map + alias resolve" },
+                { n: "03", label: "Compute KPIs", sub: "Yield · downtime · margin proxy" },
+                { n: "04", label: "LLM Diagnose", sub: "SITREP + pattern detect" },
+                { n: "05", label: "Briefing Out", sub: "5-section deck + export ready" },
+              ].map(({ n, label, sub }, i) => (
+                <div class="flex sm:flex-col items-center sm:items-stretch gap-3 flex-1">
+                  <div class="rounded-xl p-4 flex-1 text-center" style="background:rgba(10,20,40,0.8);border:1.5px solid rgba(59,130,246,0.35)">
+                    <p class="text-xs font-mono font-bold mb-2" style="color:rgba(59,130,246,0.7)">{n}</p>
+                    <p class="text-sm font-semibold text-gray-100 mb-1">{label}</p>
+                    <p class="text-xs leading-relaxed" style="color:rgba(148,163,184,0.8)">{sub}</p>
+                  </div>
+                  {i < 4 && (
+                    <div class="text-blue-500 text-xl font-bold sm:hidden">↓</div>
+                    <div class="hidden sm:flex items-center justify-center w-6 shrink-0 text-blue-500 font-bold text-lg self-center">→</div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 
@@ -515,43 +479,33 @@ const pageType = "Case Study";
             <div class="rounded-2xl border border-slate-700 bg-slate-900/50 p-5 space-y-3">
               <p class="text-sm font-semibold text-gray-200">What the Demo Includes</p>
               <ul class="space-y-2 text-sm text-gray-400">
-                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Synthetic Amkor-flavored dataset - 40 events across 9 real global factories</li>
+                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Synthetic Amkor-flavored dataset — 53 incidents across 9 real global factories</li>
                 <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Multi-file ingestion with schema auto-mapping and confidence scoring</li>
                 <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>KPI computation: yield, scrap, downtime, utilization, throughput proxy, margin proxy</li>
                 <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Anomaly detection and baseline comparison with z-score flagging</li>
                 <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Structured SITREP generation with cross-site pattern detection</li>
-                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Financial exposure panel with live throughput rate adjustment</li>
-                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Executive briefing export - print-ready 5-section document</li>
+                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Color-coded incident classification by fault category</li>
                 <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>AI assistant for follow-up questions, data gap requests, and manager update copy</li>
+                <li class="flex gap-2"><span class="text-emerald-400 shrink-0">✓</span>Pre-written executive directives — copy-ready, role-specific, incident-specific</li>
               </ul>
             </div>
             <div class="rounded-2xl border border-slate-700 bg-slate-900/50 p-5 space-y-3">
               <p class="text-sm font-semibold text-gray-200">What the Demo Explicitly Does Not Include</p>
               <ul class="space-y-2 text-sm text-gray-400">
-                <li class="flex gap-2"><span class="text-red-400 shrink-0">-</span>Live MES integration (requires internal data access)</li>
-                <li class="flex gap-2"><span class="text-red-400 shrink-0">-</span>Real Amkor production data of any kind</li>
-                <li class="flex gap-2"><span class="text-red-400 shrink-0">-</span>Authentication or multi-tenant isolation</li>
-                <li class="flex gap-2"><span class="text-red-400 shrink-0">-</span>Formal automated test suite</li>
-                <li class="flex gap-2"><span class="text-red-400 shrink-0">-</span>Production-hardened API security</li>
-                <li class="flex gap-2"><span class="text-red-400 shrink-0">-</span>Role-based access control</li>
-                <li class="flex gap-2"><span class="text-red-400 shrink-0">-</span>Persistent database (local JSON only)</li>
-                <li class="flex gap-2"><span class="text-red-400 shrink-0">-</span>Pricing or CapEx optimization models (roadmap item)</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Live MES integration (requires internal data access)</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Real Amkor production data of any kind</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Authentication or multi-tenant isolation</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Formal automated test suite</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Production-hardened API security</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Role-based access control</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Persistent database (local JSON only)</li>
+                <li class="flex gap-2"><span class="text-red-400 shrink-0">—</span>Pricing or CapEx optimization models (roadmap item)</li>
               </ul>
             </div>
           </div>
-
-          <!-- Demo video placeholder -->
-          <div class="rounded-2xl border border-dashed border-slate-700 bg-slate-900/30 p-6 text-center space-y-2">
-            <p class="text-sm text-slate-400 font-medium">[ Demo Video coming soon ]</p>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Coming soon: 60–90 second screen recording showing the full pipeline from CSV upload → KPI dashboard → SITREP output → briefing export.
-              Export as MP4 and embed with a video tag, or use a thumbnail image linking to a hosted recording. Currently ironing out UI to make it cleaner.
-            </p>
-          
-          </div>
         </section>
 
-        <!-- ARCHITECTURE -->
+        <!-- TECHNICAL ARCHITECTURE -->
         <section class="space-y-5">
           <div class="flex items-center gap-3">
             <div class="h-px flex-1 bg-slate-800"></div>
@@ -578,7 +532,7 @@ const pageType = "Case Study";
             <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-3 space-y-1">
               <p class="text-xs uppercase tracking-widest text-slate-500">Storage</p>
               <p class="text-xs text-gray-200 font-medium">Local JSON</p>
-              <p class="text-xs text-gray-500">No external DB - demo scope only</p>
+              <p class="text-xs text-gray-500">No external DB — demo scope only</p>
             </div>
           </div>
 
@@ -588,12 +542,12 @@ const pageType = "Case Study";
             </div>
             <div class="divide-y divide-slate-800/50">
               {[
-                ["POST /api/ingest", "Accepts CSV, JSON, text via multipart; schema maps to canonical incident format"],
+                ["POST /api/ingest", "Accepts CSV, JSON, text via multipart — schema maps to canonical incident format"],
                 ["GET /api/datasets", "List all ingested dataset index entries"],
                 ["GET /api/incidents", "List normalized incident summaries"],
                 ["GET /api/metrics?incident_id=…", "Return computed MetricsPayload with KPIs, anomalies, top contributors"],
-                ["POST /api/generate", "Stream structured SITREP JSON; baseline or what-if mode"],
-                ["POST /api/assistant", "Stream AssistantInsight; follow-up Q&A, data gap requests, manager update copy"],
+                ["POST /api/generate", "Stream structured SITREP JSON — baseline or what-if mode"],
+                ["POST /api/assistant", "Stream AssistantInsight — follow-up Q&A, data gap requests, manager update copy"],
               ].map(([endpoint, description]) => (
                 <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 px-4 py-3">
                   <code class="text-xs text-blue-300 font-mono shrink-0">{endpoint}</code>
@@ -619,15 +573,15 @@ const pageType = "Case Study";
 
           <div class="space-y-3">
             <div class="rounded-2xl border border-blue-900/40 bg-slate-900/30 p-4">
-              <p class="text-sm font-semibold text-blue-400 mb-3">Phase 1: Current Demo</p>
+              <p class="text-sm font-semibold text-blue-400 mb-3">Phase 1 — Current Demo</p>
               <div class="flex flex-wrap gap-2">
-                {["Synthetic dataset ingestion", "Schema normalization + KPI computation", "SITREP generation", "Financial exposure panel", "Executive briefing export"].map(item => (
+                {["Synthetic dataset ingestion", "Schema normalization + KPI computation", "SITREP generation", "Color-coded incident classification", "Pre-written executive directives"].map(item => (
                   <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-slate-800/60 rounded-full px-3 py-1"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>{item}</span>
                 ))}
               </div>
             </div>
             <div class="rounded-2xl border border-violet-900/40 bg-slate-900/30 p-4">
-              <p class="text-sm font-semibold text-violet-400 mb-3">Phase 2: Live Data Integration</p>
+              <p class="text-sm font-semibold text-violet-400 mb-3">Phase 2 — Live Data Integration</p>
               <div class="flex flex-wrap gap-2">
                 {["MES API connection or scheduled export", "Real-time incident detection and alert routing", "Persistent database replacing local JSON", "Multi-factory concurrent monitoring"].map(item => (
                   <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-slate-800/60 rounded-full px-3 py-1"><span class="w-1.5 h-1.5 rounded-full bg-violet-500"></span>{item}</span>
@@ -635,17 +589,17 @@ const pageType = "Case Study";
               </div>
             </div>
             <div class="rounded-2xl border border-amber-900/40 bg-slate-900/30 p-4">
-              <p class="text-sm font-semibold text-amber-400 mb-3">Phase 3: Profitability and Pricing Layer</p>
+              <p class="text-sm font-semibold text-amber-400 mb-3">Phase 3 — Profitability and Pricing Layer</p>
               <div class="flex flex-wrap gap-2">
-                {["ERP cost data integration", "Real-time margin monitoring by product and factory", "Parametric pricing model - design attributes to cost structure", "Volume allocation optimization with capacity constraints"].map(item => (
+                {["ERP cost data integration", "Real-time margin monitoring by product and factory", "Parametric pricing model — design attributes to cost structure", "Volume allocation optimization with capacity constraints"].map(item => (
                   <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-slate-800/60 rounded-full px-3 py-1"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>{item}</span>
                 ))}
               </div>
             </div>
             <div class="rounded-2xl border border-emerald-900/40 bg-slate-900/30 p-4">
-              <p class="text-sm font-semibold text-emerald-400 mb-3">Phase 4: Role-Based Views and Automation</p>
+              <p class="text-sm font-semibold text-emerald-400 mb-3">Phase 4 — Role-Based Views and Automation</p>
               <div class="flex flex-wrap gap-2">
-                {["Engineering manager vs. executive digest vs. team handoff", "Automated weekly reporting on schedule", "Copilot and Power Automate integration hooks", "Evidence citations per recommendation - full auditability chain"].map(item => (
+                {["Engineering manager vs. executive digest vs. team handoff", "Automated weekly reporting on schedule", "Copilot and Power Automate integration hooks", "Evidence citations per recommendation — full auditability chain"].map(item => (
                   <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-slate-800/60 rounded-full px-3 py-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>{item}</span>
                 ))}
               </div>
@@ -675,11 +629,11 @@ const pageType = "Case Study";
               <tbody class="divide-y divide-slate-800/50">
                 <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Persistence</td><td class="p-4 text-amber-300/80 text-xs">Local JSON files</td><td class="p-4 text-gray-500 text-xs">Real datastore with versioning and migration support</td></tr>
                 <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Schema Mapping</td><td class="p-4 text-amber-300/80 text-xs">Heuristic alias resolution, confidence-scored</td><td class="p-4 text-gray-500 text-xs">Validated mapping tables maintained per factory per MES version</td></tr>
-                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">AI Inference</td><td class="p-4 text-amber-300/80 text-xs">External API with privacy default</td><td class="p-4 text-gray-500 text-xs">On-premise or VPC-hosted inference - no raw data leaves facility network</td></tr>
+                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">AI Inference</td><td class="p-4 text-amber-300/80 text-xs">External API with privacy default</td><td class="p-4 text-gray-500 text-xs">On-premise or VPC-hosted inference — no raw data leaves facility network</td></tr>
                 <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Output Format</td><td class="p-4 text-amber-300/80 text-xs">HTML-to-PDF via browser print</td><td class="p-4 text-gray-500 text-xs">Templated PPTX generation or direct Copilot integration</td></tr>
-                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Authentication</td><td class="p-4 text-amber-300/80 text-xs">None (demo only)</td><td class="p-4 text-gray-500 text-xs">Role-based access - engineer, manager, executive, auditor</td></tr>
+                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Authentication</td><td class="p-4 text-amber-300/80 text-xs">None (demo only)</td><td class="p-4 text-gray-500 text-xs">Role-based access — engineer, manager, executive, auditor</td></tr>
                 <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Fault Classification</td><td class="p-4 text-amber-300/80 text-xs">LLM-based structured prompt</td><td class="p-4 text-gray-500 text-xs">Hybrid: rule-based taxonomy + ML classification trained on historical events</td></tr>
-                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Cross-Site Patterns</td><td class="p-4 text-amber-300/80 text-xs">Grouping by fault code</td><td class="p-4 text-gray-500 text-xs">Statistical similarity clustering across normalized event vectors</td></tr>
+                <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Cross-Site Patterns</td><td class="p-4 text-amber-300/80 text-xs">Grouping by fault code from incident ID</td><td class="p-4 text-gray-500 text-xs">Statistical similarity clustering across normalized event vectors</td></tr>
                 <tr class="hover:bg-slate-900/30 transition-colors"><td class="p-4 text-gray-300 font-medium text-xs">Financial Estimates</td><td class="p-4 text-amber-300/80 text-xs">Configurable $/hr rate slider</td><td class="p-4 text-gray-500 text-xs">Actual throughput and margin data from ERP integration</td></tr>
               </tbody>
             </table>
@@ -695,7 +649,7 @@ const pageType = "Case Study";
           </div>
 
           <p class="text-gray-200 leading-relaxed">
-            Advanced semiconductor packaging (flip chip BGA, chiplets, 2.5D integration, wafer-level processing)
+            Advanced semiconductor packaging — flip chip BGA, chiplets, 2.5D integration, wafer-level processing —
             operates at tolerances and complexity levels where decision latency has direct, measurable financial consequences.
             A 12-hour downtime resolution window on a critical flip chip bonding tool is not just an operational inconvenience.
             At industry-standard throughput rates, it is a quantifiable revenue loss, a potential customer commitment miss,
@@ -708,14 +662,14 @@ const pageType = "Case Study";
             on the engineering judgment that actually resolves the problem.
           </p>
           <p class="text-gray-300 leading-relaxed">
-            APEX is built on the premise that the right role for AI in manufacturing is not to make decisions.
-            It is to compress the distance between signals and the humans who make them.
+            APEX is built on the premise that the right role for AI in manufacturing is not to make decisions —
+            it is to compress the distance between signals and the humans who make them.
             The goal is not to replace the process engineer. It is to ensure the process engineer
             has the right information, structured correctly, before the 12 hours are up.
           </p>
 
           <div class="rounded-2xl border border-slate-700 bg-slate-900/40 p-5 space-y-3">
-            <p class="text-sm text-gray-200 font-semibold">Role Alignment - Advanced Flip Chip BGA and Chiplets, Product Engineer Intern</p>
+            <p class="text-sm text-gray-200 font-semibold">Role Alignment — Advanced Flip Chip BGA and Chiplets, Product Engineer Intern</p>
             <div class="space-y-2 pt-1">
               {[
                 ["Product analytics to strategy", "Operational KPIs rolled up into decision-oriented metrics and recommendations"],
@@ -742,26 +696,70 @@ const pageType = "Case Study";
           </div>
           <ul class="space-y-3 text-sm text-gray-400">
             <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Replace the synthetic dataset with a controlled sample of sanitized real incident data to validate schema mapping accuracy and KPI relevance against actual Amkor operational patterns.</li>
-            <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Conduct structured sessions with product engineers to validate the five KPIs selected - confirm which metrics actually drive decisions vs. which are noise in practice.</li>
+            <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Conduct structured sessions with product engineers to validate the five KPIs selected — confirm which metrics actually drive decisions vs. which are noise in practice.</li>
             <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Add evidence citations per recommendation, including the exact metrics and thresholds that triggered each conclusion, to build warranted trust in AI outputs.</li>
             <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Map the fault code taxonomy across at least two factory MES systems to design the cross-factory normalization layer with real schema variance data.</li>
-            <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Prototype role-based output views: engineering manager handoff, operator-level triage card, and VP-level weekly digest - same underlying data, different depth and framing.</li>
+            <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Prototype role-based output views: engineering manager handoff, operator-level triage card, and VP-level weekly digest — same underlying data, different depth and framing.</li>
             <li class="flex gap-3"><span class="text-blue-500 shrink-0 mt-0.5">→</span>Integrate Copilot and Power Automate hooks to fit APEX into existing workflows rather than requiring a new tool adoption cycle.</li>
           </ul>
         </section>
+        <!-- DEMO ACCESS -->
+<section class="rounded-2xl border border-amber-900/40 bg-amber-950/10 p-6 space-y-4">
+  <p class="text-sm font-semibold text-amber-300 uppercase tracking-widest">Demo Access</p>
 
-        <!-- DEMO LINK -->
-        <section class="rounded-2xl border border-blue-900/40 bg-blue-950/10 p-6 space-y-3">
-          <p class="text-sm font-semibold text-blue-300 uppercase tracking-widest">Live Demo</p>
-          <div class="rounded-xl border border-dashed border-blue-900/50 p-4 text-sm text-slate-400 space-y-2">
-            <p>[ Demo link currently unavailable, local machine only ]</p>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Evaluation criteria: SITREP generated in under 60 seconds from upload.
-              Executive briefing export ready for direct use in a leadership review with no manual editing.
-              Full pipeline - data load to briefing output - completable in under 5 minutes with zero training required.
-            </p>
-          </div>
-        </section>
+  <div class="rounded-xl border border-dashed border-amber-900/50 p-4 text-sm text-slate-400 space-y-3">
+    <p>
+      This demo is not publicly hosted. AMKOR APEX runs locally due to data sensitivity and 
+      model configuration requirements.
+    </p>
+    <p>
+      Live demonstrations are available in person. The full ingest → normalize → diagnose → 
+      executive briefing workflow can be completed in under 5 minutes.
+    </p>
+    <p class="text-xs text-slate-600 leading-relaxed">
+      Evaluation criteria: Structured SITREP generated in under 60 seconds from upload. 
+      Executive briefing export requires no manual editing. 
+      Financial exposure and cross-site pattern detection update in real time.
+    </p>
+  </div>
+</section>
+
+<!-- DATASETS -->
+<section class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6 space-y-4">
+  <p class="text-sm font-semibold text-slate-300 uppercase tracking-widest">Synthetic Datasets</p>
+
+  <p class="text-sm text-slate-400">
+    Download the synthetic manufacturing datasets used to build and test the decision workflow.
+    These files reflect the structure, signal patterns, and incident scenarios used in the demo.
+  </p>
+
+  <div class="grid gap-3 text-sm">
+    <a 
+      href="/downloadables/SynthData/APEX_manufacturing_incidents_1.csv" 
+      class="block rounded-lg border border-slate-800 hover:border-blue-700 px-4 py-3 transition"
+    >
+      APEX_manufacturing_incidents_1.csv
+    </a>
+
+    <a 
+      href="/downloadables/SynthData/APEX_manufacturing_incidents_2.csv" 
+      class="block rounded-lg border border-slate-800 hover:border-blue-700 px-4 py-3 transition"
+    >
+      APEX_manufacturing_incidents_2.csv
+    </a>
+
+    <a 
+      href="/downloadables/SynthData/Skibidi.csv" 
+      class="block rounded-lg border border-slate-800 hover:border-blue-700 px-4 py-3 transition"
+    >
+      Skibidi.csv
+    </a>
+  </div>
+
+  <p class="text-xs text-slate-600">
+    All datasets are synthetic and contain no real operational data.
+  </p>
+</section>
 
         <!-- BACK -->
         <div class="pt-2">
