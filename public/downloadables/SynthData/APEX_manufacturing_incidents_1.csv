@@ -1,0 +1,601 @@
+incident_id,timestamp,tool_id,product_id,line_id,input_units,good_units,scrap_units,rework_units,planned_minutes,downtime_minutes,unit_cost_proxy,unit_price_proxy,downtime_cost_per_min,event_type,event_note
+INC-ALPHA-2026-01,2026-01-10T06:00:00Z,TOOL-01,PROD-A2,LINE-2,139,134,4,1,110,13,2.6,8.34,25.05,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-10T07:57:00Z,TOOL-12,PROD-D1,LINE-3,151,142,2,7,146,3,1.96,3.87,26.03,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-10T10:26:00Z,TOOL-12,PROD-D2,LINE-5,111,103,6,2,201,9,5.65,9.77,26.4,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-10T13:51:00Z,TOOL-01,PROD-F1,LINE-2,154,139,9,6,85,12,2.89,8.86,13.49,normal_run,Steady throughput observed across the full planned window
+INC-ALPHA-2026-01,2026-01-10T15:26:00Z,TOOL-12,PROD-F1,LINE-1,235,219,9,7,122,5,3.81,6.39,28.06,micro_stop,Conveyor jam cleared quickly by line operator on site
+INC-ALPHA-2026-01,2026-01-10T17:40:00Z,TOOL-01,PROD-B2,LINE-1,160,154,4,2,205,10,2.56,7.52,27,micro_stop,Conveyor jam cleared quickly by line operator on site
+INC-ALPHA-2026-01,2026-01-10T21:15:00Z,TOOL-03,PROD-B2,LINE-5,217,178,23,16,209,45,3.31,11.98,7.6,calibration_drift,Sensor reading drifted outside control limit during mid-run
+INC-ALPHA-2026-01,2026-01-11T00:49:00Z,TOOL-03,PROD-F1,LINE-2,188,177,7,4,212,14,4.15,11.79,26.38,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-11T04:26:00Z,TOOL-11,PROD-E1,LINE-3,167,141,15,11,176,20,6.27,11.35,10.85,calibration_drift,Calibration check triggered after consecutive out-of-spec readings
+INC-ALPHA-2026-01,2026-01-11T07:40:00Z,TOOL-02,PROD-F4,LINE-3,209,198,8,3,101,0,4.49,8.42,6.91,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-11T09:32:00Z,TOOL-04,PROD-A1,LINE-2,225,210,12,3,184,2,6.39,9.61,7.27,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-ALPHA-2026-01,2026-01-11T12:43:00Z,TOOL-05,PROD-E1,LINE-5,188,170,10,8,236,6,5.06,8.13,21.46,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-11T16:55:00Z,TOOL-02,PROD-B2,LINE-2,96,91,2,3,118,7,1.54,9.37,5.53,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-11T19:05:00Z,TOOL-02,PROD-E1,LINE-2,151,143,6,2,93,15,2.71,7.37,14.58,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-11T20:53:00Z,TOOL-06,PROD-D1,LINE-4,199,187,10,2,227,3,1.8,9.55,24.82,normal_run,Steady throughput observed across the full planned window
+INC-ALPHA-2026-01,2026-01-12T00:48:00Z,TOOL-09,PROD-D2,LINE-2,188,180,3,5,79,14,5.54,11.14,6.55,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-ALPHA-2026-01,2026-01-12T02:09:00Z,TOOL-02,PROD-F3,LINE-2,122,116,3,3,162,1,2.32,3.02,14.15,maintenance_hold,Line held for bearing replacement on primary drive motor
+INC-ALPHA-2026-01,2026-01-12T05:02:00Z,TOOL-07,PROD-F2,LINE-5,204,197,3,4,74,1,5.24,6.1,19.19,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-12T06:34:00Z,TOOL-03,PROD-A1,LINE-5,100,94,5,1,77,7,3.52,11.53,18.81,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-12T07:55:00Z,TOOL-07,PROD-F1,LINE-5,224,206,8,10,112,10,2.69,6.68,21.46,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-12T09:51:00Z,TOOL-01,PROD-D2,LINE-5,224,209,13,2,114,8,2.16,6.14,5.79,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-12T11:52:00Z,TOOL-08,PROD-F4,LINE-5,157,144,6,7,227,0,4.84,9.03,28.23,normal_run,Steady throughput observed across the full planned window
+INC-ALPHA-2026-01,2026-01-12T15:49:00Z,TOOL-02,PROD-A2,LINE-5,119,98,12,9,147,33,4.94,11.04,17.14,micro_stop,Micro stop logged during transition between product lots
+INC-ALPHA-2026-01,2026-01-12T18:19:00Z,TOOL-02,PROD-F1,LINE-4,150,146,1,3,93,8,2.31,6.98,22.35,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-12T19:56:00Z,TOOL-12,PROD-B1,LINE-5,89,83,4,2,97,13,2.14,5.77,27.37,material_shortage,Substrate lot delayed from incoming inspection hold status
+INC-ALPHA-2026-01,2026-01-12T21:46:00Z,TOOL-04,PROD-F1,LINE-2,106,101,2,3,164,4,6.13,7.9,8.23,material_shortage,Line paused awaiting replenishment of component reel stock
+INC-ALPHA-2026-01,2026-01-13T00:45:00Z,TOOL-01,PROD-B1,LINE-3,185,140,29,16,123,37,2.3,9.31,13.95,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-13T02:57:00Z,TOOL-04,PROD-F4,LINE-4,169,158,4,7,118,7,1.62,4.74,12.53,calibration_drift,Tool calibration drift detected by SPC monitoring system alert
+INC-ALPHA-2026-01,2026-01-13T05:08:00Z,TOOL-11,PROD-E1,LINE-4,217,184,24,9,126,31,4.4,11.88,4.99,maintenance_hold,Tool flagged for maintenance after alarm threshold was reached
+INC-ALPHA-2026-01,2026-01-13T07:26:00Z,TOOL-07,PROD-E2,LINE-5,109,103,3,3,125,1,5.04,5.55,28.06,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-13T09:39:00Z,TOOL-06,PROD-D1,LINE-1,164,153,6,5,91,9,4.04,9.52,12.48,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-ALPHA-2026-01,2026-01-13T11:16:00Z,TOOL-04,PROD-D1,LINE-4,124,117,5,2,200,0,3.02,5.3,24.43,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-13T14:52:00Z,TOOL-08,PROD-D2,LINE-2,210,194,7,9,103,2,2.92,9.12,20.1,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-13T16:44:00Z,TOOL-11,PROD-C1,LINE-2,130,127,2,1,181,2,3.78,11.12,18.97,micro_stop,Minor sensor trigger caused momentary line hold
+INC-ALPHA-2026-01,2026-01-13T20:02:00Z,TOOL-07,PROD-B2,LINE-2,81,74,4,3,87,13,2.59,10.25,22.09,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-13T21:38:00Z,TOOL-02,PROD-D2,LINE-2,198,150,29,19,212,40,6.25,11.43,19.93,maintenance_hold,Maintenance team performed emergency seal replacement on vacuum pump
+INC-ALPHA-2026-01,2026-01-14T01:25:00Z,TOOL-09,PROD-D2,LINE-2,201,187,6,8,223,8,5.33,9.05,20.3,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-14T05:19:00Z,TOOL-04,PROD-C1,LINE-3,161,151,8,2,98,7,3.42,5.15,9.56,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-14T07:16:00Z,TOOL-08,PROD-D1,LINE-1,132,123,6,3,209,0,5.78,10.66,13.89,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-14T10:56:00Z,TOOL-07,PROD-F4,LINE-4,217,201,10,6,214,7,3.94,6.5,16.63,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-14T14:44:00Z,TOOL-12,PROD-B1,LINE-4,112,103,6,3,160,0,1.92,6.86,26.54,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-14T17:38:00Z,TOOL-06,PROD-B2,LINE-4,163,152,4,7,131,13,2.76,3.98,4.5,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-14T19:58:00Z,TOOL-11,PROD-A2,LINE-1,87,81,5,1,65,4,2.69,7.36,6.97,quality_hold,Hold placed on output pending incoming material re-inspection
+INC-ALPHA-2026-01,2026-01-14T21:13:00Z,TOOL-06,PROD-B1,LINE-5,235,213,13,9,101,9,2.04,3.23,12.11,micro_stop,Minor sensor trigger caused momentary line hold
+INC-ALPHA-2026-01,2026-01-14T23:08:00Z,TOOL-12,PROD-B2,LINE-1,231,213,10,8,86,9,5.75,9.7,7.15,sensor_fault,Pressure sensor reported intermittent fault during this production run
+INC-ALPHA-2026-01,2026-01-15T00:47:00Z,TOOL-09,PROD-D1,LINE-3,97,92,3,2,167,15,2.03,11.65,20.53,calibration_drift,Bonder force calibration drift detected during quality sample check
+INC-ALPHA-2026-01,2026-01-15T03:40:00Z,TOOL-07,PROD-B1,LINE-5,149,137,6,6,183,14,3.68,9.9,10.98,calibration_drift,Sensor reading drifted outside control limit during mid-run
+INC-ALPHA-2026-01,2026-01-15T06:53:00Z,TOOL-08,PROD-B2,LINE-4,225,211,9,5,67,15,5.75,7.3,9.52,material_shortage,Material shortage traced to late supplier delivery this morning
+INC-ALPHA-2026-01,2026-01-15T08:10:00Z,TOOL-10,PROD-F2,LINE-3,222,210,2,10,81,7,5.1,8.73,23.71,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-ALPHA-2026-01,2026-01-15T09:48:00Z,TOOL-08,PROD-F3,LINE-1,103,99,2,2,122,9,4.82,7.79,18.39,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-15T12:09:00Z,TOOL-06,PROD-C2,LINE-4,149,144,3,2,109,10,2.1,7.82,23.82,normal_run,Steady throughput observed across the full planned window
+INC-ALPHA-2026-01,2026-01-15T14:15:00Z,TOOL-05,PROD-F2,LINE-5,214,196,8,10,109,9,2.64,4.73,4.37,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-15T16:07:00Z,TOOL-01,PROD-E1,LINE-3,112,104,4,4,86,0,4.37,8.22,15.45,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-15T17:43:00Z,TOOL-08,PROD-A2,LINE-1,182,170,6,6,235,1,2.26,10.3,28.68,normal_run,Steady throughput observed across the full planned window
+INC-ALPHA-2026-01,2026-01-15T21:43:00Z,TOOL-09,PROD-F3,LINE-4,235,218,9,8,193,12,3.75,7.68,26.36,sensor_fault,Temperature sensor gave erratic readings triggering automated hold
+INC-ALPHA-2026-01,2026-01-16T01:16:00Z,TOOL-10,PROD-A1,LINE-5,105,98,6,1,114,8,4.8,6.35,8.52,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-16T03:25:00Z,TOOL-08,PROD-F2,LINE-5,200,193,4,3,240,9,5.01,8.46,21.87,maintenance_hold,Overdue PM completed resulting in extended planned downtime hold
+INC-ALPHA-2026-01,2026-01-16T07:45:00Z,TOOL-11,PROD-F3,LINE-2,188,161,17,10,98,37,5.63,6.55,8.31,changeover_delay,Changeover held pending engineering sign-off on first article
+INC-ALPHA-2026-01,2026-01-16T09:43:00Z,TOOL-05,PROD-D2,LINE-1,199,184,8,7,129,15,3.69,8.86,27.12,changeover_delay,Tool change required additional verification before restart
+INC-ALPHA-2026-01,2026-01-16T12:02:00Z,TOOL-01,PROD-A2,LINE-2,227,217,8,2,232,8,4.38,10.31,8.55,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-16T16:04:00Z,TOOL-03,PROD-E2,LINE-4,205,189,11,5,164,10,3.11,4.49,8.18,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-16T18:59:00Z,TOOL-11,PROD-D1,LINE-5,89,85,2,2,142,3,6.35,8.93,17.38,sensor_fault,Flow sensor reported out-of-range value requiring manual verification
+INC-ALPHA-2026-01,2026-01-16T21:40:00Z,TOOL-08,PROD-D1,LINE-1,128,103,16,9,187,60,3.71,4.61,10.94,micro_stop,Short stop for label verification on outgoing pallet
+INC-ALPHA-2026-01,2026-01-17T01:03:00Z,TOOL-12,PROD-D2,LINE-1,87,80,5,2,121,5,3.05,3.67,14.61,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-17T03:09:00Z,TOOL-08,PROD-A2,LINE-2,207,192,11,4,240,8,3.58,7.9,16.28,normal_run,Steady throughput observed across the full planned window
+INC-ALPHA-2026-01,2026-01-17T07:23:00Z,TOOL-04,PROD-E2,LINE-5,114,106,6,2,166,10,6.17,9.38,25.33,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-17T10:29:00Z,TOOL-10,PROD-F1,LINE-4,118,112,3,3,145,12,3.78,6.76,8.9,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-ALPHA-2026-01,2026-01-17T13:08:00Z,TOOL-04,PROD-F4,LINE-4,91,87,2,2,157,12,6.44,10.95,20.95,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-17T15:51:00Z,TOOL-09,PROD-E2,LINE-3,105,98,5,2,194,14,1.58,4.3,26.64,sensor_fault,Pressure sensor reported intermittent fault during this production run
+INC-ALPHA-2026-01,2026-01-17T19:22:00Z,TOOL-05,PROD-C2,LINE-5,181,167,7,7,232,12,6.27,10.05,27.07,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-17T23:17:00Z,TOOL-10,PROD-A2,LINE-2,153,114,27,12,171,26,5.3,10.16,6.61,micro_stop,Short stop for label verification on outgoing pallet
+INC-ALPHA-2026-01,2026-01-18T02:10:00Z,TOOL-01,PROD-C2,LINE-1,155,147,4,4,122,13,4.33,10.51,8.42,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-18T04:26:00Z,TOOL-10,PROD-F1,LINE-2,207,193,11,3,178,8,3.8,9.43,27.37,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-18T07:43:00Z,TOOL-03,PROD-A2,LINE-4,168,156,9,3,168,8,3.78,6.61,29.98,calibration_drift,Sensor reading drifted outside control limit during mid-run
+INC-ALPHA-2026-01,2026-01-18T10:40:00Z,TOOL-07,PROD-E2,LINE-3,227,214,5,8,65,12,2.87,8.25,21.83,changeover_delay,Fixture swap took longer than standard changeover time
+INC-ALPHA-2026-01,2026-01-18T12:02:00Z,TOOL-05,PROD-F3,LINE-2,235,220,11,4,108,8,4.89,10.16,21.14,calibration_drift,Bonder force calibration drift detected during quality sample check
+INC-ALPHA-2026-01,2026-01-18T13:55:00Z,TOOL-11,PROD-F1,LINE-1,159,151,7,1,153,4,1.95,5.66,23.43,normal_run,Steady throughput observed across the full planned window
+INC-ALPHA-2026-01,2026-01-18T16:47:00Z,TOOL-06,PROD-E1,LINE-5,149,139,7,3,183,9,5.23,7.85,6.99,quality_hold,Quality hold issued after visual defect found during sampling
+INC-ALPHA-2026-01,2026-01-18T19:59:00Z,TOOL-11,PROD-F2,LINE-4,222,207,6,9,63,8,4.18,8.01,21.49,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-ALPHA-2026-01,2026-01-18T21:16:00Z,TOOL-11,PROD-C2,LINE-1,139,131,4,4,203,10,6.08,7.78,5.64,calibration_drift,Bonder force calibration drift detected during quality sample check
+INC-ALPHA-2026-01,2026-01-19T00:50:00Z,TOOL-11,PROD-D1,LINE-1,115,113,1,1,186,3,1.99,10.99,7.53,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-19T04:15:00Z,TOOL-07,PROD-E2,LINE-2,186,171,7,8,217,13,6.2,8.18,21.95,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-19T08:01:00Z,TOOL-06,PROD-A2,LINE-3,219,200,12,7,75,12,2.88,11.73,28.67,calibration_drift,Sensor reading drifted outside control limit during mid-run
+INC-ALPHA-2026-01,2026-01-19T09:24:00Z,TOOL-11,PROD-F1,LINE-5,85,83,1,1,92,6,1.84,9.89,9.39,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-19T11:05:00Z,TOOL-06,PROD-F3,LINE-2,232,220,2,10,97,4,4.2,10.53,6.86,calibration_drift,Calibration check triggered after consecutive out-of-spec readings
+INC-ALPHA-2026-01,2026-01-19T12:44:00Z,TOOL-06,PROD-F3,LINE-2,230,221,6,3,73,4,5.21,9.02,23.39,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-19T14:10:00Z,TOOL-09,PROD-E2,LINE-1,195,180,6,9,71,9,3.79,11.72,5.58,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-19T15:36:00Z,TOOL-11,PROD-A2,LINE-4,193,189,2,2,215,4,1.83,5.48,20.46,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-19T19:25:00Z,TOOL-10,PROD-E1,LINE-3,196,185,6,5,239,3,5.76,10,23.99,changeover_delay,Product changeover delayed by missing tooling in staging area
+INC-ALPHA-2026-01,2026-01-19T23:39:00Z,TOOL-08,PROD-B2,LINE-4,166,154,8,4,84,10,3.63,9.36,13.73,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-20T01:07:00Z,TOOL-02,PROD-F4,LINE-1,103,96,3,4,155,4,4.28,9.01,18.6,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-20T03:57:00Z,TOOL-06,PROD-F4,LINE-4,93,85,5,3,150,3,4.39,6.4,21.08,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-20T06:40:00Z,TOOL-09,PROD-C2,LINE-1,151,140,5,6,203,0,4.54,9.62,22.03,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-20T10:14:00Z,TOOL-06,PROD-C2,LINE-1,126,116,6,4,162,2,2.21,8.7,4.8,changeover_delay,Product changeover delayed by missing tooling in staging area
+INC-ALPHA-2026-01,2026-01-20T13:10:00Z,TOOL-07,PROD-D2,LINE-3,120,113,3,4,205,2,5.92,7.29,23.62,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-20T16:45:00Z,TOOL-08,PROD-F1,LINE-4,204,191,8,5,115,3,3.23,4.65,21.63,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-20T18:51:00Z,TOOL-01,PROD-B2,LINE-4,233,227,2,4,114,4,5.32,7.61,7.12,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-20T20:52:00Z,TOOL-03,PROD-D1,LINE-5,138,129,4,5,150,2,3.49,9.93,15.34,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-20T23:34:00Z,TOOL-10,PROD-D1,LINE-5,183,171,8,4,89,12,1.6,5.92,24.83,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-21T01:16:00Z,TOOL-02,PROD-D1,LINE-1,142,135,4,3,80,12,5.85,10.56,9.76,changeover_delay,Fixture swap took longer than standard changeover time
+INC-ALPHA-2026-01,2026-01-21T02:54:00Z,TOOL-11,PROD-A2,LINE-5,210,198,4,8,149,4,2.68,4.47,9.13,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-21T05:27:00Z,TOOL-03,PROD-F3,LINE-4,198,182,9,7,174,10,5.82,9.88,7.92,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-21T08:32:00Z,TOOL-05,PROD-E2,LINE-1,170,161,6,3,175,1,1.78,10.49,6,calibration_drift,Sensor reading drifted outside control limit during mid-run
+INC-ALPHA-2026-01,2026-01-21T11:45:00Z,TOOL-07,PROD-D2,LINE-5,221,201,12,8,70,14,6.05,9.67,8.89,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-21T13:01:00Z,TOOL-01,PROD-D2,LINE-1,167,156,9,2,225,5,1.7,9.37,29.77,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-21T16:53:00Z,TOOL-06,PROD-C2,LINE-3,179,170,5,4,213,1,5.45,9.87,5.71,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-21T20:40:00Z,TOOL-05,PROD-C1,LINE-5,118,112,3,3,96,11,3.05,9.09,21.22,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-21T22:20:00Z,TOOL-05,PROD-E1,LINE-4,164,150,8,6,235,2,4.73,8.1,13.41,normal_run,Steady throughput observed across the full planned window
+INC-ALPHA-2026-01,2026-01-22T02:23:00Z,TOOL-06,PROD-F3,LINE-4,129,110,13,6,79,38,5.72,6.8,24.04,quality_hold,Quality team initiated hold after customer complaint review opened
+INC-ALPHA-2026-01,2026-01-22T03:45:00Z,TOOL-11,PROD-C2,LINE-5,113,108,4,1,106,5,5.11,5.89,13.47,changeover_delay,Recipe load delay extended total changeover beyond target
+INC-ALPHA-2026-01,2026-01-22T05:42:00Z,TOOL-12,PROD-F3,LINE-4,139,131,5,3,180,6,3.34,11.57,29.6,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-22T08:56:00Z,TOOL-09,PROD-E1,LINE-4,121,110,6,5,95,8,1.76,7.33,13.65,maintenance_hold,Overdue PM completed resulting in extended planned downtime hold
+INC-ALPHA-2026-01,2026-01-22T10:49:00Z,TOOL-02,PROD-C1,LINE-1,121,114,2,5,97,13,1.96,11.19,25.23,maintenance_hold,Scheduled preventive maintenance performed during production window
+INC-ALPHA-2026-01,2026-01-22T12:41:00Z,TOOL-01,PROD-D1,LINE-5,175,164,3,8,155,7,1.64,11.38,25.82,micro_stop,Micro stop logged during transition between product lots
+INC-ALPHA-2026-01,2026-01-22T15:22:00Z,TOOL-03,PROD-A1,LINE-3,200,189,8,3,240,15,3.74,4.28,6.06,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-22T19:28:00Z,TOOL-09,PROD-F2,LINE-5,215,201,6,8,120,9,2.11,5.15,20.61,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-22T21:33:00Z,TOOL-08,PROD-E2,LINE-5,84,79,3,2,96,9,3.65,8.98,10.25,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-22T23:13:00Z,TOOL-09,PROD-C2,LINE-1,214,199,7,8,189,0,3.45,7.73,20.53,sensor_fault,Temperature sensor gave erratic readings triggering automated hold
+INC-ALPHA-2026-01,2026-01-23T02:24:00Z,TOOL-06,PROD-F3,LINE-1,168,159,3,6,86,10,2.17,6.17,12.8,micro_stop,Micro stop logged during transition between product lots
+INC-ALPHA-2026-01,2026-01-23T04:06:00Z,TOOL-12,PROD-D2,LINE-2,114,109,1,4,177,1,2.97,3.84,9.19,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-23T07:21:00Z,TOOL-07,PROD-F4,LINE-5,201,189,4,8,108,9,3.28,10.2,26.51,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-23T09:22:00Z,TOOL-07,PROD-D1,LINE-4,178,171,4,3,237,15,3.34,10.35,10.93,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-23T13:23:00Z,TOOL-07,PROD-E2,LINE-2,219,211,5,3,143,9,3.03,8.63,15.08,micro_stop,Short stop for label verification on outgoing pallet
+INC-ALPHA-2026-01,2026-01-23T16:02:00Z,TOOL-01,PROD-F2,LINE-3,237,219,14,4,74,2,4.86,8.06,17.34,changeover_delay,Product changeover delayed by missing tooling in staging area
+INC-ALPHA-2026-01,2026-01-23T17:18:00Z,TOOL-03,PROD-F4,LINE-5,192,188,2,2,225,11,3.31,11.59,4.84,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-23T21:16:00Z,TOOL-06,PROD-D2,LINE-1,226,218,3,5,140,8,2.75,4.24,23.13,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-23T23:55:00Z,TOOL-02,PROD-C1,LINE-3,194,184,4,6,237,15,2.5,4.22,5.93,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-24T04:08:00Z,TOOL-02,PROD-F3,LINE-3,168,156,7,5,134,9,5.76,10.35,28.11,micro_stop,Micro stop logged during transition between product lots
+INC-ALPHA-2026-01,2026-01-24T06:35:00Z,TOOL-09,PROD-B2,LINE-1,131,123,6,2,186,0,3.3,8.49,16.15,sensor_fault,Sensor fault cleared after connector reseating by maintenance tech
+INC-ALPHA-2026-01,2026-01-24T09:45:00Z,TOOL-02,PROD-C1,LINE-4,202,187,7,8,207,2,2.13,5.85,5.93,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-24T13:25:00Z,TOOL-03,PROD-F4,LINE-5,230,215,4,11,170,1,5.66,9.19,11.91,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-24T16:24:00Z,TOOL-06,PROD-E1,LINE-3,100,95,2,3,201,8,2.13,5.73,17.87,normal_run,Steady throughput observed across the full planned window
+INC-ALPHA-2026-01,2026-01-24T20:05:00Z,TOOL-10,PROD-B1,LINE-2,239,220,11,8,204,1,5.63,6.3,5.18,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-ALPHA-2026-01,2026-01-24T23:39:00Z,TOOL-11,PROD-B2,LINE-5,186,177,7,2,220,9,4.71,7.26,10.37,material_shortage,Feeder ran dry before scheduled replenishment cycle arrived
+INC-ALPHA-2026-01,2026-01-25T03:30:00Z,TOOL-08,PROD-A2,LINE-1,120,114,3,3,112,10,4.53,7.21,22.68,changeover_delay,Setup time exceeded target due to new operator on shift
+INC-ALPHA-2026-01,2026-01-25T05:35:00Z,TOOL-07,PROD-B1,LINE-3,211,199,8,4,179,3,2.84,5.49,6.52,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-25T08:49:00Z,TOOL-04,PROD-F4,LINE-2,163,148,9,6,108,5,3.99,8.36,16.97,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-25T10:41:00Z,TOOL-07,PROD-E1,LINE-4,141,136,2,3,72,9,3.97,11.11,21.01,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-25T11:55:00Z,TOOL-02,PROD-D1,LINE-2,147,136,6,5,153,1,3.5,8.56,9.06,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-25T14:42:00Z,TOOL-09,PROD-D2,LINE-5,151,116,24,11,216,27,2.14,3.87,13.7,sensor_fault,Proximity sensor fault intermittently triggered line safety stop
+INC-ALPHA-2026-01,2026-01-25T18:31:00Z,TOOL-03,PROD-B2,LINE-5,210,202,6,2,69,4,5.07,10.74,17.5,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-25T19:46:00Z,TOOL-06,PROD-E2,LINE-3,121,114,3,4,136,10,4.04,8.34,16.74,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-25T22:04:00Z,TOOL-06,PROD-C2,LINE-1,186,172,7,7,236,0,4.48,6.84,21.05,sensor_fault,Proximity sensor fault intermittently triggered line safety stop
+INC-ALPHA-2026-01,2026-01-26T02:20:00Z,TOOL-04,PROD-F2,LINE-1,229,215,7,7,218,12,2.24,9.13,4.82,quality_hold,Lot placed on quality hold pending dimensional inspection results
+INC-ALPHA-2026-01,2026-01-26T06:06:00Z,TOOL-01,PROD-D2,LINE-3,187,177,3,7,165,15,5.86,10.51,5.62,normal_run,Steady throughput observed across the full planned window
+INC-ALPHA-2026-01,2026-01-26T09:10:00Z,TOOL-06,PROD-F1,LINE-4,214,198,6,10,177,10,4.23,9.64,26.56,micro_stop,Micro stop logged during transition between product lots
+INC-ALPHA-2026-01,2026-01-26T12:17:00Z,TOOL-10,PROD-D2,LINE-2,143,137,3,3,136,9,5.02,9.99,16.71,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-26T14:43:00Z,TOOL-05,PROD-A2,LINE-5,219,203,6,10,148,4,2.95,5.91,22.57,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-26T17:21:00Z,TOOL-12,PROD-D2,LINE-2,131,123,6,2,203,8,2.19,8.54,19.26,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-26T21:02:00Z,TOOL-04,PROD-F1,LINE-2,93,90,1,2,180,3,4.91,6.32,29.08,sensor_fault,Sensor fault cleared after connector reseating by maintenance tech
+INC-ALPHA-2026-01,2026-01-27T00:17:00Z,TOOL-11,PROD-D2,LINE-4,131,123,6,2,133,1,6.04,7.03,18.93,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-27T02:33:00Z,TOOL-03,PROD-D1,LINE-2,89,69,15,5,186,31,6.18,11.8,28.08,quality_hold,Lot placed on quality hold pending dimensional inspection results
+INC-ALPHA-2026-01,2026-01-27T05:50:00Z,TOOL-10,PROD-E2,LINE-1,165,154,3,8,199,15,5.95,7.19,17.11,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-27T09:14:00Z,TOOL-06,PROD-B1,LINE-4,145,138,6,1,146,9,4.34,10.26,8.56,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-ALPHA-2026-01,2026-01-27T11:55:00Z,TOOL-09,PROD-C2,LINE-1,182,172,7,3,95,15,3.12,5.7,10.78,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-27T13:40:00Z,TOOL-06,PROD-C1,LINE-5,226,216,2,8,237,7,1.81,4.06,11.98,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-27T17:48:00Z,TOOL-12,PROD-A2,LINE-3,174,164,7,3,94,15,2.27,9.73,19.75,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-27T19:39:00Z,TOOL-09,PROD-F3,LINE-2,143,133,6,4,80,14,4.14,7.3,27.85,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-27T21:18:00Z,TOOL-09,PROD-B2,LINE-5,217,209,3,5,193,14,2.08,4.85,19.16,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-28T00:47:00Z,TOOL-01,PROD-D2,LINE-2,211,199,6,6,203,14,4.86,7.41,4.57,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-28T04:18:00Z,TOOL-10,PROD-A2,LINE-1,188,181,5,2,75,2,6.43,9.32,11.46,normal_run,Steady throughput observed across the full planned window
+INC-ALPHA-2026-01,2026-01-28T05:48:00Z,TOOL-06,PROD-D1,LINE-4,176,165,5,6,229,4,4.77,7.61,8.64,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-28T09:43:00Z,TOOL-12,PROD-B2,LINE-1,85,78,5,2,199,13,4.16,10.7,10.44,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-28T13:10:00Z,TOOL-12,PROD-F3,LINE-1,88,82,4,2,64,7,2.53,3.94,4.87,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-28T14:17:00Z,TOOL-04,PROD-F2,LINE-1,182,172,5,5,74,4,4.02,6.68,25.21,changeover_delay,Changeover extended due to calibration check after setup
+INC-ALPHA-2026-01,2026-01-28T15:51:00Z,TOOL-10,PROD-F3,LINE-3,140,135,3,2,229,7,3.57,6.25,18.47,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-28T19:47:00Z,TOOL-11,PROD-F1,LINE-4,222,205,7,10,224,12,5.43,7.86,14.82,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-28T23:38:00Z,TOOL-09,PROD-D2,LINE-2,137,129,3,5,178,1,4.31,11.77,18.49,normal_run,Steady throughput observed across the full planned window
+INC-ALPHA-2026-01,2026-01-29T02:46:00Z,TOOL-04,PROD-C2,LINE-1,195,183,10,2,108,1,2.84,9.17,19.68,calibration_drift,Calibration check triggered after consecutive out-of-spec readings
+INC-ALPHA-2026-01,2026-01-29T04:54:00Z,TOOL-12,PROD-F1,LINE-5,135,125,4,6,145,9,6.29,6.87,28.37,quality_hold,Lot placed on quality hold pending dimensional inspection results
+INC-ALPHA-2026-01,2026-01-29T07:36:00Z,TOOL-04,PROD-F2,LINE-5,132,127,3,2,142,9,3.4,8.22,13.34,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-29T10:15:00Z,TOOL-08,PROD-A2,LINE-4,161,150,8,3,165,1,4.31,6.4,7.79,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-29T13:20:00Z,TOOL-12,PROD-D1,LINE-3,119,115,2,2,205,7,4,9.41,21.81,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-01-29T17:02:00Z,TOOL-12,PROD-F1,LINE-4,197,161,19,17,103,28,5.1,8.73,27.84,calibration_drift,Bonder force calibration drift detected during quality sample check
+INC-ALPHA-2026-01,2026-01-29T18:48:00Z,TOOL-09,PROD-A1,LINE-1,92,86,4,2,221,7,1.84,4.36,9.69,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-01-29T22:46:00Z,TOOL-11,PROD-D2,LINE-1,81,77,2,2,64,8,4.18,6.78,17.06,micro_stop,Minor sensor trigger caused momentary line hold
+INC-ALPHA-2026-01,2026-01-29T23:57:00Z,TOOL-02,PROD-A2,LINE-5,118,112,2,4,124,11,2.84,6.78,13.7,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-01-30T02:10:00Z,TOOL-12,PROD-B2,LINE-3,100,92,4,4,68,2,3.53,7.04,16.38,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-ALPHA-2026-01,2026-01-30T03:25:00Z,TOOL-02,PROD-D2,LINE-4,164,151,6,7,84,1,2.65,11.13,22,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-01-30T04:52:00Z,TOOL-02,PROD-F1,LINE-3,219,209,8,2,140,0,6.31,9.86,23.56,micro_stop,Minor sensor trigger caused momentary line hold
+INC-ALPHA-2026-01,2026-01-30T07:16:00Z,TOOL-05,PROD-B1,LINE-5,141,130,5,6,233,10,3.42,9.9,24.55,micro_stop,Brief line pause due to upstream buffer fill event
+INC-ALPHA-2026-01,2026-01-30T11:27:00Z,TOOL-12,PROD-C2,LINE-1,105,98,3,4,147,12,6.34,8.52,20.49,material_shortage,Feeder ran dry before scheduled replenishment cycle arrived
+INC-ALPHA-2026-01,2026-01-30T14:11:00Z,TOOL-04,PROD-C2,LINE-5,176,165,5,6,229,12,1.93,8.57,24.75,micro_stop,Brief line pause due to upstream buffer fill event
+INC-ALPHA-2026-01,2026-01-30T18:10:00Z,TOOL-03,PROD-D1,LINE-2,179,173,4,2,61,9,3.72,10.14,6.66,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-30T19:27:00Z,TOOL-09,PROD-E1,LINE-5,184,180,2,2,201,2,4.48,10.49,26.46,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-30T23:02:00Z,TOOL-02,PROD-F2,LINE-5,142,135,5,2,157,5,2.19,5.71,16.82,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-31T01:49:00Z,TOOL-07,PROD-C1,LINE-4,99,93,2,4,220,15,4.47,6.34,6.78,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-01-31T05:41:00Z,TOOL-10,PROD-D1,LINE-3,192,179,5,8,226,4,3,8.63,22.08,normal_run,Steady throughput observed across the full planned window
+INC-ALPHA-2026-01,2026-01-31T09:41:00Z,TOOL-06,PROD-C1,LINE-4,227,179,35,13,131,45,3.33,11.44,9.19,sensor_fault,Sensor fault cleared after connector reseating by maintenance tech
+INC-ALPHA-2026-01,2026-01-31T12:11:00Z,TOOL-01,PROD-F2,LINE-4,133,110,16,7,237,24,5.59,10.79,14.64,calibration_drift,Bonder force calibration drift detected during quality sample check
+INC-ALPHA-2026-01,2026-01-31T16:19:00Z,TOOL-04,PROD-C1,LINE-2,188,177,9,2,213,15,4.41,8.7,28.01,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-ALPHA-2026-01,2026-01-31T20:11:00Z,TOOL-01,PROD-F3,LINE-3,217,199,8,10,87,7,4.79,7.67,20.82,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-01-31T21:52:00Z,TOOL-06,PROD-F3,LINE-4,107,104,1,2,190,7,3.73,7.27,24.08,normal_run,All quality checks passed within acceptable tolerances
+INC-ALPHA-2026-01,2026-02-01T01:08:00Z,TOOL-06,PROD-A1,LINE-4,106,100,2,4,81,3,5.66,10.42,13.06,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-02-01T02:37:00Z,TOOL-09,PROD-D2,LINE-3,201,192,2,7,175,10,1.84,3.4,22.48,normal_run,No anomalies detected during this run cycle
+INC-ALPHA-2026-01,2026-02-01T05:37:00Z,TOOL-11,PROD-F3,LINE-2,142,133,5,4,144,13,6.29,8,14.53,normal_run,Run completed without interruption or escalation required
+INC-ALPHA-2026-01,2026-02-01T08:16:00Z,TOOL-07,PROD-A1,LINE-5,130,123,4,3,61,6,2.53,9.78,25.03,normal_run,Production running within all spec parameters today
+INC-ALPHA-2026-01,2026-02-01T09:36:00Z,TOOL-03,PROD-C2,LINE-3,130,124,4,2,185,10,4.48,9.27,19.26,normal_run,Nominal output achieved across planned production window
+INC-ALPHA-2026-01,2026-02-01T12:57:00Z,TOOL-10,PROD-B1,LINE-3,237,220,9,8,140,3,2.69,4.22,13.71,normal_run,Operator confirmed line stable through end of shift
+INC-ALPHA-2026-01,2026-02-01T15:32:00Z,TOOL-10,PROD-B1,LINE-5,178,168,5,5,197,5,4.27,8.31,7.65,normal_run,Operator confirmed line stable through end of shift
+INC-BETA-2026-01,2026-01-15T07:00:00Z,TOOL-08,PROD-B1,LINE-1,224,203,7,14,134,6,2.87,8.01,8.37,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-BETA-2026-01,2026-01-15T09:31:00Z,TOOL-09,PROD-E1,LINE-1,226,203,8,15,153,22,5.61,6.36,22.69,changeover_delay,Recipe load delay extended total changeover beyond target
+INC-BETA-2026-01,2026-01-15T12:09:00Z,TOOL-12,PROD-F4,LINE-2,156,111,36,9,127,52,5.81,6.8,26.5,micro_stop,Micro stop logged during transition between product lots
+INC-BETA-2026-01,2026-01-15T14:25:00Z,TOOL-04,PROD-F3,LINE-5,169,145,15,9,169,10,4.58,10.51,25.15,calibration_drift,Thermal calibration deviation flagged by automated monitoring system
+INC-BETA-2026-01,2026-01-15T17:27:00Z,TOOL-09,PROD-C1,LINE-5,217,191,9,17,134,14,4.36,11.66,17.37,quality_hold,Lot placed on quality hold pending dimensional inspection results
+INC-BETA-2026-01,2026-01-15T19:47:00Z,TOOL-07,PROD-A1,LINE-3,112,101,8,3,97,27,3.11,5.69,25.93,micro_stop,Conveyor jam cleared quickly by line operator on site
+INC-BETA-2026-01,2026-01-15T21:44:00Z,TOOL-11,PROD-C1,LINE-4,176,156,10,10,83,17,4.08,6.64,28.34,micro_stop,Minor sensor trigger caused momentary line hold
+INC-BETA-2026-01,2026-01-15T23:19:00Z,TOOL-10,PROD-A1,LINE-1,197,171,14,12,76,30,4.17,6.27,15.17,normal_run,No anomalies detected during this run cycle
+INC-BETA-2026-01,2026-01-16T00:47:00Z,TOOL-05,PROD-C2,LINE-5,227,203,8,16,147,33,4.91,5.73,6.59,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-BETA-2026-01,2026-01-16T03:16:00Z,TOOL-02,PROD-F4,LINE-2,192,166,11,15,169,11,6.48,11.55,26.94,micro_stop,Micro stop logged during transition between product lots
+INC-BETA-2026-01,2026-01-16T06:15:00Z,TOOL-02,PROD-F1,LINE-3,144,131,5,8,226,10,1.76,8.63,22.88,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-BETA-2026-01,2026-01-16T10:05:00Z,TOOL-12,PROD-A2,LINE-1,134,123,8,3,117,21,4.9,5.46,22.09,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-BETA-2026-01,2026-01-16T12:08:00Z,TOOL-08,PROD-A2,LINE-2,178,160,6,12,86,15,3.34,6.28,13.95,calibration_drift,Calibration check triggered after consecutive out-of-spec readings
+INC-BETA-2026-01,2026-01-16T13:40:00Z,TOOL-02,PROD-E1,LINE-5,82,75,5,2,149,28,2.57,9.75,27.92,changeover_delay,Recipe load delay extended total changeover beyond target
+INC-BETA-2026-01,2026-01-16T16:17:00Z,TOOL-02,PROD-A2,LINE-2,111,100,7,4,169,15,5.46,7.46,20.76,normal_run,All quality checks passed within acceptable tolerances
+INC-BETA-2026-01,2026-01-16T19:17:00Z,TOOL-12,PROD-A1,LINE-3,132,118,8,6,160,14,4.73,10.54,24.64,normal_run,Operator confirmed line stable through end of shift
+INC-BETA-2026-01,2026-01-16T22:02:00Z,TOOL-04,PROD-D2,LINE-5,98,85,6,7,152,34,3.08,6.84,25.81,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-BETA-2026-01,2026-01-17T00:41:00Z,TOOL-08,PROD-F3,LINE-1,84,78,5,1,115,6,6.11,11.72,14.35,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-BETA-2026-01,2026-01-17T02:54:00Z,TOOL-07,PROD-D1,LINE-4,101,89,7,5,99,13,1.92,3.71,27.94,sensor_fault,Sensor fault cleared after connector reseating by maintenance tech
+INC-BETA-2026-01,2026-01-17T04:52:00Z,TOOL-06,PROD-D1,LINE-5,96,88,4,4,121,6,2.72,11.34,7.02,changeover_delay,Fixture swap took longer than standard changeover time
+INC-BETA-2026-01,2026-01-17T07:04:00Z,TOOL-11,PROD-F2,LINE-2,110,104,3,3,62,10,3.98,7.09,17.45,calibration_drift,Tool calibration drift detected by SPC monitoring system alert
+INC-BETA-2026-01,2026-01-17T08:13:00Z,TOOL-06,PROD-B1,LINE-3,110,99,9,2,169,13,4.12,6.56,29.35,changeover_delay,Recipe load delay extended total changeover beyond target
+INC-BETA-2026-01,2026-01-17T11:18:00Z,TOOL-09,PROD-C2,LINE-1,207,183,18,6,100,13,5.37,11.35,21.53,normal_run,Run completed without interruption or escalation required
+INC-BETA-2026-01,2026-01-17T13:16:00Z,TOOL-01,PROD-A1,LINE-1,142,133,4,5,98,10,6.16,11.24,18.37,quality_hold,Production held for root cause on elevated scrap rate trend
+INC-BETA-2026-01,2026-01-17T15:09:00Z,TOOL-04,PROD-C2,LINE-2,186,162,17,7,79,23,3.36,7.95,27.45,normal_run,Nominal output achieved across planned production window
+INC-BETA-2026-01,2026-01-17T16:46:00Z,TOOL-01,PROD-D1,LINE-1,199,168,18,13,139,15,1.93,7.11,13.59,micro_stop,Micro stop logged during transition between product lots
+INC-BETA-2026-01,2026-01-17T19:16:00Z,TOOL-12,PROD-E2,LINE-2,198,172,11,15,110,28,6,10.68,10.37,normal_run,Operator confirmed line stable through end of shift
+INC-BETA-2026-01,2026-01-17T21:08:00Z,TOOL-04,PROD-E1,LINE-3,82,74,7,1,228,17,5.75,10.43,6.7,changeover_delay,Product changeover delayed by missing tooling in staging area
+INC-BETA-2026-01,2026-01-18T01:11:00Z,TOOL-08,PROD-A1,LINE-2,151,135,5,11,193,18,5,7.92,29.34,normal_run,Production running within all spec parameters today
+INC-BETA-2026-01,2026-01-18T04:42:00Z,TOOL-03,PROD-F1,LINE-4,99,90,7,2,229,35,2.15,5.63,26.12,quality_hold,Hold placed on output pending incoming material re-inspection
+INC-BETA-2026-01,2026-01-18T08:43:00Z,TOOL-06,PROD-D2,LINE-3,139,131,4,4,209,8,2.28,4.48,16.12,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-BETA-2026-01,2026-01-18T12:25:00Z,TOOL-04,PROD-D2,LINE-3,198,184,9,5,100,30,4.93,10.86,22.12,normal_run,Nominal output achieved across planned production window
+INC-BETA-2026-01,2026-01-18T14:17:00Z,TOOL-03,PROD-A2,LINE-2,171,159,9,3,136,13,5.6,7.13,28.75,maintenance_hold,Maintenance team performed emergency seal replacement on vacuum pump
+INC-BETA-2026-01,2026-01-18T16:52:00Z,TOOL-04,PROD-A2,LINE-4,106,94,9,3,63,6,5.65,11.9,7.4,calibration_drift,Tool calibration drift detected by SPC monitoring system alert
+INC-BETA-2026-01,2026-01-18T17:59:00Z,TOOL-10,PROD-E2,LINE-3,99,81,12,6,225,58,5.55,6.6,26.03,quality_hold,Lot placed on quality hold pending dimensional inspection results
+INC-BETA-2026-01,2026-01-18T21:47:00Z,TOOL-08,PROD-A1,LINE-2,226,199,13,14,187,5,3.41,7.36,13.2,quality_hold,Inline SPC chart triggered quality hold for process review
+INC-BETA-2026-01,2026-01-19T01:04:00Z,TOOL-08,PROD-B1,LINE-1,237,212,17,8,135,20,3.56,8.43,5.59,normal_run,Steady throughput observed across the full planned window
+INC-BETA-2026-01,2026-01-19T03:34:00Z,TOOL-04,PROD-F1,LINE-5,143,124,10,9,64,17,5.41,8.1,18.16,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-BETA-2026-01,2026-01-19T04:56:00Z,TOOL-06,PROD-D1,LINE-3,126,115,4,7,67,33,5.55,7.72,25.03,micro_stop,Short stop for label verification on outgoing pallet
+INC-BETA-2026-01,2026-01-19T06:23:00Z,TOOL-04,PROD-B1,LINE-1,143,128,10,5,74,29,6.48,8.08,26.01,calibration_drift,Tool calibration drift detected by SPC monitoring system alert
+INC-BETA-2026-01,2026-01-19T07:44:00Z,TOOL-03,PROD-B2,LINE-5,161,139,13,9,211,5,5.02,7.8,18.76,normal_run,Steady throughput observed across the full planned window
+INC-BETA-2026-01,2026-01-19T11:32:00Z,TOOL-09,PROD-C1,LINE-2,205,195,6,4,214,12,1.6,7.3,12.63,changeover_delay,Setup time exceeded target due to new operator on shift
+INC-BETA-2026-01,2026-01-19T15:12:00Z,TOOL-06,PROD-F2,LINE-2,162,153,5,4,240,34,2.21,4,17.68,micro_stop,Brief line pause due to upstream buffer fill event
+INC-BETA-2026-01,2026-01-19T19:25:00Z,TOOL-12,PROD-F1,LINE-4,230,214,8,8,94,10,5.16,8.43,20.62,changeover_delay,Changeover extended due to calibration check after setup
+INC-BETA-2026-01,2026-01-19T21:06:00Z,TOOL-12,PROD-E1,LINE-5,171,155,7,9,104,17,3.03,9.36,7.31,material_shortage,Shortage caused partial batch reduction for this run window
+INC-BETA-2026-01,2026-01-19T23:10:00Z,TOOL-07,PROD-F4,LINE-5,88,82,3,3,216,12,4.7,5.91,16.9,micro_stop,Brief line pause due to upstream buffer fill event
+INC-BETA-2026-01,2026-01-20T02:55:00Z,TOOL-06,PROD-C2,LINE-2,102,88,8,6,145,19,1.56,4.89,22.02,micro_stop,Micro stop logged during transition between product lots
+INC-BETA-2026-01,2026-01-20T05:25:00Z,TOOL-12,PROD-A1,LINE-1,178,160,10,8,102,33,3.57,11.06,13.13,micro_stop,Micro stop logged during transition between product lots
+INC-BETA-2026-01,2026-01-20T07:24:00Z,TOOL-10,PROD-F1,LINE-2,121,106,7,8,68,14,1.6,5.35,6.72,micro_stop,Minor sensor trigger caused momentary line hold
+INC-BETA-2026-01,2026-01-20T08:39:00Z,TOOL-12,PROD-A2,LINE-5,103,72,16,15,183,75,1.65,11.48,8.29,quality_hold,Quality hold issued after visual defect found during sampling
+INC-BETA-2026-01,2026-01-20T11:45:00Z,TOOL-02,PROD-C2,LINE-2,128,115,7,6,198,13,4.8,7.29,6.49,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-BETA-2026-01,2026-01-20T15:20:00Z,TOOL-03,PROD-A1,LINE-3,80,73,4,3,229,25,4.5,6.4,4.67,normal_run,No anomalies detected during this run cycle
+INC-BETA-2026-01,2026-01-20T19:13:00Z,TOOL-08,PROD-F4,LINE-1,158,138,13,7,229,13,1.96,7.9,8.81,maintenance_hold,Tool flagged for maintenance after alarm threshold was reached
+INC-BETA-2026-01,2026-01-20T23:09:00Z,TOOL-08,PROD-A1,LINE-3,192,174,12,6,128,23,1.81,9.77,21.35,normal_run,No anomalies detected during this run cycle
+INC-BETA-2026-01,2026-01-21T01:36:00Z,TOOL-07,PROD-F3,LINE-5,138,120,9,9,193,18,6.33,10.38,28.35,changeover_delay,Product changeover delayed by missing tooling in staging area
+INC-BETA-2026-01,2026-01-21T05:06:00Z,TOOL-05,PROD-A2,LINE-4,88,77,5,6,206,26,6.41,7.66,28.68,micro_stop,Conveyor jam cleared quickly by line operator on site
+INC-BETA-2026-01,2026-01-21T08:40:00Z,TOOL-04,PROD-B1,LINE-1,188,171,6,11,111,31,4.64,10.86,10.71,quality_hold,Lot placed on quality hold pending dimensional inspection results
+INC-BETA-2026-01,2026-01-21T10:35:00Z,TOOL-07,PROD-E1,LINE-4,221,202,11,8,177,34,5.87,10.8,20.2,changeover_delay,Recipe load delay extended total changeover beyond target
+INC-BETA-2026-01,2026-01-21T13:37:00Z,TOOL-07,PROD-B1,LINE-2,225,195,16,14,85,34,2.03,10.02,24.43,maintenance_hold,Tool flagged for maintenance after alarm threshold was reached
+INC-BETA-2026-01,2026-01-21T15:17:00Z,TOOL-05,PROD-D1,LINE-4,226,205,16,5,130,17,2.22,8.48,22.04,normal_run,No anomalies detected during this run cycle
+INC-BETA-2026-01,2026-01-21T17:36:00Z,TOOL-01,PROD-F2,LINE-4,148,132,13,3,137,14,2.9,7.63,22.1,normal_run,Nominal output achieved across planned production window
+INC-BETA-2026-01,2026-01-21T20:02:00Z,TOOL-03,PROD-C1,LINE-4,162,148,7,7,225,7,2.44,4.9,25.42,material_shortage,Production held pending clearance of quarantined input material
+INC-BETA-2026-01,2026-01-22T00:00:00Z,TOOL-01,PROD-E1,LINE-2,96,88,4,4,94,29,5.76,11.31,4.75,normal_run,Nominal output achieved across planned production window
+INC-BETA-2026-01,2026-01-22T01:42:00Z,TOOL-01,PROD-B2,LINE-1,196,182,6,8,110,13,3.34,7.63,14.32,quality_hold,Production held for root cause on elevated scrap rate trend
+INC-BETA-2026-01,2026-01-22T03:34:00Z,TOOL-04,PROD-C2,LINE-4,232,200,14,18,181,23,4.26,7.25,25.78,normal_run,Nominal output achieved across planned production window
+INC-BETA-2026-01,2026-01-22T06:39:00Z,TOOL-05,PROD-A1,LINE-4,92,85,3,4,114,32,2.61,5.11,9.38,changeover_delay,Tool change required additional verification before restart
+INC-BETA-2026-01,2026-01-22T08:35:00Z,TOOL-11,PROD-A1,LINE-4,113,99,8,6,62,12,2.76,10.3,11.94,sensor_fault,Flow sensor reported out-of-range value requiring manual verification
+INC-BETA-2026-01,2026-01-22T09:47:00Z,TOOL-07,PROD-D1,LINE-3,197,179,9,9,233,21,5.62,8.46,6.66,changeover_delay,Changeover held pending engineering sign-off on first article
+INC-BETA-2026-01,2026-01-22T13:53:00Z,TOOL-09,PROD-F1,LINE-5,235,210,11,14,183,7,3.18,5.98,12.45,normal_run,Run completed without interruption or escalation required
+INC-BETA-2026-01,2026-01-22T17:07:00Z,TOOL-04,PROD-B1,LINE-5,141,119,13,9,213,17,4.8,9.86,22.75,changeover_delay,Changeover extended due to calibration check after setup
+INC-BETA-2026-01,2026-01-22T20:50:00Z,TOOL-07,PROD-D1,LINE-4,89,76,6,7,108,15,5.13,7.05,17.9,calibration_drift,Bonder force calibration drift detected during quality sample check
+INC-BETA-2026-01,2026-01-22T22:51:00Z,TOOL-09,PROD-C1,LINE-2,222,208,9,5,92,28,2.79,10.33,23.84,normal_run,Run completed without interruption or escalation required
+INC-BETA-2026-01,2026-01-23T00:35:00Z,TOOL-11,PROD-A2,LINE-2,170,151,7,12,167,30,5.93,8.5,19.22,micro_stop,Brief line pause due to upstream buffer fill event
+INC-BETA-2026-01,2026-01-23T03:39:00Z,TOOL-01,PROD-F4,LINE-5,228,202,21,5,109,21,2.1,9.13,17.78,micro_stop,Micro stop logged during transition between product lots
+INC-BETA-2026-01,2026-01-23T05:34:00Z,TOOL-03,PROD-B2,LINE-3,184,153,18,13,177,9,3.08,9.61,24.25,changeover_delay,Changeover held pending engineering sign-off on first article
+INC-BETA-2026-01,2026-01-23T08:38:00Z,TOOL-06,PROD-F1,LINE-1,81,75,4,2,103,23,5.32,8.85,23.85,normal_run,All quality checks passed within acceptable tolerances
+INC-BETA-2026-01,2026-01-23T10:36:00Z,TOOL-11,PROD-D1,LINE-4,189,163,18,8,69,22,2.5,6.36,4.37,micro_stop,Micro stop logged during transition between product lots
+INC-BETA-2026-01,2026-01-23T12:03:00Z,TOOL-04,PROD-A1,LINE-1,240,213,19,8,148,14,2.14,6.45,19.31,normal_run,Nominal output achieved across planned production window
+INC-BETA-2026-01,2026-01-23T14:34:00Z,TOOL-05,PROD-C1,LINE-4,213,190,15,8,235,9,3.21,11.18,13.34,normal_run,Nominal output achieved across planned production window
+INC-BETA-2026-01,2026-01-23T18:43:00Z,TOOL-01,PROD-B2,LINE-2,113,106,5,2,189,10,2.12,9.4,24.6,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-BETA-2026-01,2026-01-23T22:02:00Z,TOOL-09,PROD-E2,LINE-1,232,196,23,13,227,31,1.6,9.21,14.84,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-BETA-2026-01,2026-01-24T01:59:00Z,TOOL-08,PROD-F2,LINE-2,132,115,10,7,137,18,4.81,9.74,11.02,changeover_delay,Product changeover delayed by missing tooling in staging area
+INC-BETA-2026-01,2026-01-24T04:31:00Z,TOOL-02,PROD-E1,LINE-5,110,98,5,7,187,11,4.55,10.46,25.62,sensor_fault,Temperature sensor gave erratic readings triggering automated hold
+INC-BETA-2026-01,2026-01-24T07:53:00Z,TOOL-05,PROD-B1,LINE-1,220,199,14,7,183,15,2.67,3.28,6.31,normal_run,All quality checks passed within acceptable tolerances
+INC-BETA-2026-01,2026-01-24T11:13:00Z,TOOL-03,PROD-A2,LINE-5,99,90,7,2,125,25,2.66,11.9,11.7,micro_stop,Brief line pause due to upstream buffer fill event
+INC-BETA-2026-01,2026-01-24T13:25:00Z,TOOL-01,PROD-F4,LINE-3,172,152,14,6,89,8,5.76,11.37,4.25,normal_run,Run completed without interruption or escalation required
+INC-BETA-2026-01,2026-01-24T15:01:00Z,TOOL-06,PROD-C2,LINE-4,239,213,11,15,155,31,3.21,4.65,14.41,micro_stop,Micro stop logged during transition between product lots
+INC-BETA-2026-01,2026-01-24T17:50:00Z,TOOL-12,PROD-F4,LINE-4,187,161,14,12,88,9,4.98,5.86,28.5,normal_run,Operator confirmed line stable through end of shift
+INC-BETA-2026-01,2026-01-24T19:38:00Z,TOOL-08,PROD-F3,LINE-5,192,176,8,8,151,24,1.64,9.16,25.8,sensor_fault,Sensor fault cleared after connector reseating by maintenance tech
+INC-BETA-2026-01,2026-01-24T22:26:00Z,TOOL-08,PROD-A2,LINE-4,192,180,6,6,140,5,5.02,9.91,23.96,changeover_delay,Tool change required additional verification before restart
+INC-BETA-2026-01,2026-01-25T00:55:00Z,TOOL-11,PROD-F4,LINE-3,212,185,14,13,84,18,4.81,6.97,12.99,material_shortage,Feeder ran dry before scheduled replenishment cycle arrived
+INC-BETA-2026-01,2026-01-25T02:25:00Z,TOOL-09,PROD-E2,LINE-1,82,60,16,6,180,84,3.98,5.72,23.54,changeover_delay,Changeover extended due to calibration check after setup
+INC-BETA-2026-01,2026-01-25T05:35:00Z,TOOL-01,PROD-E1,LINE-2,220,195,16,9,120,7,3.8,10.47,15.65,maintenance_hold,Line held for bearing replacement on primary drive motor
+INC-BETA-2026-01,2026-01-25T07:47:00Z,TOOL-02,PROD-D2,LINE-1,106,98,6,2,200,5,5.63,10.78,29.04,changeover_delay,Tool change required additional verification before restart
+INC-BETA-2026-01,2026-01-25T11:26:00Z,TOOL-04,PROD-F1,LINE-4,167,155,9,3,117,32,3.77,8.6,20.11,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-BETA-2026-01,2026-01-25T13:36:00Z,TOOL-12,PROD-D2,LINE-1,104,93,8,3,147,16,5.65,11.79,11.59,changeover_delay,Changeover held pending engineering sign-off on first article
+INC-BETA-2026-01,2026-01-25T16:08:00Z,TOOL-01,PROD-B1,LINE-4,115,98,10,7,164,8,2.77,4.98,7.14,maintenance_hold,Unplanned maintenance hold for lubrication of drive assembly
+INC-BETA-2026-01,2026-01-25T19:08:00Z,TOOL-04,PROD-F2,LINE-3,107,97,8,2,222,31,4.86,6.18,27.19,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-BETA-2026-01,2026-01-25T23:08:00Z,TOOL-03,PROD-D2,LINE-1,215,146,46,23,170,83,4.43,11.47,24.31,sensor_fault,Flow sensor reported out-of-range value requiring manual verification
+INC-BETA-2026-01,2026-01-26T02:18:00Z,TOOL-03,PROD-F2,LINE-2,106,95,6,5,142,21,5.91,8.75,19.83,material_shortage,Line paused awaiting replenishment of component reel stock
+INC-BETA-2026-01,2026-01-26T04:50:00Z,TOOL-07,PROD-C2,LINE-3,195,174,16,5,214,27,5.93,9.28,25.92,changeover_delay,Changeover extended due to calibration check after setup
+INC-BETA-2026-01,2026-01-26T08:43:00Z,TOOL-11,PROD-B2,LINE-2,133,120,9,4,148,34,4.86,11.88,20.9,sensor_fault,Proximity sensor fault intermittently triggered line safety stop
+INC-BETA-2026-01,2026-01-26T11:30:00Z,TOOL-12,PROD-F1,LINE-3,109,95,9,5,209,23,6.21,10.47,21.53,quality_hold,Quality team initiated hold after customer complaint review opened
+INC-BETA-2026-01,2026-01-26T15:10:00Z,TOOL-07,PROD-F3,LINE-1,213,197,7,9,73,26,1.78,5.4,24.42,sensor_fault,Flow sensor reported out-of-range value requiring manual verification
+INC-BETA-2026-01,2026-01-26T16:33:00Z,TOOL-03,PROD-F4,LINE-1,155,117,22,16,151,82,3.76,9.03,21.56,material_shortage,Line paused awaiting replenishment of component reel stock
+INC-BETA-2026-01,2026-01-26T19:23:00Z,TOOL-07,PROD-B2,LINE-5,153,138,12,3,157,17,3.58,10.32,21.81,sensor_fault,Pressure sensor reported intermittent fault during this production run
+INC-BETA-2026-01,2026-01-26T22:02:00Z,TOOL-12,PROD-C1,LINE-2,238,151,55,32,173,83,2.63,8.75,22.45,changeover_delay,Tool change required additional verification before restart
+INC-BETA-2026-01,2026-01-27T01:14:00Z,TOOL-12,PROD-E2,LINE-2,129,120,6,3,234,7,2.43,4.56,17.36,micro_stop,Minor sensor trigger caused momentary line hold
+INC-BETA-2026-01,2026-01-27T05:18:00Z,TOOL-09,PROD-C1,LINE-2,121,109,8,4,144,19,5.05,6.55,8,micro_stop,Brief line pause due to upstream buffer fill event
+INC-BETA-2026-01,2026-01-27T07:53:00Z,TOOL-08,PROD-F3,LINE-5,220,194,12,14,141,21,2.6,4.74,5.77,changeover_delay,Recipe load delay extended total changeover beyond target
+INC-BETA-2026-01,2026-01-27T10:33:00Z,TOOL-09,PROD-D1,LINE-1,169,157,7,5,144,15,3.3,5.59,23.57,changeover_delay,Tool change required additional verification before restart
+INC-BETA-2026-01,2026-01-27T12:59:00Z,TOOL-02,PROD-F1,LINE-3,194,174,9,11,219,12,6.29,10.35,12.34,quality_hold,Lot placed on quality hold pending dimensional inspection results
+INC-BETA-2026-01,2026-01-27T16:52:00Z,TOOL-05,PROD-E1,LINE-3,86,73,8,5,155,21,5.51,8.68,5.14,quality_hold,Quality hold issued after visual defect found during sampling
+INC-BETA-2026-01,2026-01-27T19:39:00Z,TOOL-09,PROD-A2,LINE-1,122,77,30,15,196,30,4.63,6.58,20.37,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-BETA-2026-01,2026-01-27T23:10:00Z,TOOL-02,PROD-B2,LINE-5,191,163,14,14,235,9,1.62,9.45,4.99,normal_run,Steady throughput observed across the full planned window
+INC-BETA-2026-01,2026-01-28T03:15:00Z,TOOL-09,PROD-A2,LINE-5,138,120,12,6,175,25,3.52,6.54,14.13,normal_run,Production running within all spec parameters today
+INC-BETA-2026-01,2026-01-28T06:14:00Z,TOOL-12,PROD-E2,LINE-1,98,89,5,4,134,30,4.93,9.42,11.32,quality_hold,Hold placed on output pending incoming material re-inspection
+INC-BETA-2026-01,2026-01-28T08:42:00Z,TOOL-11,PROD-A1,LINE-4,120,109,8,3,160,30,5.49,9.27,28.96,normal_run,Run completed without interruption or escalation required
+INC-BETA-2026-01,2026-01-28T11:35:00Z,TOOL-01,PROD-E1,LINE-5,116,110,4,2,212,17,4.19,11.61,11.92,calibration_drift,Bonder force calibration drift detected during quality sample check
+INC-BETA-2026-01,2026-01-28T15:20:00Z,TOOL-04,PROD-D1,LINE-5,116,109,4,3,124,11,2.07,9.04,18.75,normal_run,Nominal output achieved across planned production window
+INC-BETA-2026-01,2026-01-28T17:43:00Z,TOOL-08,PROD-F1,LINE-5,98,92,4,2,85,11,5.13,8.73,12.6,normal_run,Run completed without interruption or escalation required
+INC-BETA-2026-01,2026-01-28T19:17:00Z,TOOL-02,PROD-C1,LINE-5,97,85,9,3,175,15,4.58,7.2,19.19,changeover_delay,Changeover extended due to calibration check after setup
+INC-BETA-2026-01,2026-01-28T22:24:00Z,TOOL-07,PROD-B1,LINE-1,160,148,7,5,224,18,2.88,6.48,21.67,micro_stop,Minor sensor trigger caused momentary line hold
+INC-BETA-2026-01,2026-01-29T02:24:00Z,TOOL-08,PROD-C2,LINE-3,204,185,13,6,215,7,5.71,11.18,7.64,changeover_delay,Changeover extended due to calibration check after setup
+INC-BETA-2026-01,2026-01-29T06:03:00Z,TOOL-12,PROD-A2,LINE-1,209,140,42,27,208,55,5.35,7.16,4.95,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-BETA-2026-01,2026-01-29T09:48:00Z,TOOL-11,PROD-F3,LINE-2,173,120,29,24,210,76,5.79,7.05,17.03,micro_stop,Short stop for label verification on outgoing pallet
+INC-BETA-2026-01,2026-01-29T13:36:00Z,TOOL-01,PROD-F1,LINE-2,237,158,49,30,95,58,2.3,8.1,18.71,quality_hold,Quality hold issued after visual defect found during sampling
+INC-BETA-2026-01,2026-01-29T15:28:00Z,TOOL-06,PROD-A1,LINE-2,204,188,9,7,119,6,4.84,8.79,24.58,micro_stop,Minor sensor trigger caused momentary line hold
+INC-BETA-2026-01,2026-01-29T17:30:00Z,TOOL-01,PROD-F1,LINE-3,106,93,8,5,130,31,5.21,9.35,18.82,micro_stop,Minor sensor trigger caused momentary line hold
+INC-BETA-2026-01,2026-01-29T19:53:00Z,TOOL-10,PROD-F1,LINE-1,212,149,32,31,117,63,3.53,10.54,12.97,quality_hold,Quality team initiated hold after customer complaint review opened
+INC-BETA-2026-01,2026-01-29T21:52:00Z,TOOL-09,PROD-B1,LINE-4,122,111,5,6,131,11,2.25,4.42,19.65,calibration_drift,Bonder force calibration drift detected during quality sample check
+INC-BETA-2026-01,2026-01-30T00:12:00Z,TOOL-07,PROD-F3,LINE-3,109,98,6,5,113,23,2.31,10.5,4.58,normal_run,All quality checks passed within acceptable tolerances
+INC-BETA-2026-01,2026-01-30T02:25:00Z,TOOL-03,PROD-B1,LINE-5,90,80,8,2,102,13,6.11,9.39,14.54,sensor_fault,Flow sensor reported out-of-range value requiring manual verification
+INC-BETA-2026-01,2026-01-30T04:09:00Z,TOOL-12,PROD-F2,LINE-3,101,92,4,5,180,32,3.91,6.07,14.68,normal_run,All quality checks passed within acceptable tolerances
+INC-BETA-2026-01,2026-01-30T07:16:00Z,TOOL-10,PROD-F1,LINE-5,147,133,6,8,176,24,4.45,6.57,14.02,normal_run,Steady throughput observed across the full planned window
+INC-BETA-2026-01,2026-01-30T10:30:00Z,TOOL-09,PROD-F1,LINE-4,118,107,8,3,217,24,1.7,10.05,17.09,normal_run,Operator confirmed line stable through end of shift
+INC-BETA-2026-01,2026-01-30T14:13:00Z,TOOL-10,PROD-E1,LINE-1,190,170,12,8,71,27,4.15,6.34,24.86,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-BETA-2026-01,2026-01-30T15:37:00Z,TOOL-10,PROD-F3,LINE-5,105,96,6,3,119,34,5.8,7.91,26.8,micro_stop,Conveyor jam cleared quickly by line operator on site
+INC-BETA-2026-01,2026-01-30T17:38:00Z,TOOL-12,PROD-F2,LINE-1,227,201,15,11,156,25,2.53,10.24,14.63,normal_run,Operator confirmed line stable through end of shift
+INC-BETA-2026-01,2026-01-30T20:34:00Z,TOOL-05,PROD-C1,LINE-5,188,165,13,10,234,17,5.27,8.34,24.38,micro_stop,Short stop for label verification on outgoing pallet
+INC-BETA-2026-01,2026-01-31T00:47:00Z,TOOL-09,PROD-D2,LINE-3,158,137,11,10,161,28,2.19,10.77,7.1,normal_run,Nominal output achieved across planned production window
+INC-BETA-2026-01,2026-01-31T03:35:00Z,TOOL-02,PROD-B2,LINE-5,182,155,15,12,217,27,4.92,5.76,14.12,changeover_delay,Setup time exceeded target due to new operator on shift
+INC-BETA-2026-01,2026-01-31T07:16:00Z,TOOL-03,PROD-D2,LINE-5,191,179,6,6,154,7,4.55,10.09,28.2,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-BETA-2026-01,2026-01-31T10:08:00Z,TOOL-05,PROD-F2,LINE-5,94,60,22,12,223,61,3.69,5.77,21.08,quality_hold,Inline SPC chart triggered quality hold for process review
+INC-BETA-2026-01,2026-01-31T13:59:00Z,TOOL-01,PROD-F3,LINE-5,210,190,13,7,103,26,1.68,5.15,4.01,normal_run,No anomalies detected during this run cycle
+INC-BETA-2026-01,2026-01-31T15:56:00Z,TOOL-06,PROD-F1,LINE-4,183,162,12,9,240,7,6.1,9.57,22.88,changeover_delay,Tool change required additional verification before restart
+INC-BETA-2026-01,2026-01-31T20:09:00Z,TOOL-06,PROD-F4,LINE-3,137,124,9,4,163,23,1.52,4.58,17.16,changeover_delay,Tool change required additional verification before restart
+INC-BETA-2026-01,2026-01-31T23:03:00Z,TOOL-06,PROD-A2,LINE-5,145,123,13,9,207,13,4.97,11.78,18.64,calibration_drift,Tool calibration drift detected by SPC monitoring system alert
+INC-BETA-2026-01,2026-02-01T02:46:00Z,TOOL-11,PROD-D2,LINE-5,87,79,5,3,157,25,5.44,7.28,22.23,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-BETA-2026-01,2026-02-01T05:36:00Z,TOOL-09,PROD-E1,LINE-1,147,138,6,3,232,28,5.61,6.56,28.22,micro_stop,Short stop for label verification on outgoing pallet
+INC-BETA-2026-01,2026-02-01T09:36:00Z,TOOL-10,PROD-C1,LINE-2,128,116,8,4,121,32,2.83,5.32,25.71,maintenance_hold,Tool flagged for maintenance after alarm threshold was reached
+INC-BETA-2026-01,2026-02-01T11:43:00Z,TOOL-02,PROD-A2,LINE-1,206,178,15,13,198,35,1.71,7.34,20.14,changeover_delay,Tool change required additional verification before restart
+INC-BETA-2026-01,2026-02-01T15:11:00Z,TOOL-08,PROD-B1,LINE-5,151,134,8,9,92,6,4.13,7.75,28.43,normal_run,No anomalies detected during this run cycle
+INC-BETA-2026-01,2026-02-01T16:57:00Z,TOOL-11,PROD-F3,LINE-2,197,166,19,12,177,15,4.95,5.53,9.48,changeover_delay,Changeover extended due to calibration check after setup
+INC-BETA-2026-01,2026-02-01T20:07:00Z,TOOL-10,PROD-F4,LINE-3,127,115,8,4,180,35,4.57,7.61,16.97,normal_run,Run completed without interruption or escalation required
+INC-BETA-2026-01,2026-02-01T23:20:00Z,TOOL-06,PROD-F4,LINE-4,151,134,9,8,207,26,2.64,4.02,11.02,normal_run,Operator confirmed line stable through end of shift
+INC-BETA-2026-01,2026-02-02T03:01:00Z,TOOL-04,PROD-B1,LINE-2,201,178,17,6,187,9,6.48,11.24,17.44,material_shortage,Feeder ran dry before scheduled replenishment cycle arrived
+INC-BETA-2026-01,2026-02-02T06:19:00Z,TOOL-05,PROD-E1,LINE-5,92,82,5,5,75,11,5.57,8.9,20.38,micro_stop,Short stop for label verification on outgoing pallet
+INC-BETA-2026-01,2026-02-02T07:44:00Z,TOOL-06,PROD-C2,LINE-5,222,194,21,7,65,18,2.11,10.81,29.04,normal_run,All quality checks passed within acceptable tolerances
+INC-BETA-2026-01,2026-02-02T09:08:00Z,TOOL-03,PROD-F3,LINE-3,170,154,8,8,174,33,1.89,8.52,16.06,sensor_fault,Sensor fault cleared after connector reseating by maintenance tech
+INC-BETA-2026-01,2026-02-02T12:14:00Z,TOOL-07,PROD-F1,LINE-5,226,197,13,16,80,10,3.22,6.32,20.98,material_shortage,Production held pending clearance of quarantined input material
+INC-BETA-2026-01,2026-02-02T13:48:00Z,TOOL-05,PROD-D2,LINE-3,230,205,15,10,102,10,5.77,6.99,10.1,normal_run,Run completed without interruption or escalation required
+INC-BETA-2026-01,2026-02-02T15:34:00Z,TOOL-04,PROD-B1,LINE-4,106,95,3,8,181,22,1.77,9.94,17.62,sensor_fault,Pressure sensor reported intermittent fault during this production run
+INC-BETA-2026-01,2026-02-02T18:45:00Z,TOOL-10,PROD-B1,LINE-1,179,164,9,6,132,19,4.63,6.03,25.8,normal_run,Run completed without interruption or escalation required
+INC-BETA-2026-01,2026-02-02T21:10:00Z,TOOL-06,PROD-F4,LINE-4,199,170,19,10,129,22,3.72,11.76,22.14,normal_run,All quality checks passed within acceptable tolerances
+INC-BETA-2026-01,2026-02-02T23:35:00Z,TOOL-11,PROD-F2,LINE-5,191,168,12,11,139,34,3.24,8.2,24.92,micro_stop,Short stop for label verification on outgoing pallet
+INC-BETA-2026-01,2026-02-03T02:09:00Z,TOOL-05,PROD-B1,LINE-3,82,75,2,5,94,16,2.93,8.02,21.88,changeover_delay,Setup time exceeded target due to new operator on shift
+INC-BETA-2026-01,2026-02-03T04:00:00Z,TOOL-05,PROD-A1,LINE-4,154,104,30,20,200,53,2.44,10.94,15.36,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-BETA-2026-01,2026-02-03T07:34:00Z,TOOL-07,PROD-B2,LINE-3,100,92,5,3,216,30,4.97,7.25,20.86,changeover_delay,Changeover extended due to calibration check after setup
+INC-BETA-2026-01,2026-02-03T11:25:00Z,TOOL-04,PROD-F4,LINE-1,126,119,4,3,176,24,3.76,9.68,16.79,micro_stop,Conveyor jam cleared quickly by line operator on site
+INC-BETA-2026-01,2026-02-03T14:24:00Z,TOOL-09,PROD-A1,LINE-2,106,99,5,2,172,28,1.54,3.81,4.38,normal_run,Operator confirmed line stable through end of shift
+INC-BETA-2026-01,2026-02-03T17:27:00Z,TOOL-08,PROD-C2,LINE-4,88,78,4,6,97,6,2.83,6.73,18.12,normal_run,Nominal output achieved across planned production window
+INC-BETA-2026-01,2026-02-03T19:14:00Z,TOOL-07,PROD-F4,LINE-1,111,95,10,6,158,29,6.37,8.14,29.86,normal_run,Run completed without interruption or escalation required
+INC-BETA-2026-01,2026-02-03T21:57:00Z,TOOL-09,PROD-F1,LINE-2,201,175,11,15,142,10,4.65,5.44,28.37,changeover_delay,Changeover extended due to calibration check after setup
+INC-BETA-2026-01,2026-02-04T00:36:00Z,TOOL-11,PROD-C1,LINE-2,172,145,15,12,115,8,2.68,7.01,4.39,calibration_drift,Thermal calibration deviation flagged by automated monitoring system
+INC-BETA-2026-01,2026-02-04T02:36:00Z,TOOL-07,PROD-F3,LINE-2,82,53,20,9,236,60,4.94,6.46,24.04,micro_stop,Minor sensor trigger caused momentary line hold
+INC-BETA-2026-01,2026-02-04T06:36:00Z,TOOL-11,PROD-E2,LINE-3,240,223,8,9,99,27,4.18,5.47,16.68,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-BETA-2026-01,2026-02-04T08:28:00Z,TOOL-08,PROD-F2,LINE-2,85,76,6,3,94,13,5.99,9.16,15.38,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-BETA-2026-01,2026-02-04T10:19:00Z,TOOL-04,PROD-E2,LINE-2,219,194,11,14,130,32,5.66,11.5,18.42,normal_run,Steady throughput observed across the full planned window
+INC-BETA-2026-01,2026-02-04T12:45:00Z,TOOL-05,PROD-F4,LINE-3,218,202,12,4,223,21,3.4,5.4,4.49,maintenance_hold,Maintenance team performed emergency seal replacement on vacuum pump
+INC-BETA-2026-01,2026-02-04T16:37:00Z,TOOL-06,PROD-F2,LINE-1,217,193,18,6,234,20,5.33,6.78,11.36,micro_stop,Short stop for label verification on outgoing pallet
+INC-BETA-2026-01,2026-02-04T20:36:00Z,TOOL-02,PROD-E1,LINE-1,91,65,20,6,68,42,2.04,4.72,4.83,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-BETA-2026-01,2026-02-04T22:01:00Z,TOOL-09,PROD-E2,LINE-5,145,137,4,4,78,5,6.15,7.77,16.78,quality_hold,Lot placed on quality hold pending dimensional inspection results
+INC-BETA-2026-01,2026-02-04T23:35:00Z,TOOL-11,PROD-A1,LINE-3,222,188,18,16,154,30,5.04,10.86,10.91,normal_run,Production running within all spec parameters today
+INC-BETA-2026-01,2026-02-05T02:20:00Z,TOOL-02,PROD-B2,LINE-5,104,98,3,3,158,11,2.47,8.91,18.82,sensor_fault,Proximity sensor fault intermittently triggered line safety stop
+INC-BETA-2026-01,2026-02-05T05:17:00Z,TOOL-07,PROD-F2,LINE-1,227,205,12,10,230,18,5.91,7.34,8.69,micro_stop,Short stop for label verification on outgoing pallet
+INC-BETA-2026-01,2026-02-05T09:14:00Z,TOOL-09,PROD-E2,LINE-4,170,146,15,9,143,32,3.36,10.08,15.2,material_shortage,Production held pending clearance of quarantined input material
+INC-BETA-2026-01,2026-02-05T11:46:00Z,TOOL-10,PROD-E1,LINE-2,176,149,14,13,125,16,6.31,9.13,14.32,material_shortage,Material shortage traced to late supplier delivery this morning
+INC-BETA-2026-01,2026-02-05T13:53:00Z,TOOL-09,PROD-B1,LINE-3,81,75,4,2,140,5,5.36,11.65,25.38,quality_hold,Quality team initiated hold after customer complaint review opened
+INC-BETA-2026-01,2026-02-05T16:32:00Z,TOOL-10,PROD-E2,LINE-2,104,97,3,4,95,13,3.34,8.59,10.06,calibration_drift,Sensor reading drifted outside control limit during mid-run
+INC-BETA-2026-01,2026-02-05T18:27:00Z,TOOL-07,PROD-E2,LINE-2,99,86,7,6,104,20,5.63,10.18,18.98,quality_hold,Quality team initiated hold after customer complaint review opened
+INC-BETA-2026-01,2026-02-05T20:22:00Z,TOOL-01,PROD-F2,LINE-5,177,167,6,4,145,16,5.9,8.83,28.19,normal_run,Nominal output achieved across planned production window
+INC-BETA-2026-01,2026-02-05T22:56:00Z,TOOL-12,PROD-F1,LINE-5,82,72,6,4,73,14,4.12,6.98,18.69,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-BETA-2026-01,2026-02-06T00:18:00Z,TOOL-03,PROD-A1,LINE-4,194,168,16,10,83,12,3.66,10.33,7.85,micro_stop,Minor sensor trigger caused momentary line hold
+INC-BETA-2026-01,2026-02-06T02:01:00Z,TOOL-12,PROD-A1,LINE-5,182,167,8,7,171,29,4.99,10.45,16.5,normal_run,Operator confirmed line stable through end of shift
+INC-BETA-2026-01,2026-02-06T05:12:00Z,TOOL-04,PROD-E1,LINE-5,214,199,10,5,170,15,4.92,9.21,6.93,micro_stop,Short stop for label verification on outgoing pallet
+INC-BETA-2026-01,2026-02-06T08:15:00Z,TOOL-04,PROD-C2,LINE-3,232,200,17,15,103,16,4.58,11.93,15.5,normal_run,Production running within all spec parameters today
+INC-BETA-2026-01,2026-02-06T10:07:00Z,TOOL-04,PROD-F1,LINE-3,119,102,9,8,88,28,1.77,11.54,28.09,maintenance_hold,Tool flagged for maintenance after alarm threshold was reached
+INC-BETA-2026-01,2026-02-06T11:37:00Z,TOOL-06,PROD-F2,LINE-1,158,146,9,3,113,28,4.19,6.18,17.6,normal_run,Operator confirmed line stable through end of shift
+INC-BETA-2026-01,2026-02-06T13:36:00Z,TOOL-12,PROD-F2,LINE-1,176,154,12,10,71,13,2.35,5.56,24.52,changeover_delay,Fixture swap took longer than standard changeover time
+INC-GAMMA-2026-01,2026-01-20T05:30:00Z,TOOL-12,PROD-A2,LINE-3,204,159,29,16,107,22,4,7.93,28.09,normal_run,Steady throughput observed across the full planned window
+INC-GAMMA-2026-01,2026-01-20T07:35:00Z,TOOL-05,PROD-C2,LINE-4,180,149,24,7,235,32,3.28,6.27,29.9,sensor_fault,Temperature sensor gave erratic readings triggering automated hold
+INC-GAMMA-2026-01,2026-01-20T11:33:00Z,TOOL-11,PROD-C1,LINE-4,87,40,32,15,117,69,3.21,6.97,7.57,quality_hold,Quality team initiated hold after customer complaint review opened
+INC-GAMMA-2026-01,2026-01-20T13:39:00Z,TOOL-07,PROD-B2,LINE-5,119,100,12,7,214,31,3.75,5.27,20.96,calibration_drift,Bonder force calibration drift detected during quality sample check
+INC-GAMMA-2026-01,2026-01-20T17:21:00Z,TOOL-03,PROD-C1,LINE-5,114,64,31,19,97,70,3.09,8.28,28.66,micro_stop,Short stop for label verification on outgoing pallet
+INC-GAMMA-2026-01,2026-01-20T19:04:00Z,TOOL-12,PROD-A1,LINE-3,185,146,28,11,223,27,2.26,4.69,7.42,normal_run,All quality checks passed within acceptable tolerances
+INC-GAMMA-2026-01,2026-01-20T22:57:00Z,TOOL-10,PROD-E2,LINE-5,139,115,16,8,66,32,1.9,10.02,7.49,quality_hold,Hold placed on output pending incoming material re-inspection
+INC-GAMMA-2026-01,2026-01-21T00:16:00Z,TOOL-03,PROD-F4,LINE-4,205,173,22,10,117,12,3.54,11.75,28.06,sensor_fault,Sensor fault cleared after connector reseating by maintenance tech
+INC-GAMMA-2026-01,2026-01-21T02:21:00Z,TOOL-04,PROD-A2,LINE-2,192,149,28,15,143,39,5.94,8.82,24.18,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-GAMMA-2026-01,2026-01-21T04:56:00Z,TOOL-07,PROD-E2,LINE-5,232,185,26,21,240,12,4.1,7.94,25.5,normal_run,Steady throughput observed across the full planned window
+INC-GAMMA-2026-01,2026-01-21T09:14:00Z,TOOL-09,PROD-D1,LINE-1,222,179,21,22,72,22,2.96,6.86,11.92,quality_hold,Hold placed on output pending incoming material re-inspection
+INC-GAMMA-2026-01,2026-01-21T10:33:00Z,TOOL-07,PROD-C1,LINE-5,93,72,11,10,178,51,3.76,9.85,6.94,quality_hold,Production held for root cause on elevated scrap rate trend
+INC-GAMMA-2026-01,2026-01-21T13:50:00Z,TOOL-03,PROD-D1,LINE-4,162,137,17,8,211,55,5.98,11.35,6.34,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-GAMMA-2026-01,2026-01-21T17:28:00Z,TOOL-12,PROD-F2,LINE-1,103,89,7,7,152,15,4.12,7.45,24.57,material_shortage,Line paused awaiting replenishment of component reel stock
+INC-GAMMA-2026-01,2026-01-21T20:14:00Z,TOOL-09,PROD-D1,LINE-1,123,95,18,10,228,19,2.31,4.3,24,normal_run,No anomalies detected during this run cycle
+INC-GAMMA-2026-01,2026-01-22T00:13:00Z,TOOL-12,PROD-F3,LINE-4,153,128,18,7,93,22,1.52,9.89,4.32,material_shortage,Feeder ran dry before scheduled replenishment cycle arrived
+INC-GAMMA-2026-01,2026-01-22T02:05:00Z,TOOL-01,PROD-E2,LINE-4,140,117,11,12,176,36,3.71,8.89,4.17,quality_hold,Inline SPC chart triggered quality hold for process review
+INC-GAMMA-2026-01,2026-01-22T05:20:00Z,TOOL-04,PROD-A1,LINE-2,117,80,24,13,97,54,4.83,10.92,11.76,sensor_fault,Pressure sensor reported intermittent fault during this production run
+INC-GAMMA-2026-01,2026-01-22T07:02:00Z,TOOL-07,PROD-B1,LINE-2,152,120,18,14,212,46,5.44,7.02,15.84,calibration_drift,Sensor reading drifted outside control limit during mid-run
+INC-GAMMA-2026-01,2026-01-22T10:38:00Z,TOOL-05,PROD-C2,LINE-3,177,135,25,17,200,14,2.96,4.61,22.06,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-GAMMA-2026-01,2026-01-22T14:13:00Z,TOOL-09,PROD-B2,LINE-2,236,201,15,20,221,43,6.44,9.39,21.91,sensor_fault,Flow sensor reported out-of-range value requiring manual verification
+INC-GAMMA-2026-01,2026-01-22T18:05:00Z,TOOL-07,PROD-E2,LINE-3,146,113,16,17,150,18,4.57,8.51,22.96,material_shortage,Line paused awaiting replenishment of component reel stock
+INC-GAMMA-2026-01,2026-01-22T20:44:00Z,TOOL-12,PROD-C1,LINE-2,80,69,5,6,90,23,5.5,11.99,14.77,changeover_delay,Tool change required additional verification before restart
+INC-GAMMA-2026-01,2026-01-22T22:22:00Z,TOOL-01,PROD-F1,LINE-2,152,134,12,6,136,42,4.25,10.31,6.96,micro_stop,Minor sensor trigger caused momentary line hold
+INC-GAMMA-2026-01,2026-01-23T00:58:00Z,TOOL-10,PROD-A1,LINE-2,129,109,12,8,232,40,6.08,10.9,20.79,material_shortage,Shortage caused partial batch reduction for this run window
+INC-GAMMA-2026-01,2026-01-23T05:06:00Z,TOOL-09,PROD-C2,LINE-4,185,149,28,8,193,29,4.32,9.69,18.43,normal_run,All quality checks passed within acceptable tolerances
+INC-GAMMA-2026-01,2026-01-23T08:31:00Z,TOOL-06,PROD-A2,LINE-2,151,120,21,10,156,50,4.17,5.89,19.75,normal_run,Production running within all spec parameters today
+INC-GAMMA-2026-01,2026-01-23T11:18:00Z,TOOL-12,PROD-F4,LINE-3,88,60,21,7,120,97,3.76,11.62,9.62,material_shortage,Substrate lot delayed from incoming inspection hold status
+INC-GAMMA-2026-01,2026-01-23T13:31:00Z,TOOL-01,PROD-F3,LINE-2,103,89,10,4,183,42,2.27,6.06,16.57,quality_hold,Inline SPC chart triggered quality hold for process review
+INC-GAMMA-2026-01,2026-01-23T16:46:00Z,TOOL-03,PROD-F3,LINE-1,212,175,27,10,69,39,3.44,10.91,7.01,micro_stop,Brief line pause due to upstream buffer fill event
+INC-GAMMA-2026-01,2026-01-23T17:59:00Z,TOOL-06,PROD-D2,LINE-1,106,86,11,9,139,11,4.39,7.11,27.2,micro_stop,Conveyor jam cleared quickly by line operator on site
+INC-GAMMA-2026-01,2026-01-23T20:29:00Z,TOOL-05,PROD-E1,LINE-3,192,157,24,11,100,27,2.07,11.62,18.55,normal_run,All quality checks passed within acceptable tolerances
+INC-GAMMA-2026-01,2026-01-23T22:22:00Z,TOOL-09,PROD-C2,LINE-3,116,87,17,12,206,25,2.36,5.8,27.2,calibration_drift,Sensor reading drifted outside control limit during mid-run
+INC-GAMMA-2026-01,2026-01-24T01:54:00Z,TOOL-01,PROD-D2,LINE-1,107,92,10,5,160,21,5.02,11.3,20.37,maintenance_hold,Line held for bearing replacement on primary drive motor
+INC-GAMMA-2026-01,2026-01-24T04:47:00Z,TOOL-05,PROD-C2,LINE-2,216,178,14,24,179,46,2.16,10.32,27.91,material_shortage,Feeder ran dry before scheduled replenishment cycle arrived
+INC-GAMMA-2026-01,2026-01-24T07:57:00Z,TOOL-11,PROD-F1,LINE-4,200,173,16,11,217,26,6.06,8.69,22.19,calibration_drift,Tool calibration drift detected by SPC monitoring system alert
+INC-GAMMA-2026-01,2026-01-24T11:50:00Z,TOOL-08,PROD-A1,LINE-1,201,172,14,15,103,28,5.34,9.56,7.31,normal_run,Nominal output achieved across planned production window
+INC-GAMMA-2026-01,2026-01-24T13:38:00Z,TOOL-06,PROD-E1,LINE-1,157,129,17,11,165,25,4.6,8.88,29.32,changeover_delay,Changeover extended due to calibration check after setup
+INC-GAMMA-2026-01,2026-01-24T16:31:00Z,TOOL-12,PROD-E2,LINE-4,191,157,22,12,237,25,2.37,9.03,23.22,maintenance_hold,Line held for bearing replacement on primary drive motor
+INC-GAMMA-2026-01,2026-01-24T20:33:00Z,TOOL-10,PROD-E2,LINE-4,163,128,18,17,105,29,6.28,7.14,6.83,quality_hold,Hold placed on output pending incoming material re-inspection
+INC-GAMMA-2026-01,2026-01-24T22:30:00Z,TOOL-08,PROD-F1,LINE-1,103,90,8,5,208,50,5.55,10.55,21.18,material_shortage,Material shortage traced to late supplier delivery this morning
+INC-GAMMA-2026-01,2026-01-25T02:12:00Z,TOOL-10,PROD-E2,LINE-4,130,106,10,14,136,46,5.47,10.07,27.88,sensor_fault,Flow sensor reported out-of-range value requiring manual verification
+INC-GAMMA-2026-01,2026-01-25T04:41:00Z,TOOL-02,PROD-E2,LINE-1,236,182,37,17,92,28,1.81,11.11,29.17,normal_run,All quality checks passed within acceptable tolerances
+INC-GAMMA-2026-01,2026-01-25T06:26:00Z,TOOL-02,PROD-F4,LINE-3,87,72,7,8,160,50,3.09,6.81,13.92,calibration_drift,Bonder force calibration drift detected during quality sample check
+INC-GAMMA-2026-01,2026-01-25T09:13:00Z,TOOL-08,PROD-B1,LINE-2,222,176,21,25,166,19,2.94,10.91,7.26,normal_run,Run completed without interruption or escalation required
+INC-GAMMA-2026-01,2026-01-25T12:01:00Z,TOOL-03,PROD-F2,LINE-4,191,152,30,9,95,51,5.53,11.17,27.23,maintenance_hold,Line held for bearing replacement on primary drive motor
+INC-GAMMA-2026-01,2026-01-25T13:43:00Z,TOOL-08,PROD-E1,LINE-4,221,175,31,15,117,21,3.62,4.18,16.95,maintenance_hold,Overdue PM completed resulting in extended planned downtime hold
+INC-GAMMA-2026-01,2026-01-25T15:58:00Z,TOOL-05,PROD-D1,LINE-5,227,180,21,26,205,40,5.02,6.25,16.52,maintenance_hold,Unplanned maintenance hold for lubrication of drive assembly
+INC-GAMMA-2026-01,2026-01-25T19:41:00Z,TOOL-05,PROD-D2,LINE-5,100,81,11,8,122,40,4.65,9.7,21.39,maintenance_hold,Maintenance team performed emergency seal replacement on vacuum pump
+INC-GAMMA-2026-01,2026-01-25T22:03:00Z,TOOL-05,PROD-E2,LINE-1,167,143,18,6,176,42,6.03,9.67,12.62,changeover_delay,Setup time exceeded target due to new operator on shift
+INC-GAMMA-2026-01,2026-01-26T01:10:00Z,TOOL-05,PROD-B1,LINE-1,232,179,31,22,204,26,1.81,7.26,8.4,normal_run,No anomalies detected during this run cycle
+INC-GAMMA-2026-01,2026-01-26T04:36:00Z,TOOL-05,PROD-D2,LINE-1,112,88,12,12,131,26,2.16,5.53,26.3,normal_run,Production running within all spec parameters today
+INC-GAMMA-2026-01,2026-01-26T06:54:00Z,TOOL-10,PROD-F2,LINE-2,194,166,18,10,239,25,3.92,10.48,26.41,changeover_delay,Fixture swap took longer than standard changeover time
+INC-GAMMA-2026-01,2026-01-26T10:59:00Z,TOOL-10,PROD-F4,LINE-2,206,164,27,15,158,25,4.8,10.16,8.35,calibration_drift,Tool calibration drift detected by SPC monitoring system alert
+INC-GAMMA-2026-01,2026-01-26T13:40:00Z,TOOL-11,PROD-C1,LINE-1,93,80,7,6,137,40,5.23,10.45,17.85,changeover_delay,Changeover held pending engineering sign-off on first article
+INC-GAMMA-2026-01,2026-01-26T16:11:00Z,TOOL-08,PROD-C1,LINE-2,215,176,31,8,174,34,4.89,11.75,21.75,normal_run,All quality checks passed within acceptable tolerances
+INC-GAMMA-2026-01,2026-01-26T19:18:00Z,TOOL-07,PROD-E2,LINE-3,165,134,14,17,125,51,4.42,8.18,21.56,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-GAMMA-2026-01,2026-01-26T21:43:00Z,TOOL-04,PROD-E1,LINE-3,126,110,11,5,62,14,1.56,3.88,6.7,material_shortage,Line paused awaiting replenishment of component reel stock
+INC-GAMMA-2026-01,2026-01-26T22:56:00Z,TOOL-05,PROD-B2,LINE-1,86,73,10,3,212,52,5.97,7.67,19.58,normal_run,Production running within all spec parameters today
+INC-GAMMA-2026-01,2026-01-27T02:32:00Z,TOOL-10,PROD-B1,LINE-4,224,125,77,22,88,73,2.77,7.35,28.34,maintenance_hold,Tool flagged for maintenance after alarm threshold was reached
+INC-GAMMA-2026-01,2026-01-27T04:15:00Z,TOOL-12,PROD-F1,LINE-3,145,128,11,6,75,34,3.44,11.97,10.71,quality_hold,Quality hold issued after visual defect found during sampling
+INC-GAMMA-2026-01,2026-01-27T05:46:00Z,TOOL-02,PROD-D2,LINE-2,236,192,23,21,87,19,4.2,7.85,19.96,normal_run,Operator confirmed line stable through end of shift
+INC-GAMMA-2026-01,2026-01-27T07:23:00Z,TOOL-02,PROD-A1,LINE-1,98,82,11,5,174,11,5.98,7.3,20.65,sensor_fault,Flow sensor reported out-of-range value requiring manual verification
+INC-GAMMA-2026-01,2026-01-27T10:31:00Z,TOOL-05,PROD-B1,LINE-3,180,145,21,14,185,40,3.68,10.78,24.3,quality_hold,Quality team initiated hold after customer complaint review opened
+INC-GAMMA-2026-01,2026-01-27T13:45:00Z,TOOL-01,PROD-D1,LINE-4,111,87,12,12,151,31,4.91,8.05,20.44,sensor_fault,Pressure sensor reported intermittent fault during this production run
+INC-GAMMA-2026-01,2026-01-27T16:29:00Z,TOOL-09,PROD-F4,LINE-3,100,76,14,10,134,51,2.52,8,29.16,calibration_drift,Tool calibration drift detected by SPC monitoring system alert
+INC-GAMMA-2026-01,2026-01-27T18:57:00Z,TOOL-02,PROD-F1,LINE-3,204,173,13,18,108,18,1.68,3.23,29.91,micro_stop,Minor sensor trigger caused momentary line hold
+INC-GAMMA-2026-01,2026-01-27T20:49:00Z,TOOL-09,PROD-F1,LINE-3,207,162,23,22,175,11,1.69,3.5,24.48,normal_run,Production running within all spec parameters today
+INC-GAMMA-2026-01,2026-01-27T23:52:00Z,TOOL-11,PROD-F1,LINE-5,197,146,30,21,197,19,5.21,7.18,5.87,maintenance_hold,Line held for bearing replacement on primary drive motor
+INC-GAMMA-2026-01,2026-01-28T03:11:00Z,TOOL-08,PROD-E2,LINE-1,142,83,46,13,104,56,6.02,11.02,6.53,maintenance_hold,Maintenance team performed emergency seal replacement on vacuum pump
+INC-GAMMA-2026-01,2026-01-28T04:59:00Z,TOOL-02,PROD-A2,LINE-4,232,187,32,13,111,37,3.19,10.64,23.19,changeover_delay,Fixture swap took longer than standard changeover time
+INC-GAMMA-2026-01,2026-01-28T07:10:00Z,TOOL-09,PROD-B1,LINE-3,134,105,18,11,145,14,2.1,4.27,14.79,maintenance_hold,Maintenance team performed emergency seal replacement on vacuum pump
+INC-GAMMA-2026-01,2026-01-28T09:42:00Z,TOOL-08,PROD-B2,LINE-5,90,75,6,9,221,49,3.38,5.16,26.87,normal_run,Production running within all spec parameters today
+INC-GAMMA-2026-01,2026-01-28T13:30:00Z,TOOL-02,PROD-F2,LINE-5,152,122,15,15,181,54,2.13,4.29,11.04,material_shortage,Line paused awaiting replenishment of component reel stock
+INC-GAMMA-2026-01,2026-01-28T16:38:00Z,TOOL-10,PROD-F2,LINE-1,232,149,53,30,82,82,3.24,3.78,10.13,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-GAMMA-2026-01,2026-01-28T18:05:00Z,TOOL-10,PROD-C2,LINE-5,209,171,17,21,228,23,2.88,5.05,24.71,maintenance_hold,Line held for bearing replacement on primary drive motor
+INC-GAMMA-2026-01,2026-01-28T22:10:00Z,TOOL-03,PROD-B1,LINE-1,93,77,11,5,171,26,3.17,10.38,23.72,normal_run,Run completed without interruption or escalation required
+INC-GAMMA-2026-01,2026-01-29T01:04:00Z,TOOL-09,PROD-B1,LINE-2,87,74,9,4,120,38,4.46,7.25,9.17,maintenance_hold,Tool flagged for maintenance after alarm threshold was reached
+INC-GAMMA-2026-01,2026-01-29T03:13:00Z,TOOL-02,PROD-C2,LINE-2,105,90,8,7,111,34,5.96,6.87,19.21,normal_run,Operator confirmed line stable through end of shift
+INC-GAMMA-2026-01,2026-01-29T05:10:00Z,TOOL-04,PROD-E2,LINE-4,125,107,12,6,109,50,3.29,6,12.73,normal_run,All quality checks passed within acceptable tolerances
+INC-GAMMA-2026-01,2026-01-29T07:02:00Z,TOOL-05,PROD-B1,LINE-1,199,168,21,10,147,24,5.93,9.79,24.53,calibration_drift,Thermal calibration deviation flagged by automated monitoring system
+INC-GAMMA-2026-01,2026-01-29T09:36:00Z,TOOL-10,PROD-E1,LINE-2,102,84,10,8,115,47,3.87,7.9,4.38,changeover_delay,Setup time exceeded target due to new operator on shift
+INC-GAMMA-2026-01,2026-01-29T11:40:00Z,TOOL-04,PROD-C2,LINE-4,228,184,18,26,98,46,5.99,8.79,5.15,sensor_fault,Flow sensor reported out-of-range value requiring manual verification
+INC-GAMMA-2026-01,2026-01-29T13:36:00Z,TOOL-01,PROD-D1,LINE-5,180,143,19,18,85,38,3.98,5.1,23.58,maintenance_hold,Line held for bearing replacement on primary drive motor
+INC-GAMMA-2026-01,2026-01-29T15:09:00Z,TOOL-03,PROD-C2,LINE-3,141,118,17,6,182,52,3.02,9.48,26.31,maintenance_hold,Scheduled preventive maintenance performed during production window
+INC-GAMMA-2026-01,2026-01-29T18:27:00Z,TOOL-08,PROD-F3,LINE-2,183,149,14,20,220,39,5.02,5.53,20.31,changeover_delay,Changeover held pending engineering sign-off on first article
+INC-GAMMA-2026-01,2026-01-29T22:19:00Z,TOOL-09,PROD-A1,LINE-3,189,146,25,18,216,44,4.38,6.35,21.8,calibration_drift,Tool calibration drift detected by SPC monitoring system alert
+INC-GAMMA-2026-01,2026-01-30T01:58:00Z,TOOL-09,PROD-F1,LINE-3,93,81,6,6,218,12,3.33,5.26,18.53,normal_run,Run completed without interruption or escalation required
+INC-GAMMA-2026-01,2026-01-30T05:44:00Z,TOOL-03,PROD-C2,LINE-2,218,186,15,17,208,54,2.55,9.72,9.86,changeover_delay,Changeover extended due to calibration check after setup
+INC-GAMMA-2026-01,2026-01-30T09:30:00Z,TOOL-11,PROD-D1,LINE-3,93,81,6,6,184,42,4.13,5.53,22.46,maintenance_hold,Maintenance team performed emergency seal replacement on vacuum pump
+INC-GAMMA-2026-01,2026-01-30T12:45:00Z,TOOL-08,PROD-E2,LINE-3,96,79,7,10,82,15,3.45,5.39,28.91,normal_run,Steady throughput observed across the full planned window
+INC-GAMMA-2026-01,2026-01-30T14:17:00Z,TOOL-02,PROD-F2,LINE-2,207,181,15,11,220,11,2.97,11.74,18.08,normal_run,No anomalies detected during this run cycle
+INC-GAMMA-2026-01,2026-01-30T18:12:00Z,TOOL-08,PROD-F2,LINE-1,154,106,36,12,119,116,4.72,8.01,12.91,maintenance_hold,Tool flagged for maintenance after alarm threshold was reached
+INC-GAMMA-2026-01,2026-01-30T20:28:00Z,TOOL-10,PROD-F1,LINE-5,220,184,22,14,93,29,2.36,5.34,16.59,sensor_fault,Pressure sensor reported intermittent fault during this production run
+INC-GAMMA-2026-01,2026-01-30T22:07:00Z,TOOL-06,PROD-C1,LINE-4,122,102,14,6,197,28,2.41,4.58,22.41,sensor_fault,Sensor fault cleared after connector reseating by maintenance tech
+INC-GAMMA-2026-01,2026-01-31T01:31:00Z,TOOL-04,PROD-A2,LINE-1,161,131,18,12,154,21,2.53,9.37,21.3,sensor_fault,Sensor fault cleared after connector reseating by maintenance tech
+INC-GAMMA-2026-01,2026-01-31T04:18:00Z,TOOL-08,PROD-E1,LINE-2,216,173,19,24,163,41,5.34,11.68,28.12,normal_run,Run completed without interruption or escalation required
+INC-GAMMA-2026-01,2026-01-31T07:20:00Z,TOOL-09,PROD-C2,LINE-3,201,94,72,35,206,68,5.5,10.37,27.98,material_shortage,Substrate lot delayed from incoming inspection hold status
+INC-GAMMA-2026-01,2026-01-31T11:03:00Z,TOOL-01,PROD-B1,LINE-5,109,69,27,13,116,107,3.29,6.47,19.81,changeover_delay,Tool change required additional verification before restart
+INC-GAMMA-2026-01,2026-01-31T13:08:00Z,TOOL-05,PROD-B2,LINE-1,101,60,29,12,231,61,6.38,8.9,16.75,maintenance_hold,Maintenance team performed emergency seal replacement on vacuum pump
+INC-GAMMA-2026-01,2026-01-31T17:02:00Z,TOOL-11,PROD-C2,LINE-4,117,94,15,8,158,33,1.56,6.1,12.01,material_shortage,Production held pending clearance of quarantined input material
+INC-GAMMA-2026-01,2026-01-31T19:44:00Z,TOOL-04,PROD-F2,LINE-4,186,149,26,11,168,36,2.2,8.28,6.24,micro_stop,Minor sensor trigger caused momentary line hold
+INC-GAMMA-2026-01,2026-01-31T22:50:00Z,TOOL-06,PROD-A2,LINE-5,176,152,12,12,129,36,2.37,7.16,18.77,sensor_fault,Sensor fault cleared after connector reseating by maintenance tech
+INC-GAMMA-2026-01,2026-02-01T01:06:00Z,TOOL-07,PROD-C1,LINE-5,205,171,13,21,209,29,3.97,10.04,9.84,quality_hold,Quality hold issued after visual defect found during sampling
+INC-GAMMA-2026-01,2026-02-01T04:45:00Z,TOOL-05,PROD-F1,LINE-4,111,86,13,12,166,21,3.96,9.65,10.36,normal_run,No anomalies detected during this run cycle
+INC-GAMMA-2026-01,2026-02-01T07:48:00Z,TOOL-02,PROD-E2,LINE-3,228,187,24,17,126,50,4.93,11.83,25.28,changeover_delay,Changeover held pending engineering sign-off on first article
+INC-GAMMA-2026-01,2026-02-01T10:14:00Z,TOOL-01,PROD-F4,LINE-3,121,101,14,6,178,54,2.18,4.47,11.09,changeover_delay,Changeover extended due to calibration check after setup
+INC-GAMMA-2026-01,2026-02-01T13:15:00Z,TOOL-05,PROD-C1,LINE-5,99,78,11,10,106,16,4.49,6.16,12.39,micro_stop,Micro stop logged during transition between product lots
+INC-GAMMA-2026-01,2026-02-01T15:12:00Z,TOOL-05,PROD-F1,LINE-3,104,86,11,7,96,10,2.18,5.53,24.25,changeover_delay,Product changeover delayed by missing tooling in staging area
+INC-GAMMA-2026-01,2026-02-01T16:53:00Z,TOOL-04,PROD-B1,LINE-5,136,103,19,14,203,49,4.95,11.69,26,maintenance_hold,Overdue PM completed resulting in extended planned downtime hold
+INC-GAMMA-2026-01,2026-02-01T20:21:00Z,TOOL-07,PROD-D2,LINE-1,109,82,15,12,182,32,3.06,6.62,25.24,quality_hold,Quality team initiated hold after customer complaint review opened
+INC-GAMMA-2026-01,2026-02-01T23:41:00Z,TOOL-06,PROD-B1,LINE-3,87,72,11,4,92,54,2.21,5.04,7.26,normal_run,Production running within all spec parameters today
+INC-GAMMA-2026-01,2026-02-02T01:28:00Z,TOOL-12,PROD-F3,LINE-1,99,86,6,7,170,12,2.48,3.3,21.15,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-GAMMA-2026-01,2026-02-02T04:23:00Z,TOOL-05,PROD-A1,LINE-1,157,123,19,15,91,48,2.53,11.11,8.8,changeover_delay,Fixture swap took longer than standard changeover time
+INC-GAMMA-2026-01,2026-02-02T06:00:00Z,TOOL-12,PROD-C1,LINE-5,169,135,16,18,216,25,4.02,5.03,25.31,maintenance_hold,Maintenance team performed emergency seal replacement on vacuum pump
+INC-GAMMA-2026-01,2026-02-02T09:44:00Z,TOOL-12,PROD-B2,LINE-3,123,95,18,10,85,23,6.1,11.2,16.34,maintenance_hold,Unplanned maintenance hold for lubrication of drive assembly
+INC-GAMMA-2026-01,2026-02-02T11:25:00Z,TOOL-11,PROD-A2,LINE-2,170,132,26,12,191,24,3.54,10.1,12.17,material_shortage,Production held pending clearance of quarantined input material
+INC-GAMMA-2026-01,2026-02-02T14:42:00Z,TOOL-08,PROD-F3,LINE-3,153,130,17,6,143,41,2.08,5.55,19.61,micro_stop,Micro stop logged during transition between product lots
+INC-GAMMA-2026-01,2026-02-02T17:21:00Z,TOOL-04,PROD-E1,LINE-4,154,119,24,11,77,40,6.2,8.65,4.33,maintenance_hold,Overdue PM completed resulting in extended planned downtime hold
+INC-GAMMA-2026-01,2026-02-02T18:43:00Z,TOOL-07,PROD-D2,LINE-5,101,87,7,7,237,47,6.39,10.68,27.2,normal_run,No anomalies detected during this run cycle
+INC-GAMMA-2026-01,2026-02-02T22:48:00Z,TOOL-06,PROD-B2,LINE-5,183,151,13,19,187,27,5.32,10.55,19.43,maintenance_hold,Overdue PM completed resulting in extended planned downtime hold
+INC-GAMMA-2026-01,2026-02-03T02:09:00Z,TOOL-06,PROD-D2,LINE-5,183,140,29,14,97,39,2.04,5.26,16.93,calibration_drift,Calibration check triggered after consecutive out-of-spec readings
+INC-GAMMA-2026-01,2026-02-03T03:48:00Z,TOOL-02,PROD-F2,LINE-1,97,83,10,4,105,34,4.52,7.3,11.87,calibration_drift,Sensor reading drifted outside control limit during mid-run
+INC-GAMMA-2026-01,2026-02-03T05:51:00Z,TOOL-08,PROD-F3,LINE-4,131,110,11,10,189,26,4.21,10.61,18.05,normal_run,Nominal output achieved across planned production window
+INC-GAMMA-2026-01,2026-02-03T09:03:00Z,TOOL-07,PROD-A2,LINE-4,195,165,17,13,177,12,1.66,8.01,26.37,micro_stop,Tool head contact check caused brief unplanned stoppage
+INC-GAMMA-2026-01,2026-02-03T12:07:00Z,TOOL-08,PROD-D1,LINE-2,159,127,20,12,88,46,4.88,9.75,21.82,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-GAMMA-2026-01,2026-02-03T13:54:00Z,TOOL-03,PROD-E1,LINE-1,180,150,15,15,156,49,4.88,10.45,11.4,normal_run,All quality checks passed within acceptable tolerances
+INC-GAMMA-2026-01,2026-02-03T16:33:00Z,TOOL-03,PROD-F4,LINE-3,169,132,23,14,220,31,3.4,7.37,29.79,changeover_delay,Fixture swap took longer than standard changeover time
+INC-GAMMA-2026-01,2026-02-03T20:22:00Z,TOOL-04,PROD-B2,LINE-3,231,195,15,21,138,17,3.19,3.85,12.48,material_shortage,Feeder ran dry before scheduled replenishment cycle arrived
+INC-GAMMA-2026-01,2026-02-03T23:00:00Z,TOOL-09,PROD-D1,LINE-3,85,67,11,7,141,34,4.35,7.16,6.54,material_shortage,Shortage caused partial batch reduction for this run window
+INC-GAMMA-2026-01,2026-02-04T01:29:00Z,TOOL-06,PROD-D2,LINE-5,166,110,38,18,171,75,3.98,10.85,24.47,quality_hold,Quality team initiated hold after customer complaint review opened
+INC-GAMMA-2026-01,2026-02-04T04:28:00Z,TOOL-05,PROD-C1,LINE-1,156,121,24,11,117,49,5.21,6.29,25.95,normal_run,No anomalies detected during this run cycle
+INC-GAMMA-2026-01,2026-02-04T06:35:00Z,TOOL-02,PROD-E2,LINE-5,201,168,20,13,79,51,5.62,9.09,11.8,calibration_drift,Tool calibration drift detected by SPC monitoring system alert
+INC-GAMMA-2026-01,2026-02-04T08:02:00Z,TOOL-07,PROD-D1,LINE-3,239,191,26,22,200,21,5.9,9.92,17.42,normal_run,Operator confirmed line stable through end of shift
+INC-GAMMA-2026-01,2026-02-04T11:30:00Z,TOOL-11,PROD-F4,LINE-4,148,114,22,12,217,37,6.17,10.54,5.56,normal_run,Operator confirmed line stable through end of shift
+INC-GAMMA-2026-01,2026-02-04T15:13:00Z,TOOL-04,PROD-B1,LINE-3,191,152,19,20,76,50,2.52,6.72,25.42,calibration_drift,Tool calibration drift detected by SPC monitoring system alert
+INC-GAMMA-2026-01,2026-02-04T16:38:00Z,TOOL-07,PROD-B2,LINE-1,118,102,9,7,139,39,3.93,11.93,14.97,sensor_fault,Sensor fault cleared after connector reseating by maintenance tech
+INC-GAMMA-2026-01,2026-02-04T19:04:00Z,TOOL-05,PROD-B1,LINE-1,146,117,20,9,200,21,4.72,5.51,22.78,quality_hold,Lot placed on quality hold pending dimensional inspection results
+INC-GAMMA-2026-01,2026-02-04T22:28:00Z,TOOL-06,PROD-E2,LINE-3,96,76,14,6,153,52,4.79,5.9,28.52,maintenance_hold,Unplanned maintenance hold for lubrication of drive assembly
+INC-GAMMA-2026-01,2026-02-05T01:10:00Z,TOOL-02,PROD-E2,LINE-5,110,87,12,11,194,26,3.98,5.16,19.6,quality_hold,Inline SPC chart triggered quality hold for process review
+INC-GAMMA-2026-01,2026-02-05T04:36:00Z,TOOL-10,PROD-F2,LINE-4,140,111,21,8,87,21,2.57,5.52,14.62,quality_hold,Lot placed on quality hold pending dimensional inspection results
+INC-GAMMA-2026-01,2026-02-05T06:20:00Z,TOOL-09,PROD-C2,LINE-1,161,131,18,12,123,27,5.9,11.65,13.44,maintenance_hold,Tool flagged for maintenance after alarm threshold was reached
+INC-GAMMA-2026-01,2026-02-05T08:25:00Z,TOOL-11,PROD-E2,LINE-1,93,72,12,9,121,26,4.26,7,28.92,changeover_delay,Setup time exceeded target due to new operator on shift
+INC-GAMMA-2026-01,2026-02-05T10:31:00Z,TOOL-09,PROD-F4,LINE-2,193,153,19,21,160,26,3,11.46,23.67,micro_stop,Micro stop logged during transition between product lots
+INC-GAMMA-2026-01,2026-02-05T13:18:00Z,TOOL-08,PROD-F1,LINE-3,184,148,25,11,80,41,3.86,7.52,25.87,maintenance_hold,Scheduled preventive maintenance performed during production window
+INC-GAMMA-2026-01,2026-02-05T14:45:00Z,TOOL-12,PROD-C1,LINE-5,96,79,9,8,200,30,3.77,4.48,5.35,calibration_drift,Bonder force calibration drift detected during quality sample check
+INC-GAMMA-2026-01,2026-02-05T18:21:00Z,TOOL-11,PROD-B1,LINE-1,182,157,14,11,207,15,2.05,5.25,22.55,maintenance_hold,Overdue PM completed resulting in extended planned downtime hold
+INC-GAMMA-2026-01,2026-02-05T21:54:00Z,TOOL-10,PROD-F1,LINE-4,161,128,16,17,94,26,2.37,8.34,12.52,micro_stop,Brief line pause due to upstream buffer fill event
+INC-GAMMA-2026-01,2026-02-05T23:43:00Z,TOOL-06,PROD-B1,LINE-4,176,130,27,19,117,11,6.24,11.6,20.82,calibration_drift,Sensor reading drifted outside control limit during mid-run
+INC-GAMMA-2026-01,2026-02-06T01:56:00Z,TOOL-04,PROD-C1,LINE-2,92,77,9,6,126,19,1.95,6.31,28.63,normal_run,Run completed without interruption or escalation required
+INC-GAMMA-2026-01,2026-02-06T04:20:00Z,TOOL-07,PROD-F3,LINE-4,206,173,14,19,108,27,2.94,7.67,7.39,quality_hold,Quality team initiated hold after customer complaint review opened
+INC-GAMMA-2026-01,2026-02-06T06:16:00Z,TOOL-05,PROD-F2,LINE-2,187,154,14,19,67,28,6.38,8.09,15.73,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-GAMMA-2026-01,2026-02-06T07:39:00Z,TOOL-02,PROD-A1,LINE-4,114,85,16,13,161,53,2.56,6.49,15.01,calibration_drift,Sensor reading drifted outside control limit during mid-run
+INC-GAMMA-2026-01,2026-02-06T10:25:00Z,TOOL-09,PROD-A1,LINE-1,165,128,25,12,150,48,6.2,11.83,19.55,maintenance_hold,Scheduled preventive maintenance performed during production window
+INC-GAMMA-2026-01,2026-02-06T12:57:00Z,TOOL-05,PROD-E1,LINE-5,177,150,15,12,154,18,6.34,9.73,19.09,micro_stop,Operator-initiated pause to clear accumulated scrap tray
+INC-GAMMA-2026-01,2026-02-06T15:48:00Z,TOOL-06,PROD-D2,LINE-2,102,85,9,8,96,26,2.08,3.4,7.32,quality_hold,Inline SPC chart triggered quality hold for process review
+INC-GAMMA-2026-01,2026-02-06T17:37:00Z,TOOL-07,PROD-C1,LINE-3,236,177,33,26,192,30,3.68,5.47,23.16,material_shortage,Line paused awaiting replenishment of component reel stock
+INC-GAMMA-2026-01,2026-02-06T21:08:00Z,TOOL-11,PROD-F1,LINE-4,93,82,7,4,106,12,3.85,5.6,16.15,normal_run,Operator confirmed line stable through end of shift
+INC-GAMMA-2026-01,2026-02-06T22:57:00Z,TOOL-08,PROD-C2,LINE-5,204,174,21,9,97,17,3.25,5.43,11.39,quality_hold,Production held for root cause on elevated scrap rate trend
+INC-GAMMA-2026-01,2026-02-07T00:52:00Z,TOOL-05,PROD-E2,LINE-5,134,104,15,15,194,46,2.4,11.28,10.4,material_shortage,Substrate lot delayed from incoming inspection hold status
+INC-GAMMA-2026-01,2026-02-07T04:18:00Z,TOOL-01,PROD-C1,LINE-1,180,143,17,20,87,30,2.27,3.73,25.6,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-GAMMA-2026-01,2026-02-07T05:55:00Z,TOOL-10,PROD-F1,LINE-1,164,124,25,15,175,30,6.24,12,27.58,quality_hold,Quality hold issued after visual defect found during sampling
+INC-GAMMA-2026-01,2026-02-07T08:58:00Z,TOOL-01,PROD-F3,LINE-3,162,124,22,16,200,48,3.41,7.14,8.63,sensor_fault,Vision sensor fault caused false reject events during run
+INC-GAMMA-2026-01,2026-02-07T12:22:00Z,TOOL-01,PROD-F4,LINE-2,121,102,11,8,225,51,2.27,5.69,24.83,maintenance_hold,Tool flagged for maintenance after alarm threshold was reached
+INC-GAMMA-2026-01,2026-02-07T16:13:00Z,TOOL-06,PROD-F1,LINE-1,174,142,19,13,159,40,2.84,8.54,6.35,changeover_delay,Changeover extended due to calibration check after setup
+INC-GAMMA-2026-01,2026-02-07T18:59:00Z,TOOL-07,PROD-F1,LINE-4,103,91,6,6,178,53,2.62,9.21,8.03,material_shortage,Shortage caused partial batch reduction for this run window
+INC-GAMMA-2026-01,2026-02-07T22:15:00Z,TOOL-02,PROD-C1,LINE-4,191,121,40,30,136,69,6.42,10.4,11.81,changeover_delay,Recipe load delay extended total changeover beyond target
+INC-GAMMA-2026-01,2026-02-08T00:42:00Z,TOOL-10,PROD-A1,LINE-5,99,76,15,8,190,37,3.57,7.75,22.73,quality_hold,Inline SPC chart triggered quality hold for process review
+INC-GAMMA-2026-01,2026-02-08T04:02:00Z,TOOL-10,PROD-A2,LINE-5,84,54,18,12,105,73,5.71,6.47,14.82,quality_hold,Inline SPC chart triggered quality hold for process review
+INC-GAMMA-2026-01,2026-02-08T06:07:00Z,TOOL-12,PROD-D2,LINE-4,239,130,82,27,107,77,2.43,9.72,19.71,sensor_fault,Pressure sensor reported intermittent fault during this production run
+INC-GAMMA-2026-01,2026-02-08T08:09:00Z,TOOL-09,PROD-A1,LINE-1,181,160,12,9,182,39,4.96,11.14,29.11,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-GAMMA-2026-01,2026-02-08T11:22:00Z,TOOL-10,PROD-F4,LINE-5,172,130,22,20,232,35,5.52,6.54,7.51,normal_run,Nominal output achieved across planned production window
+INC-GAMMA-2026-01,2026-02-08T15:16:00Z,TOOL-12,PROD-B2,LINE-1,133,113,14,6,121,37,5.71,11.18,18,normal_run,Nominal output achieved across planned production window
+INC-GAMMA-2026-01,2026-02-08T17:33:00Z,TOOL-03,PROD-D2,LINE-4,85,70,6,9,239,38,6.32,9.26,26.35,calibration_drift,Calibration check triggered after consecutive out-of-spec readings
+INC-GAMMA-2026-01,2026-02-08T21:43:00Z,TOOL-10,PROD-F4,LINE-4,93,81,8,4,170,36,5.74,10.49,19.49,calibration_drift,Tool calibration drift detected by SPC monitoring system alert
+INC-GAMMA-2026-01,2026-02-09T00:36:00Z,TOOL-08,PROD-D1,LINE-4,211,168,25,18,233,41,2.66,3.7,4.49,calibration_drift,Thermal calibration deviation flagged by automated monitoring system
+INC-GAMMA-2026-01,2026-02-09T04:33:00Z,TOOL-05,PROD-F1,LINE-4,201,169,14,18,225,32,3.74,7.63,8.19,maintenance_hold,Line held for bearing replacement on primary drive motor
+INC-GAMMA-2026-01,2026-02-09T08:31:00Z,TOOL-08,PROD-B2,LINE-5,136,108,16,12,214,55,4.78,6.16,11.63,maintenance_hold,Line held for bearing replacement on primary drive motor
+INC-GAMMA-2026-01,2026-02-09T12:18:00Z,TOOL-08,PROD-F3,LINE-2,239,198,19,22,82,52,3.91,5.73,8.06,material_shortage,Feeder ran dry before scheduled replenishment cycle arrived
+INC-GAMMA-2026-01,2026-02-09T13:57:00Z,TOOL-05,PROD-B2,LINE-2,222,199,14,9,126,32,4.88,6.54,26.35,material_shortage,Substrate lot delayed from incoming inspection hold status
+INC-GAMMA-2026-01,2026-02-09T16:15:00Z,TOOL-07,PROD-A2,LINE-5,138,122,9,7,126,31,5.42,10.6,24.02,calibration_drift,Calibration check triggered after consecutive out-of-spec readings
+INC-GAMMA-2026-01,2026-02-09T18:39:00Z,TOOL-10,PROD-F1,LINE-1,92,72,14,6,177,17,6.37,10.88,19.85,quality_hold,Lot placed on quality hold pending dimensional inspection results
+INC-GAMMA-2026-01,2026-02-09T21:55:00Z,TOOL-01,PROD-E1,LINE-1,122,94,15,13,152,20,5.14,10.14,23.81,material_shortage,Substrate lot delayed from incoming inspection hold status
+INC-GAMMA-2026-01,2026-02-10T00:33:00Z,TOOL-11,PROD-C2,LINE-3,115,101,8,6,166,10,2.73,10.33,12.87,material_shortage,Substrate lot delayed from incoming inspection hold status
+INC-GAMMA-2026-01,2026-02-10T03:29:00Z,TOOL-06,PROD-F2,LINE-4,172,141,21,10,195,36,5.44,6.78,15.15,sensor_fault,Vision sensor fault caused false reject events during run
+INC-GAMMA-2026-01,2026-02-10T07:02:00Z,TOOL-11,PROD-C2,LINE-1,193,172,14,7,192,14,1.92,5.83,29.53,normal_run,Production running within all spec parameters today
+INC-GAMMA-2026-01,2026-02-10T10:28:00Z,TOOL-01,PROD-F1,LINE-2,227,193,14,20,229,43,6.36,9.02,27.03,maintenance_hold,Tool flagged for maintenance after alarm threshold was reached
+INC-GAMMA-2026-01,2026-02-10T14:29:00Z,TOOL-06,PROD-A1,LINE-3,215,178,26,11,163,38,4.72,11.24,20.23,calibration_drift,Process parameter drift required inline recalibration procedure
+INC-GAMMA-2026-01,2026-02-10T17:25:00Z,TOOL-11,PROD-D1,LINE-2,157,134,10,13,159,18,4.1,8.6,9.56,material_shortage,Material shortage traced to late supplier delivery this morning
+INC-GAMMA-2026-01,2026-02-10T20:22:00Z,TOOL-06,PROD-F3,LINE-2,85,72,5,8,211,26,2.71,10.01,22.89,sensor_fault,Pressure sensor reported intermittent fault during this production run
+INC-GAMMA-2026-01,2026-02-10T23:56:00Z,TOOL-06,PROD-C1,LINE-5,170,141,12,17,91,38,2.99,9.76,15.78,sensor_fault,Flow sensor reported out-of-range value requiring manual verification
+INC-GAMMA-2026-01,2026-02-11T01:47:00Z,TOOL-10,PROD-F2,LINE-5,232,199,19,14,230,55,4.36,5.86,13.82,maintenance_hold,Scheduled preventive maintenance performed during production window
+INC-GAMMA-2026-01,2026-02-11T05:49:00Z,TOOL-09,PROD-E2,LINE-2,172,146,18,8,168,36,1.91,3.56,27.1,material_shortage,Feeder ran dry before scheduled replenishment cycle arrived
+INC-GAMMA-2026-01,2026-02-11T08:41:00Z,TOOL-06,PROD-F1,LINE-5,183,148,21,14,161,26,4.42,9.43,29.91,maintenance_hold,Line held for bearing replacement on primary drive motor
+INC-GAMMA-2026-01,2026-02-11T11:37:00Z,TOOL-03,PROD-B1,LINE-5,112,92,12,8,240,42,5.82,6.99,9.53,material_shortage,Shortage caused partial batch reduction for this run window
+INC-GAMMA-2026-01,2026-02-11T15:44:00Z,TOOL-09,PROD-C2,LINE-1,234,190,33,11,154,46,2.95,7.92,7.06,micro_stop,Short stop for label verification on outgoing pallet
+INC-GAMMA-2026-01,2026-02-11T18:29:00Z,TOOL-05,PROD-D2,LINE-1,116,98,8,10,72,29,5.95,7.65,25.3,material_shortage,Substrate lot delayed from incoming inspection hold status
+INC-GAMMA-2026-01,2026-02-11T20:00:00Z,TOOL-06,PROD-A2,LINE-1,186,154,20,12,175,31,5.41,8.8,22.72,calibration_drift,Calibration check triggered after consecutive out-of-spec readings
+INC-GAMMA-2026-01,2026-02-11T23:13:00Z,TOOL-11,PROD-D2,LINE-4,194,161,14,19,82,49,4.82,8.06,10.05,changeover_delay,Tool change required additional verification before restart
+INC-GAMMA-2026-01,2026-02-12T00:38:00Z,TOOL-11,PROD-D2,LINE-3,102,79,14,9,206,50,5.48,10.24,18.59,normal_run,All quality checks passed within acceptable tolerances
