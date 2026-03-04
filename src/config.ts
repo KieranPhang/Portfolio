@@ -68,7 +68,7 @@ export const siteConfig = {
     hero: "/images/projects/pyramid/Pyramid_Hero.jpg",
     skills: ["SOLIDWORKS", "3D Printing", "Project Management"],
     featured: false
-}
+},
     {
     name: "APEX: Automated Plant Executive Intelligence",
     description: "A structured decision workflow prototype that compresses the gap between factory signals and executive action built for semiconductor packaging operations.",
