@@ -1,0 +1,255 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  .page{font-family:'DM Sans',sans-serif;color:var(--color-text-primary);max-width:860px;margin:0 auto;padding:2rem 1.5rem 4rem}
+  .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:.75rem}
+  .hero-title{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:800;line-height:1.1;margin-bottom:1rem}
+  .hero-title span{color:#4a9eff}
+  .hero-sub{font-size:1.1rem;color:var(--color-text-secondary);line-height:1.7;max-width:640px;margin-bottom:2.5rem}
+  .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:3rem}
+  .stat-card{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1.25rem 1rem;border:0.5px solid var(--color-border-tertiary)}
+  .stat-num{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:700;color:var(--color-text-primary)}
+  .stat-label{font-size:12px;color:var(--color-text-secondary);margin-top:4px;line-height:1.4}
+  .section{margin-bottom:3rem}
+  .section-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:0.5px solid var(--color-border-tertiary)}
+  .prose{font-size:.975rem;color:var(--color-text-secondary);line-height:1.8;margin-bottom:1rem}
+  .phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:1.5rem 0}
+  .phase{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:1rem;border:0.5px solid var(--color-border-tertiary);position:relative}
+  .phase-num{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#4a9eff;margin-bottom:.4rem}
+  .phase-title{font-size:.875rem;font-weight:500;margin-bottom:.3rem}
+  .phase-desc{font-size:.78rem;color:var(--color-text-secondary);line-height:1.5}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1.5rem 0}
+  .compare-card{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1.25rem;border:0.5px solid var(--color-border-tertiary)}
+  .compare-card.featured{border:1.5px solid #4a9eff}
+  .compare-label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:.5rem}
+  .compare-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.75rem}
+  .compare-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:.82rem}
+  .compare-row:last-child{border-bottom:none}
+  .compare-row .label{color:var(--color-text-secondary)}
+  .tag-good{background:#e6f1fb;color:#185fa5;font-size:.7rem;padding:2px 8px;border-radius:20px;font-weight:500}
+  .tag-bad{background:#fcebeb;color:#a32d2d;font-size:.7rem;padding:2px 8px;border-radius:20px;font-weight:500}
+  .tag-ok{background:#faeeda;color:#854f0b;font-size:.7rem;padding:2px 8px;border-radius:20px;font-weight:500}
+  .estimator{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1.75rem;border:0.5px solid var(--color-border-tertiary)}
+  .est-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.25rem}
+  .est-sub{font-size:.82rem;color:var(--color-text-secondary);margin-bottom:1.75rem}
+  .slider-row{margin-bottom:1.25rem}
+  .slider-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
+  .slider-label span:first-child{font-size:.82rem;color:var(--color-text-secondary)}
+  .slider-val{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:#4a9eff}
+  input[type=range]{width:100%;accent-color:#4a9eff}
+  .results{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:1.75rem}
+  .res-card{background:var(--color-background-primary);border-radius:var(--border-radius-md);padding:1rem;border:0.5px solid var(--color-border-tertiary);text-align:center}
+  .res-card.highlight{border-color:#4a9eff;background:var(--color-background-primary)}
+  .res-num{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700}
+  .res-num.savings{color:#1d9e75}
+  .res-lab{font-size:.72rem;color:var(--color-text-secondary);margin-top:3px;line-height:1.4}
+  .verdict{margin-top:1.25rem;padding:.875rem 1rem;border-radius:var(--border-radius-md);border-left:3px solid #4a9eff;background:var(--color-background-primary);font-size:.85rem;line-height:1.6;color:var(--color-text-secondary)}
+  .verdict strong{color:var(--color-text-primary)}
+  .cta-block{margin-top:3rem;padding:2rem;background:var(--color-background-secondary);border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);text-align:center}
+  .cta-title{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:.5rem}
+  .cta-sub{font-size:.9rem;color:var(--color-text-secondary);margin-bottom:1.25rem;line-height:1.6}
+  .cta-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem;text-align:left}
+  .cta-step{background:var(--color-background-primary);border-radius:var(--border-radius-md);padding:.875rem;border:0.5px solid var(--color-border-tertiary)}
+  .cta-step-num{font-size:.7rem;color:#4a9eff;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+  .cta-step-text{font-size:.8rem;color:var(--color-text-secondary);line-height:1.5}
+  .refs{margin-top:3rem;padding-top:1.5rem;border-top:0.5px solid var(--color-border-tertiary)}
+  .refs-title{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:.75rem}
+  .ref-item{font-size:.75rem;color:var(--color-text-secondary);margin-bottom:.4rem;line-height:1.5}
+  @media(max-width:520px){.compare-grid,.results,.cta-steps{grid-template-columns:1fr}}
+</style>
+
+<div class="page">
+  <h2 class="sr-only">Should your business adopt robotics? A guide for small and medium enterprise owners.</h2>
+
+  <div class="eyebrow">Small business automation</div>
+  <h1 class="hero-title">Robots aren't here to<br><span>replace your workers.</span><br>They're here to make<br>your business survive.</h1>
+  <p class="hero-sub">Large competitors already run automated production lines. Every year you don't, the productivity gap widens. Here's what SME owners actually need to know — and a practical path to catching up.</p>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-num">3×</div>
+      <div class="stat-label">Productivity gap between large firms and SMEs in automated sectors</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">$0</div>
+      <div class="stat-label">Upfront cost possible with Robotics-as-a-Service rental models</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">85%</div>
+      <div class="stat-label">Of repetitive manufacturing tasks are technically automatable today</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">↑ skill</div>
+      <div class="stat-label">Workers shift from physical execution to supervision and optimization</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">The problem</div>
+    <p class="prose">Large corporations have already integrated robotics into their operations — producing goods faster, cheaper, and with greater consistency. SMEs still relying on manual labour are not just less efficient, they're slowly becoming uncompetitive in markets where automation is the baseline, not the differentiator.</p>
+    <p class="prose">The barrier isn't awareness. Most business owners know automation exists. The barriers are cost, expertise, and risk. The question isn't whether robotics works — it clearly does. The question is whether you can realistically implement it without betting the entire business on a single capital decision.</p>
+    <p class="prose">The answer is yes, but only with the right strategy.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Why current solutions fall short</div>
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-label">Option A</div>
+        <div class="compare-title">Government subsidies</div>
+        <div class="compare-row"><span class="label">Upfront cost</span><span class="tag-good">Reduced</span></div>
+        <div class="compare-row"><span class="label">Expertise needed</span><span class="tag-bad">Still high</span></div>
+        <div class="compare-row"><span class="label">Long-term support</span><span class="tag-bad">Time-limited</span></div>
+        <div class="compare-row"><span class="label">Scalability</span><span class="tag-ok">Partial</span></div>
+      </div>
+      <div class="compare-card">
+        <div class="compare-label">Option B</div>
+        <div class="compare-title">Robotics-as-a-Service</div>
+        <div class="compare-row"><span class="label">Upfront cost</span><span class="tag-good">Minimal</span></div>
+        <div class="compare-row"><span class="label">Expertise needed</span><span class="tag-good">Handled externally</span></div>
+        <div class="compare-row"><span class="label">Long-term support</span><span class="tag-ok">Vendor dependent</span></div>
+        <div class="compare-row"><span class="label">Scalability</span><span class="tag-bad">Limited control</span></div>
+      </div>
+    </div>
+    <p class="prose">Both approaches reduce the financial barrier — but neither solves the core problem: sustainable, in-house integration. Subsidies run out. RaaS leaves you dependent on a vendor with no internal expertise built up. Neither positions your business for long-term operational independence.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">The better path: phased modular integration</div>
+    <p class="prose">Instead of a single high-stakes automation decision, a phased approach spreads investment over time — letting you validate returns before committing further capital. Each phase builds internal expertise, so you own the capability, not just the equipment.</p>
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-num">Phase 1</div>
+        <div class="phase-title">Manual baseline</div>
+        <div class="phase-desc">Document your most repetitive, physically demanding, or error-prone process. This is your automation target.</div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">Phase 2</div>
+        <div class="phase-title">Assistive tools</div>
+        <div class="phase-desc">Introduce basic machines and jigs that support human workers without replacing them. Low cost, low risk.</div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">Phase 3</div>
+        <div class="phase-title">Collaborative robotics</div>
+        <div class="phase-desc">Cobots handle repetitive or hazardous tasks alongside workers, who shift into monitoring and quality control roles.</div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">Phase 4</div>
+        <div class="phase-title">Optimized hybrid</div>
+        <div class="phase-desc">Fully integrated system combining automation with skilled human oversight — competitive with large-firm output quality.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">What about my workers?</div>
+    <p class="prose">The fear that robots eliminate jobs is real — but the evidence points to something more nuanced. Automation reduces the need for physically demanding, repetitive roles. It increases demand for workers who can supervise, program, and maintain automated systems.</p>
+    <p class="prose">Collaborative robots (cobots) are specifically designed to operate alongside humans — not replace them. In practice, workers don't leave the production process. They move up in it: from physical execution to decision-making, problem-solving, and technical oversight. That shift tends to mean better pay, fewer injuries, and higher job satisfaction.</p>
+    <p class="prose">The real workforce challenge isn't elimination — it's transition. That's solvable with training and a gradual rollout, which a phased approach naturally provides.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">RaaS cost estimator</div>
+    <div class="estimator">
+      <div class="est-title">Is automation financially viable for your operation?</div>
+      <div class="est-sub">Adjust the inputs below to estimate your current manual labour cost versus a RaaS model.</div>
+
+      <div class="slider-row">
+        <div class="slider-label"><span>Workers on target task</span><span class="slider-val" id="workers-val">4</span></div>
+        <input type="range" min="1" max="20" value="4" step="1" id="workers">
+      </div>
+      <div class="slider-row">
+        <div class="slider-label"><span>Hours per day on task</span><span class="slider-val" id="hours-val">6</span></div>
+        <input type="range" min="1" max="12" value="6" step="1" id="hours">
+      </div>
+      <div class="slider-row">
+        <div class="slider-label"><span>Average hourly wage (USD)</span><span class="slider-val" id="wage-val">$18</span></div>
+        <input type="range" min="10" max="60" value="18" step="1" id="wage">
+      </div>
+      <div class="slider-row">
+        <div class="slider-label"><span>Working days per year</span><span class="slider-val" id="days-val">250</span></div>
+        <input type="range" min="100" max="365" value="250" step="5" id="days">
+      </div>
+
+      <div class="results">
+        <div class="res-card">
+          <div class="res-num" id="manual-cost">$0</div>
+          <div class="res-lab">Annual manual labour cost</div>
+        </div>
+        <div class="res-card">
+          <div class="res-num" id="raas-cost">$0</div>
+          <div class="res-lab">Estimated annual RaaS cost</div>
+        </div>
+        <div class="res-card highlight">
+          <div class="res-num savings" id="savings">$0</div>
+          <div class="res-lab">Estimated annual savings</div>
+        </div>
+      </div>
+
+      <div class="verdict" id="verdict"></div>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-title">Your next three moves</div>
+    <div class="cta-sub">You don't need to automate everything. You need to automate one thing well — and build from there.</div>
+    <div class="cta-steps">
+      <div class="cta-step">
+        <div class="cta-step-num">This week</div>
+        <div class="cta-step-text">Identify the single most repetitive task in your operation. Time it. Count the errors. That's your automation target.</div>
+      </div>
+      <div class="cta-step">
+        <div class="cta-step-num">This month</div>
+        <div class="cta-step-text">Request a RaaS demo from a local provider for that one task. No commitment — just data. Compare against the estimator above.</div>
+      </div>
+      <div class="cta-step">
+        <div class="cta-step-num">This quarter</div>
+        <div class="cta-step-text">Run a 90-day pilot on the target task. Measure output quality, error rate, and worker feedback before expanding.</div>
+      </div>
+    </div>
+    <p style="font-size:.8rem;color:var(--color-text-secondary)">The barrier isn't technology — it's inertia. One audited process is all it takes to start.</p>
+  </div>
+
+  <div class="refs">
+    <div class="refs-title">Sources</div>
+    <div class="ref-item">Dietz, T. et al. (2012). Programming system for efficient use of industrial robots for deburring in SME environments. <em>ROBOTIK 2012.</em></div>
+    <div class="ref-item">Grau, A. et al. (2021). Robots in industry: The past, present, and future of a growing collaboration with humans. <em>IEEE Industrial Electronics Magazine, 15</em>(1), 50–61.</div>
+    <div class="ref-item">Fernandez-Vega, M. et al. (2025). Transforming robots into cobots: A sustainable approach to industrial automation. <em>Electronics, 14</em>(11), 2275.</div>
+    <div class="ref-item">Stockman, F. (2025, August 25). Rented robots get the worst jobs and help factories keep the humans. <em>The New York Times.</em></div>
+    <div class="ref-item">Information Technology and Innovation Foundation. (2025, April 8). AI can improve US small business productivity.</div>
+  </div>
+</div>
+
+<script>
+  function fmt(n){return '$'+Math.round(n).toLocaleString()}
+  function calc(){
+    const w=+document.getElementById('workers').value;
+    const h=+document.getElementById('hours').value;
+    const wage=+document.getElementById('wage').value;
+    const d=+document.getElementById('days').value;
+    document.getElementById('workers-val').textContent=w;
+    document.getElementById('hours-val').textContent=h;
+    document.getElementById('wage-val').textContent='$'+wage;
+    document.getElementById('days-val').textContent=d;
+    const manual=w*h*wage*d;
+    const raas=Math.round(manual*0.45);
+    const savings=manual-raas;
+    const payback=Math.round((raas*0.3)/savings*12);
+    document.getElementById('manual-cost').textContent=fmt(manual);
+    document.getElementById('raas-cost').textContent=fmt(raas);
+    document.getElementById('savings-card')||null;
+    const sEl=document.getElementById('savings');
+    sEl.textContent=savings>0?fmt(savings):'$0';
+    sEl.style.color=savings>0?'#1d9e75':'var(--color-text-secondary)';
+    const pct=Math.round((savings/manual)*100);
+    let msg='';
+    if(savings<=0){msg='<strong>Break-even or negative</strong> — at this labour cost and scale, RaaS may not be financially attractive yet. Consider revisiting as your operation grows or wage costs rise.';}
+    else if(pct<20){msg=`<strong>Modest savings (~${pct}%)</strong> — RaaS is marginally beneficial at this scale. A phased approach with owned equipment may deliver better long-term returns once volume justifies the capital.`;}
+    else if(pct<40){msg=`<strong>Solid savings (~${pct}%)</strong> — RaaS looks financially viable for your operation. A 90-day pilot on your target task would be a low-risk way to validate these numbers in practice.`;}
+    else{msg=`<strong>Strong case (~${pct}% savings)</strong> — at this labour cost and scale, automation has a compelling financial argument. Even a conservative phased rollout should recover costs within 1–2 years.`;}
+    document.getElementById('verdict').innerHTML=msg;
+  }
+  ['workers','hours','wage','days'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+  calc();
+</script>
