@@ -30,9 +30,19 @@ export const siteConfig = {
     "Fusion 360",
     "AutoCAD",
     "KiCad",
+    // Industrial robotics
+    "ABB RAPID",
+    "RobotStudio",
+    "FlexPendant",
+    "WorkObject & TCP Calibration",
+    // Electronics & tools
+    "PLECS",
+    "Oscilloscope",
     // Other
     "Technical Documentation",
-    "Project Management"
+    "Project Management",
+    "Preventive Maintenance",
+    "LLM Workflows",
   ],
 
   projects: [
