@@ -65,7 +65,7 @@ export const siteConfig = {
     name: "Pyramid of Light",
     description: "Built a modular LED pyramid stage prop in 9 days using PVC, 3D printed connectors, and shop lights.",
     link: "/projects/Pyramid-of-Light",
-    hero: "/images/projects/pyramid/Pyramid_Hero.jpg",
+    image: "/images/projects/pyramid/Pyramid_Hero.jpg",
     skills: ["SOLIDWORKS", "3D Printing", "Project Management"],
     featured: false
 },
@@ -73,7 +73,6 @@ export const siteConfig = {
     name: "APEX: Automated Plant Executive Intelligence",
     description: "A structured decision workflow prototype that compresses the gap between factory signals and executive action built for semiconductor packaging operations.",
     link: "/projects/APEX",
-    hero: "/images/projects/pyramid/Pyramid_Hero.jpg",
     skills: ["LLM", "Data Analysis", "Project Management"],
     featured: false
 }
@@ -83,6 +82,16 @@ export const siteConfig = {
   ],
 
   experience: [
+    {
+      company: "ABB Robotics",
+      title: "Engineering Intern",
+      dateRange: "May 2026 – Present",
+      bullets: [
+        "Programmed Delta, SCARA, 4-axis, and 6-axis robots in RAPID across RobotStudio and live controller environments, covering motion planning, WorkObject and TCP calibration, digital I/O, and multi-robot coordination.",
+        "Performed QC testing, functional verification, and shipment inspection on ABB industrial robots; conducted hands-on preventative maintenance including oil changes on live systems.",
+        "Independently developed RobotDraw, a Python/Flask tool converting SVG files to ABB RAPID programs using WorkObject-based plane calibration & automated path generation; validated via 586-stroke programs in RobotStudio.",
+      ],
+    },
     {
       company: "Arizona State University",
       title: "Head Residential Assistant (RA)",
