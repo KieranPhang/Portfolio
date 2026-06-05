@@ -10,6 +10,59 @@
       .dimension { fill:none; stroke:#ffffff; stroke-width:1; stroke-linecap:round; stroke-linejoin:round; }
       .annotation-text { fill:none; stroke:#ffffff; stroke-width:1; font-family:"Arial", "Helvetica", sans-serif; font-size:22px; letter-spacing:0.5px; }
       .small-text { font-size:18px; } .range-text { font-size:18px; }
+
+      /* === entrance animations === */
+
+      @keyframes arm-fade-in {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
+      @keyframes pulse-bright {
+        0%   { filter: brightness(1); }
+        50%  { filter: brightness(3); }
+        100% { filter: brightness(1); }
+      }
+
+      @keyframes dim-fade-in {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
+      /* 1. Arm fade-in: 0s to 1.5s */
+      #traced-white-linework {
+        animation: arm-fade-in 1.5s ease-in 0s both;
+      }
+
+      /* 2. Joint pulses: sequential after arm fade completes at 1.5s
+            J1→J2→J3→J6, each 0.4s with 0.3s gap between */
+      #label-j1-range { animation: pulse-bright 0.4s ease-in-out 1.5s both; }
+      #label-j2-range { animation: pulse-bright 0.4s ease-in-out 2.2s both; }
+      #label-j3-range { animation: pulse-bright 0.4s ease-in-out 2.9s both; }
+      #label-j6-range { animation: pulse-bright 0.4s ease-in-out 3.6s both; }
+
+      /* 3. Dim annotations: fade in left-to-right after all pulses end at 4.0s
+            ordered by leftmost x-coordinate, 0.1s stagger, 0.15s each */
+      #dim-tool-flange-diameter-50 { animation: dim-fade-in 0.15s ease-in 4.0s both; }
+      #dim-tool-bolt-pattern-6xm6  { animation: dim-fade-in 0.15s ease-in 4.1s both; }
+      #dim-ext-top-380-left        { animation: dim-fade-in 0.15s ease-in 4.2s both; }
+      #dim-line-top-380            { animation: dim-fade-in 0.15s ease-in 4.3s both; }
+      #dim-ext-top-210-left        { animation: dim-fade-in 0.15s ease-in 4.4s both; }
+      #dim-line-top-210            { animation: dim-fade-in 0.15s ease-in 4.5s both; }
+      #dim-height-230              { animation: dim-fade-in 0.15s ease-in 4.6s both; }
+      #dim-line-height-230         { animation: dim-fade-in 0.15s ease-in 4.7s both; }
+      #dim-length-210              { animation: dim-fade-in 0.15s ease-in 4.8s both; }
+      #dim-length-380              { animation: dim-fade-in 0.15s ease-in 4.9s both; }
+      #dim-line-base-depth-220     { animation: dim-fade-in 0.15s ease-in 5.0s both; }
+      #dim-depth-220               { animation: dim-fade-in 0.15s ease-in 5.1s both; }
+      #dim-ext-top-210-right       { animation: dim-fade-in 0.15s ease-in 5.2s both; }
+      #dim-ext-top-380-right       { animation: dim-fade-in 0.15s ease-in 5.3s both; }
+      #dim-line-base-width-220     { animation: dim-fade-in 0.15s ease-in 5.4s both; }
+      #dim-ext-height-580-bottom   { animation: dim-fade-in 0.15s ease-in 5.5s both; }
+      #dim-width-220               { animation: dim-fade-in 0.15s ease-in 5.6s both; }
+      #dim-ext-height-580-top      { animation: dim-fade-in 0.15s ease-in 5.7s both; }
+      #dim-line-height-580         { animation: dim-fade-in 0.15s ease-in 5.8s both; }
+      #dim-height-580              { animation: dim-fade-in 0.15s ease-in 5.9s both; }
     ]]></style>
   </defs>
   <g id="traced-white-linework" class="structural">
