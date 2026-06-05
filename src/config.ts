@@ -158,7 +158,7 @@ export const siteConfig = {
       degree: "B.S.E., Engineering (Robotics Specialization)",
       dateRange: "Expected Graduation May 2027",
       achievements: [
-        "Current GPA: 3.14",
+        "Current GPA: 3.34",
         "Relevant coursework: Engineering Design Project (PCB design, robotic arms & manipulators, 3D printing, team management).",
         "Additional coursework: Introduction to SOLIDWORKS, Electrical Engineering Fundamentals, Materials & Manufacturing, General Chemistry, and technical writing for engineering.",
       ],
