@@ -13,7 +13,7 @@ import { siteConfig } from "../config";
     alt=""
     aria-hidden="true"
     class="absolute inset-y-0 right-0 -z-10 h-full w-auto max-w-none pointer-events-none"
-          style="filter: invert(1) sepia(1) hue-rotate(190deg) saturate(2.5) brightness(2); opacity: 0.85; -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 100%); mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 100%);"
+    style="filter: invert(1) sepia(1) hue-rotate(190deg) saturate(2.5) brightness(2); opacity: 1; -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%); mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);"
 />
 
   <!-- Left fade: keeps text side dark, lets robot side breathe -->
@@ -25,7 +25,7 @@ import { siteConfig } from "../config";
   <!-- Bottom fade to page background -->
   <div
     class="absolute inset-x-0 bottom-0 -z-10"
-    style="height: 50%; background: linear-gradient(to bottom, transparent 0%, #0b0d10 5%);"
+    style="height: 50%; background: linear-gradient(to bottom, transparent 0%, #0b0d10 85%);"
   ></div>
 
   <!-- Dark gradient overlay -->
@@ -43,13 +43,13 @@ import { siteConfig } from "../config";
 
   <div class="h-full mx-auto p-8 sm:p-12 md:p-24 flex items-center">
     <div>
-      <h2 class="text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-200 animate-fade-in">
+      <h2 class="text-pretty text-base sm:text-xl md:text-4xl font-bold tracking-tight text-gray-200 animate-fade-in">
         Hey!
       </h2>
-      <h1 class="mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-100 animate-fade-in animation-delay-200">
+      <h1 class="mt-6 sm:mt-8 md:mt-10 text-pretty text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-gray-100 animate-fade-in animation-delay-200">
         I'm <span style={{ color: siteConfig.accentColor }}>{siteConfig.name}</span>
       </h1>
-      <p class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-300 animate-fade-in animation-delay-400">
+      <p class="mt-4 sm:mt-6 md:mt-8 text-pretty text-sm sm:text-base md:text-lg/8 font-medium text-gray-300 animate-fade-in animation-delay-400">
         {siteConfig.title}
       </p>
     </div>
