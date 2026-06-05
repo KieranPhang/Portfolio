@@ -7,13 +7,13 @@ import { siteConfig } from "../config";
   class="relative isolate overflow-hidden bg-background py-24 md:h-screen"
   style={`--accent-color: ${siteConfig.accentColor}`}
 >
-  <!-- Robot illustration -->
+  <!-- Hero illustration — brightness: edit the brightness() value below -->
   <img
-    src="/images/abb_irb_eye_catch_vector.svg"
+    src="/images/WebsiteEyecatch.svg"
     alt=""
     aria-hidden="true"
     class="absolute inset-y-0 right-0 -z-10 h-full w-auto max-w-none pointer-events-none"
-    style="filter: invert(1) sepia(1) hue-rotate(190deg) saturate(2.5) brightness(4); opacity: 0.85;"
+    style="filter: invert(1) sepia(1) hue-rotate(190deg) saturate(2.5) brightness(2); opacity: 0.85; -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 100%); mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 100%);"
   />
 
   <!-- Left fade: keeps text side dark, lets robot side breathe -->
