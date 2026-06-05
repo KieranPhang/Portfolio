@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Kieran 'K' Phang",
-  title: "Robotics Engineer",
+  title: "Robotics Engineer & Aspiring Giant Mech Pilot",
   description: "Engineering Portfolio website of Kieran Phang-Davey",
   accentColor: "#1d4ed8",
 
