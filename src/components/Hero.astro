@@ -9,12 +9,18 @@ import { siteConfig } from "../config";
   >
     <!-- Hero illustration — brightness: edit the brightness() value below -->
     <img
-      src="/images/WebsiteEyecatch.svg"
-      alt=""
-      aria-hidden="true"
-      class="absolute inset-y-0 right-0 -z-10 h-full w-auto max-w-none pointer-events-none"
-      style="filter: sepia(1) hue-rotate(190deg) saturate(2.5) brightness(3.5); opacity: 0.9; -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%); mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);"
-  />
+  src="/images/WebsiteEyecatch.svg"
+  alt=""
+  aria-hidden="true"
+  class="absolute inset-y-0 right-0 -z-10 h-full w-auto max-w-none pointer-events-none"
+  style="
+    mix-blend-mode: screen;
+    filter: sepia(1) hue-rotate(190deg) saturate(2.5) brightness(3.5);
+    opacity: 0.9;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
+  "
+/>
 
 
     <!-- Dark gradient overlay -->
