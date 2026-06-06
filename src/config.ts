@@ -97,7 +97,7 @@ export const siteConfig = {
       bullets: [
         "Programmed Delta, SCARA, 4-axis, and 6-axis robots in RAPID across RobotStudio and live controller environments, covering motion planning, WorkObject and TCP calibration, digital I/O, and multi-robot coordination.",
         "Performed QC testing, functional verification, and shipment inspection on ABB industrial robots; conducted hands-on preventative maintenance including oil changes on live systems.",
-        "Independently developed RobotDraw, a Python/Flask tool converting SVG files to ABB RAPID programs using WorkObject-based plane calibration & automated path generation; validated via 586-stroke programs in RobotStudio.",
+        "Independently developed RobotDraw, a Python/Flask tool converting SVG files to ABB RAPID programs using WorkObject-based plane calibration & automated path generation; validated via 5596-stroke programs in RobotStudio.",
       ],
     },
     {
