@@ -20,10 +20,10 @@ export const siteConfig = {
     "MATLAB",
     "Excel",
     // Hardware & hands-on skills
-    "Microcontrollers (ESP32, PIC, & Arduino)",
     "3D Printing",
     "Soldering",
     "Welding",
+    "Microcontrollers (ESP32, PIC, & Arduino)",
     "Embedded Systems",
     // Design tools
     "SOLIDWORKS",
@@ -32,8 +32,7 @@ export const siteConfig = {
     "KiCad",
     // Industrial robotics
     "ABB RAPID",
-    "RobotStudio",
-    "FlexPendant",
+    "RobotStudio & FlexPendant",
     "WorkObject & TCP Calibration",
     // Electronics & tools
     "PLECS",
@@ -41,7 +40,6 @@ export const siteConfig = {
     // Other
     "Technical Documentation",
     "Project Management",
-    "Preventive Maintenance",
     "LLM Workflows",
   ],
 
