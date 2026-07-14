@@ -1,5 +1,32 @@
 # Changelog
 
+### 2.1.0 (2026-07-13) — content refresh (completed projects only)
+
+- Added RobotDraw as the flagship project, with a full case study page
+  (`/projects/robotdraw`). SVG-to-RAPID converter, hardware-validated on an IRB
+  1100 across five drawings, framed with the troubleshoot / simulate / build
+  triad. v1 hardware validation stated as fact; the Pro fork and June fixes are
+  labeled simulator-tested only.
+- Added Yumi TTS as a running project, with a case study page
+  (`/projects/yumi-tts`) and a clearly marked demo-video placeholder for K to
+  drop in his own recording. Voice-to-RAPID on a physical ABB YuMi, 44 green
+  Python tests.
+- Added rapid-lint as a built, pre-release tool, with a case study page
+  (`/projects/rapid-lint`). Geometric linter for offline-generated RAPID; 66
+  green tests verified on disk.
+- Tightened APEX wording to claims-true: local prototype, synthetic data,
+  demo-quality, not deployed (config entry plus the APEX page tagline, summary,
+  and claim box).
+- Promoted RobotDraw and Yumi TTS to the two featured homepage slots alongside
+  the Water Opacity Sensor; C3 and Pontoon remain on the projects page.
+- Fixed the Pyramid of Light and APEX cards to use `image` so thumbnails render
+  (they previously used an unused `hero` field); removed APEX's incorrect
+  pointer at the Pyramid hero image.
+- Tightened the skills array against the honest full-stack map: added the strong
+  robotics rows (RAPID, RobotStudio, Industrial Robot Programming, Offline
+  Programming) plus Flask and software testing; left the hollow-middle areas
+  (ROS 2, MoveIt, perception, closed-loop control, motion planning) off.
+
 ### 2.0.0
 
 - Complete rewrite of the template using Astro and Tailwind
