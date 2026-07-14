@@ -1,0 +1,181 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+// PROJECT META
+const projectName = "Yumi TTS";
+const projectTagline =
+  "Say \"hey robot\" and a physical ABB YuMi moves: a fully local voice pipeline wired to RAPID.";
+const projectSummary =
+  "A fully local wake-word voice interface that drives a physical ABB YuMi (IRB 14000). Speech is transcribed on-device, parsed into a deterministic command, confirmed, and dispatched over a socket protocol to RAPID running on the robot. Running on the physical arm, backed by 44 green Python tests.";
+
+// DEMO VIDEO: K is recording this himself. When the file is ready, replace the
+// placeholder block in the "Demo" section below with either a local <video> tag
+// (drop the file at /public/videos/yumi-tts-demo.mp4) or a YouTube <iframe>.
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{projectName} | {siteConfig.name}</title>
+    <meta name="description" content={projectSummary} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        {/* Top header */}
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Project
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">
+            {projectName}
+          </h1>
+
+          <p class="text-base sm:text-lg text-gray-400">
+            {projectTagline}
+          </p>
+
+          <p class="text-sm sm:text-base text-gray-400">
+            {projectSummary}
+          </p>
+        </header>
+
+        {/* DEMO VIDEO SLOT: clearly marked for K to drop his recording in */}
+        <section class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Demo</p>
+            <div class="h-px flex-1 bg-slate-800"></div>
+          </div>
+          <div class="rounded-2xl border-2 border-dashed border-slate-700 bg-slate-900/50 p-4">
+            <div class="aspect-video w-full rounded-xl border border-slate-800 bg-slate-950/60 flex flex-col items-center justify-center gap-2 text-center px-6">
+              {/*
+                DEMO VIDEO GOES HERE.
+                Option A (local file): drop the recording at
+                  /public/videos/yumi-tts-demo.mp4
+                then replace this whole placeholder div with:
+                  <video src="/videos/yumi-tts-demo.mp4" controls poster="/images/projects/yumi/yumi_poster.jpg" class="w-full h-full rounded-xl object-cover"></video>
+                Option B (YouTube): replace with an <iframe> like the APEX page uses.
+              */}
+              <p class="text-sm text-slate-300 font-medium">Demo video coming soon</p>
+              <p class="text-xs text-slate-500">Recording of the physical YuMi responding to a spoken command.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* What */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">What it is</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Say <span class="font-medium">"hey robot, ..."</span> at an Ubuntu box and the physical YuMi in the
+            ABB Singapore office does it. The system is speech-to-command only: the robot moves rather than talks
+            back. Two features run over one socket: a coffee order that triggers a preloaded recipe, and a
+            gesture library where a spoken word runs taught two-arm poses.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            This project is the voice front end, the socket wire, and the gesture dispatch. It does not touch the
+            robot's proprietary recipe routines, which are treated as out of scope and left untouched.
+          </p>
+        </section>
+
+        {/* How it works */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">How it works</h2>
+          <p class="text-gray-300 leading-relaxed">
+            A wake-word listener runs a local faster-whisper transcription with a Silero voice-activity filter to
+            kill silence hallucinations. Recognized speech is parsed into a deterministic command, confirmed, then
+            sent over a TCP socket to the controller. The robot is the client and the voice box is the server, so
+            the exact same stack drives a RobotStudio virtual controller and the real robot. Text lines flow both
+            ways: a command number or a gesture name goes out, an acknowledgement and a done signal come back. New
+            gestures late-bind by name, so adding one means teaching two poses and adding a single keymap line,
+            with no RAPID edit.
+          </p>
+        </section>
+
+        {/* Status */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Status</h2>
+          <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/60">
+            <table class="min-w-full text-sm text-left text-gray-300">
+              <thead class="bg-slate-900/80 text-gray-200">
+                <tr>
+                  <th class="px-4 py-2">Piece</th>
+                  <th class="px-4 py-2">State</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800">
+                <tr>
+                  <td class="px-4 py-2">Wake word and local speech-to-text</td>
+                  <td class="px-4 py-2">Working</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Physical YuMi responding to a spoken command</td>
+                  <td class="px-4 py-2">Working on the real robot</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Two-arm move test and a taught gesture</td>
+                  <td class="px-4 py-2">Validated</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Ubuntu voice box (self-bootstrapping launcher, USB mic auto-detect)</td>
+                  <td class="px-4 py-2">Set up and running</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Python test suite</td>
+                  <td class="px-4 py-2">44 green</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Honest scope: additional gestures are wired but still need their poses taught, and a full coffee brew
+            depends on the robot's native gripper. The core claim on this page is exactly what it says: a spoken
+            command moves the physical arm today.
+          </p>
+        </section>
+
+        {/* Stack */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Stack</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li><span class="font-medium">Robot:</span> ABB IRB 14000 (YuMi), IRC5 controller, socket messaging over the service port.</li>
+            <li><span class="font-medium">Voice box:</span> Ubuntu, on-device faster-whisper with a Silero VAD, USB mic, running the full Python stack on CPU.</li>
+            <li><span class="font-medium">Software:</span> a Python voice and dispatch stack over a locked text socket protocol, mock-first development, 44 green tests.</li>
+            <li><span class="font-medium">Robot side:</span> RAPID that accepts commands and late-binds gesture names to taught procedures.</li>
+          </ul>
+        </section>
+
+        {/* Why it matters */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Why it matters</h2>
+          <p class="text-gray-300 leading-relaxed">
+            This is the human-to-robot application layer on real industrial hardware: wiring human intent through
+            wake-word speech, a deterministic parse, a confirmation step, socket dispatch, and RAPID, with the
+            software discipline of a locked protocol and a green test suite. It is a clean demonstration of the
+            application and integration end of the stack.
+          </p>
+        </section>
+
+        {/* Back link */}
+        <div class="pt-4">
+          <a
+            href="/projects"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all projects
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>
