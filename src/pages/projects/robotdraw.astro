@@ -1,0 +1,213 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+// PROJECT META
+const projectName = "RobotDraw";
+const projectTagline =
+  "SVG to RAPID: turning vector artwork into robot code, validated on a real six-axis arm.";
+const projectSummary =
+  "A self-built Python and Flask application that converts SVG artwork into ABB RAPID programs for a six-axis industrial robot, generates safe lift and traversal moves, estimates run time, and runs the whole workflow from a local browser interface. Hardware-validated on an IRB 1100 across five drawings.";
+
+// IMAGE SLOTS: drop files into /public/images/projects/robotdraw/ and swap the
+// placeholder blocks below for <img> tags. Suggested shots: the robot mid-stroke,
+// a finished drawing, the FlexPendant showing generated RAPID, the web UI.
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{projectName} | {siteConfig.name}</title>
+    <meta name="description" content={projectSummary} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        {/* Top header */}
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Flagship Project
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">
+            {projectName}
+          </h1>
+
+          <p class="text-base sm:text-lg text-gray-400">
+            {projectTagline}
+          </p>
+
+          <p class="text-sm sm:text-base text-gray-400">
+            {projectSummary}
+          </p>
+        </header>
+
+        {/* Hero image slot */}
+        <section class="space-y-4">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <p class="text-sm text-gray-400 mb-3">Hero image (placeholder):</p>
+            <div class="aspect-[16/9] w-full rounded-xl border border-dashed border-slate-700 flex items-center justify-center text-xs text-slate-500 text-center px-6">
+              {/* Swap for: <img src="/images/projects/robotdraw/robotdraw_hero.jpg" alt="IRB 1100 drawing with RobotDraw" class="w-full h-full object-cover rounded-xl" /> */}
+              Drop the IRB 1100 drawing photo here
+            </div>
+          </div>
+        </section>
+
+        {/* The one-line frame */}
+        <section class="space-y-4">
+          <div class="rounded-2xl border p-6" style="background-color:#0f141c; border-color:#1c2330;">
+            <p class="text-lg sm:text-xl text-gray-100 leading-relaxed">
+              A full-stack robotics project sits on three legs:
+              <span class="font-semibold">troubleshoot it on a live site, simulate it before it exists, and build the application on top of it.</span>
+              RobotDraw is the third leg made concrete: a human-usable application layer that sits on top of raw industrial motion.
+            </p>
+          </div>
+        </section>
+
+        {/* Why */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Why</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Most people who can program an industrial robot write joint targets by hand. I wanted to prove I could
+            put a usable layer above that: hand the machine a normal vector drawing and have it produce clean,
+            readable RAPID that runs safely on real hardware. It started as a personal challenge in robot
+            programming, and it doubles as evidence of the exact skills an ABB integration role asks for.
+          </p>
+          <h3 class="text-lg font-semibold text-gray-100">Goals and constraints</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Accept practical SVG artwork and convert paths into ordered drawing strokes.</li>
+            <li>Map 2D geometry onto a calibrated robot work surface without reach, wrist, or configuration faults.</li>
+            <li>Generate readable RAPID, not an opaque dump of points.</li>
+            <li>Keep speeds and lift height easy to tune, and always return to a safe reset position.</li>
+            <li>Run locally with minimal setup.</li>
+          </ul>
+        </section>
+
+        {/* What */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">What it is</h2>
+          <p class="text-gray-300 leading-relaxed">
+            RobotDraw parses an SVG, transforms and orders the vector paths into drawing strokes, inserts safe
+            pen-up lift and traversal moves between strokes, generates RAPID modules for a six-axis arm, and
+            estimates execution time. The whole workflow runs from a local browser interface, so tuning a drawing
+            does not require touching a controller.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            The tested target is an ABB IRB 1100 fitted with a custom spring-loaded marker holder. The generated
+            code uses the real RAPID vocabulary of the job: <code>MoveL</code>, <code>MoveJ</code>, <code>MoveC</code>,
+            <code>MoveAbsJ</code>, <code>Offs()</code>, <code>SingArea\Wrist</code>, <code>ConfJ</code>, and proper
+            <code>robtarget</code> / <code>wobjdata</code> / <code>speeddata</code> declarations.
+          </p>
+        </section>
+
+        {/* Web UI image slot */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">The workflow</h2>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <p class="text-sm text-gray-400 mb-3">Local web interface (placeholder):</p>
+            <div class="aspect-[16/9] w-full rounded-xl border border-dashed border-slate-700 flex items-center justify-center text-xs text-slate-500 text-center px-6">
+              {/* Swap for: <img src="/images/projects/robotdraw/robotdraw_ui.png" alt="RobotDraw local web interface" class="w-full h-full object-contain rounded-xl" /> */}
+              Drop a screenshot of the local browser UI here
+            </div>
+          </div>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            <li>Vectorize artwork to SVG (Inkscape or a raster-to-vector service), then load it in the browser UI.</li>
+            <li>RobotDraw parses paths, orders strokes, and maps them onto the calibrated work plane.</li>
+            <li>Pen-up lifts and traversals are inserted between strokes; safety checks guard reach and orientation.</li>
+            <li>Readable RAPID modules are generated with a run-time estimate.</li>
+            <li>The code loads onto the controller and draws.</li>
+          </ol>
+        </section>
+
+        {/* Testing and Results: hardware validation (fact) */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Hardware validation</h2>
+          <p class="text-gray-300 leading-relaxed">
+            RobotDraw v1 is physically validated on an ABB IRB 1100. Five drawings ran successfully on the real
+            robot: the ABB logo, IRB line art, a flowers piece of 586 strokes, IRB 1100 art, and a detailed
+            eyecatch of roughly 3,000 strokes on A4. The run-time estimator was calibrated against those real runs.
+          </p>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <p class="text-sm text-gray-400 mb-3">Finished drawings on hardware (placeholder):</p>
+            <div class="aspect-[16/9] w-full rounded-xl border border-dashed border-slate-700 flex items-center justify-center text-xs text-slate-500 text-center px-6">
+              {/* Swap for: <img src="/images/projects/robotdraw/robotdraw_results.jpg" alt="Drawings produced on the IRB 1100" class="w-full h-full object-cover rounded-xl" /> */}
+              Drop photos of the five validated drawings here
+            </div>
+          </div>
+        </section>
+
+        {/* The honest bug story */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">The bugs, kept on the record</h2>
+          <p class="text-gray-300 leading-relaxed">
+            A build in June introduced three geometry bugs worth naming, because finding them is the whole point.
+            A lift-direction sign was computed in the drawing-plane-normal frame but applied to RAPID
+            <code>Offs()</code> heights, which offset along the work-object Z axis, a different frame. The result:
+            the marker pressed into the table instead of lifting. A sibling bug emitted a surface quaternion
+            verbatim as the tool orientation, so the pen pointed the wrong way on pen-up. A third silently rotated
+            portrait drawings by 90 degrees. None are syntax errors, and all were found the expensive way, on
+            hardware. That experience is what led directly to a companion validator (see rapid-lint).
+          </p>
+        </section>
+
+        {/* Pro fork: clearly bounded claims */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Where it stands now</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The project split into two versions. <span class="font-medium">RobotDraw v1</span> is the stable,
+            hardware-validated tool, frozen except for bug fixes and UX. <span class="font-medium">RobotDrawPro</span>
+            is a software-complete fork aimed at offline programming: a click-to-draw path editor with
+            <code>MoveL</code> / <code>MoveC</code> and tool I/O steps, DXF import, process profiles, a travel
+            optimizer, and portable project files, all behind three green regression suites.
+          </p>
+          <div class="rounded-xl border border-amber-900/40 bg-amber-950/20 px-4 py-3">
+            <p class="text-sm text-amber-200/80 leading-relaxed">
+              Honest scope: the June fixes and the entire Pro fork are simulator-tested only. They have not yet run
+              on a physical robot. Only v1's five drawings are hardware-validated, and nothing on this page claims
+              otherwise.
+            </p>
+          </div>
+        </section>
+
+        {/* Stack */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Stack</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li><span class="font-medium">Robot / tooling:</span> ABB IRB 1100, RobotStudio, FlexPendant, custom spring-loaded marker holder.</li>
+            <li><span class="font-medium">Software:</span> Python, Flask, a local browser UI (pywebview), quaternion and plane-interpolation math.</li>
+            <li><span class="font-medium">Pipeline tools:</span> Inkscape and raster-to-vector conversion for artwork prep.</li>
+          </ul>
+        </section>
+
+        {/* What I'd do next */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">What I&apos;d Do Next</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Run the Pro fork's offline-programming path editor on the physical IRB 1100 to validate it on hardware.</li>
+            <li>Make a clean rapid-lint pass a precondition before any hardware session, so the June bug class can never reach the robot again.</li>
+            <li>Add plane-normal lifting for tilted surfaces (a guardrail warning exists today; the feature does not).</li>
+          </ul>
+        </section>
+
+        {/* Back link */}
+        <div class="pt-4">
+          <a
+            href="/projects"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all projects
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

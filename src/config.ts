@@ -14,26 +14,29 @@ export const siteConfig = {
     "Robotics-focused engineering student building real hardware across fabrication, embedded systems, and system integration. Interested in manufacturing, automation, and rapid prototyping, with a bias toward shipping and iterative improvement.",
 
   skills: [
-    // Programming & data analysis
-    "C",
+    // Industrial robotics
+    "ABB RAPID",
+    "RobotStudio & FlexPendant",
+    "WorkObject & TCP Calibration",
+    "Offline Programming (OLP)",
+    // Programming & data
     "Python",
+    "C",
+    "Flask",
+    "Software Testing (pytest)",
     "MATLAB",
     "Excel",
     // Hardware & hands-on skills
+    "Microcontrollers (ESP32, PIC, & Arduino)",
+    "Embedded Systems",
     "3D Printing",
     "Soldering",
     "Welding",
-    "Microcontrollers (ESP32, PIC, & Arduino)",
-    "Embedded Systems",
     // Design tools
     "SOLIDWORKS",
     "Fusion 360",
     "AutoCAD",
     "KiCad",
-    // Industrial robotics
-    "ABB RAPID",
-    "RobotStudio & FlexPendant",
-    "WorkObject & TCP Calibration",
     // Electronics & tools
     "PLECS",
     "Oscilloscope",
@@ -45,8 +48,22 @@ export const siteConfig = {
 
   projects: [
     {
+    name: "RobotDraw",
+    description: "SVG-to-RAPID converter for six-axis ABB industrial robots. A Python and Flask tool that turns vector artwork into readable RAPID drawing programs with safe lift and traversal moves, then estimates run time. Hardware-validated on an IRB 1100 across five drawings, including one of roughly 3,000 strokes.",
+    link: "/projects/robotdraw",
+    skills: ["RAPID (ABB robot programming)", "RobotStudio", "Python", "Flask", "Industrial Robot Programming", "Offline Programming (OLP)"],
+    featured: true
+  },
+  {
+    name: "Yumi TTS",
+    description: "Voice-driven control for a physical ABB YuMi (IRB 14000). A fully local wake-word speech pipeline parses a spoken command, confirms it, and dispatches it over a socket protocol to RAPID on the robot. Running on the physical arm, backed by 44 green Python tests.",
+    link: "/projects/yumi-tts",
+    skills: ["Python", "Speech-to-Text", "Socket Programming", "RAPID (ABB robot programming)", "Industrial Robot Programming", "Software Testing (pytest)"],
+    featured: true
+  },
+  {
     name: "Water Opacity Sensor",
-    description: "PIC-based optical sensor PCB measuring fluid clarity via light intensity. ",
+    description: "PIC-based optical sensor PCB measuring fluid clarity via light intensity.",
     link: "/projects/water-opacity-sensor",
     image: "/images/projects/WOS/WOS_PCBB.jpg",
     skills: ["KiCad", "C", "Microcontrollers (ESP32, PIC, & Arduino)", "Soldering", "Technical Documentation", "Embedded Systems"],
@@ -58,7 +75,7 @@ export const siteConfig = {
     link: "/projects/c3-cosmic-cable-braiding-machine",
     image: "/images/projects/C3/C3_Hero.png",
     skills: ["Mechatronics", "Systems", "CAD", "Technical Documentation", "Project Management"],
-    featured: true
+    featured: false
   },
   {
     name: "Pontoon Picnic Table",
@@ -66,8 +83,15 @@ export const siteConfig = {
     link: "/projects/pontoon-picnic-table",
     image: "/images/projects/pontoon/Pontoon_Hero.png",
     skills: ["Welding", "Fabrication", "Design for Constraints", "Project Management"],
-    featured: true
+    featured: false
 
+  },
+  {
+    name: "rapid-lint",
+    description: "A geometric linter for offline-generated ABB RAPID. It reconstructs every TCP path from the program text and asserts geometric invariants, catching frame-sign, orientation, and axis-mapping defects at the desk before robot time. Built after a real RobotDraw bug pressed a marker into the table. Pre-release, with 66 green tests.",
+    link: "/projects/rapid-lint",
+    skills: ["Python", "RAPID (ABB robot programming)", "Static Analysis", "Software Testing (pytest)", "Offline Programming (OLP)"],
+    featured: false
   },
   {
     name: "Pyramid of Light",
@@ -79,14 +103,14 @@ export const siteConfig = {
 },
     {
     name: "APEX: Automated Plant Executive Intelligence",
-    description: "A structured decision workflow prototype that compresses the gap between factory signals and executive action built for semiconductor packaging operations.",
+    description: "A local decision-workflow prototype for semiconductor packaging (OSAT) operations. It compresses factory signals into executive-ready briefings, demonstrated on a synthetic dataset. Prototype quality, not deployed.",
     link: "/projects/APEX",
     skills: ["LLM", "Data Analysis", "Project Management"],
     featured: false
 }
 
 
-  
+
   ],
 
   experience: [
