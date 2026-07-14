@@ -1,6 +1,18 @@
 # Changelog
 
-### 2.1.1 (2026-07-13) — add K's Koi Mod
+### 2.1.2 (2026-07-13) - koi wiki and APEX em-dash sweep
+
+- Added a basic wiki subpage for K's Koi Mod (`/projects/koi-mod-wiki`), linked
+  from the koi-mod project page. Scope is only what the source implements: the
+  nine-colour breeding ladder (rung table, same-colour 10% promotion capped at
+  violet, mixed-colour random inheritance, litter-size odds, fry growth) and the
+  one custom item, Koi Pellets (shapeless bone-meal-plus-seeds recipe yielding 4,
+  used to breed, raise fry, and lure/school koi).
+- Swept every em dash out of the APEX page (69 characters across the body copy),
+  replacing each with the correct punctuation (comma, colon, period, or
+  parentheses) with no rewording; the "excluded" list glyphs became red crosses.
+
+### 2.1.1 (2026-07-13) - add K's Koi Mod
 
 - Added K's Koi Mod as a non-featured completed project, with a case study page
   (`/projects/koi-mod`). A self-built Forge 1.16.5 mini-mod (Java 8, ForgeGradle
@@ -10,7 +22,7 @@
   Described only as what the code implements; no external link (no public repo or
   CurseForge listing found).
 
-### 2.1.0 (2026-07-13) — content refresh (completed projects only)
+### 2.1.0 (2026-07-13) - content refresh (completed projects only)
 
 - Added RobotDraw as the flagship project, with a full case study page
   (`/projects/robotdraw`). SVG-to-RAPID converter, hardware-validated on an IRB
