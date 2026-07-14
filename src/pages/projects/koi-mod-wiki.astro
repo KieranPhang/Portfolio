@@ -1,0 +1,176 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+// PROJECT META
+const projectName = "K's Koi Mod Wiki";
+const projectTagline = "A basic mechanics reference: breeding and the Koi Pellets item.";
+const projectSummary =
+  "A short, factual wiki for K's Koi Mod, covering only what the source implements: the nine-colour breeding ladder and the one custom item, Koi Pellets.";
+
+// The nine ladder rungs in code order (KoiRenderer COLORS / KoiEntity ladder).
+// The swatch colours are visual approximations of the named rungs.
+const ladder = [
+  { rung: 0, name: "Black", hex: "#1a1a1a" },
+  { rung: 1, name: "Brown", hex: "#6b4a2b" },
+  { rung: 2, name: "Red", hex: "#c0392b" },
+  { rung: 3, name: "Orange", hex: "#e67e22" },
+  { rung: 4, name: "Yellow", hex: "#f1c40f" },
+  { rung: 5, name: "Green", hex: "#27ae60" },
+  { rung: 6, name: "Blue", hex: "#2980b9" },
+  { rung: 7, name: "Indigo", hex: "#4b0082" },
+  { rung: 8, name: "Violet", hex: "#8e44ad" },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{projectName} | {siteConfig.name}</title>
+    <meta name="description" content={projectSummary} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        {/* Top header */}
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Wiki
+          </p>
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{projectName}</h1>
+          <p class="text-base sm:text-lg text-gray-400">{projectTagline}</p>
+          <p class="text-sm sm:text-base text-gray-400">{projectSummary}</p>
+        </header>
+
+        {/* Breeding */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Breeding</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Feed Koi Pellets to two adult koi to put them into love mode. Each fed adult stays in love mode for
+            600 ticks (30 seconds), looks for a mate of its kind within 8 blocks, and swims to it. When a pair
+            meets, one of them spawns the litter, then both enter a breeding cooldown of 6000 ticks (5 minutes)
+            before they can breed again. Breeding also drops 1 to 7 experience.
+          </p>
+
+          <h3 class="text-lg font-semibold text-gray-100">Litter size</h3>
+          <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/60">
+            <table class="min-w-full text-sm text-left text-gray-300">
+              <thead class="bg-slate-900/80 text-gray-200">
+                <tr>
+                  <th class="px-4 py-2">Fry per breeding</th>
+                  <th class="px-4 py-2">Chance</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800">
+                <tr><td class="px-4 py-2">1 fry</td><td class="px-4 py-2">60%</td></tr>
+                <tr><td class="px-4 py-2">2 fry</td><td class="px-4 py-2">30%</td></tr>
+                <tr><td class="px-4 py-2">3 fry</td><td class="px-4 py-2">10%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-300 leading-relaxed">
+            Each fry rolls its colour independently (see the ladder below). Fry grow into adults after 24000 ticks
+            (20 minutes). Feeding a fry Koi Pellets speeds its remaining growth by about 10% per feed.
+          </p>
+        </section>
+
+        {/* Colour ladder */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">The colour ladder</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Koi come in nine colours arranged as a ladder, from black at the bottom to violet at the top. Each
+            colour has three skin patterns; a koi's pattern is cosmetic, decided from its own identity rather than
+            inherited. Koi that spawn in the wild are black, the bottom rung.
+          </p>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/60">
+            <table class="min-w-full text-sm text-left text-gray-300">
+              <thead class="bg-slate-900/80 text-gray-200">
+                <tr>
+                  <th class="px-4 py-2">Rung</th>
+                  <th class="px-4 py-2">Colour</th>
+                  <th class="px-4 py-2">Patterns</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800">
+                {ladder.map((c) => (
+                  <tr>
+                    <td class="px-4 py-2">{c.rung}</td>
+                    <td class="px-4 py-2">
+                      <span class="inline-flex items-center gap-2">
+                        <span class="inline-block h-3 w-3 rounded-full border border-slate-600" style={`background-color:${c.hex}`}></span>
+                        {c.name}
+                      </span>
+                    </td>
+                    <td class="px-4 py-2">3</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="text-lg font-semibold text-gray-100">How colour passes to fry</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li><span class="font-medium">Same-colour parents:</span> the fry keeps that colour, with a 10% chance to be promoted one rung up the ladder. Promotion is capped at violet, the top rung.</li>
+            <li><span class="font-medium">Different-colour parents:</span> the fry inherits one parent's colour at random (a 50/50 coin flip), with no promotion.</li>
+            <li>Because each fry rolls independently, a single breeding can produce fry of mixed results.</li>
+          </ul>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            So climbing the ladder means pairing koi of the same colour and breeding repeatedly, since only
+            same-colour pairs can promote a fry to the next rung.
+          </p>
+        </section>
+
+        {/* Item card: Koi Pellets */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Item: Koi Pellets</h2>
+          <div class="rounded-2xl border p-6 space-y-4" style="background-color:#0f141c; border-color:#1c2330;">
+            <div class="flex items-center gap-4">
+              <div class="h-14 w-14 shrink-0 rounded-lg border border-slate-700 bg-slate-950/60 flex items-center justify-center text-xs text-slate-500 text-center">
+                {/* Swap for: <img src="/images/projects/koi/koi_pellets.png" alt="Koi Pellets" class="h-10 w-10" style="image-rendering: pixelated;" /> */}
+                icon
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-100">Koi Pellets</h3>
+                <p class="text-sm text-gray-400">The mod's one custom item.</p>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-sm font-semibold text-gray-200 mb-1">Recipe</p>
+              <p class="text-gray-300 leading-relaxed">
+                Shapeless crafting: 1 bone meal plus 1 wheat seeds yields 4 Koi Pellets.
+              </p>
+            </div>
+
+            <div>
+              <p class="text-sm font-semibold text-gray-200 mb-1">Uses</p>
+              <ul class="list-disc list-inside space-y-2 text-gray-300">
+                <li><span class="font-medium">Breed adults:</span> feed pellets to two adult koi to start breeding (see above).</li>
+                <li><span class="font-medium">Raise fry:</span> feed pellets to a fry to speed its growth by about 10% per feed.</li>
+                <li><span class="font-medium">Lure and school:</span> hold pellets and any koi within 10 blocks swim toward you and gather. They keep following while you hold the pellets and stay within about 12 blocks; crowding at the water's edge can beach a few.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Back links */}
+        <div class="pt-4 flex flex-wrap gap-6">
+          <a href="/projects/koi-mod" class="text-sm underline-offset-2 hover:underline" style={`color:${siteConfig.accentColor}`}>
+            ← Back to K&apos;s Koi Mod
+          </a>
+          <a href="/projects" class="text-sm underline-offset-2 hover:underline" style={`color:${siteConfig.accentColor}`}>
+            ← Back to all projects
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>
