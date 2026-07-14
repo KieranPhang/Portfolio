@@ -1,0 +1,120 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+// PROJECT META
+const projectName = "K's Koi Mod";
+const projectTagline =
+  "A self-built Minecraft Forge mod that adds breeding, schooling koi fish.";
+const projectSummary =
+  "A standalone Forge 1.16.5 mini-mod that adds koi fish to Minecraft. Koi spawn in water, school toward a player holding craftable pellets, and breed along a nine-colour ladder. Built end to end as a proof-of-workflow for a larger mod project, and compiled to a loadable jar.";
+
+// IMAGE SLOT: drop screenshots into /public/images/projects/koi/ and swap the
+// placeholder for an <img>. Good shots: koi schooling in water, the colour ladder,
+// the spawn egg in the creative menu.
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{projectName} | {siteConfig.name}</title>
+    <meta name="description" content={projectSummary} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        {/* Top header */}
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Project
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">
+            {projectName}
+          </h1>
+
+          <p class="text-base sm:text-lg text-gray-400">
+            {projectTagline}
+          </p>
+
+          <p class="text-sm sm:text-base text-gray-400">
+            {projectSummary}
+          </p>
+        </header>
+
+        {/* Hero image slot */}
+        <section class="space-y-4">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <p class="text-sm text-gray-400 mb-3">In-game screenshot (placeholder):</p>
+            <div class="aspect-[16/9] w-full rounded-xl border border-dashed border-slate-700 flex items-center justify-center text-xs text-slate-500 text-center px-6">
+              {/* Swap for: <img src="/images/projects/koi/koi_school.png" alt="Koi schooling in water" class="w-full h-full object-cover rounded-xl" /> */}
+              Drop a screenshot of the koi in-game here
+            </div>
+          </div>
+        </section>
+
+        {/* Why */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Why</h2>
+          <p class="text-gray-300 leading-relaxed">
+            I wanted to learn Java game modding by taking the whole toolchain end to end on the simplest useful
+            creature: idea, to 3D model, to texture, to a live entity swimming in-game. The koi is deliberately
+            small in scope. Its job is to de-risk the pipeline for a larger mod, so that the harder mobs are just
+            more of a pattern I have already run once.
+          </p>
+        </section>
+
+        {/* What it does */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">What it does</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Adds a koi entity that swims and spawns naturally in water, weighted into river and ocean spawn pools alongside vanilla fish.</li>
+            <li>Koi school toward a nearby player holding craftable Koi Pellets, using a swimmer-safe follow behaviour.</li>
+            <li>Breeding runs along a nine-colour ladder (black through violet), with three hand-made patterns per colour and a breeding cooldown.</li>
+            <li>Ships the supporting items: Koi Pellets with a crafting recipe, a koi bucket, and a spawn egg.</li>
+          </ul>
+        </section>
+
+        {/* How */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">How it is built</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The mod is written in Java 8 against Minecraft Forge 1.16.5 (ForgeGradle 5, official Mojang mappings).
+            It follows the standard Forge pattern: deferred registries for the entity and items, an entity class
+            with data-synced colour and NBT persistence, a custom goal for the pellet lure, and a client-side
+            model and renderer. The 3D model was made in Blockbench. It compiles cleanly to a reobfuscated mod jar
+            that loads in a dev client, with the koi visible, spawning, swimming, and breeding.
+          </p>
+        </section>
+
+        {/* Stack */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Stack</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li><span class="font-medium">Language and platform:</span> Java 8, Minecraft Forge 1.16.5, ForgeGradle 5.</li>
+            <li><span class="font-medium">Modeling and art:</span> Blockbench model, hand-made colour and pattern textures.</li>
+            <li><span class="font-medium">Build:</span> Gradle, producing a loadable mod jar.</li>
+          </ul>
+        </section>
+
+        {/* Back link */}
+        <div class="pt-4">
+          <a
+            href="/projects"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all projects
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

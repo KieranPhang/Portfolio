@@ -1,5 +1,15 @@
 # Changelog
 
+### 2.1.1 (2026-07-13) — add K's Koi Mod
+
+- Added K's Koi Mod as a non-featured completed project, with a case study page
+  (`/projects/koi-mod`). A self-built Forge 1.16.5 mini-mod (Java 8, ForgeGradle
+  5) that adds koi fish with natural water spawning, a pellet lure, and a
+  nine-colour breeding ladder. Verified on disk: gradle build logs report success
+  and a complete loadable jar (`kkoi-1.0.6.jar`) exists with classes and assets.
+  Described only as what the code implements; no external link (no public repo or
+  CurseForge listing found).
+
 ### 2.1.0 (2026-07-13) — content refresh (completed projects only)
 
 - Added RobotDraw as the flagship project, with a full case study page

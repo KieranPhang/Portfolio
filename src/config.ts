@@ -94,6 +94,13 @@ export const siteConfig = {
     featured: false
   },
   {
+    name: "K's Koi Mod",
+    description: "A self-built Forge 1.16.5 mini-mod that adds koi fish to Minecraft. Koi spawn in water and school toward a player holding craftable pellets, and breed along a nine-colour ladder with three patterns each. Built end to end as a proof-of-workflow for a larger mod, and compiled to a loadable jar.",
+    link: "/projects/koi-mod",
+    skills: ["Java", "Minecraft Forge", "Gradle", "Blockbench", "Game Modding"],
+    featured: false
+  },
+  {
     name: "Pyramid of Light",
     description: "Built a modular LED pyramid stage prop in 9 days using PVC, 3D printed connectors, and shop lights.",
     link: "/projects/Pyramid-of-Light",
