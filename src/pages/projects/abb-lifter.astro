@@ -8,12 +8,13 @@ const projectName = "ABB Lifter Force Analysis Study";
 const projectTagline =
   "Two industrial scissor lifts, taken from geometry to load path to a punch list of fixes.";
 const projectSummary =
-  "A statics study of two industrial scissor lifts analyzed during my robotics internship, checking each against a 1000 kg payload target across its real travel envelope and stating what it needs to carry that load safely.";
+  "A statics study of two industrial scissor lifts analyzed during my robotics internship, checking each against a 1000 kg payload target across its real travel envelope and stating what it needs to carry that load safely. Full derivations and calculation source are in the two subpages; this page is the summary of both machines.";
 
 const imgBase = "/images/projects/abb-lifter";
 const accent = siteConfig.accentColor;
 const btn =
   "inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-white";
+const figClass = "w-full h-auto rounded-xl bg-white";
 ---
 
 <html lang="en">
@@ -36,22 +37,6 @@ const btn =
           <p class="text-sm sm:text-base text-gray-400">{projectSummary}</p>
         </header>
 
-        {/* Cover */}
-        <section class="space-y-3">
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
-            <img
-              src={`${imgBase}/fig18-stroke-hold.png`}
-              alt="Shaft lifter travel envelope at true scale, showing closed, working, and top poses"
-              class="w-full h-auto rounded-xl bg-white"
-              loading="eager"
-            />
-            <p class="mt-3 text-sm text-gray-400">
-              The travel envelope at true scale. A scissor lift is a force multiplier that gets worse as it
-              closes, so the lowest angle governs every structural check.
-            </p>
-          </div>
-        </section>
-
         {/* Two subpage buttons */}
         <section class="flex flex-col sm:flex-row gap-4">
           <a href="/projects/abb-lifter-shaft" class={btn} style={`background-color:${accent}`}>
@@ -71,45 +56,123 @@ const btn =
           </p>
         </div>
 
-        {/* Objective */}
+        {/* ============================ SHAFT LIFTER ============================ */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Objective</h2>
+          <h2 class="text-3xl font-bold text-gray-100 border-b border-slate-800 pb-2">Shaft lifter</h2>
           <p class="text-gray-300 leading-relaxed">
-            I was asked to structurally validate two industrial scissor lifts against a 1000 kg payload
-            requirement (plus a roughly 150 to 165 kg platform, with a safety factor of 1.5 applied to the
-            working weight), throughout each machine's real travel, and to identify what each needs to carry
-            that load safely. Actuation sizing was out of scope: sourcing a cylinder that meets the demand is the
-            actuation vendor's problem, and the analysis states the force demand where the vendor needs it.
-            Actuation-side components, including the cylinder cross member on the shaft lifter, are the actuation
-            vendor's scope and were not analyzed.
+            <span class="font-medium">Objective:</span> the machine is in service development. Determine whether
+            its structure can carry a 1000 kg payload (plus a roughly 150 kg platform, safety factor 1.5 on
+            working weight) throughout its real travel envelope, and what must be corrected for it to do so
+            safely. Actuation sizing is excluded from scope and remains the vendor's responsibility; the
+            structure's force demand is stated where the vendor needs it. Actuation-side components, including the
+            cylinder cross member, are the actuation vendor's scope and were not analyzed.
           </p>
         </section>
 
         {/* Measured basis */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Measured basis</h2>
+          <h3 class="text-xl font-semibold text-gray-100">Measured basis</h3>
           <p class="text-gray-300 leading-relaxed">
-            Every dimension was taken from the supplied CAD assemblies through section cuts and dimension
-            callouts. The material grade could not be confirmed, so all stresses assume mild steel at a yield of
-            250 MPa and a shear yield of 145 MPa. The analysis is static, hand-derived, and cross-checked with a
-            parametric script.
+            All dimensions were taken from the supplied CAD assembly through section cuts and dimension callouts.
+          </p>
+          <p class="text-sm font-semibold text-gray-200">Geometry</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Arm pin-to-pin 1565 mm; half-arms 782.50 / 782.50 mm (the arms cross at their midpoints).</li>
+            <li>Working pose: horizontal pin span 1542.05 mm, vertical pin spacing 267.0 mm, arm angle 9.82 degrees. The three values form a self-consistent triangle and check against each other.</li>
+          </ul>
+          <p class="text-sm font-semibold text-gray-200">Travel</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Piston travel 167 mm total, 120 mm usable.</li>
+            <li>The modeled pose is the working position, not the bottom: the piston travels 19.92 mm below it (to the true closed position at 3.56 degrees, piston bottomed, pins at 97 mm) and 100.08 mm above it (to the top at 22.9 degrees, pins at 608 mm).</li>
+            <li>Platform range: 170 mm below the working pose, 341 mm above, 511 mm total.</li>
+          </ul>
+          <p class="text-sm font-semibold text-gray-200">Joints and members</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Arm-end hinges, outside to inside: block, arm plate, roller, arm plate, block (double shear). The bores step 18 mm (blocks) / 24.1 mm (arm plates) / 31 mm (roller). No axle exists in the model; analysis proceeds on an 18 mm plain pin, the diameter the block holes govern.</li>
+            <li>Center pins: 24 mm diameter with 29 mm rivet heads in 24 mm holes, double shear, fully fitted.</li>
+            <li>Arms: two flat bars per arm, 6 mm thick each, measured at 25 mm depth at the crossing.</li>
+            <li>Sliding ends: two linear bearing blocks per end, top and bottom.</li>
+            <li>Material assumed mild steel (yield 250 MPa, shear yield 145 MPa); the grade could not be confirmed.</li>
+          </ul>
+          <p class="text-xs text-gray-500 leading-relaxed">
+            Note: the vault report embeds raw CAD captures of the side profile, the piston section, and the hinge
+            stack here. Those are omitted to avoid CAD-borne part identifiers; the governing geometry and the
+            joint stack are reproduced in the derived diagrams below.
           </p>
         </section>
 
         {/* The mechanics */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">The mechanics: multiplier versus angle</h2>
+          <h3 class="text-xl font-semibold text-gray-100">The mechanics</h3>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/fig16-geometry-derivation.png`} alt="Scissor geometry and force multiplication" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Geometry and force multiplication: the horizontal force is the lifted weight divided by the tangent of the arm angle, 5.78x at the working pose.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/fig18-stroke-hold.png`} alt="Travel envelope at true scale" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">The travel envelope at true scale. The multiplier swings from 16.1x at closed, through 5.78x at working, to 2.37x at top.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/fig12-force-vs-angle.png`} alt="Force demand across the envelope" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Force demand across the envelope. The shaded band is where the end pins exceed allowable stress; the closed position sits inside it.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/fig19-reaction-map.png`} alt="Joint reaction map at the working pose" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">The joint reaction map at the working pose, design load: end hinges 49.1 kN per side, center pins 48.9 kN, slider verticals 4.2 kN. The top hinges carry no horizontal force; every structural check consumes these reactions.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/fig20-pin-shear.png`} alt="Pin shear at the working pose" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Pin shear at the working pose: the 18 mm end-pin in its confirmed double-shear stack runs 96 MPa (67% of allowable); the 24 mm center pin 54 MPa (37%). Bearing stresses pass. End pins deform permanently at roughly 2.4 tonnes of payload at the working pose, rupture at 4.1 to 5.8 tonnes.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/fig21-slider-share.png`} alt="Sliding-end linear bearing load share" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Sliding-end linear bearings: 2.12 kN per block at design load is 106 to 132 percent of the static rating, at any angle. This is the machine's first structural failure under full load.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/fig23-stopper-reach.png`} alt="Descent stopper reachability" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">The descent stopper: its top face sits 457 mm below the platform against 170 mm of reachable travel, so it misses by 287 mm and can never engage. The only bottom limit is the piston bottoming at 3.56 degrees, inside the pin-overstress zone.</p>
+          </div>
+        </section>
+
+        {/* Results */}
+        <section class="space-y-4">
+          <h3 class="text-xl font-semibold text-gray-100">Results</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li><span class="font-medium">Joints at the working pose: adequate.</span> With a proper 18 mm double-shear pin at each arm-end hinge, all pin shear and bearing stresses pass with margin (end pins 67 percent, center pins 37 percent, bearing under half of allowable). But the axle is a stepped or sleeved custom pin that was never drawn, specified, or retained, so the hinge is unbuildable as documented even though its stresses check out.</li>
+            <li><span class="font-medium">The travel envelope is the risk map.</span> Loaded descent below 6.5 degrees (design load) or 4.4 degrees (working load) overstresses the end pins, and the true closed position, 3.56 degrees, is inside that zone. With 1000 kg aboard at the bottom the outcome is permanent pin deformation, not rupture. An empty platform may be parked at closed without harm.</li>
+            <li><span class="font-medium">Capacity is pin-governed: 474 kg rated payload at the 1.5 safety factor from the lowest point (3.56 degrees, 16.1x)</span>, or 786 kg loaded to the shear allowable with no safety factor. The 1000 kg rating exists only at or above the working pose, and remains contingent on closing the open items below.</li>
+            <li><span class="font-medium">Sliding-end linear bearings fail at design load</span> (106 to 132 percent of static rating), independent of angle. Expected mode is brinelling, presenting as sticky travel well before collapse.</li>
+            <li><span class="font-medium">All fasteners on the primary load paths are unmodeled</span> (hinge hold-downs, cylinder bracket); roughly 49 kN per hinge must pass through bolts that exist only as cosmetic features.</li>
+            <li><span class="font-medium">The descent stopper is non-functional</span> (287 mm short of the reachable bottom), leaving the pin-overstress zone unguarded.</li>
+            <li><span class="font-medium">A note on the arm bending model.</span> Fed into a simple central-load, simply-supported bending idealization, the measured 25 mm arm section returns roughly 2,600 MPa, about ten times the yield of mild steel. That is not a real result: the machine demonstrably stands and lifts at this section, so the model, not the machine, is wrong here. The arms carry load primarily axially along the pin line, closer to a two-force member than a transversely loaded beam. The correct open item is a beam-column check against the true load path, now with the section in hand.</li>
+          </ul>
+        </section>
+
+        {/* Punch list */}
+        <section class="space-y-4">
+          <h3 class="text-xl font-semibold text-gray-100">Open items (punch list)</h3>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            <li>Fit a third linear bearing block per sliding end, or higher-rated carriages. This removes the one outright structural failure at design load.</li>
+            <li>Install a functional descent stop that engages at or above the working pose, so a loaded platform can never be driven into the low-angle overstress zone. This is a prerequisite for any actuation upgrade.</li>
+            <li>Specify and positively retain the arm-end axles, stepped or sleeved to match the stepped bores.</li>
+            <li>Close the arm beam-column check against the axial load path, using the measured section and final drawings.</li>
+            <li>Specify the hold-down and bracket bolts on the primary load paths.</li>
+            <li>Confirm material certificates before build.</li>
+          </ol>
           <p class="text-gray-300 leading-relaxed">
-            A scissor lift near its closed position multiplies force brutally. The horizontal actuator force is
-            the lifted weight divided by the tangent of the arm angle, and every joint load scales the same way,
-            with one over the tangent. So the lowest angle in the travel governs every structural check. The
-            shaft lifter multiplies 5.78x at its 9.82 degree working pose and 16.1x at its 3.56 degree bottom of
-            stroke. The case lifter starts from a worse 5.23 degree floor, a 10.92x multiplier, which its joints
-            absorb but its actuation must respect.
+            For the actuation vendor: the structure demands 97.7 kN total at the working pose (65.2 kN at working
+            load), falling with height along the demand curve above.
           </p>
         </section>
 
-        {/* Callout: top hinge */}
+        {/* Top-hinge callout */}
         <section class="space-y-3">
           <div class="rounded-2xl border p-6 space-y-3" style="background-color:#0f141c; border-color:#1c2330;">
             <h3 class="text-lg font-semibold text-gray-100">Why the top hinge carries no horizontal force</h3>
@@ -127,47 +190,79 @@ const btn =
           </div>
         </section>
 
-        {/* Headline results: shaft */}
+        {/* ============================ CASE LIFTER ============================ */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Headline result: shaft lifter</h2>
+          <h2 class="text-3xl font-bold text-gray-100 border-b border-slate-800 pb-2">Case lifter</h2>
           <p class="text-gray-300 leading-relaxed">
-            Capacity is pin-governed. At and above the working pose the joints check out with margin (end pins at
-            67 percent of allowable, center pins at 37 percent). From the machine's lowest reachable point (3.56
-            degrees, the 16.1x multiplier) the rated payload is 474 kg at the 1.5 safety factor, or 786 kg loaded
-            to the shear allowable with no safety factor. The 1000 kg target therefore exists only at or above the
-            working pose, and it remains contingent on closing the open items in the shaft study.
-          </p>
-          <p class="text-gray-300 leading-relaxed">
-            Two real deficiencies stand out as delivered. The sliding-end linear bearings run 106 to 132 percent
-            of their static rating at design load, the machine's first structural failure under full load, with
-            brinelling as the expected mode. The descent stop is non-functional, sitting 287 mm below the
-            reachable bottom, so it can never engage and the low-angle overstress zone is left unguarded. Full
-            calculations, the open-items punch list, and a note on the limits of the arm bending model are in the
-            shaft study.
+            <span class="font-medium">Verdict: every structural check passes across the entire travel
+            envelope.</span> Real 25 mm double-shear axles with retention (95 MPa, 66 percent), a 30 mm center
+            bushing (46 to 91 percent), solid 25 by 70 mm arms (68 percent of yield), ball-bearing rollers at 38
+            percent of rating, a solid pusher block, and a modeled 5.23 degree pose that is genuinely the bottom
+            of stroke, so no hidden low-angle trap exists. The bent-bar failure mode of a thinner design has been
+            engineered out. The one open structural risk is behavioral: two independent cylinders with no
+            synchronization (racking under uneven extension); a flow divider or mechanical tie is the single
+            recommendation. For the actuation vendor: the 10.92x multiplier at the 5.23 degree floor demands
+            187.1 kN total at design load.
           </p>
         </section>
 
-        {/* Headline results: case */}
+        {/* Case measured basis */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Headline result: case lifter</h2>
-          <p class="text-gray-300 leading-relaxed">
-            Every structural check passes across the entire travel envelope. This machine has real 25 mm
-            double-shear axles with retention (66 percent of allowable), a 30 mm center bushing (46 percent in
-            double shear, and still inside allowable at 91 percent even read as single shear), solid 25 by 70 mm
-            arms (68 percent of yield), and ball-bearing rollers at 38 percent of rating. Its modeled pose is
-            genuinely the bottom of stroke, so there is no hidden low-angle trap. The one open risk is
-            behavioral: two independent cylinders with no synchronization, which can rack the platform under
-            uneven extension. The single recommendation is a flow divider, a rephasing circuit, or a mechanical
-            tie between sides.
-          </p>
-        </section>
-
-        {/* Recommendations */}
-        <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Recommendations</h2>
+          <h3 class="text-xl font-semibold text-gray-100">Measured basis</h3>
           <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li><span class="font-medium">Shaft:</span> add a third linear bearing block per sliding end or fit higher-rated carriages; install a descent stop that engages at or above the working pose; specify and positively retain the arm-end axles; close the arm beam-column check now that the section is measured; confirm material certificates.</li>
-            <li><span class="font-medium">Case:</span> add cylinder synchronization; verify the center pivot's double-shear construction next time the joint is opened; confirm material certificates.</li>
+            <li>Arm pin-to-pin 1490.09 mm; half-arms 745.04 / 745.04 mm; working pose span 1483.87 mm, vertical 135.87 mm, angle 5.23 degrees (the true bottom of stroke, confirmed).</li>
+            <li>Piston stroke 50 mm; one hydraulic cylinder per scissor side, independent.</li>
+            <li>Main hinges: 25 mm axle in double shear with retention. Center pivot: bushing, 30 mm load-bearing diameter.</li>
+            <li>Arms: single solid plates, 25 mm thick by 70 mm deep. Sliding end on ball-bearing rollers, no linear slides.</li>
+            <li>Lifted structure roughly 164 kg. Material assumed mild steel (yield 250 MPa, shear yield 145 MPa); grade unconfirmed.</li>
+          </ul>
+          <p class="text-xs text-gray-500 leading-relaxed">
+            Note: the vault report embeds a raw CAD side-profile capture here. It is omitted to avoid CAD-borne
+            part identifiers; the governing geometry is derived in the diagram below.
+          </p>
+        </section>
+
+        {/* Case diagrams */}
+        <section class="space-y-4">
+          <h3 class="text-xl font-semibold text-gray-100">The mechanics</h3>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/case-fig08-geometry-derivation.png`} alt="Case lifter geometry and derivation" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Case lifter geometry and derivation: half-arms 745.04 / 745.04, span 1483.87, vertical 135.87, angle 5.23 degrees, 10.92x multiplier.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/case-fig10-reaction-map.png`} alt="Case lifter joint reactions per side at design load" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Joint reactions per side at design load: main hinge 93.7 kN, center pivot 93.6 kN, roller verticals 4.28 kN. The top hinges carry no horizontal force.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/case-fig09-demand-envelope.png`} alt="Case lifter force demand across its envelope" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Case lifter force demand across its envelope, from 187.1 kN at the floor to 60.6 kN at the top.</p>
+          </div>
+        </section>
+
+        {/* Case results + recommendations */}
+        <section class="space-y-4">
+          <h3 class="text-xl font-semibold text-gray-100">Results and recommendations</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Main hinge axles 66 percent, center pivot 46 percent (double shear) and still inside allowable at 91 percent read as single shear, arms 68 percent of yield, rollers 38 percent of rating. Every check passes across the whole 5.23 to 15.8 degree envelope.</li>
+            <li>Add cylinder synchronization: a flow divider, a rephasing circuit, or a mechanical tie between sides. This is the only open structural risk on the machine.</li>
+            <li>Verify the center pivot's double-shear construction next time the joint is opened; the 91 percent single-shear reading is the thinnest margin on the machine.</li>
+            <li>Confirm material certificates at build.</li>
+          </ul>
+        </section>
+
+        {/* Assumptions and limitations */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Assumptions and limitations</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Material grade is unconfirmed; all stresses assume mild steel at a yield of 250 MPa.</li>
+            <li>The only safety factor is 1.5 on the working weight, applied to the load. The 145 MPa shear figure is the shear yield, not a further-reduced allowable.</li>
+            <li>Static analysis only: no dynamic or impact factor, no fatigue, and no stress concentration at holes.</li>
+            <li>Deformation and rupture loads are isolated pin-shear values on assumed steel; other components govern well below them.</li>
+            <li>The case lifter's center pivot is checked as steel shear only. The bushing material's own bearing pressure limit was not evaluated (projected pressure roughly 104 to 125 MPa); flagged for follow-up with the bushing specification.</li>
+            <li>Actuation-side components, including the shaft lifter's cylinder cross member, are the actuation vendor's scope and were not analyzed.</li>
           </ul>
         </section>
 
