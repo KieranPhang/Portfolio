@@ -1,0 +1,257 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const projectName = "Shaft Lifter Study";
+const projectTagline =
+  "A single-stage scissor lift checked joint by joint, with the risks it hides at low angle.";
+const projectSummary =
+  "The in-depth structural analysis of the shaft lifter: force multiplication, the joint reaction map, and every load-path check against a 1000 kg target, with an honest punch list of what stays open.";
+
+const imgBase = "/images/projects/abb-lifter";
+const accent = siteConfig.accentColor;
+
+const figClass = "w-full h-auto rounded-xl bg-white";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{projectName} | {siteConfig.name}</title>
+    <meta name="description" content={projectSummary} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        {/* Header */}
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${accent}`}>Case Study</p>
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{projectName}</h1>
+          <p class="text-base sm:text-lg text-gray-400">{projectTagline}</p>
+          <p class="text-sm sm:text-base text-gray-400">{projectSummary}</p>
+          <p class="text-sm">
+            <a href="/projects/abb-lifter" class="underline-offset-2 hover:underline font-medium" style={`color:${accent}`}>
+              ← Back to the ABB Lifter Force Analysis Study
+            </a>
+          </p>
+        </header>
+
+        {/* Scope */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Scope</h2>
+          <p class="text-gray-300 leading-relaxed">
+            A single-stage scissor: two X-frames, pinned ends on one side (top and bottom), sliding ends on the
+            other, driven by one horizontal cylinder at the base. The task was to check whether the structure can
+            carry 1000 kg (plus a roughly 150 kg platform, safety factor 1.5 on working weight) across its real
+            travel, and what must be corrected for it to do so. Actuation sizing was excluded: actuation-side
+            components, including the cylinder cross member, are the actuation vendor's scope and were not
+            analyzed. The force demand is stated where the vendor needs it. Material grade was unconfirmed, so
+            mild steel is assumed (yield 250 MPa, shear yield 145 MPa).
+          </p>
+        </section>
+
+        {/* Calc 1 */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Force required to lift</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The horizontal actuator force is the lifted weight divided by the tangent of the arm angle. At the
+            9.82 degree working pose the multiplier is 5.78x, so the 16.92 kN design load demands 97.7 kN of
+            horizontal push (65.2 kN at working load). The multiplier collapses as the lift rises, so everything
+            dangerous happens in the first few degrees, and every structural load below inherits this number.
+          </p>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/fig16-geometry-derivation.png`} alt="Scissor geometry and the force-multiplication derivation" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Geometry and the virtual-work derivation of the force multiplier at the true 9.82 degree pose.</p>
+          </div>
+        </section>
+
+        {/* Calc 4 reaction map */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">The joint reaction map</h2>
+          <p class="text-gray-300 leading-relaxed">
+            A 2D free-body model per side converts the actuation force into loads on every joint. As built, with
+            the load centered and all drive at the bottom, each side sees end hinges at 49.1 kN resultant, the
+            center pin at 48.9 kN, and slider verticals at 4.2 kN. The center pin carries the difference between
+            top and bottom actuation, which a bottom-only drive maximizes. Every structural check below consumes
+            these reactions.
+          </p>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/fig19-reaction-map.png`} alt="Joint reaction map per side at design load" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Reactions per side at design load, the input to every joint check.</p>
+          </div>
+        </section>
+
+        {/* Results table */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Structural checks</h2>
+          <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/60">
+            <table class="min-w-full text-sm text-left text-gray-300">
+              <thead class="bg-slate-900/80 text-gray-200">
+                <tr>
+                  <th class="px-4 py-2">Check</th>
+                  <th class="px-4 py-2">Result</th>
+                  <th class="px-4 py-2">Verdict</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800">
+                <tr>
+                  <td class="px-4 py-2">Arm-end hinge axles (18 mm, double shear confirmed)</td>
+                  <td class="px-4 py-2">96 MPa shear (67%); bearing 170 MPa arm plate, 72 MPa block</td>
+                  <td class="px-4 py-2">Stresses pass; unbuildable as documented (see below)</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Center pins (24 mm, double shear)</td>
+                  <td class="px-4 py-2">54 MPa (37%)</td>
+                  <td class="px-4 py-2">Pass, the one fully specified joint</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Sliding-end linear bearings (2 per end)</td>
+                  <td class="px-4 py-2">2.12 kN per block, 106 to 132% of static rating at design load</td>
+                  <td class="px-4 py-2">Fail at design load, marginal at working load</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Descent stop</td>
+                  <td class="px-4 py-2">Top face 457 mm down against 170 mm of reachable descent, misses by 287 mm</td>
+                  <td class="px-4 py-2">Non-functional</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Pin shear figure */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Pin shear</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The arm-end stack is block, arm plate, roller, arm plate, block, so the pin sits in double shear. The
+            18 mm block holes govern the pin diameter. At 49.1 kN the shear is 96 MPa, 67 percent of allowable,
+            and both bearing checks pass. The 24 mm center pin runs 54 MPa. On the breakage envelope, the end
+            pins deform permanently at roughly 2.4 tonnes of payload at the working pose and rupture between about
+            4.1 and 5.8 tonnes.
+          </p>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/fig20-pin-shear.png`} alt="Pin shear planes and stresses for the end and center pins" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Shear planes and stresses under the confirmed double-shear construction.</p>
+          </div>
+        </section>
+
+        {/* Slider figure */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Sliding-end bearings: the first failure</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The actuated ends carry their vertical share through two linear bearing blocks per end. Each block
+            takes 2.12 kN at design load against a static rating of roughly 1.6 to 2.0 kN, so 106 to 132 percent
+            of rating. This is the machine's first structural failure under full load, independent of angle. A
+            third block per end, or a higher-rated carriage, brings design load back to 71 to 88 percent. The
+            failure mode is brinelling, which presents as sticky travel long before collapse.
+          </p>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/fig21-slider-share.png`} alt="Sliding-end load share against the bearing static rating" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Per-block load against the static rating at the confirmed two-block count.</p>
+          </div>
+        </section>
+
+        {/* Travel envelope */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">The travel envelope is the risk map</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The modeled 9.82 degree pose is the working position, not the bottom. The piston can retract 19.92 mm
+            below it to a true closed position of 3.56 degrees, where the multiplier is 16.1x, and extend 100.08
+            mm above it. Because every joint load scales with one over the tangent, lowering a load toward the
+            piston's hard stop drives the pins toward their overstress floors: 6.5 degrees at design load, 4.4 at
+            working load. The reachable bottom sits inside that zone.
+          </p>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <img src={`${imgBase}/fig12-force-vs-angle.png`} alt="Force demand across the travel envelope with the pin-overstress floor" class={figClass} loading="lazy" />
+              <p class="mt-3 text-sm text-gray-400">Force demand versus angle, with the pin-overstress zone shaded.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <img src={`${imgBase}/fig23-stopper-reach.png`} alt="The descent stop is 287 mm short of the reachable bottom" class={figClass} loading="lazy" />
+              <p class="mt-3 text-sm text-gray-400">The descent stop cannot reach the platform, so nothing mechanical limits low-angle descent.</p>
+            </div>
+          </div>
+          <p class="text-gray-300 leading-relaxed">
+            Loaded to 1000 kg from the reachable bottom, the outcome is permanent pin deformation rather than
+            rupture. An empty platform can be parked at closed without harm.
+          </p>
+        </section>
+
+        {/* Capacity */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Capacity, stated honestly</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Capacity is pin-governed. From the lowest reachable point (3.56 degrees, 16.1x) the rated payload is
+            474 kg at the 1.5 safety factor, or 786 kg loaded to the shear allowable with no safety factor. The
+            center pins and bearings do not govern from that point. The 1000 kg rating therefore exists only at or
+            above the working pose, and remains contingent on closing the open items below.
+          </p>
+        </section>
+
+        {/* Arm model-limits note */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">A note on the arm bending model</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The arms are two flat bars per arm, each 6 mm thick, measured at 25 mm depth at the crossing (pending
+            confirmation that this is the tall side-view dimension). Fed into a simple central-load,
+            simply-supported bending idealization, that section returns roughly 2,600 MPa, about ten times the
+            yield of mild steel. That is not a real result: the machine demonstrably stands and lifts at this
+            section, so the model, not the machine, is wrong here. The idealization does not represent how these
+            arms work. They carry load primarily axially along the pin line, closer to a two-force member than a
+            transversely loaded beam. The correct open item is a beam-column check against the true load path,
+            now with the section dimensions in hand.
+          </p>
+        </section>
+
+        {/* Open items */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Open items (punch list)</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Arm beam-column check against the true axial load path, using the measured 25 mm section (pending confirmation of the section orientation). Any higher-capacity conclusion is contingent on this.</li>
+            <li>The arm-end axle is a stepped or sleeved custom pin that was never drawn, specified, or retained, so the hinge is unbuildable as documented even though its stresses pass. Fit and positively retain a proper axle.</li>
+            <li>The primary-load-path fasteners (hinge hold-downs, cylinder bracket) are unmodeled, yet roughly 49 kN per hinge must pass through them. Specify them.</li>
+            <li>Confirm material certificates; every stress here assumes mild steel.</li>
+          </ul>
+        </section>
+
+        {/* Recommendations */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Recommendations</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            <li>Fit a third linear bearing block per sliding end, or higher-rated carriages. This removes the one outright structural failure at design load.</li>
+            <li>Install a functional descent stop that engages at or above the working pose, so a loaded platform can never be driven into the low-angle overstress zone. This is a prerequisite for any actuation upgrade.</li>
+            <li>Specify and positively retain the arm-end axles, stepped or sleeved to match the stepped bores.</li>
+            <li>Close the arm beam-column check with the measured section and final drawings.</li>
+            <li>Confirm material certificates before build.</li>
+          </ol>
+        </section>
+
+        {/* Assumptions and limitations */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Assumptions and limitations</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Material grade is unconfirmed; all stresses assume mild steel at a yield of 250 MPa.</li>
+            <li>The only safety factor is 1.5 on the working weight, applied to the load. The 145 MPa shear figure is the shear yield, not a further-reduced allowable.</li>
+            <li>Static analysis only: no dynamic or impact factor, no fatigue, and no stress concentration at holes.</li>
+            <li>Deformation and rupture loads are isolated pin-shear values on assumed steel; other components govern well below them.</li>
+            <li>Actuation-side components, including the cylinder cross member, are the actuation vendor's scope and were not analyzed.</li>
+          </ul>
+        </section>
+
+        {/* Back link */}
+        <div class="pt-4">
+          <a href="/projects/abb-lifter" class="text-sm underline-offset-2 hover:underline" style={`color:${accent}`}>
+            ← Back to the ABB Lifter Force Analysis Study
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

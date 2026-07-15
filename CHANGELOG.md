@@ -1,5 +1,30 @@
 # Changelog
 
+### 2.2.0 (2026-07-14) - ABB Lifter Force Analysis Study
+
+- Added the ABB Lifter Force Analysis Study: a main page (`/projects/abb-lifter`)
+  plus two in-depth subpages, the Shaft Lifter Study (`/projects/abb-lifter-shaft`)
+  and the Case Lifter Study (`/projects/abb-lifter-case`), linked from the main
+  page with the site's standard button style.
+- Main page mirrors the analysis summary of both lifters (objective, measured
+  basis, multiplier-versus-angle mechanics, headline results, recommendations)
+  with a callout on why the top hinge carries no horizontal force. Cover figure
+  is the true-scale travel envelope.
+- Shaft page presents capacity as pin-governed (474 kg rated at SF 1.5, 786 kg at
+  the shear allowable) with an open-items punch list, and frames the arm check as
+  a model-limits note (the simple central-load bending idealization is
+  inconsistent with the machine's observed service, so a beam-column check against
+  the true axial load path is the open item, now with the measured section).
+  Actuation-side components including the cylinder cross member are stated once as
+  a vendor-scope exclusion.
+- Case page publishes as passing across the whole envelope with cylinder
+  synchronization as the sole open risk, and an informational flag that the
+  bushing material bearing pressure limit was not evaluated.
+- Added a non-featured project card. Copied 13 analysis figures into
+  `public/images/projects/abb-lifter/`; used only the clean derived schematics and
+  excluded all raw CAD screenshots (which the source flags as carrying customer
+  part identifiers). No customer, vendor, or part-number strings appear.
+
 ### 2.1.2 (2026-07-13) - koi wiki and APEX em-dash sweep
 
 - Added a basic wiki subpage for K's Koi Mod (`/projects/koi-mod-wiki`), linked

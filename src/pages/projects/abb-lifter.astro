@@ -1,0 +1,198 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const projectName = "ABB Lifter Force Analysis Study";
+const projectTagline =
+  "Two industrial scissor lifts, taken from geometry to load path to a punch list of fixes.";
+const projectSummary =
+  "A statics study of two industrial scissor lifts analyzed during my robotics internship, checking each against a 1000 kg payload target across its real travel envelope and stating what it needs to carry that load safely.";
+
+const imgBase = "/images/projects/abb-lifter";
+const accent = siteConfig.accentColor;
+const btn =
+  "inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-white";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{projectName} | {siteConfig.name}</title>
+    <meta name="description" content={projectSummary} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        {/* Header */}
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${accent}`}>Project</p>
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{projectName}</h1>
+          <p class="text-base sm:text-lg text-gray-400">{projectTagline}</p>
+          <p class="text-sm sm:text-base text-gray-400">{projectSummary}</p>
+        </header>
+
+        {/* Cover */}
+        <section class="space-y-3">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img
+              src={`${imgBase}/fig18-stroke-hold.png`}
+              alt="Shaft lifter travel envelope at true scale, showing closed, working, and top poses"
+              class="w-full h-auto rounded-xl bg-white"
+              loading="eager"
+            />
+            <p class="mt-3 text-sm text-gray-400">
+              The travel envelope at true scale. A scissor lift is a force multiplier that gets worse as it
+              closes, so the lowest angle governs every structural check.
+            </p>
+          </div>
+        </section>
+
+        {/* Two subpage buttons */}
+        <section class="flex flex-col sm:flex-row gap-4">
+          <a href="/projects/abb-lifter-shaft" class={btn} style={`background-color:${accent}`}>
+            Shaft Lifter Study →
+          </a>
+          <a href="/projects/abb-lifter-case" class={btn} style={`background-color:${accent}`}>
+            Case Lifter Study →
+          </a>
+        </section>
+
+        {/* Validation */}
+        <div class="rounded-xl border border-emerald-900/40 bg-emerald-950/20 px-4 py-3">
+          <p class="text-sm text-emerald-200/80 leading-relaxed">
+            The numbers were independently re-derived by two adversarial AI verification passes, one for statics
+            and geometry and one for materials and failure theory, and reviewed by K. The validation covers the
+            arithmetic and statics.
+          </p>
+        </div>
+
+        {/* Objective */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Objective</h2>
+          <p class="text-gray-300 leading-relaxed">
+            I was asked to structurally validate two industrial scissor lifts against a 1000 kg payload
+            requirement (plus a roughly 150 to 165 kg platform, with a safety factor of 1.5 applied to the
+            working weight), throughout each machine's real travel, and to identify what each needs to carry
+            that load safely. Actuation sizing was out of scope: sourcing a cylinder that meets the demand is the
+            actuation vendor's problem, and the analysis states the force demand where the vendor needs it.
+            Actuation-side components, including the cylinder cross member on the shaft lifter, are the actuation
+            vendor's scope and were not analyzed.
+          </p>
+        </section>
+
+        {/* Measured basis */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Measured basis</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Every dimension was taken from the supplied CAD assemblies through section cuts and dimension
+            callouts. The material grade could not be confirmed, so all stresses assume mild steel at a yield of
+            250 MPa and a shear yield of 145 MPa. The analysis is static, hand-derived, and cross-checked with a
+            parametric script.
+          </p>
+        </section>
+
+        {/* The mechanics */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">The mechanics: multiplier versus angle</h2>
+          <p class="text-gray-300 leading-relaxed">
+            A scissor lift near its closed position multiplies force brutally. The horizontal actuator force is
+            the lifted weight divided by the tangent of the arm angle, and every joint load scales the same way,
+            with one over the tangent. So the lowest angle in the travel governs every structural check. The
+            shaft lifter multiplies 5.78x at its 9.82 degree working pose and 16.1x at its 3.56 degree bottom of
+            stroke. The case lifter starts from a worse 5.23 degree floor, a 10.92x multiplier, which its joints
+            absorb but its actuation must respect.
+          </p>
+        </section>
+
+        {/* Callout: top hinge */}
+        <section class="space-y-3">
+          <div class="rounded-2xl border p-6 space-y-3" style="background-color:#0f141c; border-color:#1c2330;">
+            <h3 class="text-lg font-semibold text-gray-100">Why the top hinge carries no horizontal force</h3>
+            <p class="text-gray-300 leading-relaxed">
+              It is the question every engineer asks first when they see one hinge design used top and bottom.
+              Treat the platform as a free body. Its only horizontal connections are the top hinge and the top
+              roller, and a frictionless roller transmits no horizontal force, so horizontal equilibrium of the
+              platform forces the top hinge's horizontal reaction to zero. The entire multiplied actuation force
+              (93.6 kN per side on the case lifter, 48.9 kN per side on the shaft lifter) stays in the bottom
+              half of the machine and circulates between the arms, the base pins, and the cylinder. The top
+              hinge only carries its small vertical share. Real rollers are not perfectly frictionless, so roller
+              friction adds an estimated 10 to 20 percent, which is why the top hinge is small rather than exactly
+              zero.
+            </p>
+          </div>
+        </section>
+
+        {/* Headline results: shaft */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Headline result: shaft lifter</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Capacity is pin-governed. At and above the working pose the joints check out with margin (end pins at
+            67 percent of allowable, center pins at 37 percent). From the machine's lowest reachable point (3.56
+            degrees, the 16.1x multiplier) the rated payload is 474 kg at the 1.5 safety factor, or 786 kg loaded
+            to the shear allowable with no safety factor. The 1000 kg target therefore exists only at or above the
+            working pose, and it remains contingent on closing the open items in the shaft study.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            Two real deficiencies stand out as delivered. The sliding-end linear bearings run 106 to 132 percent
+            of their static rating at design load, the machine's first structural failure under full load, with
+            brinelling as the expected mode. The descent stop is non-functional, sitting 287 mm below the
+            reachable bottom, so it can never engage and the low-angle overstress zone is left unguarded. Full
+            calculations, the open-items punch list, and a note on the limits of the arm bending model are in the
+            shaft study.
+          </p>
+        </section>
+
+        {/* Headline results: case */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Headline result: case lifter</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Every structural check passes across the entire travel envelope. This machine has real 25 mm
+            double-shear axles with retention (66 percent of allowable), a 30 mm center bushing (46 percent in
+            double shear, and still inside allowable at 91 percent even read as single shear), solid 25 by 70 mm
+            arms (68 percent of yield), and ball-bearing rollers at 38 percent of rating. Its modeled pose is
+            genuinely the bottom of stroke, so there is no hidden low-angle trap. The one open risk is
+            behavioral: two independent cylinders with no synchronization, which can rack the platform under
+            uneven extension. The single recommendation is a flow divider, a rephasing circuit, or a mechanical
+            tie between sides.
+          </p>
+        </section>
+
+        {/* Recommendations */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Recommendations</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li><span class="font-medium">Shaft:</span> add a third linear bearing block per sliding end or fit higher-rated carriages; install a descent stop that engages at or above the working pose; specify and positively retain the arm-end axles; close the arm beam-column check now that the section is measured; confirm material certificates.</li>
+            <li><span class="font-medium">Case:</span> add cylinder synchronization; verify the center pivot's double-shear construction next time the joint is opened; confirm material certificates.</li>
+          </ul>
+        </section>
+
+        {/* Bottom buttons */}
+        <section class="space-y-3 pt-2">
+          <p class="text-sm text-gray-400">Read the full analysis for each machine:</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/projects/abb-lifter-shaft" class={btn} style={`background-color:${accent}`}>
+              Shaft Lifter Study →
+            </a>
+            <a href="/projects/abb-lifter-case" class={btn} style={`background-color:${accent}`}>
+              Case Lifter Study →
+            </a>
+          </div>
+        </section>
+
+        {/* Back link */}
+        <div class="pt-4">
+          <a href="/projects" class="text-sm underline-offset-2 hover:underline" style={`color:${accent}`}>
+            ← Back to all projects
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,219 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const projectName = "Case Lifter Study";
+const projectTagline =
+  "A scissor lift that passes every structural check, with one behavioral risk left to close.";
+const projectSummary =
+  "The in-depth structural analysis of the case lifter: real axles, a solid arm section, and a genuine bottom-of-stroke pose, so the whole envelope checks out, leaving cylinder synchronization as the sole open item.";
+
+const imgBase = "/images/projects/abb-lifter";
+const accent = siteConfig.accentColor;
+const figClass = "w-full h-auto rounded-xl bg-white";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{projectName} | {siteConfig.name}</title>
+    <meta name="description" content={projectSummary} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        {/* Header */}
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${accent}`}>Case Study</p>
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{projectName}</h1>
+          <p class="text-base sm:text-lg text-gray-400">{projectTagline}</p>
+          <p class="text-sm sm:text-base text-gray-400">{projectSummary}</p>
+          <p class="text-sm">
+            <a href="/projects/abb-lifter" class="underline-offset-2 hover:underline font-medium" style={`color:${accent}`}>
+              ← Back to the ABB Lifter Force Analysis Study
+            </a>
+          </p>
+        </header>
+
+        {/* Verdict */}
+        <div class="rounded-xl border border-emerald-900/40 bg-emerald-950/20 px-4 py-3">
+          <p class="text-sm text-emerald-200/80 leading-relaxed">
+            Verdict: every structural check passes across the entire travel envelope. The one open risk is
+            behavioral, not a part: two independent cylinders with no synchronization.
+          </p>
+        </div>
+
+        {/* Scope */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Scope</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The same 1000 kg payload target (plus a roughly 164 kg platform, safety factor 1.5 on working weight),
+            the same mild-steel assumption (yield 250 MPa, shear yield 145 MPa), and the same static method as the
+            shaft study. This machine is a single-stage scissor with one hydraulic cylinder per side. Actuation
+            sizing is out of scope; the force demand is stated for the vendor.
+          </p>
+        </section>
+
+        {/* Calc 1 */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Force required to lift</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Same mechanics as the shaft lifter, from a worse angle. At 5.23 degrees the multiplier is 10.92x, so
+            the 17.13 kN design load demands 187.1 kN of total horizontal push, or 93.6 kN per side, falling to
+            60.6 kN total at the 15.8 degree top. Because the modeled pose is the true bottom of stroke, this
+            worst case is the floor, not a hidden low-angle trap.
+          </p>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/case-fig08-geometry-derivation.png`} alt="Case lifter geometry and force-multiplication derivation" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Geometry and derivation at the 5.23 degree floor.</p>
+          </div>
+        </section>
+
+        {/* Reaction map */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">The joint reaction map</h2>
+          <p class="text-gray-300 leading-relaxed">
+            With one pusher per side, each side frame is its own bottom-driven load path. At design load the main
+            hinge sees 93.7 kN resultant, the center pivot 93.6 kN, and the roller verticals 4.28 kN per side. As
+            on the shaft lifter, the top hinges carry no horizontal force by platform equilibrium.
+          </p>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/case-fig10-reaction-map.png`} alt="Case lifter joint reactions per side at design load" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Reactions per side at design load.</p>
+          </div>
+        </section>
+
+        {/* Results table */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Structural checks</h2>
+          <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/60">
+            <table class="min-w-full text-sm text-left text-gray-300">
+              <thead class="bg-slate-900/80 text-gray-200">
+                <tr>
+                  <th class="px-4 py-2">Check</th>
+                  <th class="px-4 py-2">Result</th>
+                  <th class="px-4 py-2">Verdict</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800">
+                <tr>
+                  <td class="px-4 py-2">Main hinge axles (25 mm, double shear, with retention)</td>
+                  <td class="px-4 py-2">95 MPa (66%); overstress floor 3.4 deg, below the reachable range</td>
+                  <td class="px-4 py-2">Pass everywhere in the envelope</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Center pivot (30 mm load-bearing bushing)</td>
+                  <td class="px-4 py-2">66 MPa (46%) double shear; 132 MPa (91%) even single shear</td>
+                  <td class="px-4 py-2">Pass</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Arm bending (solid 25 by 70 mm arms, 30 mm hole)</td>
+                  <td class="px-4 py-2">169 MPa, 68% of yield at the worst pose</td>
+                  <td class="px-4 py-2">Pass</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Rollers (ball-bearing) and pusher block</td>
+                  <td class="px-4 py-2">4.28 kN per side, 38% of static rating; block strong by inspection</td>
+                  <td class="px-4 py-2">Pass</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Travel envelope and synchronization</td>
+                  <td class="px-4 py-2">5.23 to 15.8 deg, modeled pose = full retraction; two independent cylinders</td>
+                  <td class="px-4 py-2">Envelope clean; sync is the open risk</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Pin shear */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Axle and bushing shear</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The main hinge is a 25 mm axle in double shear, confirmed by section, with retention screw holes. At
+            93.7 kN it runs 95 MPa, 66 percent of allowable, and its overstress floor of 3.4 degrees sits below
+            anything the 50 mm stroke can reach, so no reachable pose overloads it. On the breakage envelope, the
+            main hinges deform at roughly 2.5 tonnes of payload at the working pose and rupture between about 4.2
+            and 5.9 tonnes.
+          </p>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/case-fig11-pin-shear.png`} alt="Case lifter axle and bushing shear with breakage envelope" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Axle and bushing shear, with the breakage envelope.</p>
+          </div>
+        </section>
+
+        {/* Arm bending */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Arm bending</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The arms are solid plates, 25 mm thick and 70 mm deep, with a 30 mm hole at the crossing. The net
+            section modulus against the 3.18 kN.m center moment gives 169 MPa, 68 percent of yield, at the worst
+            pose. A solid 25 mm arm has ample axial and buckling margin on top of that at these loads. This is the
+            structural difference that engineers out the bent-bar failure mode of a thinner design.
+          </p>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/case-fig12-arm-bending.png`} alt="Case lifter arm section and bending check" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">The arm section and the bending check.</p>
+          </div>
+        </section>
+
+        {/* Envelope and sync */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">The travel envelope and the open risk</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The modeled pose is full retraction, so the envelope is exactly 5.23 to 15.8 degrees and everything in
+            it passes. The one open structural risk is behavioral: two independent cylinders with no flow divider,
+            sync valve, or mechanical tie. If one side leads, the platform racks, the lagging side's hinge sees
+            more than its half of the load, and the arms take out-of-plane twist that the 2D checks do not cover.
+            At 66 to 68 percent utilizations the structure has real margin to absorb moderate imbalance, but
+            synchronization hardware is cheap and the loads here are 93 kN a side.
+          </p>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/case-fig13-envelope.png`} alt="Case lifter travel envelope at true scale" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">The travel envelope at true scale; the modeled pose is the bottom of stroke.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+            <img src={`${imgBase}/case-fig09-demand-envelope.png`} alt="Case lifter force demand across the envelope" class={figClass} loading="lazy" />
+            <p class="mt-3 text-sm text-gray-400">Force demand across the envelope, for the actuation vendor.</p>
+          </div>
+        </section>
+
+        {/* Recommendations */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Recommendations</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            <li>Add cylinder synchronization: a flow divider, a rephasing circuit, or a mechanical tie between sides. This is the only open structural risk on this machine.</li>
+            <li>Verify the center pivot's double-shear construction next time the joint is opened; the 91 percent single-shear reading is the thinnest margin on the machine.</li>
+            <li>Confirm material certificates at build; all margins assume mild steel.</li>
+          </ol>
+        </section>
+
+        {/* Assumptions and limitations */}
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Assumptions and limitations</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Material grade is unconfirmed; all stresses assume mild steel at a yield of 250 MPa.</li>
+            <li>The only safety factor is 1.5 on the working weight, applied to the load. The 145 MPa shear figure is the shear yield, not a further-reduced allowable.</li>
+            <li>Static analysis only: no dynamic or impact factor, no fatigue, and no stress concentration at holes. Both sides are assumed to share load equally except where the unsynchronized cylinders are flagged.</li>
+            <li>Deformation and rupture loads are isolated pin-shear values on assumed steel; other components govern well below them.</li>
+            <li>The center pivot is checked as steel shear only. The bushing material's own bearing pressure limit was not evaluated (projected pressure roughly 104 to 125 MPa); flagged for follow-up with the bushing specification.</li>
+          </ul>
+        </section>
+
+        {/* Back link */}
+        <div class="pt-4">
+          <a href="/projects/abb-lifter" class="text-sm underline-offset-2 hover:underline" style={`color:${accent}`}>
+            ← Back to the ABB Lifter Force Analysis Study
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

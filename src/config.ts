@@ -87,6 +87,14 @@ export const siteConfig = {
 
   },
   {
+    name: "ABB Lifter Force Analysis Study",
+    description: "Structural statics study of two industrial scissor lifts analyzed during my robotics internship. Force multiplication, a full joint reaction map, and every load-path check against a 1000 kg target, with an honest punch list of open items. Independently re-derived by two adversarial verification passes.",
+    link: "/projects/abb-lifter",
+    image: "/images/projects/abb-lifter/fig18-stroke-hold.png",
+    skills: ["Statics", "Structural Analysis", "Mechanical Engineering", "Python", "Technical Documentation"],
+    featured: false
+  },
+  {
     name: "rapid-lint",
     description: "A geometric linter for offline-generated ABB RAPID. It reconstructs every TCP path from the program text and asserts geometric invariants, catching frame-sign, orientation, and axis-mapping defects at the desk before robot time. Built after a real RobotDraw bug pressed a marker into the table. Pre-release, with 66 green tests.",
     link: "/projects/rapid-lint",
