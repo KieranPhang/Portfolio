@@ -12,7 +12,7 @@ export const siteConfig = {
   },
 
   aboutMe:
-    "Full stack roboticist working across fabrication, embedded systems, and industrial robot programming, with a specialty in lateral innovation: taking tools and methods that already exist and building them into workflows that lacked them. The clearest proof is bringing an ABB Robotics service office into a more AI-forward way of working: delivering the division's AI training, driving internal AI assistant adoption across the team, and standing up a shared knowledge-vault system for team context.",
+    "Full stack roboticist working across fabrication, embedded systems, and industrial robot programming, with a specialty in lateral innovation: taking tools and methods that already exist and building them into workflows that lacked them. The clearest proof is bringing an ABB Robotics service office into a more AI-forward way of working: delivering the division's AI training, driving internal AI assistant adoption across the team, and standing up a shared knowledge-vault system for team context. I graduate May 2027 with a BS in Robotics Engineering from ASU and I am interviewing now for full-time robotics, automation, and AI-integration roles. Singapore citizen, H-1B1 eligible: no lottery, no cap pressure, so the hiring process works like hiring a domestic candidate.",
 
   skills: [
     // Industrial robotics
