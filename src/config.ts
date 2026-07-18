@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Kieran 'K' Phang",
-  title: "Roboticist and AI Integrator",
+  title: "Full Stack Roboticist",
   description:
-    "Kieran Phang-Davey is a roboticist and AI integrator specializing in lateral innovation, taking existing tools and building them into robotics and engineering workflows that lacked them.",
+    "Kieran Phang-Davey is a full stack roboticist and AI integrator specializing in lateral innovation, taking existing tools and building them into robotics and engineering workflows that lacked them.",
   accentColor: "#1d4ed8",
 
   social: {
@@ -12,7 +12,7 @@ export const siteConfig = {
   },
 
   aboutMe:
-    "Roboticist and AI integrator specializing in lateral innovation, taking tools and methods that already exist and building them into workflows that lacked them. That shows up as AI training completed with ABB's engineering team, AI-assisted validation studies on industrial robot systems, and builds orchestrated end to end with AI tooling, on top of hands-on fabrication, embedded systems, and industrial robot programming.",
+    "Full stack roboticist working across fabrication, embedded systems, and industrial robot programming, with a specialty in lateral innovation: taking tools and methods that already exist and building them into workflows that lacked them. The clearest proof is bringing an ABB Robotics service office into a more AI-forward way of working: delivering the division's AI training, driving internal AI assistant adoption across the team, and standing up a shared knowledge-vault system for team context.",
 
   skills: [
     // Industrial robotics
