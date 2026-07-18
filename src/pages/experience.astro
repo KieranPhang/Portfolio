@@ -5,6 +5,9 @@ import { siteConfig } from "../config";
 import "../styles/global.css";
 
 const experiences = siteConfig.experience ?? [];
+
+const experienceDescription =
+  "Professional experience in industrial robotics and AI integration, including Kieran Phang-Davey's work as an engineering intern at ABB Robotics.";
 ---
 
 <html lang="en">
@@ -13,7 +16,7 @@ const experiences = siteConfig.experience ?? [];
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={siteConfig.description} />
+    <meta name="description" content={experienceDescription} />
     <title>Experience | {siteConfig.name}</title>
   </head>
 

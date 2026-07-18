@@ -1,7 +1,8 @@
 export const siteConfig = {
   name: "Kieran 'K' Phang",
-  title: "Robotics Engineer & Aspiring Giant Mech Pilot",
-  description: "Engineering Portfolio website of Kieran Phang-Davey",
+  title: "Roboticist and AI Integrator",
+  description:
+    "Kieran Phang-Davey is a roboticist and AI integrator specializing in lateral innovation, taking existing tools and building them into robotics and engineering workflows that lacked them.",
   accentColor: "#1d4ed8",
 
   social: {
@@ -11,7 +12,7 @@ export const siteConfig = {
   },
 
   aboutMe:
-    "Robotics-focused engineering student building real hardware across fabrication, embedded systems, and system integration. Interested in manufacturing, automation, and rapid prototyping, with a bias toward shipping and iterative improvement.",
+    "Roboticist and AI integrator specializing in lateral innovation, taking tools and methods that already exist and building them into workflows that lacked them. That shows up as AI training completed with ABB's engineering team, AI-assisted validation studies on industrial robot systems, and builds orchestrated end to end with AI tooling, on top of hands-on fabrication, embedded systems, and industrial robot programming.",
 
   skills: [
     // Industrial robotics

@@ -3,6 +3,9 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { siteConfig } from "../config";
 import "../styles/global.css";
+
+const aboutDescription =
+  "Get to know Kieran Phang-Davey, a roboticist and AI integrator who builds robots and integrates AI into real engineering workflows, on and off the clock.";
 ---
 
 <html lang="en">
@@ -11,7 +14,7 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={siteConfig.description} />
+    <meta name="description" content={aboutDescription} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,7 +31,7 @@ import "../styles/global.css";
     />
     <meta
       property="og:description"
-      content="Get to know Kieran – a robotics engineering student with a passion for manufacturing, optimization, and building real things."
+      content={aboutDescription}
     />
     <meta property="og:type" content="website" />
     <!-- If you have a dedicated OG image, replace this with its URL -->
@@ -41,7 +44,7 @@ import "../styles/global.css";
     />
     <meta
       name="twitter:description"
-      content="Get to know Kieran – a robotics engineering student with a passion for manufacturing, optimization, and building real things."
+      content={aboutDescription}
     />
     <!-- <meta name="twitter:image" content="https://yourdomain.com/images/og-about.jpg" /> -->
   </head>

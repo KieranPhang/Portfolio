@@ -24,6 +24,18 @@ import "../styles/global.css";
       rel="stylesheet"
     />
     <title>{siteConfig.name} - {siteConfig.title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kieran Phang-Davey",
+      "alternateName": "Kieran Phang",
+      "jobTitle": "Robotics Engineer and AI Integrator",
+      "url": "https://www.HireKieran.com",
+      "sameAs": [
+        siteConfig.social.github,
+        siteConfig.social.linkedin,
+      ],
+    })} />
   </head>
   <body>
     <Header />

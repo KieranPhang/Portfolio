@@ -9,6 +9,9 @@ const projects = siteConfig.projects ?? [];
 
 // Prefix paths correctly for GitHub Pages base URL
 const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\//, "")}`;
+
+const projectsDescription =
+  "Robotics, AI integration, and hands-on engineering projects by Kieran Phang-Davey, from industrial robot programming to AI-assisted validation studies.";
 ---
 
 <html lang="en">
@@ -17,7 +20,7 @@ const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\//, "
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={siteConfig.description} />
+    <meta name="description" content={projectsDescription} />
     <title>Projects | {siteConfig.name}</title>
   </head>
 
