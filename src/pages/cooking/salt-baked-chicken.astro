@@ -1,0 +1,122 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Salt-Baked Chicken";
+const recipeTagline = "Cantonese-style salt-baked seasoning chicken, adapted for an oven and foil rather than a full hot-salt burial.";
+const recipeDescription =
+  "Cantonese salt-baked chicken done the practical way: a seasoning rub and a foil wrap standing in for a full clay burial, still juicy under a crowded banquet oven.";
+
+const ingredients = [
+  "1 whole chicken, roughly 3 lb",
+  "3-4 tbsp salt-baked chicken seasoning powder",
+  "Sliced ginger",
+  "Heavy foil",
+];
+
+const steps = [
+  "Pat the chicken thoroughly dry.",
+  "Rub seasoning over the skin and inside the cavity.",
+  "Place ginger in the cavity.",
+  "Wrap tightly in three layers of heavy foil.",
+  "Refrigerate overnight.",
+  "Heat oven to 375 F.",
+  "Bake 85-90 minutes.",
+  "Rest wrapped for 20 minutes.",
+  "Hold at 200 F if needed.",
+  "Chop immediately before serving.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Chinese",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Chinese
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <p class="text-sm text-gray-500">Per whole chicken.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <h3 class="text-lg font-semibold text-gray-100">Day before</h3>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.slice(0, 5).map((step) => <li>{step}</li>)}
+          </ol>
+          <h3 class="text-lg font-semibold text-gray-100">Day of</h3>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.slice(5).map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Scaling</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The Lunar New Year plan originally used three chickens for 20 guests. A later pass considered
+            two chickens for closer to 15 guests, because the clay for a full salt burial was more expensive
+            per pound than the chicken itself. The foil-and-seasoning method avoids making clay a required
+            consumable.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Decisions</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li><span class="font-medium">Foil method retained:</span> practical, inexpensive, and compatible with a crowded banquet oven.</li>
+            <li><span class="font-medium">Full clay enclosure rejected for routine use:</span> excessive material cost with no clear benefit for this event.</li>
+            <li><span class="font-medium">Do not unwrap early:</span> the sealed rest preserves moisture and aroma.</li>
+          </ul>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

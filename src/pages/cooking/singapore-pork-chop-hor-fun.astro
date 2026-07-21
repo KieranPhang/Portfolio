@@ -1,0 +1,174 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Singapore Pork Chop Hor Fun";
+const recipeTagline = "Wat tan hor, zi char style: charred flat rice noodles topped with pork and egg gravy.";
+const recipeDescription =
+  "Charred wok noodles under a silky pork and egg gravy, tuned down to the gram after the pantry ran low on soy sauce.";
+
+const noodleIngredients = [
+  "400 g dried flat rice noodles, or 900-1,000 g fresh hor fun",
+  "40 g neutral oil",
+  "25 g dark soy sauce",
+  "2 g salt",
+];
+
+const porkIngredients = [
+  "900 g pork chops, sliced across the grain into roughly 5 mm strips",
+  "15 g regular soy sauce",
+  "8 g dark soy sauce",
+  "30 g oyster sauce",
+  "10-20 g rice wine (add an equal amount of water if only 10 g wine is available)",
+  "8 g sugar",
+  "2 g white or black pepper",
+  "15 g cornstarch",
+  "2 g baking soda, optional for tough pork",
+  "15 g neutral oil",
+];
+
+const gravyIngredients = [
+  "900 g water or chicken stock",
+  "20 g regular soy sauce",
+  "12 g dark soy sauce",
+  "60 g oyster sauce",
+  "3 g salt, then adjust",
+  "8 g sugar",
+  "3 g pepper",
+  "8 g sesame oil, optional",
+  "35 g cornstarch plus 70 g water for slurry",
+  "3 large eggs, about 150 g beaten",
+];
+
+const aromaticIngredients = [
+  "25 g minced garlic",
+  "10 g ginger, optional",
+  "150 g onion, optional",
+  "250-350 g bean sprouts, bok choy, cabbage, or spinach, optional",
+];
+
+const allIngredients = [
+  ...noodleIngredients,
+  ...porkIngredients,
+  ...gravyIngredients,
+  ...aromaticIngredients,
+];
+
+const steps = [
+  "Mix the pork marinade and rest 15-30 minutes. Add 10-20 g water if it looks dry.",
+  "Boil dried noodles until just soft, around 2.5-3 minutes. Drain hard and spread out.",
+  "Heat a wok very hot. Add 40 g oil, noodles, dark soy, and salt.",
+  "Spread the noodles flat for 45-90 seconds at a time to create dry browned patches. Remove.",
+  "Sear pork in batches until browned and 80-90% cooked. Remove.",
+  "Fry garlic, ginger, onion, and vegetables for 30-60 seconds.",
+  "Add all gravy liquids and seasonings. Bring to a simmer, return the pork, and cook 2-4 minutes.",
+  "Add about 70% of the slurry while stirring. Wait 20 seconds before deciding whether the rest is needed.",
+  "Lower the heat and drizzle in the egg. Stir less for larger ribbons.",
+  "Finish with sesame oil and pour over the charred noodles.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Chinese",
+  recipeIngredient: allIngredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Chinese
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+
+          <p class="text-sm sm:text-base text-gray-400">
+            This is the final pantry-constrained version, worked out after discovering only 35 g regular soy
+            sauce and 10-20 g rice wine remained in the kitchen.
+          </p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Noodles</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {noodleIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Pork</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {porkIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Gravy</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {gravyIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Aromatics and vegetables</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {aromaticIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Control points</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Dark soy is for color and caramel depth, not a one-to-one replacement for regular soy.</li>
+            <li>Do not crowd the pork or it will steam.</li>
+            <li>The gravy should coat a spoon but still flow.</li>
+            <li>Store noodles and gravy separately for meal prep; combined storage softens the noodles.</li>
+            <li>If too thick, loosen with 50-100 g water. If too thin, add a slurry of 10 g cornstarch and 20 g water.</li>
+          </ul>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

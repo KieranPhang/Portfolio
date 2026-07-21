@@ -6,6 +6,7 @@ import "../styles/global.css";
 
 const aboutDescription =
   "Get to know Kieran Phang-Davey, a roboticist and AI integrator who builds robots and integrates AI into real engineering workflows, on and off the clock.";
+const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\//, "")}`;
 ---
 
 <html lang="en">
@@ -211,13 +212,25 @@ const aboutDescription =
 
           <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
             On the more maker side, I enjoy 3D printing and hands-on
-            projects, from custom parts to experimental hardware. I like cooking
-            the same way I like engineering; running small experiments, tuning
-            ratios, and chasing the “FINAL_FINAL_FINALFORREAL_Version12” that really feels right. I
+            projects, from custom parts to experimental hardware. I
             also enjoy DJing because it blends technical control, creativity, and
             performing under pressure. Long-term, I’m excited to keep blending
             these interests into a career where I’m designing, improving, and
             manufacturing real things into the world.
+          </p>
+
+          <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
+            And then there’s cooking. I cook the way I engineer: run the dish,
+            take notes, change one variable, run it again, and keep iterating a
+            recipe version by version until it’s perfect. Salt-baked chicken,
+            air-fryer fried chicken, pulled pork, ramyeon: each one is a small
+            optimization project, and the “FINAL_FINAL_FINALFORREAL_Version12”
+            that survives testing gets written down. If you’re curious what that
+            looks like, the recipe lab lives
+            <a
+              href={withBase("cooking")}
+              class="font-semibold text-blue-400 hover:text-blue-300 underline underline-offset-4"
+            >over here</a>.
           </p>
         </section>
 

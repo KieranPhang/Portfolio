@@ -1,0 +1,155 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Refried Black Beans";
+const recipeTagline = "Dried black beans cooked down and mashed into a spreadable, garlicky refry.";
+const recipeDescription =
+  "Dried beans cooked down and mashed into a spreadable, garlicky refry, with a dedicated wok method that keeps the seasoning intact.";
+
+const ingredients = [
+  "1 cup dried black beans",
+  "4 cups fresh water for cooking",
+  "1-2 tbsp oil or lard",
+  "2 cloves garlic, minced",
+  "1 tsp cumin",
+  "1 tsp salt, added after beans soften",
+  "1/2 tsp chili powder or paprika",
+  "Small diced onion, optional",
+];
+
+const steps = [
+  "Rinse and inspect the beans.",
+  "Cover with 3-4 inches water and soak 8-12 hours.",
+  "Drain the soaking water.",
+  "Add 4 cups fresh water and bring to a boil.",
+  "Simmer 60-90 minutes until beans crush easily.",
+  "Add salt during the final 15 minutes.",
+  "Reserve 1 cup bean liquid.",
+  "Heat fat, then cook garlic and optional onion for one minute.",
+  "Bloom cumin and chili powder for about 10 seconds.",
+  "Add beans and about 1/2 cup bean liquid.",
+  "Mash and stir for 5-10 minutes, adding liquid as needed.",
+];
+
+const wokSteps = [
+  "Cook the raw beans in a pot; use the seasoned wok only for frying and mashing.",
+  "Heat the empty wok until lightly smoking.",
+  "Add 1/2 tbsp neutral oil and swirl.",
+  "Render bacon or heat the chosen fat.",
+  "Fry aromatics and cumin for 60-90 seconds.",
+  "Add cooked beans and a splash of bean liquid.",
+  "Press beans against the wok wall and scrape down repeatedly.",
+  "Cook about five minutes to a slowly spreading paste.",
+  "Clean immediately with hot water, heat dry, and wipe with a thin oil layer.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Latin American",
+  recipeYield: "About 3 cups (six 1/2-cup servings)",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({ "@type": "HowToStep", text: step })),
+  nutrition: {
+    "@type": "NutritionInformation",
+    servingSize: "1/2 cup",
+    calories: "115 calories",
+    proteinContent: "7 g",
+    carbohydrateContent: "20 g",
+    fatContent: "2 g",
+  },
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Latin American
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+
+          <p class="text-sm sm:text-base text-gray-400">Yield: about 3 cups, roughly six 1/2-cup servings.</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+          <p class="text-gray-300 leading-relaxed">
+            Thick and spreadable suits tortillas; a looser consistency suits rice bowls.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Wok method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {wokSteps.map((step) => <li>{step}</li>)}
+          </ol>
+          <p class="text-gray-300 leading-relaxed">
+            Beans are not acidic enough to strip seasoning during this short cook. Long wet simmering in the
+            wok was avoided.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Bacon upgrade</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Render 2 strips bacon or about 30 g pork fat before the aromatics for a deeper restaurant-style
+            flavor.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Estimated macros</h2>
+          <p class="text-sm text-gray-500">Per 1/2 cup:</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>115 calories</li>
+            <li>7 g protein</li>
+            <li>20 g carbohydrate</li>
+            <li>2 g fat</li>
+          </ul>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

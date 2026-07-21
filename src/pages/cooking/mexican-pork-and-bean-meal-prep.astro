@@ -1,0 +1,131 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Mexican Pork and Bean Meal Prep";
+const recipeTagline = "One slow-cooked pork and black bean base, split into wraps and bowls for eight meals.";
+const recipeDescription =
+  "One slow-cooked pork and black bean base, split into crispy wraps and rice bowls for eight meals without repeating the same plate twice.";
+
+const baseIngredients = [
+  "Pork butt",
+  "Cooked black beans",
+  "Mushrooms",
+  "Salt",
+  "Chili powder and cumin, if available",
+];
+
+const baseSteps = [
+  "Cut pork into chunks and salt well.",
+  "Cook covered at 300 F for 3-4 hours until shreddable.",
+  "Shred the pork.",
+  "Cook chopped mushrooms over high heat until their water evaporates.",
+  "Add pork and black beans.",
+  "Fry until the filling is cohesive but not wet.",
+];
+
+const wrapIngredients = ["2 tortillas", "150-200 g pork-and-bean filling", "Mexican-style cheese"];
+
+const bowlIngredients = ["About 200 g filling", "Spinach or additional mushrooms", "Optional rice for more carbohydrate"];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Latin American",
+  recipeYield: "8 meals",
+  recipeIngredient: [...baseIngredients, ...wrapIngredients, ...bowlIngredients],
+  recipeInstructions: baseSteps.map((step) => ({ "@type": "HowToStep", text: step })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Latin American
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+
+          <p class="text-sm sm:text-base text-gray-400">Output: eight meals from one pork-and-bean base.</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Base</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {baseIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {baseSteps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Branch 1: four wraps or quesadillas</h2>
+          <p class="text-sm text-gray-500">Per meal:</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {wrapIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+          <p class="text-gray-300 leading-relaxed">
+            Toast in a dry pan and press until crisp. Steaming the wraps was specifically avoided because it
+            weakens texture.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Branch 2: four bowls</h2>
+          <p class="text-sm text-gray-500">Per meal:</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {bowlIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Spaghetti decision</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Existing spaghetti and red sauce remained a separate meal stream. Mixing it into the Mexican pork
+            system was rejected. To make the spaghetti more complete, add ground pork or beef and reduce the
+            sauce until thick.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Design logic</h2>
+          <p class="text-gray-300 leading-relaxed">
+            One slow-cooked base creates two formats, limiting prep work without making all eight meals
+            identical.
+          </p>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

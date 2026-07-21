@@ -1,0 +1,280 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Lunar New Year Dinner";
+const recipeTagline = "A full Lunar New Year banquet for 15-20 guests, run off one oven and one clock.";
+const recipeDescription =
+  "A full 15 to 20 guest Lunar New Year banquet: whole fried fish, salt-baked chicken, mapo tofu, glazed tri-tip, steamed egg, and greens, all run off a single oven's clock.";
+
+const menu = [
+  "Whole fried pearl grouper with soy, ginger, and scallion",
+  "Salt-baked chicken",
+  "Crispy pork belly",
+  "Braised and glazed tri-tip",
+  "Mapo tofu with pork",
+  "Choy sum or bok choy with oyster sauce",
+  "Silken steamed egg with mince",
+  "Rice",
+];
+
+const mapoIngredients = [
+  "1.75 lb 30% fat pork mince",
+  "3 tbsp doubanjiang",
+  "1.5 tbsp fermented black beans, rinsed and chopped",
+  "4 cloves garlic",
+  "1 tbsp ginger",
+  "1.5 tsp sugar",
+  "1.5 cups chicken stock",
+  "2 blocks medium tofu",
+  "2 tsp cornstarch plus 2 tbsp water",
+  "1.5 tsp Sichuan pepper",
+  "1-2 tbsp chili oil",
+];
+
+const mapoSteps = [
+  "Brown pork until the fat renders.",
+  "Fry doubanjiang to red oil.",
+  "Add aromatics and stock.",
+  "Simmer tofu for five minutes.",
+  "Thicken lightly.",
+  "Finish with Sichuan pepper and chili oil.",
+];
+
+const eggIngredients = [
+  "0.8 lb minced pork",
+  "6-7 eggs",
+  "About 1/3 cup warm stock per egg",
+  "1.5 tbsp light soy for the pork",
+  "1 tsp sesame oil",
+  "White pepper",
+];
+
+const eggSteps = ["Combine pork, soy, sesame oil, and white pepper.", "Beat and strain eggs with warm stock.", "Steam until set."];
+
+const greensIngredients = [
+  "3.35 lb choy sum",
+  "Blanching water with 2 tbsp salt and 1 tbsp oil",
+  "6 tbsp oyster sauce",
+  "1.5 tsp sugar",
+  "1/2 cup stock",
+  "1 tsp cornstarch slurry",
+  "4 cloves garlic",
+];
+
+const greensSteps = ["Blanch 60-75 seconds.", "Drain very well.", "Sauce only at service."];
+
+const fishIngredients = [
+  "Two whole pearl groupers totaling 3.9 lb",
+  "4 tbsp light soy",
+  "1 tsp sugar",
+  "Shaoxing wine",
+  "3 tbsp smoking-hot oil",
+  "Ginger and scallion",
+];
+
+const fishSteps = [
+  "Score each side 3-4 times.",
+  "Salt 20 minutes before frying.",
+  "Pat dry and dust heavily with cornstarch.",
+  "Fry at 350 F for 6-8 minutes per fish.",
+  "Finish one minute at 375 F.",
+  "Top with ginger and scallion.",
+  "Add light soy, sugar, and Shaoxing wine.",
+  "Pour smoking-hot oil over the aromatics.",
+];
+
+const triTipSteps = [
+  "Remove beef from its braising liquid.",
+  "Strengthen and reduce the liquid with light soy, dark soy, oyster sauce, sugar, salt, and Shaoxing wine.",
+  "Slice very thin against the grain.",
+  "Glaze for 60-90 seconds only.",
+];
+
+const timeline = [
+  { time: "1200-1230", items: ["Scrape visible salt from pork-belly skin; do not wash.", "Pat dry and leave uncovered on a rack 30-45 minutes.", "Clear oven racks and reserve burners for beef and fish."] },
+  { time: "1245", items: ["Put wrapped chickens and pork belly into a 375 F oven.", "Do not repeatedly open the oven."] },
+  { time: "1300-1345 (mise en place)", items: ["Mince mapo aromatics and portion sauces.", "Beat and strain the steamed-egg mixture.", "Trim, wash, and dry greens.", "Measure and rinse rice.", "Dry and score fish; return uncovered to refrigerator."] },
+  { time: "1415", items: ["Remove chickens after roughly 90 minutes and keep wrapped.", "Raise oven to 450 F.", "Blister pork-belly skin for 25-35 minutes."] },
+  { time: "1430-1500", items: ["Start rice.", "Steam egg in the rice cooker once strongly steaming.", "Lower oven to 200 F for holding when cooking is complete."] },
+  { time: "1520", items: ["Remove tri-tip from its liquid.", "Reduce the liquid to a strong glossy glaze.", "Slice beef very thin against the grain.", "Toss in glaze for only 60-90 seconds."] },
+  { time: "1530-1600", items: ["Cook mapo tofu.", "Warm pork belly briefly.", "Blanch and plate greens.", "Fry fish last.", "Slice pork belly immediately before serving."] },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Chinese",
+  recipeIngredient: [
+    ...mapoIngredients,
+    ...eggIngredients,
+    ...greensIngredients,
+    ...fishIngredients,
+  ],
+  recipeInstructions: [
+    {
+      "@type": "HowToSection",
+      name: "Mapo Tofu",
+      itemListElement: mapoSteps.map((step) => ({ "@type": "HowToStep", text: step })),
+    },
+    {
+      "@type": "HowToSection",
+      name: "Steamed Egg",
+      itemListElement: eggSteps.map((step) => ({ "@type": "HowToStep", text: step })),
+    },
+    {
+      "@type": "HowToSection",
+      name: "Greens",
+      itemListElement: greensSteps.map((step) => ({ "@type": "HowToStep", text: step })),
+    },
+    {
+      "@type": "HowToSection",
+      name: "Whole Fish",
+      itemListElement: fishSteps.map((step) => ({ "@type": "HowToStep", text: step })),
+    },
+    {
+      "@type": "HowToSection",
+      name: "Tri-Tip Recovery",
+      itemListElement: triTipSteps.map((step) => ({ "@type": "HowToStep", text: step })),
+    },
+  ],
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Chinese
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+
+          <p class="text-sm sm:text-base text-gray-400">
+            Planned for 15-20 guests, with a detailed execution run targeting a 1600 service time. Stir-fried
+            noodles were removed from the later menu to control workload and quantity.
+          </p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Menu</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {menu.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Mapo Tofu</h2>
+          <p class="text-sm text-gray-500">For 1.75 lb 30% fat pork mince.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {mapoIngredients.slice(1).map((item) => <li>{item}</li>)}
+          </ul>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {mapoSteps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Steamed Egg</h2>
+          <p class="text-sm text-gray-500">For 0.8 lb minced pork. The chat proposed one egg per 0.1 lb pork, then settled on 6-7 eggs for balance.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {eggIngredients.slice(1).map((item) => <li>{item}</li>)}
+          </ul>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {eggSteps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Greens</h2>
+          <p class="text-sm text-gray-500">For 3.35 lb choy sum.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {greensIngredients.slice(1).map((item) => <li>{item}</li>)}
+          </ul>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {greensSteps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Whole Fish</h2>
+          <p class="text-sm text-gray-500">For two pearl groupers totaling 3.9 lb.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {fishIngredients.slice(1).map((item) => <li>{item}</li>)}
+          </ul>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {fishSteps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Tri-Tip Recovery</h2>
+          <p class="text-gray-300 leading-relaxed">
+            The tri-tip had braised for two to three hours and became tender but internally dry and
+            flavor-leached. More braising was rejected. The recovery:
+          </p>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {triTipSteps.map((step) => <li>{step}</li>)}
+          </ol>
+          <p class="text-gray-300 leading-relaxed">
+            This restored surface flavor and moisture perception without further overcooking.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Execution timeline</h2>
+          <div class="space-y-4">
+            {timeline.map((block) => (
+              <div>
+                <h3 class="text-lg font-semibold text-gray-100">{block.time}</h3>
+                <ul class="list-disc list-inside space-y-1 text-gray-300">
+                  {block.items.map((item) => <li>{item}</li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Lessons</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Fish and greens are the final dishes because their quality decays fastest.</li>
+            <li>Crackling must not be tented.</li>
+            <li>A balanced-tasting glaze in the pot may taste weak once applied; the reduction should be deliberately intense.</li>
+            <li>Tri-tip is not chuck. Long braising was the key rejected approach from this cook.</li>
+            <li>The oven, not ingredient cost, was the primary scheduling constraint.</li>
+          </ul>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

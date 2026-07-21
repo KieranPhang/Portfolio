@@ -1,0 +1,132 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Brown Butter Coffee Cookies";
+const recipeTagline = "Gluten-free cookies built on browned butter and dissolved instant coffee.";
+const recipeDescription =
+  "Gluten-free cookies built on browned butter and dissolved instant coffee, with a mandatory chill that's the difference between gritty and right.";
+
+const ingredients = [
+  "140 g unsalted butter",
+  "120 g brown sugar",
+  "60 g white sugar",
+  "1 large egg plus 1 yolk",
+  "1.5 tsp vanilla",
+  "180 g gluten-free 1:1 flour containing xanthan gum",
+  "1/2 tsp baking soda",
+  "1/2 tsp salt",
+  "1-2 tsp instant coffee",
+  "100 g chocolate chips or chunks",
+];
+
+const steps = [
+  "Brown butter over medium heat until golden with nutty-smelling brown specks.",
+  "Immediately transfer to a bowl and cool 10-15 minutes.",
+  "Dissolve coffee in 1 tsp hot water and mix into the warm butter.",
+  "Whisk in both sugars.",
+  "Add egg, yolk, and vanilla; mix until glossy.",
+  "Fold in flour, baking soda, and salt.",
+  "Fold in chocolate.",
+  "Chill 30-60 minutes. This hydration step is mandatory for avoiding gritty gluten-free dough.",
+  "Scoop roughly 2 tbsp portions.",
+  "Bake at 350 F / 175 C for 10-12 minutes.",
+  "Cool on the tray for five minutes.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Western",
+  recipeYield: "12-14 cookies",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({ "@type": "HowToStep", text: step })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Western
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+
+          <p class="text-sm sm:text-base text-gray-400">Yield: 12-14 gluten-free cookies.</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Brown-sugar alternatives</h2>
+          <p class="text-sm text-gray-500">Preferred:</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Replace 120 g brown sugar with 100 g white sugar plus 20 g molasses.</li>
+          </ul>
+          <p class="text-sm text-gray-500">Without molasses:</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Use 120 g white sugar.</li>
+            <li>Add 1 tbsp milk or cream, or one extra yolk.</li>
+            <li>Optionally add another 1/2 tsp coffee and a pinch of salt.</li>
+          </ul>
+          <p class="text-gray-300 leading-relaxed">
+            Plain white sugar without a moisture correction was rejected because it produces a drier, flatter
+            cookie.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Control points</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Over-browned butter becomes bitter.</li>
+            <li>Too much coffee becomes harsh rather than deep.</li>
+            <li>Skipping the rest creates gritty texture.</li>
+            <li>Overbaking removes the intended chew.</li>
+          </ul>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,193 @@
+---
+// src/pages/cooking.astro
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { siteConfig } from "../config";
+import "../styles/global.css";
+
+// Prefix paths correctly for GitHub Pages base URL
+const withBase = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\//, "")}`;
+
+const cookingDescription =
+  "A cooking log by Kieran Phang-Davey: recipes treated like engineering problems, tuned one variable at a time until the version that actually works.";
+
+type Recipe = {
+  name: string;
+  slug: string;
+  description: string;
+};
+
+type CuisineSection = {
+  label: string;
+  recipes: Recipe[];
+};
+
+const cuisines: CuisineSection[] = [
+  {
+    label: "Chinese",
+    recipes: [
+      {
+        name: "Salt-Baked Chicken",
+        slug: "salt-baked-chicken",
+        description:
+          "Cantonese salt-baked chicken done the practical way: a seasoning rub and a foil wrap standing in for a full clay burial, still juicy under a crowded banquet oven.",
+      },
+      {
+        name: "Singapore Pork Chop Hor Fun",
+        slug: "singapore-pork-chop-hor-fun",
+        description:
+          "Charred wok noodles under a silky pork and egg gravy, tuned down to the gram after the pantry ran low on soy sauce.",
+      },
+      {
+        name: "Lunar New Year Dinner",
+        slug: "lunar-new-year-dinner",
+        description:
+          "A full banquet for 15 to 20 guests: whole fried fish, salt-baked chicken, mapo tofu, glazed tri-tip, steamed egg, and greens, all run off a single oven's clock.",
+      },
+    ],
+  },
+  {
+    label: "Korean",
+    recipes: [
+      {
+        name: "Shin-Style Ramyeon",
+        slug: "shin-style-ramyeon",
+        description:
+          "A copycat of the beefy, garlicky Shin Ramyeon broth, built from cheap noodle bricks and a hand-tuned spice mix, scaled from one bowl up to a seven-pack hot dog batch.",
+      },
+    ],
+  },
+  {
+    label: "Southeast Asian",
+    recipes: [],
+  },
+  {
+    label: "Fusion",
+    recipes: [
+      {
+        name: "Spicy Garlic-Chili Ground Beef",
+        slug: "spicy-garlic-chili-ground-beef",
+        description:
+          "A fifteen-minute garlic and chili ground beef base built to drop into rice bowls, tacos, or flatbread without a second thought.",
+      },
+    ],
+  },
+  {
+    label: "Latin American",
+    recipes: [
+      {
+        name: "Mexican Pork and Bean Meal Prep",
+        slug: "mexican-pork-and-bean-meal-prep",
+        description:
+          "One slow-cooked pork and black bean base, split into crispy wraps and rice bowls for eight meals without repeating the same plate twice.",
+      },
+      {
+        name: "Refried Black Beans",
+        slug: "refried-black-beans",
+        description:
+          "Dried beans cooked down and mashed into a spreadable, garlicky refry, with a dedicated wok method that keeps the seasoning intact.",
+      },
+    ],
+  },
+  {
+    label: "Western",
+    recipes: [
+      {
+        name: "Brown Butter Coffee Cookies",
+        slug: "brown-butter-coffee-cookies",
+        description:
+          "Gluten-free cookies built on browned butter and dissolved instant coffee, with a mandatory chill that's the difference between gritty and right.",
+      },
+      {
+        name: "Costco-Style Mocha Freeze",
+        slug: "costco-style-mocha-freeze",
+        description:
+          "A copycat mocha freeze fixed by an ice-ratio correction and a frozen coffee-cube method that skips the meltwater dilution.",
+      },
+      {
+        name: "Popeyes-Style Air Fryer Chicken",
+        slug: "popeyes-style-air-fryer-chicken",
+        description:
+          "Crackly, spiced drumsticks built for the air fryer, double-dredged and rested so the crust actually bonds before it hits the basket.",
+      },
+    ],
+  },
+  {
+    label: "Sides",
+    recipes: [
+      {
+        name: "Air-Fried Cabbage",
+        slug: "air-fried-cabbage",
+        description:
+          "Cabbage tuned for either max crunch or max low-calorie volume, because those two goals turned out to need opposite settings.",
+      },
+    ],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={cookingDescription} />
+    <title>Kitchen | {siteConfig.name}</title>
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-6xl mx-auto px-6 space-y-12">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em] text-blue-500">Kitchen</p>
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">Recipes, iterated until perfection</h1>
+          <p class="text-base sm:text-lg text-gray-400 max-w-3xl">
+            I treat recipes the same way I treat an engineering problem: pick one variable, run the test,
+            write down what happened, and change exactly one thing next time. These are the logs from that
+            process, some of them clean finished recipes, some of them still mid-iteration, all of them
+            documented instead of trusted to memory.
+          </p>
+        </header>
+
+        {cuisines
+          .filter((section) => section.recipes.length > 0)
+          .map((section) => (
+            <div class="space-y-6">
+              <h2 class="text-xl font-semibold uppercase tracking-[0.15em] text-gray-300 border-b border-slate-800 pb-2">
+                {section.label}
+              </h2>
+
+              <div class="grid gap-6 sm:gap-8 md:grid-cols-2">
+                {section.recipes.map((recipe) => (
+                  <article class="flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 shadow-lg shadow-black/30">
+                    <div class="h-40 bg-gradient-to-br from-blue-500/40 via-purple-500/30 to-slate-900" />
+
+                    <div class="flex flex-1 flex-col p-6 space-y-4">
+                      <header class="space-y-1">
+                        <h3 class="text-xl font-semibold text-gray-100">{recipe.name}</h3>
+                        <p class="text-sm text-slate-400 line-clamp-3">{recipe.description}</p>
+                      </header>
+
+                      <div class="pt-2 mt-auto">
+                        <a
+                          href={withBase(`cooking/${recipe.slug}`)}
+                          class="inline-flex items-center rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white hover:bg-blue-500 transition"
+                        >
+                          View recipe →
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

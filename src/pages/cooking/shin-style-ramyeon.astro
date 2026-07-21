@@ -1,0 +1,148 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Shin-Style Ramyeon";
+const recipeTagline = "A copycat of the beefy, spicy, garlicky, mushroom-heavy Shin Ramyeon soup profile, built from inexpensive noodle bricks.";
+const recipeDescription =
+  "A copycat of the beefy, garlicky Shin Ramyeon broth, built from cheap noodle bricks and a hand-tuned spice mix, scaled from one bowl up to a seven-pack hot dog batch.";
+
+const oneBowlMix = [
+  "1 noodle brick, 85 g",
+  "500 ml water",
+  "6 g gochugaru or chili powder",
+  "5 g beef bouillon powder",
+  "1.5 g MSG",
+  "2 g garlic powder",
+  "2 g onion powder",
+  "1.5 g sugar",
+  "1 g salt",
+  "0.5 g black pepper",
+  "1.5 g mushroom powder",
+  "1 g soy sauce powder, optional",
+  "0.2 g ginger powder, optional",
+];
+
+const batchIngredients = [
+  "7 Top Ramen noodle bricks, 595 g total",
+  "680 g beef hot dogs",
+  "3.2-3.5 L water",
+  "About 97 g hot dog per noodle pack",
+];
+
+const batchSeasoning = [
+  "42 g gochugaru or chili powder",
+  "25 g beef bouillon powder",
+  "10 g MSG",
+  "16 g garlic powder",
+  "16 g onion powder",
+  "10 g sugar",
+  "10 g mushroom powder",
+  "4 g black pepper",
+  "1 g ginger powder, optional",
+  "0-3 g salt",
+];
+
+const steps = [
+  "Slice the hot dogs thinly.",
+  "Pan-sear until browned; this builds more broth depth than adding them raw.",
+  "Add 3.2 L water for a stronger broth or 3.5 L for a more typical soup consistency.",
+  "Add the seasoning and simmer 3-5 minutes.",
+  "Add the noodles and cook until loosened but still chewy.",
+  "Optionally finish with 50-70 g gochujang, 20 g soy sauce, and 10 g sesame oil.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Korean",
+  recipeIngredient: [...batchIngredients, ...batchSeasoning],
+  recipeInstructions: steps.map((step) => ({ "@type": "HowToStep", text: step })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Korean
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">One-bowl dry mix</h2>
+          <p class="text-sm text-gray-500">For one 85 g noodle brick and 500 ml water. Boil the water, dissolve the powder, add the noodles, and cook until just tender.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {oneBowlMix.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Seven-pack hot dog batch</h2>
+          <p class="text-gray-300 leading-relaxed">This version was scaled around the ingredients on hand.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {batchIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+          <h3 class="text-lg font-semibold text-gray-100">Seasoning</h3>
+          <p class="text-sm text-gray-500">
+            Because the hot dogs are already salty, added salt must remain low. If using the original Top
+            Ramen packets, use only 2-3 packets, reduce beef bouillon to 10 g and MSG to 6 g, and omit added
+            salt. Using all seven packets was rejected because it would make the batch excessively salty.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {batchSeasoning.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Adjustments</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Too weak: increase bouillon and MSG.</li>
+            <li>Too salty: reduce packet seasoning, bouillon, or added salt.</li>
+            <li>Missing the Shin profile: increase garlic, mushroom powder, MSG, and gochugaru.</li>
+            <li>Too flat: add 5 g soy sauce or 5 g gochujang.</li>
+            <li>No mushroom powder: use 2 g crushed dried shiitake, 1 g porcini powder, or 5 g oyster sauce.</li>
+          </ul>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

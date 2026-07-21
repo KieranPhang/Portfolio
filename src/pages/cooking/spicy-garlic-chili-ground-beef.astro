@@ -1,0 +1,122 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Spicy Garlic-Chili Ground Beef";
+const recipeTagline = "A fifteen-minute, four-serving ground beef base with garlic, chili, and a splash of acid.";
+const recipeDescription =
+  "A fifteen-minute garlic and chili ground beef base built to drop into rice bowls, tacos, or flatbread without a second thought.";
+
+const ingredients = [
+  "1 lb 85/15 ground beef",
+  "4 cloves garlic",
+  "1 tbsp neutral oil",
+  "1-2 tsp chili powder",
+  "1 tsp cumin",
+  "1 tsp paprika",
+  "1/2 tsp black pepper",
+  "1 tsp salt",
+  "1 tsp soy sauce",
+  "1 tsp vinegar or lime juice",
+  "Optional: 1 tsp chili flakes or 1 tbsp chili crisp",
+];
+
+const steps = [
+  "Heat a wok or skillet over medium-high heat.",
+  "Add oil and beef.",
+  "Break the beef into small pieces and brown 4-5 minutes until fat renders.",
+  "Add garlic for 30 seconds.",
+  "Add dry spices and bloom in the fat for one minute.",
+  "Add soy sauce, acid, and optional extra chili.",
+  "Cook 1-2 minutes until edges crisp.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Fusion",
+  recipeYield: "4 servings",
+  totalTime: "PT15M",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({ "@type": "HowToStep", text: step })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Fusion
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+
+          <p class="text-sm sm:text-base text-gray-400">Yield: four servings, about 15 minutes.</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Uses</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Rice bowls</li>
+            <li>Tacos</li>
+            <li>Flatbread filling</li>
+            <li>Potato topping</li>
+            <li>Bean mixture</li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Variants</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Onion and cabbage for more volume.</li>
+            <li>Soy, oyster sauce, and sugar for a Chinese takeout profile.</li>
+            <li>Cumin seeds and extra chili for a Xinjiang-inspired direction.</li>
+          </ul>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>
