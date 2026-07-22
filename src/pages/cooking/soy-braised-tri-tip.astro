@@ -1,0 +1,112 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Soy-Braised Tri-Tip";
+const recipeTagline = "Seared tri-tip braised in soy, star anise, and cinnamon, then glazed for only 60 to 90 seconds.";
+const recipeDescription =
+  "I sear tri-tip hard, braise it low with soy and star anise for about 90 minutes, then glaze the sliced beef in the reduced liquid for under two minutes so it doesn't dry out.";
+
+const ingredients = [
+  "3 pounds tri-tip",
+  "4 tablespoons light soy sauce",
+  "2 tablespoons dark soy sauce",
+  "1 tablespoon oyster sauce",
+  "2 tablespoons rock sugar",
+  "1 cup beef stock",
+  "1-1½ cups water",
+  "4 garlic cloves",
+  "4-5 ginger slices",
+  "2 scallions",
+  "1 cinnamon stick",
+  "2 star anise",
+  "Dried orange peel, optional",
+  "Oil for searing",
+];
+
+const steps = [
+  "Pat the tri-tip dry.",
+  "Heat a heavy pot until very hot.",
+  "Add a small amount of oil and sear the beef hard on all sides.",
+  "Add the garlic, ginger, scallions, cinnamon, star anise, and optional orange peel.",
+  "Add the light soy, dark soy, oyster sauce, rock sugar, beef stock, and enough water to produce a shallow braise.",
+  "Bring to a simmer.",
+  "Cover with the lid slightly cracked and cook on low for about 90 minutes.",
+  "Flip the beef every 30 minutes.",
+  "Cool the beef in its braising liquid and refrigerate overnight when making it ahead.",
+  "On the day of service, remove and slice thinly against the grain.",
+  "Strain and reduce the braising liquid until glossy.",
+  "Return the sliced beef to the glaze for only 60-90 seconds. Do not continue simmering it or the slices will dry out.",
+  "The glazed beef may be held covered at 200 F for up to about 1½ hours.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Chinese",
+  recipeYield: "About 3 pounds cooked beef before trimming and moisture loss",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Chinese
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <p class="text-sm text-gray-500">About 3 pounds cooked beef before trimming and moisture loss.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,114 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "El Pollo Loco-Style BBQ Chicken";
+const recipeTagline = "Orange and lime marinated chicken grilled slowly so the citrus sugars char instead of burn.";
+const recipeDescription =
+  "I marinate chicken in orange juice, lime, garlic, and cumin overnight, then grill it slowly, watching the citrus sugars so they char instead of burn.";
+
+const ingredients = [
+  "2-3 pounds chicken thighs or leg quarters",
+  "½-1 cup orange juice",
+  "Juice of 1 lime",
+  "1 tablespoon olive oil",
+  "4 garlic cloves, minced",
+  "1 teaspoon ground cumin",
+  "1 teaspoon paprika",
+  "1 teaspoon kosher salt",
+  "½ teaspoon black pepper",
+];
+
+const steps = [
+  "Combine the orange juice, lime juice, olive oil, garlic, cumin, paprika, salt, and pepper.",
+  "Coat the chicken completely.",
+  "Refrigerate for at least 4 hours and preferably overnight.",
+  "Remove the chicken from the refrigerator about 20 minutes before cooking.",
+  "Grill over medium to medium-high heat, turning regularly to prevent the citrus sugars from burning.",
+  "Cook until browned, lightly charred, and cooked through.",
+  "Rest for 10 minutes before portioning.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Mexican",
+  recipeYield: "About 4 portions",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Latin American
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+
+          <p class="text-sm sm:text-base italic text-gray-500">
+            Reconstructed from a recovered orange-based marinade. The chicken, juice, oil, spices used, and
+            marination method were preserved, but not every original spice quantity.
+          </p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <p class="text-sm text-gray-500">About 4 portions.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Oven Alternative</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Roast on a rack at 425 F until cooked through, then broil briefly for char. Watch closely because
+            the marinade contains sugar from the orange juice.
+          </p>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

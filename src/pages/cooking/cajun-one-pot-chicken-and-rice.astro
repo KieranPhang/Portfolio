@@ -1,0 +1,108 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Cajun One-Pot Chicken and Rice";
+const recipeTagline = "Cajun-browned chicken thighs finished in the same skillet as the rice that cooks in their fond.";
+const recipeDescription =
+  "I brown Cajun-seasoned chicken thighs, then build the rice right in the same skillet so it picks up all the fond.";
+
+const ingredients = [
+  "2 pounds chicken thighs",
+  "1½ cups long-grain rice",
+  "2½ cups chicken stock",
+  "1 onion, diced",
+  "4-6 garlic cloves, minced",
+  "3 tablespoons tomato paste",
+  "2 tablespoons Cajun seasoning",
+  "2 tablespoons olive oil",
+  "1-2 tablespoons lemon juice",
+  "Salt and black pepper",
+];
+
+const steps = [
+  "Pat the chicken dry. Season it with Cajun seasoning, salt, and black pepper.",
+  "Heat the olive oil in a large covered skillet over medium-high heat.",
+  "Brown the chicken for 3-4 minutes per side. It does not need to be fully cooked. Remove it to a plate.",
+  "Reduce the heat to medium. Add the onion and cook for 3-4 minutes.",
+  "Add the garlic and cook for 30 seconds.",
+  "Add the tomato paste and remaining Cajun seasoning. Cook for 1-2 minutes, stirring, until the paste darkens slightly.",
+  "Add the rice and stir until every grain is coated.",
+  "Pour in the chicken stock and scrape the bottom of the pan.",
+  "Return the chicken and any accumulated juices to the skillet.",
+  "Bring to a simmer, cover tightly, and reduce the heat to low.",
+  "Cook for 18-22 minutes, until the rice is tender and the chicken is cooked through.",
+  "Remove from the heat and rest, covered, for 5 minutes.",
+  "Finish with lemon juice. Adjust salt and pepper before serving.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "American",
+  recipeYield: "About 4 portions",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Western
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <p class="text-sm text-gray-500">About 4 portions. Needs a large skillet or sauté pan with a lid.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,106 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Mapo Tofu";
+const recipeTagline = "Ground pork fried with doubanjiang until the oil turns red, then simmered with soft tofu.";
+const recipeDescription =
+  "I fry ground pork with doubanjiang until the oil turns red, then simmer in soft tofu cubes just long enough for the sauce to lightly thicken.";
+
+const ingredients = [
+  "1 pound 30%-fat ground pork",
+  "19 ounces soft tofu, cut into large cubes",
+  "2 tablespoons doubanjiang",
+  "3 garlic cloves, minced",
+  "1 teaspoon minced or grated ginger",
+  "1 tablespoon soy sauce",
+  "1 cup water or stock",
+  "1 teaspoon cornstarch",
+  "1 tablespoon cold water",
+  "Sichuan pepper, optional",
+  "Sliced green onion, optional",
+];
+
+const steps = [
+  "Mix the cornstarch with 1 tablespoon cold water and reserve.",
+  "Brown the pork in a skillet or wok.",
+  "Remove excess rendered fat when necessary, leaving enough to fry the aromatics.",
+  "Add the garlic and ginger. Cook briefly.",
+  "Add the doubanjiang and fry until aromatic and the oil turns red.",
+  "Add the soy sauce and water or stock.",
+  "Add the tofu carefully.",
+  "Simmer gently for 5-7 minutes. Stir by moving the pan or folding carefully so the tofu does not break apart.",
+  "Stir in the slurry and cook for about 30 seconds, until the sauce lightly thickens.",
+  "Finish with optional Sichuan pepper and green onion.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Chinese",
+  recipeYield: "About 4 portions",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Chinese
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <p class="text-sm text-gray-500">About 4 portions.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

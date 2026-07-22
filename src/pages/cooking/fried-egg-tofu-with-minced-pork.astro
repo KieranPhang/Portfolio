@@ -1,0 +1,113 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Fried Egg Tofu with Minced Pork";
+const recipeTagline = "Pan-fried egg tofu rounds simmered in a mushroom and minced pork sauce.";
+const recipeDescription =
+  "I fry egg tofu rounds until golden, then simmer them in a soy and shiitake sauce built from minced pork and the mushroom soaking liquid.";
+
+const ingredients = [
+  "2 packages egg tofu, 8 ounces each",
+  "½ pound ground pork",
+  "3 dried shiitake mushrooms",
+  "2¼ cups warm water for soaking the mushrooms",
+  "1 tablespoon minced ginger",
+  "3 garlic cloves, minced",
+  "2 cups strained mushroom soaking liquid",
+  "2 tablespoons light soy sauce",
+  "½ tablespoon dark soy sauce",
+  "2 tablespoons Shaoxing wine",
+  "1 teaspoon sugar",
+  "2 tablespoons cornstarch",
+  "2 tablespoons cold water",
+  "Neutral oil for frying",
+];
+
+const steps = [
+  "Soak the dried mushrooms in 2¼ cups warm water for 2-3 hours.",
+  "Remove the mushrooms, squeeze them gently, and dice them.",
+  "Strain and reserve 2 cups of the soaking liquid.",
+  "Slice the egg tofu into thick rounds.",
+  "Heat oil in a nonstick pan over medium heat.",
+  "Fry the tofu rounds until golden on both sides. Remove carefully.",
+  "Brown the pork.",
+  "Add the mushrooms, ginger, and garlic.",
+  "Add the light soy, dark soy, Shaoxing wine, sugar, and mushroom liquid.",
+  "Simmer for approximately 20 minutes.",
+  "Mix the cornstarch and cold water.",
+  "Stir the slurry into the sauce.",
+  "Add the fried tofu and gently toss or spoon the sauce over it.",
+  "Simmer only long enough to heat the tofu through.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Chinese",
+  recipeYield: "About 4 portions",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Chinese
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <p class="text-sm text-gray-500">About 4 portions.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

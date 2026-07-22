@@ -1,0 +1,118 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Hambāgu";
+const recipeTagline = "Seared Japanese-style beef patties finished in a ketchup and Worcestershire pan sauce.";
+const recipeDescription =
+  "I sear onion-and-egg-bound beef patties, then finish them in a glossy ketchup and Worcestershire sauce built in the same pan.";
+
+const pattyIngredients = [
+  "2 pounds ground beef, or a beef-and-pork blend",
+  "1 onion, very finely minced",
+  "1 egg",
+  "½ cup breadcrumbs",
+  "¼ cup milk",
+  "Salt and black pepper",
+];
+
+const sauceIngredients = [
+  "3 tablespoons ketchup",
+  "2 tablespoons Worcestershire sauce",
+  "1 tablespoon butter",
+  "Splash of stock, optional",
+];
+
+const allIngredients = [...pattyIngredients, ...sauceIngredients];
+
+const steps = [
+  "Mix the breadcrumbs and milk.",
+  "Combine the meat, onion, egg, soaked breadcrumbs, salt, and pepper.",
+  "Mix only until cohesive; overmixing makes the patties dense.",
+  "Form four oval patties. Press a shallow indentation into each center.",
+  "Heat a skillet over medium-high heat.",
+  "Sear the patties for 4-5 minutes per side.",
+  "Remove the patties.",
+  "Add the ketchup, Worcestershire sauce, butter, and optional stock to the skillet.",
+  "Stir and simmer until glossy.",
+  "Return the patties and simmer in the sauce for about 5 minutes, until cooked through.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Japanese",
+  recipeYield: "4 large patties",
+  totalTime: "PT35M",
+  recipeIngredient: allIngredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Japanese
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Patties</h2>
+          <p class="text-sm text-gray-500">Makes 4 large patties. Total time is about 25-35 minutes.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {pattyIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Sauce</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {sauceIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

@@ -24,6 +24,17 @@ type CuisineSection = {
 
 const cuisines: CuisineSection[] = [
   {
+    label: "Basics",
+    recipes: [
+      {
+        name: "Soup-Pot Chicken Stock",
+        slug: "soup-pot-chicken-stock",
+        description:
+          "I turn a stripped rotisserie chicken carcass into a clean stock with a five to six hour bare simmer instead of a pressure cooker.",
+      },
+    ],
+  },
+  {
     label: "Chinese",
     recipes: [
       {
@@ -39,10 +50,63 @@ const cuisines: CuisineSection[] = [
           "Charred wok noodles under a silky pork and egg gravy, tuned down to the gram after the pantry ran low on soy sauce.",
       },
       {
-        name: "Lunar New Year Dinner",
-        slug: "lunar-new-year-dinner",
+        name: "Hong Shao Rou",
+        slug: "hong-shao-rou",
         description:
-          "A full banquet for 15 to 20 guests: whole fried fish, salt-baked chicken, mapo tofu, glazed tri-tip, steamed egg, and greens, all run off a single oven's clock.",
+          "I caramelize sugar in rendered pork fat, braise the belly low and slow in soy and Shaoxing wine, then reduce the liquid until it turns glossy.",
+      },
+      {
+        name: "Beggar's Chicken",
+        slug: "beggars-chicken",
+        description:
+          "I brine a whole chicken, rub it with a five-spice marinade, stuff it with shiitake and lap cheong, and seal it in lotus leaf, parchment, and foil to bake.",
+      },
+      {
+        name: "Soy-Braised Tri-Tip",
+        slug: "soy-braised-tri-tip",
+        description:
+          "I sear tri-tip hard, braise it low with soy and star anise, then glaze the sliced beef in the reduced liquid for under two minutes so it doesn't dry out.",
+      },
+      {
+        name: "Mapo Tofu",
+        slug: "mapo-tofu",
+        description:
+          "I fry ground pork with doubanjiang until the oil turns red, then simmer in soft tofu cubes just long enough for the sauce to lightly thicken.",
+      },
+      {
+        name: "Fried Egg Tofu with Minced Pork",
+        slug: "fried-egg-tofu-with-minced-pork",
+        description:
+          "I fry egg tofu rounds until golden, then simmer them in a soy and shiitake sauce built from minced pork and the mushroom soaking liquid.",
+      },
+      {
+        name: "Silken Steamed Egg with Minced Pork",
+        slug: "silken-steamed-egg-with-minced-pork",
+        description:
+          "I strain a warm-stock egg mixture into a shallow dish, steam it low until barely set, then finish it with seasoned minced pork so the texture jiggles like soft tofu.",
+      },
+    ],
+  },
+  {
+    label: "Japanese",
+    recipes: [
+      {
+        name: "Japanese Beef Curry",
+        slug: "japanese-beef-curry",
+        description:
+          "I braise chuck roll with kombu and dashi until fork-tender, then finish it with Japanese curry roux over rice.",
+      },
+      {
+        name: "Chicken Katsu",
+        slug: "chicken-katsu",
+        description:
+          "I pound chicken thighs even, coat them flour-egg-panko, and shallow-fry them for a crust that survives resting on a rack.",
+      },
+      {
+        name: "Hambāgu",
+        slug: "hambagu",
+        description:
+          "I sear onion-and-egg-bound beef patties, then finish them in a glossy ketchup and Worcestershire sauce built in the same pan.",
       },
     ],
   },
@@ -59,7 +123,32 @@ const cuisines: CuisineSection[] = [
   },
   {
     label: "Southeast Asian",
-    recipes: [],
+    recipes: [
+      {
+        name: "Kampung-Style Steamed Ginger Chicken and Stock Rice",
+        slug: "kampung-style-steamed-ginger-chicken-and-stock-rice",
+        description:
+          "I steam garlic-ginger marinated chicken thighs and spoon the accumulated juices over rice that I cook in chicken stock instead of water.",
+      },
+      {
+        name: "Sambal Belacan Barracuda",
+        slug: "sambal-belacan-barracuda",
+        description:
+          "I fry barracuda steaks, then coat them in a coarse chili, garlic, shallot, and belacan sambal fried dark red in the same pan.",
+      },
+      {
+        name: "Spicy Coconut Barracuda Head-and-Tail Curry",
+        slug: "spicy-coconut-barracuda-head-and-tail-curry",
+        description:
+          "I build a curry powder and coconut milk base, then stagger the barracuda head and tail into the pot on their own timers so the fish never overcooks.",
+      },
+      {
+        name: "Coconut-Broth Meatballs",
+        slug: "coconut-broth-meatballs",
+        description:
+          "I bind beef meatballs with soaked bread and milk, then simmer them gently in a lemongrass and coconut broth that I keep from ever boiling hard so it doesn't split.",
+      },
+    ],
   },
   {
     label: "Fusion",
@@ -69,6 +158,12 @@ const cuisines: CuisineSection[] = [
         slug: "spicy-garlic-chili-ground-beef",
         description:
           "A fifteen-minute garlic and chili ground beef base built to drop into rice bowls, tacos, or flatbread without a second thought.",
+      },
+      {
+        name: "Spicy Stir-Fry Egg Noodles",
+        slug: "spicy-stir-fry-egg-noodles",
+        description:
+          "I stir-fry sliced pork or beef with chili paste, toss in boiled egg noodles, and top each portion with a fried egg.",
       },
     ],
   },
@@ -86,6 +181,18 @@ const cuisines: CuisineSection[] = [
         slug: "refried-black-beans",
         description:
           "Dried beans cooked down and mashed into a spreadable, garlicky refry, with a dedicated wok method that keeps the seasoning intact.",
+      },
+      {
+        name: "Chicken Quesadillas",
+        slug: "chicken-quesadillas",
+        description:
+          "I fold shredded rotisserie chicken and a heavy layer of cheese into a flour tortilla and crisp it in a skillet, no onion.",
+      },
+      {
+        name: "El Pollo Loco-Style BBQ Chicken",
+        slug: "el-pollo-loco-style-bbq-chicken",
+        description:
+          "I marinate chicken in orange juice, lime, garlic, and cumin overnight, then grill it slowly, watching the citrus sugars so they char instead of burn.",
       },
     ],
   },
@@ -110,16 +217,47 @@ const cuisines: CuisineSection[] = [
         description:
           "Crackly, spiced drumsticks built for the air fryer, double-dredged and rested so the crust actually bonds before it hits the basket.",
       },
-    ],
-  },
-  {
-    label: "Sides",
-    recipes: [
       {
-        name: "Air-Fried Cabbage",
-        slug: "air-fried-cabbage",
+        name: "Cajun One-Pot Chicken and Rice",
+        slug: "cajun-one-pot-chicken-and-rice",
         description:
-          "Cabbage tuned for either max crunch or max low-calorie volume, because those two goals turned out to need opposite settings.",
+          "I brown Cajun-seasoned chicken thighs, then build the rice right in the same skillet so it picks up all the fond.",
+      },
+      {
+        name: "Creamy Garlic Chicken Pasta",
+        slug: "creamy-garlic-chicken-pasta",
+        description:
+          "I sear chicken thighs, build a garlic-Parmesan cream sauce in the same pan, then toss it all with pasta in about 30 minutes.",
+      },
+      {
+        name: "Chicken Schnitzel with Red Sauce",
+        slug: "chicken-schnitzel-with-red-sauce",
+        description:
+          "I fry Parmesan-panko chicken schnitzel and keep the sauce mostly underneath so the fried crust stays crisp on the plate.",
+      },
+      {
+        name: "Chicken Cutlet with Mushroom Cream Gravy",
+        slug: "chicken-cutlet-with-mushroom-cream-gravy",
+        description:
+          "I fry breaded chicken cutlets, then build a mushroom cream gravy in the same skillet and pour it over right before serving.",
+      },
+      {
+        name: "Beef Red-Sauce Pasta",
+        slug: "beef-red-sauce-pasta",
+        description:
+          "I brown ground beef and mushrooms, deglaze with red wine, and simmer everything into a Worcestershire-backed tomato sauce for pasta.",
+      },
+      {
+        name: "Barracuda Steak with Fennel Purée and Citrus Beurre Blanc",
+        slug: "barracuda-steak-with-fennel-puree-and-citrus-beurre-blanc",
+        description:
+          "I sear lean barracuda steaks and plate them over a sieved fennel and cream purée, with a lemon beurre blanc spooned around and a green herb oil finish.",
+      },
+      {
+        name: "Barramundi with Beurre Blanc, Yukon Gold Mash, and Asparagus",
+        slug: "barramundi-with-beurre-blanc-yukon-gold-mash-and-asparagus",
+        description:
+          "I run this whole plate, mash, asparagus, seared barramundi, and beurre blanc, off a 45-minute countdown clock so everything lands hot at once.",
       },
     ],
   },

@@ -1,0 +1,114 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Silken Steamed Egg with Minced Pork";
+const recipeTagline = "Stock-thinned steamed egg custard finished with seasoned minced pork on top.";
+const recipeDescription =
+  "I strain a warm-stock egg mixture into a shallow dish, steam it low until barely set, then finish it with seasoned minced pork so the final texture jiggles like soft tofu.";
+
+const ingredients = [
+  "4 eggs",
+  "1½ cups warm chicken stock",
+  "½ pound minced pork",
+  "1 tablespoon soy sauce",
+  "1 teaspoon sesame oil",
+  "White pepper",
+  "Sliced scallions",
+];
+
+const steps = [
+  "Season the minced pork with part of the soy sauce, sesame oil, and white pepper.",
+  "Beat the eggs gently without incorporating excessive air.",
+  "Mix the eggs with the warm stock.",
+  "Strain the egg mixture into a shallow heatproof dish.",
+  "Cover the dish tightly with foil or a plate so condensation does not drip into the custard.",
+  "Steam over low heat for 8 minutes.",
+  "Add the seasoned minced pork in small, thin pieces across the surface.",
+  "Cover again and steam for about 2 more minutes, or until the pork is cooked and the egg is barely set.",
+  "Finish with the remaining soy sauce, sesame oil, white pepper, and scallions.",
+  "The final texture should jiggle like soft tofu rather than become firm or porous.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Chinese",
+  recipeYield: "About 4 portions",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Chinese
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <p class="text-sm text-gray-500">About 4 portions.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Banquet Half-Batch Recorded Later</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>8 eggs</li>
+            <li>3 cups warm stock</li>
+            <li>1 pound minced pork</li>
+            <li>2 tablespoons light soy sauce</li>
+            <li>2 teaspoons sesame oil</li>
+            <li>White pepper</li>
+          </ul>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

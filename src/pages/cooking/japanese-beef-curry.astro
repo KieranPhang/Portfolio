@@ -1,0 +1,116 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Japanese Beef Curry";
+const recipeTagline = "Chuck roll braised low and slow with kombu and dashi, finished with curry roux.";
+const recipeDescription =
+  "I braise chuck roll with kombu and dashi until fork-tender, then finish it with Japanese curry roux over rice.";
+
+const ingredients = [
+  "1½-2 pounds chuck roll, cut into large cubes",
+  "1 onion, sliced",
+  "2 potatoes, cut into large chunks",
+  "2-3 carrots, cut into large chunks",
+  "3-4 cups chicken stock",
+  "One approximately 3 x 3-inch piece kombu",
+  "1 tablespoon dashi powder",
+  "½ box Japanese curry roux",
+  "1 tablespoon tomato paste",
+  "1-2 tablespoons soy sauce",
+  "1-2 tablespoons olive oil",
+  "Salt, added only after the roux",
+  "Cooked long-grain rice, for serving",
+  "Chicken or pork katsu, optional",
+];
+
+const steps = [
+  "Heat the pot over medium-high heat. Add the olive oil.",
+  "Brown the chuck roll in batches so it develops color instead of steaming.",
+  "Add the onion and cook until it begins to soften.",
+  "Add the tomato paste and cook for about 1 minute.",
+  "Add the chicken stock, kombu, and soy sauce. Scrape the bottom of the pot.",
+  "Bring to a simmer, cover, and cook on low for 1½-2 hours, until the chuck is fork-tender. Check at 90 minutes.",
+  "Remove the kombu after the first 45 minutes of the braise so it does not turn slimy or bitter.",
+  "Add the potatoes and carrots for the final 30 minutes of the braise so they cook through without dissolving.",
+  "Stir in the dashi powder.",
+  "Break the curry roux into the liquid gradually, stirring until completely dissolved.",
+  "Simmer uncovered for 10-15 minutes, stirring frequently, until thick.",
+  "Taste before adding salt because curry roux and soy sauce are already salty.",
+  "Serve over rice, with katsu when used.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Japanese",
+  recipeYield: "About 4 portions",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Japanese
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+
+          <p class="text-sm sm:text-base italic text-gray-500">
+            Converted from the original pressure-cooker method, since I don't own a pressure cooker.
+          </p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <p class="text-sm text-gray-500">About 4 portions. Needs a heavy soup pot or Dutch oven with a lid.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

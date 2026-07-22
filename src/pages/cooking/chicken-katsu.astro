@@ -1,0 +1,109 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Chicken Katsu";
+const recipeTagline = "Panko-crusted chicken thighs, shallow-fried and rested on a rack so the crust stays crisp.";
+const recipeDescription =
+  "I pound chicken thighs even, coat them flour-egg-panko, and shallow-fry them for a crust that survives resting on a rack.";
+
+const ingredients = [
+  "2 pounds boneless chicken thighs",
+  "1 cup flour",
+  "2-3 eggs, beaten",
+  "2-3 cups panko",
+  "Salt and black pepper",
+  "Olive oil for shallow frying",
+];
+
+const steps = [
+  "Trim the chicken and pound thicker areas until the pieces are reasonably even.",
+  "Season both sides with salt and pepper.",
+  "Set up three dishes: flour, beaten egg, and panko.",
+  "Coat each piece in flour and shake off the excess.",
+  "Dip in egg.",
+  "Press firmly into panko.",
+  "Heat a shallow layer of oil to about 350 F.",
+  "Fry for approximately 3-5 minutes per side, depending on thickness, until deeply golden and cooked through.",
+  "Drain on a wire rack rather than directly on paper towels.",
+  "Rest for several minutes, slice into strips, and serve with Japanese curry or rice.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Japanese",
+  recipeYield: "About 4 large portions",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Japanese
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <p class="text-sm text-gray-500">About 4 large portions.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Reheating</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Reheat on a rack in a hot oven or air fryer so the coating stays crisp. Do not microwave unless
+            texture is unimportant.
+          </p>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

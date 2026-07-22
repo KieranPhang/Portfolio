@@ -1,0 +1,130 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Spicy Coconut Barracuda Head-and-Tail Curry";
+const recipeTagline = "Nose-to-tail barracuda curry, head and tail added in stages so nothing overcooks.";
+const recipeDescription =
+  "I build a curry powder and coconut milk base, then stagger the barracuda head and tail into the pot on their own timers so the fish never overcooks.";
+
+const ingredients = [
+  "1 cleaned barracuda head, cut into 2-4 pieces",
+  "1 barracuda tail section, cut into thick chunks",
+  "1 teaspoon salt",
+  "3 tablespoons neutral oil",
+  "1 large onion, sliced or diced",
+  "4 garlic cloves, minced",
+  "1 tablespoon minced ginger",
+  "2-3 green chilies",
+  "2 tablespoons Singapore chicken curry powder",
+  "1 teaspoon chili powder",
+  "½ teaspoon paprika",
+  "½ teaspoon black pepper",
+  "1 cup crushed tomatoes",
+  "1½ cups coconut milk",
+  "½ cup coconut cream",
+  "1-1½ tablespoons lime juice",
+  "Salt, to taste",
+  "Eggplant, optional",
+  "Okra, optional",
+  "Tomato wedges, optional",
+];
+
+const steps = [
+  "Rinse the fish pieces and season with 1 teaspoon salt.",
+  "Rest for 15 minutes.",
+  "Heat the oil over medium heat.",
+  "Cook the onion until softened.",
+  "Add the garlic, ginger, and green chilies.",
+  "Add the curry powder, chili powder, paprika, and black pepper.",
+  "Bloom the spices for 30-45 seconds without burning them.",
+  "Add the crushed tomatoes and cook until the mixture thickens slightly.",
+  "Add the coconut milk and simmer for 5 minutes.",
+  "Add the head pieces first.",
+  "Cover and maintain a low simmer for 10 minutes.",
+  "Add the tail chunks and cook for 6-8 minutes.",
+  "Add the coconut cream and cook gently for another 2-3 minutes.",
+  "Turn off the heat and add the lime juice.",
+  "Rest uncovered for 10 minutes before serving.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Southeast Asian",
+  recipeYield: "About 4-5 servings",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Southeast Asian
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <p class="text-sm text-gray-500">About 4-5 servings.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Fish Control</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>Never hard-boil the curry.</li>
+            <li>Head pieces: approximately 15-18 minutes total</li>
+            <li>Tail pieces: approximately 6-8 minutes</li>
+            <li>Target internal temperature: approximately 130-135 F for moist fish</li>
+          </ul>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

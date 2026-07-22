@@ -1,0 +1,148 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Coconut-Broth Meatballs";
+const recipeTagline = "Bread-and-milk-bound beef meatballs simmered gently in a lemongrass coconut broth.";
+const recipeDescription =
+  "I bind beef meatballs with soaked bread and milk, then simmer them gently in a lemongrass and coconut broth that I keep from ever boiling hard so it doesn't split.";
+
+const meatballIngredients = [
+  "2.25 pounds 70/30 ground beef",
+  "4 slices bread",
+  "1 cup milk",
+  "1 large onion, very finely minced",
+  "2 shallots, finely minced",
+  "2 teaspoons salt",
+  "1½ teaspoons black pepper",
+  "1 teaspoon ground coriander or cumin, optional",
+];
+
+const brothIngredients = [
+  "6 garlic cloves, minced",
+  "About 3 inches ginger, grated or minced",
+  "2 lemongrass stalks, bruised and cut into sections",
+  "Chili, to taste",
+  "2-3 tablespoons olive oil, only as needed",
+  "1 can, 14 ounces, coconut cream",
+  "2 cans, 14 ounces each, coconut milk",
+  "1-1½ cups chicken stock",
+  "1½ teaspoons cornstarch",
+  "3 tablespoons cold water",
+  "Juice of 2 limes",
+  "Cilantro",
+  "Spring onion",
+];
+
+const allIngredients = [...meatballIngredients, ...brothIngredients];
+
+const steps = [
+  "Soak the bread in the milk until soft.",
+  "Combine the soaked bread, beef, onion, shallots, salt, pepper, and optional coriander or cumin.",
+  "Mix gently and form meatballs.",
+  "Chill the mixture or formed meatballs overnight when preparing ahead.",
+  "Brown the meatballs in batches.",
+  "Remove the meatballs and aggressively spoon off rendered fat, leaving only about 2 tablespoons in the pan. This is essential with 70/30 beef.",
+  "Fry the garlic, ginger, chili, and optional dry spices in the remaining fat.",
+  "Add the chicken stock and scrape the pan.",
+  "Add the bruised lemongrass.",
+  "Add the coconut cream and coconut milk.",
+  "Return the meatballs.",
+  "Maintain a gentle simmer for 12-15 minutes. Do not boil hard or the coconut broth may split.",
+  "Mix the cornstarch with 3 tablespoons cold water.",
+  "Stir the slurry into the broth and simmer briefly until lightly stabilized.",
+  "Turn off the heat.",
+  "Finish with lime juice, cilantro, and spring onion.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Southeast Asian",
+  recipeYield: "5 meal-prep portions",
+  recipeIngredient: allIngredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Southeast Asian
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Meatballs</h2>
+          <p class="text-sm text-gray-500">Makes 5 meal-prep portions, using 2.25 pounds 70/30 ground beef in the final batch.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {meatballIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Broth</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {brothIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+          <p class="text-sm sm:text-base italic text-gray-500">
+            A later version bloomed cardamom, coriander, and cumin with the garlic, ginger, and chili before
+            the stock went in. Exact quantities for those optional additions were not retained.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Meal-Prep Handling</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            <li>Cool before sealing the containers.</li>
+            <li>Refrigerate.</li>
+            <li>Remove any hardened excess fat if necessary.</li>
+            <li>Reheat gently, stirring once or twice. Avoid a hard boil.</li>
+          </ol>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

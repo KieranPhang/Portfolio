@@ -1,0 +1,203 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Barracuda Steak with Fennel Purée and Citrus Beurre Blanc";
+const recipeTagline = "Seared barracuda plated over a silky fennel purée with a lemon beurre blanc and herb oil.";
+const recipeDescription =
+  "I sear lean barracuda steaks and plate them over a sieved fennel and cream purée, with a lemon beurre blanc spooned around and a green herb oil finish.";
+
+const fishIngredients = [
+  "2 barracuda steaks",
+  "Salt and black or white pepper",
+  "Neutral oil",
+  "Butter for basting, optional",
+];
+
+const pureeIngredients = [
+  "1 large fennel bulb, sliced",
+  "1 tablespoon butter",
+  "½ cup heavy cream",
+  "Salt",
+  "White pepper",
+];
+
+const beurreBlancIngredients = [
+  "¼ cup dry white wine",
+  "1 tablespoon minced shallot",
+  "1 tablespoon lemon juice",
+  "6 tablespoons cold butter, cubed",
+  "Salt",
+];
+
+const herbOilIngredients = [
+  "Small handful soft herbs such as parsley or chives",
+  "Enough neutral or olive oil to blend into a pourable green oil",
+  "Pinch of salt",
+];
+
+const allIngredients = [
+  ...fishIngredients,
+  ...pureeIngredients,
+  ...beurreBlancIngredients,
+  ...herbOilIngredients,
+];
+
+const pureeSteps = [
+  "Melt 1 tablespoon butter over low heat.",
+  "Add the sliced fennel and a pinch of salt.",
+  "Sweat without browning.",
+  "Add the cream.",
+  "Cover and cook for 15-20 minutes, until completely soft.",
+  "Blend until smooth.",
+  "Pass through a fine sieve.",
+  "Adjust salt and white pepper and keep warm.",
+];
+
+const beurreBlancSteps = [
+  "Combine the white wine and shallot in a small saucepan.",
+  "Simmer until almost dry.",
+  "Add the lemon juice.",
+  "Reduce the heat to very low.",
+  "Whisk in the cold butter one cube at a time.",
+  "Keep the sauce below a simmer. Do not boil.",
+  "Season with salt and keep barely warm.",
+];
+
+const fishSteps = [
+  "Pat the barracuda dry and season it.",
+  "Heat a skillet over medium-high heat with a thin film of oil.",
+  "Sear the first side until well browned.",
+  "Turn and finish gently. Barracuda is lean, so avoid overcooking.",
+  "Butter-baste briefly when desired.",
+  "Rest for 2-3 minutes.",
+];
+
+const platingSteps = [
+  "Spoon or swipe fennel purée onto each plate.",
+  "Set the barracuda on the purée.",
+  "Spoon beurre blanc beside and partly around the fish.",
+  "Dot with herb oil.",
+  "Finish with fennel fronds or micro herbs when available.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Western",
+  recipeYield: "2 portions",
+  recipeIngredient: allIngredients,
+  recipeInstructions: [...pureeSteps, ...beurreBlancSteps, ...fishSteps, ...platingSteps].map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Western
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+
+          <p class="text-sm sm:text-base italic text-gray-500">
+            Mostly recovered. The purée and beurre blanc quantities were preserved exactly; the herb-oil
+            proportions were not preserved and are reconstructed as a loose ratio.
+          </p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Fish</h2>
+          <p class="text-sm text-gray-500">2 portions.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {fishIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Fennel Purée</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {pureeIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Citrus Beurre Blanc</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {beurreBlancIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Reconstructed Herb Oil</h2>
+          <p class="text-sm sm:text-base italic text-gray-500">
+            The exact herb-oil proportions were not preserved in the archive; this is a reconstructed ratio.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {herbOilIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Fennel Purée Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {pureeSteps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Beurre Blanc Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {beurreBlancSteps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Fish Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {fishSteps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Plating</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {platingSteps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

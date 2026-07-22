@@ -1,0 +1,120 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Creamy Garlic Chicken Pasta";
+const recipeTagline = "Seared chicken thighs sliced back into a Parmesan cream sauce built in the same pan.";
+const recipeDescription =
+  "I sear chicken thighs, build a garlic-Parmesan cream sauce in the same pan, then toss it all with pasta in about 30 minutes.";
+
+const ingredients = [
+  "1½-2 pounds boneless, skinless chicken thighs",
+  "12-16 ounces pasta",
+  "1½ cups heavy cream",
+  "½-¾ cup chicken stock",
+  "6-8 garlic cloves, minced",
+  "½ cup grated Parmesan",
+  "2 tablespoons butter",
+  "1-2 tablespoons olive oil",
+  "Salt and black pepper",
+  "6-8 ounces mushrooms, sliced, optional",
+  "About ½ cup reserved pasta water",
+];
+
+const steps = [
+  "Bring a large pot of salted water to a boil.",
+  "Cook the pasta until just al dente. Reserve about ½ cup pasta water, then drain.",
+  "Season the chicken with salt and pepper.",
+  "Heat olive oil in a large skillet over medium-high heat.",
+  "Sear the chicken until browned and cooked through. Remove and rest before slicing.",
+  "Reduce the heat to medium. Add the butter.",
+  "Add the garlic and cook for 30-45 seconds.",
+  "Add the mushrooms, when using, and cook until browned and their moisture has evaporated.",
+  "Add the chicken stock and simmer for 2-3 minutes.",
+  "Add the cream and maintain a gentle simmer for about 5 minutes. Do not boil aggressively.",
+  "Reduce the heat. Stir in the Parmesan until smooth.",
+  "Return the sliced chicken to the sauce.",
+  "Add the pasta and toss until coated.",
+  "Loosen with reserved pasta water as needed.",
+  "Taste and adjust salt and black pepper.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "American",
+  recipeYield: "About 4 large portions",
+  totalTime: "PT30M",
+  recipeIngredient: ingredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Western
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Ingredients</h2>
+          <p class="text-sm text-gray-500">About 4 large portions. Total time is about 30 minutes.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {ingredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Reheating</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Microwave covered with the lid cracked, adding about 1 tablespoon water per portion. Stir halfway
+            through so the sauce emulsifies again.
+          </p>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

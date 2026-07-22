@@ -1,0 +1,171 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Beggar's Chicken";
+const recipeTagline = "Brined and five-spice marinated whole chicken, stuffed with lap cheong and shiitake, sealed and baked.";
+const recipeDescription =
+  "I brine a whole chicken, rub it with a five-spice marinade, stuff it with shiitake and lap cheong, and seal it in lotus leaf, parchment, and foil to bake.";
+
+const brineIngredients = [
+  "1 gallon cold water",
+  "¾ cup kosher salt",
+  "¼ cup sugar",
+  "2 slices ginger",
+  "2 garlic cloves, smashed",
+];
+
+const marinadeIngredients = [
+  "1 teaspoon five-spice powder",
+  "2 teaspoons sesame oil",
+  "2 teaspoons sugar",
+  "2 teaspoons oyster sauce",
+  "1 tablespoon Shaoxing wine",
+  "½ tablespoon dark soy sauce",
+  "1 teaspoon light soy sauce",
+  "½ teaspoon white pepper",
+  "1 teaspoon grated ginger",
+  "1 teaspoon grated garlic",
+];
+
+const stuffingIngredients = [
+  "Rehydrated shiitake mushrooms",
+  "Sliced ginger",
+  "Scallions",
+  "Lap cheong",
+  "2-3 tablespoons chicken stock or Shaoxing wine, optional",
+];
+
+const wrappingIngredients = ["Lotus leaf", "Parchment paper", "Heavy-duty foil, doubled"];
+
+const allIngredients = [
+  ...brineIngredients,
+  ...marinadeIngredients,
+  ...stuffingIngredients,
+  ...wrappingIngredients,
+];
+
+const steps = [
+  "Dissolve the salt and sugar in the cold water.",
+  "Add the ginger and garlic.",
+  "Submerge the chicken and brine it under refrigeration.",
+  "Remove the chicken, rinse only when the exterior is excessively salty, and dry it thoroughly.",
+  "Combine all marinade ingredients.",
+  "Rub the marinade inside and outside the chicken.",
+  "Fill the cavity with mushrooms, ginger, scallions, lap cheong, and optional stock or Shaoxing.",
+  "Wrap tightly in lotus leaf.",
+  "Wrap in parchment.",
+  "Seal in two layers of heavy-duty foil. Add another layer when leakage is possible.",
+  "Bake at 375 F for 1 hour 50 minutes to 2 hours 10 minutes.",
+  "Confirm approximately 165 F in the thickest part of the thigh without touching bone.",
+  "Keep the package sealed and hold at 160-170 F for 15-20 minutes.",
+  "Open the package over a tray so none of the juices are lost.",
+];
+
+const holdingSteps = [
+  "Hold at 200 F for 30 minutes.",
+  "Turn the oven off only for the remaining absence.",
+  "On return, reheat the sealed package at 375 F for 10-15 minutes.",
+  "Open over a tray.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Chinese",
+  recipeYield: "1 chicken, 3.41 pounds",
+  recipeIngredient: allIngredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Chinese
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+
+          <p class="text-sm sm:text-base text-gray-500">Made with a 3.41-pound chicken.</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Brine</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {brineIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Marinade</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {marinadeIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Stuffing</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {stuffingIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Wrapping</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {wrappingIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Holding Procedure Used in the Original Chat</h2>
+          <p class="text-gray-300 leading-relaxed">For an unavoidable absence of roughly 2 hours 15 minutes:</p>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {holdingSteps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

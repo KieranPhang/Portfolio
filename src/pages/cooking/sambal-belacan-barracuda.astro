@@ -1,0 +1,111 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Sambal Belacan Barracuda";
+const recipeTagline = "Fried barracuda steaks coated in a pounded chili, belacan, and lime sambal.";
+const recipeDescription =
+  "I fry barracuda steaks, then coat them in a coarse chili, garlic, shallot, and belacan sambal fried dark red in the same pan.";
+
+const fishIngredients = ["5 barracuda steaks", "1 teaspoon salt", "Neutral oil for frying"];
+
+const sambalIngredients = [
+  "5-8 red chilies",
+  "3 garlic cloves",
+  "1 shallot",
+  "1 teaspoon belacan",
+  "1 tablespoon lime juice",
+  "1 teaspoon sugar",
+  "Salt, to taste",
+];
+
+const allIngredients = [...fishIngredients, ...sambalIngredients];
+
+const steps = [
+  "Pat the fish completely dry and season it with the salt.",
+  "Pound or blend the chilies, garlic, shallot, belacan, lime juice, sugar, and a small amount of salt into a coarse paste.",
+  "Heat oil in a skillet.",
+  "Fry the barracuda for 3-4 minutes per side, depending on thickness.",
+  "Remove the fish.",
+  "Fry the sambal in the same pan for 5-8 minutes, until dark red, aromatic, and no longer raw.",
+  "Return the fish and coat it in the sambal for 1-2 minutes.",
+  "Finish with additional lime juice.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Southeast Asian",
+  recipeYield: "About 4-5 servings",
+  recipeIngredient: allIngredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Southeast Asian
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Fish</h2>
+          <p class="text-sm text-gray-500">About 4-5 servings.</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {fishIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Sambal</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {sambalIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

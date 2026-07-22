@@ -1,0 +1,115 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+const recipeName = "Kampung-Style Steamed Ginger Chicken and Stock Rice";
+const recipeTagline = "Garlic-ginger marinated thighs steamed over their own juices, with rice cooked in chicken stock.";
+const recipeDescription =
+  "I steam garlic-ginger marinated chicken thighs and spoon the accumulated juices over rice that I cook in chicken stock instead of water.";
+
+const chickenIngredients = [
+  "2 pounds chicken thighs",
+  "1-1½ teaspoons salt",
+  "2 tablespoons minced garlic",
+  "2 tablespoons grated or finely minced ginger",
+  "1 tablespoon hot oil, optional finishing step",
+  "Sliced green onion, optional garnish",
+];
+
+const riceIngredients = [
+  "2 cups uncooked long-grain rice",
+  "Chicken stock replacing part or all of the normal rice-cooking water",
+  "Pinch of salt",
+];
+
+const allIngredients = [...chickenIngredients, ...riceIngredients];
+
+const steps = [
+  "Rub the chicken with salt, garlic, and ginger.",
+  "Marinate for at least 30 minutes and up to overnight.",
+  "Arrange the thighs in a heatproof dish that fits inside the steamer. Keep the pieces in a single layer when possible.",
+  "Bring the steamer to a strong steam.",
+  "Steam the chicken for approximately 20-25 minutes, until cooked through.",
+  "Rest briefly, then spoon the accumulated ginger-chicken juices over the meat.",
+  "For the optional finish, scatter green onion over the chicken and pour 1 tablespoon very hot oil over it.",
+  "Rinse the rice and cook it in the rice cooker using chicken stock in place of part or all of the water. Add a pinch of salt.",
+  "Serve the chicken and its juices over the stock-flavored rice.",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  name: recipeName,
+  description: recipeDescription,
+  recipeCuisine: "Southeast Asian",
+  recipeYield: "About 4 portions",
+  recipeIngredient: allIngredients,
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    text: step,
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{recipeName} | {siteConfig.name}</title>
+    <meta name="description" content={recipeDescription} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-4xl mx-auto px-6 space-y-10">
+        <header class="space-y-3">
+          <p class="text-sm uppercase tracking-[0.25em]" style={`color:${siteConfig.accentColor}`}>
+            Kitchen / Southeast Asian
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-100">{recipeName}</h1>
+
+          <p class="text-base sm:text-lg text-gray-400">{recipeTagline}</p>
+        </header>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Chicken</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {chickenIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Rice</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            {riceIngredients.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-100">Method</h2>
+          <p class="text-sm text-gray-500">About 4 portions.</p>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {steps.map((step) => <li>{step}</li>)}
+          </ol>
+        </section>
+
+        <div class="pt-4">
+          <a
+            href="/cooking"
+            class="text-sm underline-offset-2 hover:underline"
+            style={`color:${siteConfig.accentColor}`}
+          >
+            ← Back to all recipes
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>
