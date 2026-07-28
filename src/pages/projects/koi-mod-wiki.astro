@@ -29,6 +29,7 @@ const ladder = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href={new URL(Astro.url.pathname.endsWith("/") ? Astro.url.pathname : Astro.url.pathname + "/", Astro.site).href} />
     <title>{projectName} | {siteConfig.name}</title>
     <meta name="description" content={projectSummary} />
   </head>
@@ -162,10 +163,10 @@ const ladder = [
 
         {/* Back links */}
         <div class="pt-4 flex flex-wrap gap-6">
-          <a href="/projects/koi-mod" class="text-sm underline-offset-2 hover:underline" style={`color:${siteConfig.accentColor}`}>
+          <a href="/projects/koi-mod/" class="text-sm underline-offset-2 hover:underline" style={`color:${siteConfig.accentColor}`}>
             ← Back to K&apos;s Koi Mod
           </a>
-          <a href="/projects" class="text-sm underline-offset-2 hover:underline" style={`color:${siteConfig.accentColor}`}>
+          <a href="/projects/" class="text-sm underline-offset-2 hover:underline" style={`color:${siteConfig.accentColor}`}>
             ← Back to all projects
           </a>
         </div>

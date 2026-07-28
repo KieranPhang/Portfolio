@@ -17,6 +17,7 @@ const pageType = "Case Study";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href={new URL(Astro.url.pathname.endsWith("/") ? Astro.url.pathname : Astro.url.pathname + "/", Astro.site).href} />
     <title>{projectName}: {projectFullName} | {siteConfig.name}</title>
     <meta name="description" content={projectSummary} />
   </head>
@@ -833,7 +834,7 @@ const pageType = "Case Study";
 
         <!-- BACK -->
         <div class="pt-2">
-          <a href="/projects" class="text-sm text-blue-400 hover:text-blue-300 underline-offset-2 hover:underline">
+          <a href="/projects/" class="text-sm text-blue-400 hover:text-blue-300 underline-offset-2 hover:underline">
             ← Back to all projects
           </a>
         </div>

@@ -61,6 +61,7 @@ const jsonLd = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href={new URL(Astro.url.pathname.endsWith("/") ? Astro.url.pathname : Astro.url.pathname + "/", Astro.site).href} />
     <title>{recipeName} | {siteConfig.name}</title>
     <meta name="description" content={recipeDescription} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -106,7 +107,7 @@ const jsonLd = {
 
         <div class="pt-4">
           <a
-            href="/cooking"
+            href="/cooking/"
             class="text-sm underline-offset-2 hover:underline"
             style={`color:${siteConfig.accentColor}`}
           >

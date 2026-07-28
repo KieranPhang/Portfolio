@@ -269,6 +269,7 @@ const cuisines: CuisineSection[] = [
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="canonical" href={new URL(Astro.url.pathname.endsWith("/") ? Astro.url.pathname : Astro.url.pathname + "/", Astro.site).href} />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={cookingDescription} />
     <title>Kitchen | {siteConfig.name}</title>

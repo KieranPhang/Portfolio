@@ -69,6 +69,7 @@ const safety = [
     <title>{projectName} | {siteConfig.name}</title>
     <meta name="description" content={projectSummary} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href={new URL(Astro.url.pathname.endsWith("/") ? Astro.url.pathname : Astro.url.pathname + "/", Astro.site).href} />
   </head>
 
   <body class="bg-background text-foreground">
@@ -339,7 +340,7 @@ const safety = [
         <!-- Back link -->
         <div class="pt-4">
           <a
-            href="/projects"
+            href="/projects/"
             class="text-sm text-blue-400 hover:text-blue-300 underline-offset-2 hover:underline"
           >
             ← Back to all projects

@@ -15,6 +15,7 @@ import "../styles/global.css";
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="canonical" href={new URL(Astro.url.pathname.endsWith("/") ? Astro.url.pathname : Astro.url.pathname + "/", Astro.site).href} />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={siteConfig.description} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,7 +31,7 @@ import "../styles/global.css";
       "name": "Kieran Phang-Davey",
       "alternateName": "Kieran Phang",
       "jobTitle": "Full Stack Roboticist and AI Integrator",
-      "url": "https://www.HireKieran.com",
+      "url": "https://hirekieran.com/",
       "sameAs": [
         siteConfig.social.github,
         siteConfig.social.linkedin,

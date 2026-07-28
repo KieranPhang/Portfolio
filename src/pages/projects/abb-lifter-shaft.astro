@@ -20,6 +20,7 @@ const figClass = "w-full h-auto rounded-xl bg-white";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href={new URL(Astro.url.pathname.endsWith("/") ? Astro.url.pathname : Astro.url.pathname + "/", Astro.site).href} />
     <title>{projectName} | {siteConfig.name}</title>
     <meta name="description" content={projectSummary} />
   </head>
@@ -36,7 +37,7 @@ const figClass = "w-full h-auto rounded-xl bg-white";
           <p class="text-base sm:text-lg text-gray-400">{projectTagline}</p>
           <p class="text-sm sm:text-base text-gray-400">{projectSummary}</p>
           <p class="text-sm">
-            <a href="/projects/abb-lifter" class="underline-offset-2 hover:underline font-medium" style={`color:${accent}`}>
+            <a href="/projects/abb-lifter/" class="underline-offset-2 hover:underline font-medium" style={`color:${accent}`}>
               ← Back to the ABB Lifter Force Analysis Study
             </a>
           </p>
@@ -246,7 +247,7 @@ const figClass = "w-full h-auto rounded-xl bg-white";
 
         {/* Back link */}
         <div class="pt-4">
-          <a href="/projects/abb-lifter" class="text-sm underline-offset-2 hover:underline" style={`color:${accent}`}>
+          <a href="/projects/abb-lifter/" class="text-sm underline-offset-2 hover:underline" style={`color:${accent}`}>
             ← Back to the ABB Lifter Force Analysis Study
           </a>
         </div>
