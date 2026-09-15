@@ -20,6 +20,7 @@ export const siteConfig = {
     "RobotStudio & FlexPendant",
     "WorkObject & TCP Calibration",
     "Offline Programming (OLP)",
+    "PLC ladder logic and industrial automation simulation (Automation Studio, Famic Technologies)",
     // Programming & data
     "Python",
     "C",
@@ -52,6 +53,7 @@ export const siteConfig = {
     name: "RobotDraw",
     description: "SVG-to-RAPID converter for six-axis ABB industrial robots. A Python and Flask tool that turns vector artwork into readable RAPID drawing programs with safe lift and traversal moves, then estimates run time. Hardware-validated on an IRB 1100 across five drawings, including one of roughly 3,000 strokes.",
     link: "/projects/robotdraw/",
+    image: "/images/projects/robotdraw/robotdraw-card.jpg",
     skills: ["RAPID (ABB robot programming)", "RobotStudio", "Python", "Flask", "Industrial Robot Programming", "Offline Programming (OLP)"],
     featured: true
   },
@@ -59,8 +61,15 @@ export const siteConfig = {
     name: "Yumi TTS",
     description: "Voice-driven control for a physical ABB YuMi (IRB 14000). A fully local wake-word speech pipeline parses a spoken command, confirms it, and dispatches it over a socket protocol to RAPID on the robot. Running on the physical arm, backed by 44 green Python tests.",
     link: "/projects/yumi-tts/",
+    image: "/images/projects/yumi/yumi-card.jpg",
     skills: ["Python", "Speech-to-Text", "Socket Programming", "RAPID (ABB robot programming)", "Industrial Robot Programming", "Software Testing (pytest)"],
     featured: true
+  },
+  {
+    name: "ASU / NASA Psyche Mission Capstone: Robotic Sample Acquisition and Caching System",
+    description: "Aug 2026 to May 2027, in progress. Designing a robotic sampling and caching system for a future Psyche lander concept with the ASU / NASA Psyche Mission as industrial partner. Sample extraction across four hypothesized surface regimes (flat metallic, debris-covered metallic, rough metallic or rocky terrain, high-relief metallic crater walls) plus a single caching system able to store each sample type. Deliverables: calculations, simulations, and a design package, with physical prototyping if resources allow.",
+    skills: ["Mechanical Design", "Robotics", "Simulation", "Systems Engineering", "Technical Documentation"],
+    featured: false
   },
   {
     name: "Water Opacity Sensor",
@@ -133,7 +142,7 @@ export const siteConfig = {
     {
       company: "ABB Robotics",
       title: "Engineering Intern",
-      dateRange: "May 2026 – Present",
+      dateRange: "May 2026 – Aug 2026",
       bullets: [
         "Programmed Delta, SCARA, 4-axis, and 6-axis robots in RAPID across RobotStudio and live controller environments, covering motion planning, WorkObject and TCP calibration, digital I/O, and multi-robot coordination.",
         "Performed QC testing, functional verification, and shipment inspection on ABB industrial robots; conducted hands-on preventative maintenance including oil changes on live systems.",

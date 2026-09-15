@@ -11,9 +11,7 @@ const projectTagline =
 const projectSummary =
   "A fully local wake-word voice interface that drives a physical ABB YuMi (IRB 14000). Speech is transcribed on-device, parsed into a deterministic command, confirmed, and dispatched over a socket protocol to RAPID running on the robot. Running on the physical arm, backed by 44 green Python tests.";
 
-// DEMO VIDEO: K is recording this himself. When the file is ready, replace the
-// placeholder block in the "Demo" section below with either a local <video> tag
-// (drop the file at /public/videos/yumi-tts-demo.mp4) or a YouTube <iframe>.
+// DEMO VIDEOS live in /public/media/ (compressed with ffmpeg, crf 28, 1280 max).
 ---
 
 <html lang="en">
@@ -56,18 +54,28 @@ const projectSummary =
             <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Demo</p>
             <div class="h-px flex-1 bg-slate-800"></div>
           </div>
-          <div class="rounded-2xl border-2 border-dashed border-slate-700 bg-slate-900/50 p-4">
-            <div class="aspect-video w-full rounded-xl border border-slate-800 bg-slate-950/60 flex flex-col items-center justify-center gap-2 text-center px-6">
-              {/*
-                DEMO VIDEO GOES HERE.
-                Option A (local file): drop the recording at
-                  /public/videos/yumi-tts-demo.mp4
-                then replace this whole placeholder div with:
-                  <video src="/videos/yumi-tts-demo.mp4" controls poster="/images/projects/yumi/yumi_poster.jpg" class="w-full h-full rounded-xl object-cover"></video>
-                Option B (YouTube): replace with an <iframe> like the APEX page uses.
-              */}
-              <p class="text-sm text-slate-300 font-medium">Demo video coming soon</p>
-              <p class="text-xs text-slate-500">Recording of the physical YuMi responding to a spoken command.</p>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3 sm:p-4">
+            <video class="w-full max-h-[80vh] rounded-xl bg-black" controls playsinline preload="metadata" poster="/images/projects/yumi/yumi-card.jpg">
+              <source src="/media/yumi-llm-quick-demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p class="text-sm text-gray-400 mt-3">Main demo: the physical YuMi responding to spoken commands through the local speech pipeline.</p>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
+              <video class="w-full rounded-xl bg-black" controls playsinline preload="metadata">
+                <source src="/media/yumi-coffee-routine.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <p class="text-sm text-gray-400 mt-2">Speech-to-text to command, running the coffee routine on the robot.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
+              <video class="w-full rounded-xl bg-black" controls playsinline preload="metadata">
+                <source src="/media/yumi-coffee-voice-recognition.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <p class="text-sm text-gray-400 mt-2">Voice recognition test at NUS.</p>
             </div>
           </div>
         </section>

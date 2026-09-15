@@ -11,9 +11,7 @@ const projectTagline =
 const projectSummary =
   "A self-built Python and Flask application that converts SVG artwork into ABB RAPID programs for a six-axis industrial robot, generates safe lift and traversal moves, estimates run time, and runs the whole workflow from a local browser interface. Hardware-validated on an IRB 1100 across five drawings.";
 
-// IMAGE SLOTS: drop files into /public/images/projects/robotdraw/ and swap the
-// placeholder blocks below for <img> tags. Suggested shots: the robot mid-stroke,
-// a finished drawing, the FlexPendant showing generated RAPID, the web UI.
+// MEDIA: videos in /public/media/, photos in /public/images/projects/robotdraw/.
 ---
 
 <html lang="en">
@@ -49,14 +47,14 @@ const projectSummary =
           </p>
         </header>
 
-        {/* Hero image slot */}
+        {/* Hero: the full RobotDraw demo video */}
         <section class="space-y-4">
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
-            <p class="text-sm text-gray-400 mb-3">Hero image (placeholder):</p>
-            <div class="aspect-[16/9] w-full rounded-xl border border-dashed border-slate-700 flex items-center justify-center text-xs text-slate-500 text-center px-6">
-              {/* Swap for: <img src="/images/projects/robotdraw/robotdraw_hero.jpg" alt="IRB 1100 drawing with RobotDraw" class="w-full h-full object-cover rounded-xl" /> */}
-              Drop the IRB 1100 drawing photo here
-            </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3 sm:p-4">
+            <video class="w-full max-h-[80vh] rounded-xl bg-black" controls playsinline preload="metadata" poster="/images/projects/robotdraw/robotdraw-card.jpg">
+              <source src="/media/robotdraw-proof.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p class="text-sm text-gray-400 mt-3">Full RobotDraw demo: from SVG in the browser UI to the IRB 1100 drawing it on paper.</p>
           </div>
         </section>
 
@@ -110,12 +108,17 @@ const projectSummary =
         {/* Web UI image slot */}
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">The workflow</h2>
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
-            <p class="text-sm text-gray-400 mb-3">Local web interface (placeholder):</p>
-            <div class="aspect-[16/9] w-full rounded-xl border border-dashed border-slate-700 flex items-center justify-center text-xs text-slate-500 text-center px-6">
-              {/* Swap for: <img src="/images/projects/robotdraw/robotdraw_ui.png" alt="RobotDraw local web interface" class="w-full h-full object-contain rounded-xl" /> */}
-              Drop a screenshot of the local browser UI here
-            </div>
+          <figure class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3 sm:p-4">
+            <img src="/images/projects/robotdraw/robotdraw-ui.jpg" alt="RobotDraw local web interface: SVG drop zone, work object corners, toolpath preview, and RAPID output" class="w-full rounded-xl" loading="lazy" />
+            <figcaption class="text-sm text-gray-400 mt-3">The local browser UI: drop an SVG, paste three work-object corners from the FlexPendant, preview the toolpath, generate the .mod file.</figcaption>
+          </figure>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3 sm:p-4">
+            <video class="w-full max-h-[80vh] rounded-xl bg-black" controls playsinline preload="metadata">
+              <source src="/media/robotdraw-abb-logo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p class="text-sm text-gray-400 mt-3">The robot drawing the ABB logo from a RobotDraw-generated RAPID program.</p>
           </div>
           <ol class="list-decimal list-inside space-y-2 text-gray-300">
             <li>Vectorize artwork to SVG (Inkscape or a raster-to-vector service), then load it in the browser UI.</li>
@@ -135,12 +138,31 @@ const projectSummary =
             eyecatch of roughly 3,000 strokes on A4. The run-time estimator was calibrated against those real runs.
           </p>
 
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
-            <p class="text-sm text-gray-400 mb-3">Finished drawings on hardware (placeholder):</p>
-            <div class="aspect-[16/9] w-full rounded-xl border border-dashed border-slate-700 flex items-center justify-center text-xs text-slate-500 text-center px-6">
-              {/* Swap for: <img src="/images/projects/robotdraw/robotdraw_results.jpg" alt="Drawings produced on the IRB 1100" class="w-full h-full object-cover rounded-xl" /> */}
-              Drop photos of the five validated drawings here
-            </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3 sm:p-4">
+            <video class="w-full rounded-xl bg-black" controls playsinline preload="metadata">
+              <source src="/media/robotdraw-timelapse.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p class="text-sm text-gray-400 mt-3">Full timelapse of the roughly 3,000-stroke eyecatch sequence on the IRB 1100.</p>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <figure class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3 sm:col-span-2">
+              <img src="/images/projects/robotdraw/robotdraw-drawings-spread.jpg" alt="Seven finished RobotDraw drawings laid out on a desk" class="w-full rounded-xl" loading="lazy" />
+              <figcaption class="text-sm text-gray-400 mt-2">The validated set laid out: ABB logo runs, IRB 1100 line art, the flowers piece, and the eyecatch.</figcaption>
+            </figure>
+            <figure class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
+              <img src="/images/projects/robotdraw/robotdraw-eyecatch-3000-strokes.jpg" alt="Eyecatch drawing of roughly 3,000 strokes on A4" class="w-full rounded-xl" loading="lazy" />
+              <figcaption class="text-sm text-gray-400 mt-2">The eyecatch: roughly 3,000 strokes on A4, the largest program run on hardware.</figcaption>
+            </figure>
+            <figure class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
+              <img src="/images/projects/robotdraw/robotdraw-flowers-586-strokes.jpg" alt="Flower bouquet drawing of 586 strokes" class="w-full rounded-xl" loading="lazy" />
+              <figcaption class="text-sm text-gray-400 mt-2">The flowers piece, 586 strokes.</figcaption>
+            </figure>
+            <figure class="rounded-2xl border border-slate-800 bg-slate-900/60 p-3 sm:col-span-2">
+              <img src="/images/projects/robotdraw/robotdraw-irb1100-abb-logo.jpg" alt="IRB 1100 line art next to the ABB logo, drawn by the robot" class="w-full rounded-xl" loading="lazy" />
+              <figcaption class="text-sm text-gray-400 mt-2">IRB 1100 line art and the ABB logo, drawn by the IRB 1100 itself.</figcaption>
+            </figure>
           </div>
         </section>
 
