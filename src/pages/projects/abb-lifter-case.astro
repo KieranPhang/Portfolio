@@ -45,8 +45,9 @@ const figClass = "w-full h-auto rounded-xl bg-white";
         {/* Verdict */}
         <div class="rounded-xl border border-emerald-900/40 bg-emerald-950/20 px-4 py-3">
           <p class="text-sm text-emerald-200/80 leading-relaxed">
-            Verdict: every structural check passes across the entire travel envelope. The one open risk is
-            behavioral, not a part: two independent cylinders with no synchronization.
+            Verdict: every joint passes across the entire travel envelope. The arms are the tightest member and
+            reach nominal yield at the holed section under design load once axial compression is counted. The
+            other open risk is behavioral, not a part: two independent cylinders with no synchronization.
           </p>
         </div>
 
@@ -114,9 +115,14 @@ const figClass = "w-full h-auto rounded-xl bg-white";
                   <td class="px-4 py-2">Pass</td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-2">Arm bending (solid 25 by 70 mm arms, 30 mm hole)</td>
-                  <td class="px-4 py-2">169 MPa, 68% of yield at the worst pose</td>
-                  <td class="px-4 py-2">Pass</td>
+                  <td class="px-4 py-2">Arm section (solid 25 by 70 mm arms, 30 mm hole)</td>
+                  <td class="px-4 py-2">bending alone 169 MPa (68%); bending plus 93.6 kN axial at the holed section 263 MPa, 105% of yield at design load, 70% at working load</td>
+                  <td class="px-4 py-2">Pass at working load, at yield at design load; the governing member</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">Arm weak-axis buckling (braced at the centre pivot)</td>
+                  <td class="px-4 py-2">53 MPa applied against an Euler stress of 190 MPa, 3.5x margin; 0.9x if the arm were unbraced over its full length</td>
+                  <td class="px-4 py-2">Pass, on the assumption the pivot restrains the arm laterally</td>
                 </tr>
                 <tr>
                   <td class="px-4 py-2">Rollers (ball-bearing) and pusher block</td>
@@ -151,16 +157,32 @@ const figClass = "w-full h-auto rounded-xl bg-white";
 
         {/* Arm bending */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">Arm bending</h2>
+          <h2 class="text-2xl font-semibold text-gray-100">The arm section</h2>
           <p class="text-gray-300 leading-relaxed">
             The arms are solid plates, 25 mm thick and 70 mm deep, with a 30 mm hole at the crossing. The net
             section modulus against the 3.18 kN.m center moment gives 169 MPa, 68 percent of yield, at the worst
-            pose. A solid 25 mm arm has ample axial and buckling margin on top of that at these loads. This is the
-            structural difference that engineers out the bent-bar failure mode of a thinner design.
+            pose. That is the bending answer, and it is correct as far as it goes.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            It is not the whole answer. The arm is a beam-column, not a beam: the same section also carries
+            93.6 kN of axial compression, which is the full per-side drive force resolved along the arm, and the
+            peak moment sits exactly at the pivot hole where the net area drops to 1000 mm2. Both peak at the same
+            place. Combined, that section runs 263 MPa, 105 percent of yield at the 1.5x design load and 175 MPa,
+            70 percent, at working load. The realised safety factor on the arm is about 1.43 rather than 1.5.
+            Local yielding at a pin hole in ductile steel redistributes rather than fractures, so this is a margin
+            finding and not a failure prediction, but it means the arm, not the axles, is what governs this
+            machine.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            Weak-axis buckling is the companion check. At 25 mm thick over a 1473 mm length the radius of gyration
+            is 7.2 mm, so the applied 53 MPa sits against an Euler stress of 190 MPa when the arm is braced
+            laterally at the centre pivot, a 3.5x margin, and against 47 MPa if it were unbraced over its full
+            length. The pivot ties each arm to its partner and the frames are tied by the platform, so the braced
+            case is the realistic one. The member passes because of the brace, not because the section is stout.
           </p>
           <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
             <img src={`${imgBase}/case-fig12-arm-bending.png`} alt="Case lifter arm section and bending check" class={figClass} loading="lazy" />
-            <p class="mt-3 text-sm text-gray-400">The arm section and the bending check.</p>
+            <p class="mt-3 text-sm text-gray-400">The arm section and the bending check as first published. The axial term above is added on top of this figure.</p>
           </div>
         </section>
 
@@ -168,12 +190,13 @@ const figClass = "w-full h-auto rounded-xl bg-white";
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">The travel envelope and the open risk</h2>
           <p class="text-gray-300 leading-relaxed">
-            The modeled pose is full retraction, so the envelope is exactly 5.23 to 15.8 degrees and everything in
-            it passes. The one open structural risk is behavioral: two independent cylinders with no flow divider,
-            sync valve, or mechanical tie. If one side leads, the platform racks, the lagging side's hinge sees
-            more than its half of the load, and the arms take out-of-plane twist that the 2D checks do not cover.
-            At 66 to 68 percent utilizations the structure has real margin to absorb moderate imbalance, but
-            synchronization hardware is cheap and the loads here are 93 kN a side.
+            The modeled pose is full retraction, so the envelope is exactly 5.23 to 15.8 degrees and every joint in
+            it passes. The remaining open structural risk is behavioral: two independent cylinders with no flow
+            divider, sync valve, or mechanical tie. If one side leads, the platform racks, the lagging side's hinge
+            sees more than its half of the load, and the arms take out-of-plane twist that the 2D checks do not
+            cover. At 66 percent axle utilization there is real margin to absorb moderate imbalance, but the arms
+            sit at 105 percent at the holed section under design load and have much less room for an uneven share.
+            Synchronization hardware is cheap and the loads here are 93 kN a side.
           </p>
           <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
             <img src={`${imgBase}/case-fig13-envelope.png`} alt="Case lifter travel envelope at true scale" class={figClass} loading="lazy" />
@@ -189,8 +212,9 @@ const figClass = "w-full h-auto rounded-xl bg-white";
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">Recommendations</h2>
           <ol class="list-decimal list-inside space-y-2 text-gray-300">
-            <li>Add cylinder synchronization: a flow divider, a rephasing circuit, or a mechanical tie between sides. This is the only open structural risk on this machine.</li>
-            <li>Verify the center pivot's double-shear construction next time the joint is opened; the 91 percent single-shear reading is the thinnest margin on the machine.</li>
+            <li>Add cylinder synchronization: a flow divider, a rephasing circuit, or a mechanical tie between sides. Racking loads the lagging hinge beyond its half share and twists the arms, which are the tightest member on the machine.</li>
+            <li>Treat the arm as the governing member: 105 percent of yield at the holed section under design load, a realised safety factor of about 1.43. Confirm the centre pivot gives genuine out-of-plane restraint, since the buckling check passes only on that assumption.</li>
+            <li>Verify the center pivot's double-shear construction next time the joint is opened; the 91 percent single-shear reading is the thinnest joint margin on the machine. Specify the bush material against a projected bearing pressure of 95 to 125 MPa while it is open.</li>
             <li>Confirm material certificates at build; all margins assume mild steel.</li>
           </ol>
         </section>
@@ -203,7 +227,11 @@ const figClass = "w-full h-auto rounded-xl bg-white";
             <li>The only safety factor is 1.5 on the working weight, applied to the load. The 145 MPa shear figure is the shear yield, not a further-reduced allowable.</li>
             <li>Static analysis only: no dynamic or impact factor, no fatigue, and no stress concentration at holes. Both sides are assumed to share load equally except where the unsynchronized cylinders are flagged.</li>
             <li>Deformation and rupture loads are isolated pin-shear values on assumed steel; other components govern well below them.</li>
-            <li>The center pivot is checked as steel shear only. The bushing material's own bearing pressure limit was not evaluated (projected pressure roughly 104 to 125 MPa); flagged for follow-up with the bushing specification.</li>
+            <li>The center pivot is checked as steel shear only. The bushing material's own bearing pressure limit was not evaluated (projected pressure roughly 95 to 125 MPa depending on bush width); flagged for follow-up with the bushing specification.</li>
+            <li>The arm's weak-axis buckling check assumes the centre pivot provides genuine lateral restraint. Unbraced over its full length the member would sit below the Euler stress.</li>
+            <li>The lifted mass is payload plus platform. Arm self-weight is excluded, worth roughly 3.5 percent on top of every force here, and the 164.4 kg platform figure is measured with no padding.</li>
+            <li>Frictionless pins and rollers. Real friction adds an estimated 10 to 20 percent to breakaway force and is not included in any figure here.</li>
+            <li>Lug edge distance and tear-out were not checked, because plate edge geometry was never captured. Welds were not assessed. The analysis is 2D throughout, so racking, twist and rail misalignment are outside the model.</li>
           </ul>
         </section>
 

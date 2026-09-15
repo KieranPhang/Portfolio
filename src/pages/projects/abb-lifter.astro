@@ -52,9 +52,11 @@ const figClass = "w-full h-auto rounded-xl bg-white";
         {/* Validation */}
         <div class="rounded-xl border border-emerald-900/40 bg-emerald-950/20 px-4 py-3">
           <p class="text-sm text-emerald-200/80 leading-relaxed">
-            The numbers were independently re-derived by two adversarial AI verification passes, one for statics
-            and geometry and one for materials and failure theory, and reviewed by K. The validation covers the
-            arithmetic and statics.
+            The numbers were independently re-derived by three verification passes, two adversarial (one for
+            statics and geometry, one for materials and failure theory) and a third that rebuilt the closed form
+            from scratch and checked all 68 published quantities, and reviewed by K. All 68 reproduce within
+            rounding. The third pass also found three modeling omissions on the arm sections, corrected on these
+            pages. The validation covers the arithmetic and statics.
           </p>
         </div>
 
@@ -150,10 +152,10 @@ const figClass = "w-full h-auto rounded-xl bg-white";
             <li><span class="font-medium">Joints at the working pose: adequate.</span> With a proper 18 mm double-shear pin at each arm-end hinge, all pin shear and bearing stresses pass with margin (end pins 67 percent, center pins 37 percent, bearing under half of allowable). But the axle is a stepped or sleeved custom pin that was never drawn, specified, or retained, so the hinge is unbuildable as documented even though its stresses check out.</li>
             <li><span class="font-medium">The travel envelope is the risk map.</span> Loaded descent below 6.5 degrees (design load) or 4.4 degrees (working load) overstresses the end pins, and the true closed position, 3.56 degrees, is inside that zone. With 1000 kg aboard at the bottom the outcome is permanent pin deformation, not rupture. An empty platform may be parked at closed without harm.</li>
             <li><span class="font-medium">Capacity is pin-governed: 474 kg rated payload at the 1.5 safety factor from the lowest point (3.56 degrees, 16.1x)</span>, or 786 kg loaded to the shear allowable with no safety factor. The 1000 kg rating exists only at or above the working pose, and remains contingent on closing the open items below.</li>
-            <li><span class="font-medium">Sliding-end linear bearings fail at design load</span> (106 to 132 percent of static rating), independent of angle. Expected mode is brinelling, presenting as sticky travel well before collapse.</li>
+            <li><span class="font-medium">Sliding-end linear bearings fail at design load</span> (106 to 132 percent of static rating), independent of angle. Expected mode is brinelling, presenting as sticky travel well before collapse. The rating is a class assumption: an LM25-class carriage at 1.37 kN would put the blocks at 154 percent, so confirm the fitted part number.</li>
             <li><span class="font-medium">All fasteners on the primary load paths are unmodeled</span> (hinge hold-downs, cylinder bracket); roughly 49 kN per hinge must pass through bolts that exist only as cosmetic features.</li>
             <li><span class="font-medium">The descent stopper is non-functional</span> (287 mm short of the reachable bottom), leaving the pin-overstress zone unguarded.</li>
-            <li><span class="font-medium">A note on the arm bending model.</span> Fed into a simple central-load, simply-supported bending idealization, the measured 25 mm arm section returns roughly 2,600 MPa, about ten times the yield of mild steel. That is not a real result: the machine demonstrably stands and lifts at this section, so the model, not the machine, is wrong here. The arms carry load primarily axially along the pin line, closer to a two-force member than a transversely loaded beam. The correct open item is a beam-column check against the true load path, now with the section in hand.</li>
+            <li><span class="font-medium">The arm section is unresolved, and it is an open input rather than a broken model.</span> An earlier reading treated the bending idealization as suspect, because a 25 mm depth returns roughly ten times yield while the machine demonstrably stands. An independent re-derivation settles it the other way: the bending model is right and the 25 mm figure cannot be the depth, since a 24.1 mm hole through a 25 mm deep plate leaves 0.9 mm of material. Nor are these arms two-force members; the free body gives a genuine 3.26 kN.m moment at the crossing, peaking at the pin hole, alongside 48.9 kN of axial compression at the same section. Including both, a 2 by 6 mm plate pair needs roughly 100 mm of depth to stay inside yield at design load. The depth has never been measured, and the capacity claim is contingent on it.</li>
           </ul>
         </section>
 
@@ -164,7 +166,8 @@ const figClass = "w-full h-auto rounded-xl bg-white";
             <li>Fit a third linear bearing block per sliding end, or higher-rated carriages. This removes the one outright structural failure at design load.</li>
             <li>Install a functional descent stop that engages at or above the working pose, so a loaded platform can never be driven into the low-angle overstress zone. This is a prerequisite for any actuation upgrade.</li>
             <li>Specify and positively retain the arm-end axles, stepped or sleeved to match the stepped bores.</li>
-            <li>Close the arm beam-column check against the axial load path, using the measured section and final drawings.</li>
+            <li>Measure the arm plate depth at the crossing and close the beam-column check. Roughly 100 mm is needed in 2 by 6 mm plates to clear design load with axial included.</li>
+            <li>Confirm the sliding-end carriage part number and its true static rating before sizing the bearing fix.</li>
             <li>Specify the hold-down and bracket bolts on the primary load paths.</li>
             <li>Confirm material certificates before build.</li>
           </ol>
@@ -196,15 +199,28 @@ const figClass = "w-full h-auto rounded-xl bg-white";
         <section class="space-y-4">
           <h2 class="text-3xl font-bold text-gray-100 border-b border-slate-800 pb-2">Case lifter</h2>
           <p class="text-gray-300 leading-relaxed">
-            <span class="font-medium">Verdict: every structural check passes across the entire travel
-            envelope.</span> Real 25 mm double-shear axles with retention (95 MPa, 66 percent), a 30 mm center
-            bushing (46 to 91 percent), solid 25 by 70 mm arms (68 percent of yield), ball-bearing rollers at 38
+            <span class="font-medium">Verdict: every joint passes across the entire travel envelope, and the arms
+            reach nominal yield at the holed section under design load.</span> Real 25 mm double-shear axles with
+            retention (95 MPa, 66 percent), a 30 mm center bushing (46 to 91 percent), ball-bearing rollers at 38
             percent of rating, a solid pusher block, and a modeled 5.23 degree pose that is genuinely the bottom
             of stroke, so no hidden low-angle trap exists. The bent-bar failure mode of a thinner design has been
-            engineered out. The one open structural risk is behavioral: two independent cylinders with no
-            synchronization (racking under uneven extension); a flow divider or mechanical tie is the single
-            recommendation. For the actuation vendor: the 10.92x multiplier at the 5.23 degree floor demands
+            engineered out. For the actuation vendor: the 10.92x multiplier at the 5.23 degree floor demands
             187.1 kN total at design load.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            <span class="font-medium">Arm correction.</span> The solid 25 by 70 mm arms were first published at
+            169 MPa, 68 percent of yield. That figure counted bending only. The same section also carries 93.6 kN
+            of axial compression, and the peak moment sits exactly at the 30 mm pivot hole where the net area
+            drops to 1000 mm2. Combined at that section the arm runs 263 MPa, 105 percent of yield at the 1.5x
+            design load and 70 percent at working load, so the realised safety factor on the arm is about 1.43.
+            Local yielding at a pin hole in ductile steel redistributes rather than fractures, so this is a margin
+            finding and not a failure prediction, but it makes the arm, not the axles, the governing member.
+            Weak-axis buckling passes at 3.5x, and only because the centre pivot braces the arm.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            Two open risks remain: the arm margin above, and a behavioral one, two independent cylinders with no
+            synchronization. Racking under uneven extension loads the lagging side's hinge beyond its half share
+            and twists the arms; a flow divider or mechanical tie remains the leading recommendation.
           </p>
         </section>
 
@@ -248,9 +264,11 @@ const figClass = "w-full h-auto rounded-xl bg-white";
         <section class="space-y-4">
           <h3 class="text-xl font-semibold text-gray-100">Results and recommendations</h3>
           <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>Main hinge axles 66 percent, center pivot 46 percent (double shear) and still inside allowable at 91 percent read as single shear, arms 68 percent of yield, rollers 38 percent of rating. Every check passes across the whole 5.23 to 15.8 degree envelope.</li>
-            <li>Add cylinder synchronization: a flow divider, a rephasing circuit, or a mechanical tie between sides. This is the only open structural risk on the machine.</li>
-            <li>Verify the center pivot's double-shear construction next time the joint is opened; the 91 percent single-shear reading is the thinnest margin on the machine.</li>
+            <li>Main hinge axles 66 percent, center pivot 46 percent (double shear) and still inside allowable at 91 percent read as single shear, rollers 38 percent of rating. Every joint passes across the whole 5.23 to 15.8 degree envelope.</li>
+            <li>Arms 105 percent of yield at the holed section under design load once axial compression is included, 70 percent at working load. The governing member, at a realised safety factor of about 1.43.</li>
+            <li>Add cylinder synchronization: a flow divider, a rephasing circuit, or a mechanical tie between sides. Racking loads the lagging hinge beyond its half share and twists the arms.</li>
+            <li>Confirm the centre pivot gives genuine lateral restraint to the arm; the weak-axis buckling check passes only on that assumption.</li>
+            <li>Verify the center pivot's double-shear construction next time the joint is opened; the 91 percent single-shear reading is the thinnest joint margin on the machine.</li>
             <li>Confirm material certificates at build.</li>
           </ul>
         </section>
@@ -263,7 +281,10 @@ const figClass = "w-full h-auto rounded-xl bg-white";
             <li>The only safety factor is 1.5 on the working weight, applied to the load. The 145 MPa shear figure is the shear yield, not a further-reduced allowable.</li>
             <li>Static analysis only: no dynamic or impact factor, no fatigue, and no stress concentration at holes.</li>
             <li>Deformation and rupture loads are isolated pin-shear values on assumed steel; other components govern well below them.</li>
-            <li>The case lifter's center pivot is checked as steel shear only. The bushing material's own bearing pressure limit was not evaluated (projected pressure roughly 104 to 125 MPa); flagged for follow-up with the bushing specification.</li>
+            <li>The case lifter's center pivot is checked as steel shear only. The bushing material's own bearing pressure limit was not evaluated (projected pressure roughly 95 to 125 MPa depending on bush width); flagged for follow-up with the bushing specification.</li>
+            <li>The lifted mass is payload plus platform. Arm self-weight is excluded, worth roughly 3.5 percent on the case lifter, whose 164 kg platform figure is measured with no padding.</li>
+            <li>Frictionless pins and carriages. Real friction adds an estimated 10 to 20 percent to breakaway force and is not included in any figure here.</li>
+            <li>Lug edge distance and tear-out were not checked on either machine, because plate edge geometry was never captured. Welds were not assessed. The analysis is 2D throughout, so racking, twist and rail misalignment are outside the model.</li>
             <li>Actuation-side components, including the shaft lifter's cylinder cross member, are the actuation vendor's scope and were not analyzed.</li>
           </ul>
         </section>

@@ -113,7 +113,7 @@ const figClass = "w-full h-auto rounded-xl bg-white";
                 </tr>
                 <tr>
                   <td class="px-4 py-2">Sliding-end linear bearings (2 per end)</td>
-                  <td class="px-4 py-2">2.12 kN per block, 106 to 132% of static rating at design load</td>
+                  <td class="px-4 py-2">2.12 kN per block, 106 to 132% of static rating at design load, and 154% if the fitted carriage is LM25 class</td>
                   <td class="px-4 py-2">Fail at design load, marginal at working load</td>
                 </tr>
                 <tr>
@@ -151,6 +151,13 @@ const figClass = "w-full h-auto rounded-xl bg-white";
             of rating. This is the machine's first structural failure under full load, independent of angle. A
             third block per end, or a higher-rated carriage, brings design load back to 71 to 88 percent. The
             failure mode is brinelling, which presents as sticky travel long before collapse.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            One caveat on the rating itself: 1.6 to 2.0 kN is a class assumption, not a fitted part number.
+            LM25-class bushings are catalogued nearer 1.37 kN, which would put the blocks at 154 percent of rating
+            at design load and 103 percent at working load, turning the marginal working-load pass into a marginal
+            failure. Confirm the carriage part number before sizing the fix. The verdict deepens either way; it
+            does not change.
           </p>
           <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
             <img src={`${imgBase}/fig21-slider-share.png`} alt="Sliding-end load share against the bearing static rating" class={figClass} loading="lazy" />
@@ -197,16 +204,28 @@ const figClass = "w-full h-auto rounded-xl bg-white";
 
         {/* Arm model-limits note */}
         <section class="space-y-4">
-          <h2 class="text-2xl font-semibold text-gray-100">A note on the arm bending model</h2>
+          <h2 class="text-2xl font-semibold text-gray-100">The arm section: an open input, not a model failure</h2>
           <p class="text-gray-300 leading-relaxed">
-            The arms are two flat bars per arm, each 6 mm thick, measured at 25 mm depth at the crossing (pending
-            confirmation that this is the tall side-view dimension). Fed into a simple central-load,
-            simply-supported bending idealization, that section returns roughly 2,600 MPa, about ten times the
-            yield of mild steel. That is not a real result: the machine demonstrably stands and lifts at this
-            section, so the model, not the machine, is wrong here. The idealization does not represent how these
-            arms work. They carry load primarily axially along the pin line, closer to a two-force member than a
-            transversely loaded beam. The correct open item is a beam-column check against the true load path,
-            now with the section dimensions in hand.
+            The arms are two flat bars per arm, each 6 mm thick. The depth at the crossing, the tall side-view
+            dimension, has never been measured, and it is the last unknown on the primary load path.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            An earlier reading of this page treated the bending model itself as suspect, on the grounds that a
+            25 mm depth returns roughly ten times yield while the machine demonstrably stands. An independent
+            re-derivation settles that: the bending model is right, and the 25 mm figure is what cannot be. A
+            24.1 mm hole through a 25 mm deep plate leaves 0.9 mm of material, so 25 mm is a thickness or some
+            other dimension, not the depth at the crossing. Nor are these arms two-force members. Solving the free
+            body gives a genuine bending moment at the crossing of 3.26 kN.m per side, driven by the large
+            horizontal drive force acting through the half-height offset between the pin and the crossing, and it
+            peaks exactly at the pin hole.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            The arm is a beam-column: that 3.26 kN.m acts together with 48.9 kN of axial compression at the same
+            holed section. Including both, a 2 by 6 mm plate pair needs roughly 100 mm of depth to stay inside
+            yield at design load, against the 82 mm the bending-only figure suggested. A 60 to 80 mm depth is
+            consistent with a machine that stands and field-tested at 600 kg, and 60 to 80 mm would not clear
+            1000 kg at a 1.5 safety factor. The depth is unknown, the threshold is known, and the capacity claim
+            for this machine is contingent on that one number.
           </p>
         </section>
 
@@ -214,7 +233,8 @@ const figClass = "w-full h-auto rounded-xl bg-white";
         <section class="space-y-4">
           <h2 class="text-2xl font-semibold text-gray-100">Open items (punch list)</h2>
           <ul class="list-disc list-inside space-y-2 text-gray-300">
-            <li>Arm beam-column check against the true axial load path, using the measured 25 mm section (pending confirmation of the section orientation). Any higher-capacity conclusion is contingent on this.</li>
+            <li>Measure the arm plate depth at the crossing and run the beam-column check. It needs roughly 100 mm in 2 by 6 mm plates to clear design load with axial included. The capacity claim is contingent on this one number.</li>
+            <li>Confirm the sliding-end carriage part number and its true static rating; an LM25-class carriage would move the bearing verdict from 106 to 132 percent up to 154 percent.</li>
             <li>The arm-end axle is a stepped or sleeved custom pin that was never drawn, specified, or retained, so the hinge is unbuildable as documented even though its stresses pass. Fit and positively retain a proper axle.</li>
             <li>The primary-load-path fasteners (hinge hold-downs, cylinder bracket) are unmodeled, yet roughly 49 kN per hinge must pass through them. Specify them.</li>
             <li>Confirm material certificates; every stress here assumes mild steel.</li>
