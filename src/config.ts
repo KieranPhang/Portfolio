@@ -67,7 +67,8 @@ export const siteConfig = {
   },
   {
     name: "ASU / NASA Psyche Mission Capstone: Robotic Sample Acquisition and Caching System",
-    description: "Aug 2026 to May 2027, in progress. Designing a robotic sampling and caching system for a future Psyche lander concept with the ASU / NASA Psyche Mission as industrial partner. Sample extraction across four hypothesized surface regimes (flat metallic, debris-covered metallic, rough metallic or rocky terrain, high-relief metallic crater walls) plus a single caching system able to store each sample type. Deliverables: calculations, simulations, and a design package, with physical prototyping if resources allow.",
+    description: "Aug 2026 to May 2027, in progress. Designing a robotic sampling and caching system for a future Psyche lander concept with the ASU / NASA Psyche Mission as industrial partner. Sample extraction across four hypothesized surface regimes (flat metallic, debris-covered metallic, rough metallic or rocky terrain, high-relief metallic crater walls) plus a single caching system able to store each sample type. Deliverables: calculations, simulations, and a design package, with physical prototyping if resources allow. Image: NASA/JPL-Caltech/ASU.",
+    image: "/images/projects/psyche/psyche-card.jpg",
     skills: ["Mechanical Design", "Robotics", "Simulation", "Systems Engineering", "Technical Documentation"],
     featured: false
   },
@@ -108,6 +109,7 @@ export const siteConfig = {
     name: "rapid-lint",
     description: "A geometric linter for offline-generated ABB RAPID. It reconstructs every TCP path from the program text and asserts geometric invariants, catching frame-sign, orientation, and axis-mapping defects at the desk before robot time. Built after a real RobotDraw bug pressed a marker into the table. Pre-release, with 66 green tests.",
     link: "/projects/rapid-lint/",
+    image: "/images/projects/rapid-lint/rapid-lint-card.jpg",
     skills: ["Python", "RAPID (ABB robot programming)", "Static Analysis", "Software Testing (pytest)", "Offline Programming (OLP)"],
     featured: false
   },
@@ -115,6 +117,7 @@ export const siteConfig = {
     name: "K's Koi Mod",
     description: "A self-built Forge 1.16.5 mini-mod that adds koi fish to Minecraft. Koi spawn in water and school toward a player holding craftable pellets, and breed along a nine-colour ladder with three patterns each. Built end to end as a proof-of-workflow for a larger mod, and compiled to a loadable jar.",
     link: "/projects/koi-mod/",
+    image: "/images/projects/koi/koi-card.jpg",
     skills: ["Java", "Minecraft Forge", "Gradle", "Blockbench", "Game Modding"],
     featured: false
   },
@@ -130,6 +133,7 @@ export const siteConfig = {
     name: "APEX: Automated Plant Executive Intelligence",
     description: "A local decision-workflow prototype for semiconductor packaging (OSAT) operations. It compresses factory signals into executive-ready briefings, demonstrated on a synthetic dataset. Prototype quality, not deployed.",
     link: "/projects/APEX/",
+    image: "/images/projects/apex/apex-card.jpg",
     skills: ["LLM", "Data Analysis", "Project Management"],
     featured: false
 }
